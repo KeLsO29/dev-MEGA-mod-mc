@@ -92,9 +92,6 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "onBlockAdded": {
-      "name": "CateriumNODEblockBlockAdded"
-    },
     "onTickUpdate": {
       "name": "CateriumNODEblockUpdateTick"
     },

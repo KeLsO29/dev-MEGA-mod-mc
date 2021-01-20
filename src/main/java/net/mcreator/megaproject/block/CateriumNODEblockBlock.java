@@ -19,7 +19,6 @@ import net.minecraft.block.Block;
 
 import net.mcreator.megaproject.procedures.CateriumNODEblockUpdateTickProcedure;
 import net.mcreator.megaproject.procedures.CateriumNODEblockBlockIsPlacedByProcedure;
-import net.mcreator.megaproject.procedures.CateriumNODEblockBlockAddedProcedure;
 import net.mcreator.megaproject.MegaProjectModElements;
 
 import java.util.Random;
@@ -63,14 +62,6 @@ public class CateriumNODEblockBlock extends MegaProjectModElements.ModElement {
 			int y = pos.getY();
 			int z = pos.getZ();
 			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				CateriumNODEblockBlockAddedProcedure.executeProcedure($_dependencies);
-			}
 		}
 
 		@Override
