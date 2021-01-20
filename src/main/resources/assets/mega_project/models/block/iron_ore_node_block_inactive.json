@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "mega_project:blocks/iron_ore",
+    "up": "mega_project:blocks/ironore_node_block_top",
+    "north": "mega_project:blocks/iron_ore",
+    "east": "mega_project:blocks/iron_ore",
+    "south": "mega_project:blocks/iron_ore",
+    "west": "mega_project:blocks/iron_ore",
+    "particle": "mega_project:blocks/iron_ore"
+  }
+}

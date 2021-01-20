@@ -1,0 +1,13 @@
+{
+  "group": "mega_project",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mega_project:caterium_block"
+    }
+  ],
+  "result": {
+    "item": "mega_project:caterium_ingot",
+    "count": 9
+  }
+}
