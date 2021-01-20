@@ -1,5 +1,5 @@
 {
-  "block.mega_project.iron_ore_node_block": "Iron Ore Node Block",
+  "block.mega_project.iron_ore_node_block": "Iron Ore Node Block(active)",
   "item.mega_project.node_scanner": "Node Scanner",
   "block.mega_project.iron_ore_node_block_inactive": "Iron Ore Node Block Inactive",
   "block.mega_project.caterium_node_block_inactive": "Caterium Node Block Inactive",

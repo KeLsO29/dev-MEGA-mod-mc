@@ -14,6 +14,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.block.Blocks;
 
 import net.mcreator.megaproject.block.CateriumOreBlock;
+import net.mcreator.megaproject.block.CateriumNODEblockBlock;
 import net.mcreator.megaproject.MegaProjectModElements;
 
 import java.util.Map;
