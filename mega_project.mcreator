@@ -352,17 +352,132 @@
           }
         ]
       }
+    },
+    {
+      "name": "AdminMenu",
+      "type": "gui",
+      "sortid": 17,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "admin_menu"
+    },
+    {
+      "name": "AdminmenuSurvivalCreative",
+      "type": "procedure",
+      "sortid": 18,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "adminmenu_survival_creative",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AdminmenukeybindOnKeyPressed",
+      "type": "procedure",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "adminmenukeybind_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Adminmenukeybind",
+      "type": "keybind",
+      "sortid": 19,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "adminmenukeybind"
+    },
+    {
+      "name": "AdminmenuDayNight",
+      "type": "procedure",
+      "sortid": 20,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "adminmenu_day_night",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AdminmenuSunRain",
+      "type": "procedure",
+      "sortid": 21,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "adminmenu_sun_rain",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "block.mega_project.iron_ore_node_block": "Iron Ore Node Block(active)",
+      "block.mega_project.iron_ore_node_block": "Iron Ore Node Block",
       "item.mega_project.node_scanner": "Node Scanner",
       "block.mega_project.iron_ore_node_block_inactive": "Iron Ore Node Block Inactive",
       "block.mega_project.caterium_node_block_inactive": "Caterium Node Block Inactive",
       "block.mega_project.caterium_block": "Block of Caterium",
+      "key.mcreator.adminmenukeybind": "Adminmenukeybind",
       "item.mega_project.caterium_ingot": "Caterium",
       "block.mega_project.caterium_ore": "Caterium Ore",
       "block.mega_project.caterium_nod_eblock": "Caterium  Node Block (active)"

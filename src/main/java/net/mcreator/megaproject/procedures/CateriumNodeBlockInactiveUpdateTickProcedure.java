@@ -8,7 +8,6 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.megaproject.block.CateriumOreBlock;
-import net.mcreator.megaproject.block.CateriumNODEblockBlock;
 import net.mcreator.megaproject.MegaProjectModElements;
 
 import java.util.Map;

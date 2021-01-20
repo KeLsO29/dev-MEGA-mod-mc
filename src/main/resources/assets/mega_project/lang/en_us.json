@@ -1,9 +1,10 @@
 {
-  "block.mega_project.iron_ore_node_block": "Iron Ore Node Block(active)",
+  "block.mega_project.iron_ore_node_block": "Iron Ore Node Block",
   "item.mega_project.node_scanner": "Node Scanner",
   "block.mega_project.iron_ore_node_block_inactive": "Iron Ore Node Block Inactive",
   "block.mega_project.caterium_node_block_inactive": "Caterium Node Block Inactive",
   "block.mega_project.caterium_block": "Block of Caterium",
+  "key.mcreator.adminmenukeybind": "Adminmenukeybind",
   "item.mega_project.caterium_ingot": "Caterium",
   "block.mega_project.caterium_ore": "Caterium Ore",
   "block.mega_project.caterium_nod_eblock": "Caterium  Node Block (active)"
