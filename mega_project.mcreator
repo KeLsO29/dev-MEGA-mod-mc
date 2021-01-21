@@ -496,15 +496,6 @@
       "registry_name": "copper_block_ore_recipe"
     },
     {
-      "name": "Coppersheet",
-      "type": "recipe",
-      "sortid": 28,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "coppersheet"
-    },
-    {
       "name": "CopperBlock",
       "type": "block",
       "sortid": 24,
@@ -577,15 +568,136 @@
           }
         ]
       }
+    },
+    {
+      "name": "CopperSheetItem",
+      "type": "item",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_sheet_item"
+    },
+    {
+      "name": "Coppersheetrecipe",
+      "type": "recipe",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coppersheetrecipe"
+    },
+    {
+      "name": "Turbofuelitem",
+      "type": "item",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "turbofuelitem"
+    },
+    {
+      "name": "Turbofuelitem2",
+      "type": "item",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "turbofuelitem_2"
+    },
+    {
+      "name": "Turbofuelitem3",
+      "type": "item",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "turbofuelitem_3"
+    },
+    {
+      "name": "Turbofuelrecipe1",
+      "type": "recipe",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "turbofuelrecipe_1"
+    },
+    {
+      "name": "Turbofuelrecipe2",
+      "type": "recipe",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "turbofuelrecipe_2"
+    },
+    {
+      "name": "Turbofuelrecipe3",
+      "type": "recipe",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "turbofuelrecipe_3"
+    },
+    {
+      "name": "Turbofuelmk1",
+      "type": "fuel",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "turbofuelmk_1"
+    },
+    {
+      "name": "Turbofuelmk2",
+      "type": "fuel",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "turbofuelmk_2"
+    },
+    {
+      "name": "Turbofuelmk3",
+      "type": "fuel",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "turbofuelmk_3"
+    },
+    {
+      "name": "Redstoneingotitem",
+      "type": "item",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redstoneingotitem"
+    },
+    {
+      "name": "Redstoneingotrecipe",
+      "type": "recipe",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redstoneingotrecipe"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "item.mega_project.turbofuelitem_2": "Turbofuel Mk.2",
       "block.mega_project.iron_ore_node_block_inactive": "Iron Ore Node Block Inactive",
+      "item.mega_project.turbofuelitem_3": "Turbofuel Mk.3",
       "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
+      "item.mega_project.turbofuelitem": "Turbofuel Mk.1",
       "block.mega_project.caterium_node_block_inactive": "Caterium Node Block Inactive",
+      "item.mega_project.redstoneingotitem": "Redstone Ingot",
       "block.mega_project.copper_ore": "Copper Ore",
       "block.mega_project.caterium_ore": "Caterium Ore",
       "block.mega_project.copper_block": "Block of Copper",
@@ -595,6 +707,7 @@
       "block.mega_project.caterium_block": "Block of Caterium",
       "key.mcreator.adminmenukeybind": "Admin Menu",
       "item.mega_project.caterium_ingot": "Caterium Ingot",
+      "item.mega_project.copper_sheet_item": "Copper Sheet",
       "block.mega_project.caterium_nod_eblock": "Caterium  Node Block (active)"
     }
   },
