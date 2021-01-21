@@ -906,6 +906,15 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "turbofuelitem_2"
+    },
+    {
+      "name": "Minerblock",
+      "type": "block",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "minerblock"
     }
   ],
   "variable_elements": [
@@ -938,6 +947,7 @@
       "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
       "item.mega_project.turbofuelitem": "Turbofuel Mk.1",
       "block.mega_project.caterium_node_block_inactive": "Caterium Node Block Inactive",
+      "block.mega_project.minerblock": "Miner",
       "item.mega_project.redstoneingotitem": "Redstone Ingot",
       "block.mega_project.copper_ore": "Copper Ore",
       "block.mega_project.caterium_ore": "Caterium Ore",
