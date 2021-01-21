@@ -1,0 +1,42 @@
+{
+  "group": "mega_project",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "mega_project:turbofuelitem"
+    },
+    "1": {
+      "item": "mega_project:turbofuelitem"
+    },
+    "2": {
+      "item": "mega_project:turbofuelitem"
+    },
+    "3": {
+      "item": "mega_project:turbofuelitem"
+    },
+    "4": {
+      "item": "mega_project:redstoneingotitem"
+    },
+    "5": {
+      "item": "mega_project:turbofuelitem"
+    },
+    "6": {
+      "item": "mega_project:turbofuelitem"
+    },
+    "7": {
+      "item": "mega_project:turbofuelitem"
+    },
+    "8": {
+      "item": "mega_project:turbofuelitem"
+    }
+  },
+  "result": {
+    "item": "mega_project:unknown_element",
+    "count": 1
+  }
+}

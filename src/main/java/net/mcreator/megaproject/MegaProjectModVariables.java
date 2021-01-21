@@ -67,25 +67,25 @@ public class MegaProjectModVariables {
 		@Override
 		public INBT writeNBT(Capability<PlayerVariables> capability, PlayerVariables instance, Direction side) {
 			CompoundNBT nbt = new CompoundNBT();
+			nbt.putDouble("hub_z", instance.hub_z);
 			nbt.putDouble("hub_x", instance.hub_x);
 			nbt.putDouble("hub_y", instance.hub_y);
-			nbt.putDouble("hub_z", instance.hub_z);
 			return nbt;
 		}
 
 		@Override
 		public void readNBT(Capability<PlayerVariables> capability, PlayerVariables instance, Direction side, INBT inbt) {
 			CompoundNBT nbt = (CompoundNBT) inbt;
+			instance.hub_z = nbt.getDouble("hub_z");
 			instance.hub_x = nbt.getDouble("hub_x");
 			instance.hub_y = nbt.getDouble("hub_y");
-			instance.hub_z = nbt.getDouble("hub_z");
 		}
 	}
 
 	public static class PlayerVariables {
+		public double hub_z = 0;
 		public double hub_x = 0;
 		public double hub_y = 0;
-		public double hub_z = 0;
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
 				MegaProjectMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity),
@@ -118,9 +118,9 @@ public class MegaProjectModVariables {
 		PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new PlayerVariables()));
 		PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
+		clone.hub_z = original.hub_z;
 		clone.hub_x = original.hub_x;
 		clone.hub_y = original.hub_y;
-		clone.hub_z = original.hub_z;
 		if (!event.isWasDeath()) {
 		}
 	}
@@ -145,9 +145,9 @@ public class MegaProjectModVariables {
 				if (!context.getDirection().getReceptionSide().isServer()) {
 					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new PlayerVariables()));
+					variables.hub_z = message.data.hub_z;
 					variables.hub_x = message.data.hub_x;
 					variables.hub_y = message.data.hub_y;
-					variables.hub_z = message.data.hub_z;
 				}
 			});
 			context.setPacketHandled(true);

@@ -1,39 +1,17 @@
 
 package net.mcreator.megaproject.block;
 
-import net.minecraftforge.registries.ObjectHolder;
-
-import net.minecraft.world.storage.loot.LootContext;
-import net.minecraft.world.server.ServerWorld;
-import net.minecraft.world.World;
-import net.minecraft.world.IWorldReader;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.item.BlockItem;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.Block;
-
-import net.mcreator.megaproject.procedures.CoalNodeUpdateTickProcedure;
-import net.mcreator.megaproject.procedures.CoalNodeBlockIsPlacedByProcedure;
-import net.mcreator.megaproject.MegaProjectModElements;
-
-import java.util.Random;
-import java.util.Map;
-import java.util.List;
-import java.util.HashMap;
-import java.util.Collections;
 
 @MegaProjectModElements.ModElement.Tag
 public class CoalNodeBlock extends MegaProjectModElements.ModElement {
+
 	@ObjectHolder("mega_project:coal_node")
 	public static final Block block = null;
+
 	public CoalNodeBlock(MegaProjectModElements instance) {
 		super(instance, 29);
+
 	}
 
 	@Override
@@ -42,9 +20,14 @@ public class CoalNodeBlock extends MegaProjectModElements.ModElement {
 		elements.items
 				.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
+
 		public CustomBlock() {
-			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(50f, 15f).lightValue(0));
+			super(
+
+					Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(50f, 15f).lightValue(0));
+
 			setRegistryName("coal_node");
 		}
 
@@ -55,6 +38,7 @@ public class CoalNodeBlock extends MegaProjectModElements.ModElement {
 
 		@Override
 		public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
+
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
@@ -78,10 +62,12 @@ public class CoalNodeBlock extends MegaProjectModElements.ModElement {
 			int z = pos.getZ();
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
+
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
+
 				CoalNodeUpdateTickProcedure.executeProcedure($_dependencies);
 			}
 			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
@@ -95,13 +81,17 @@ public class CoalNodeBlock extends MegaProjectModElements.ModElement {
 			int z = pos.getZ();
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
+
 				$_dependencies.put("entity", entity);
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
+
 				CoalNodeBlockIsPlacedByProcedure.executeProcedure($_dependencies);
 			}
 		}
+
 	}
+
 }

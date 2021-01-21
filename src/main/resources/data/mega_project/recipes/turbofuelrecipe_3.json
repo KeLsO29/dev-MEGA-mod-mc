@@ -1,0 +1,42 @@
+{
+  "group": "mega_project",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "mega_project:unknown_element"
+    },
+    "1": {
+      "item": "mega_project:unknown_element"
+    },
+    "2": {
+      "item": "mega_project:unknown_element"
+    },
+    "3": {
+      "item": "mega_project:unknown_element"
+    },
+    "4": {
+      "item": "minecraft:gold_nugget"
+    },
+    "5": {
+      "item": "mega_project:unknown_element"
+    },
+    "6": {
+      "item": "mega_project:unknown_element"
+    },
+    "7": {
+      "item": "mega_project:unknown_element"
+    },
+    "8": {
+      "item": "mega_project:unknown_element"
+    }
+  },
+  "result": {
+    "item": "mega_project:turbofuelitem_3",
+    "count": 1
+  }
+}

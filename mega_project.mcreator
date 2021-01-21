@@ -553,63 +553,6 @@
       }
     },
     {
-      "name": "CateriumNodeGrassAdditionalGenerationCondition",
-      "type": "procedure",
-      "sortid": 28,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "caterium_node_grass_additional_generation_condition",
-      "metadata": {
-        "return_type": "LOGIC",
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "CateriumNodeGrass",
-      "type": "structure",
-      "sortid": 28,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "caterium_node_grass"
-    },
-    {
-      "name": "CoalNode",
-      "type": "block",
-      "sortid": 29,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "coal_node"
-    },
-    {
-      "name": "CoalNodeInactive",
-      "type": "block",
-      "sortid": 30,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "coal_node_inactive"
-    },
-    {
       "name": "CoalNodeUpdateTick",
       "type": "procedure",
       "sortid": 31,
@@ -639,6 +582,15 @@
       }
     },
     {
+      "name": "Hub",
+      "type": "block",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hub"
+    },
+    {
       "name": "CoalNodeBlockIsPlacedBy",
       "type": "procedure",
       "sortid": 32,
@@ -652,35 +604,6 @@
             "name": "entity",
             "type": "entity"
           },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "CoalNodeInactiveUpdateTick",
-      "type": "procedure",
-      "sortid": 33,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "coal_node_inactive_update_tick",
-      "metadata": {
-        "dependencies": [
           {
             "name": "x",
             "type": "number"
@@ -731,33 +654,6 @@
       }
     },
     {
-      "name": "CoalNodestructure",
-      "type": "structure",
-      "sortid": 34,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "coal_nodestructure"
-    },
-    {
-      "name": "Hub",
-      "type": "block",
-      "sortid": 35,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "hub"
-    },
-    {
-      "name": "HubGUI",
-      "type": "gui",
-      "sortid": 36,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "hub_gui"
-    },
-    {
       "name": "HubBlockIsPlacedBy",
       "type": "procedure",
       "sortid": 37,
@@ -767,10 +663,6 @@
       "registry_name": "hub_block_is_placed_by",
       "metadata": {
         "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
           {
             "name": "x",
             "type": "number"
@@ -789,9 +681,236 @@
           }
         ]
       }
+    },
+    {
+      "name": "CateriumNodeGrassAdditionalGenerationCondition",
+      "type": "procedure",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "caterium_node_grass_additional_generation_condition",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CoalNode",
+      "type": "block",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coal_node"
+    },
+    {
+      "name": "CoalNodeInactive",
+      "type": "block",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coal_node_inactive"
+    },
+    {
+      "name": "CateriumNodeGrass",
+      "type": "structure",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "caterium_node_grass"
+    },
+    {
+      "name": "CoalNodestructure",
+      "type": "structure",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coal_nodestructure"
+    },
+    {
+      "name": "HubGUI",
+      "type": "gui",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hub_gui"
+    },
+    {
+      "name": "CoalNodeInactiveUpdateTick",
+      "type": "procedure",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coal_node_inactive_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Turbofuelmk1",
+      "type": "fuel",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "turbofuelmk_1"
+    },
+    {
+      "name": "Turbofuelrecipe1",
+      "type": "recipe",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "turbofuelrecipe_1"
+    },
+    {
+      "name": "Redstoneingotitem",
+      "type": "item",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redstoneingotitem"
+    },
+    {
+      "name": "CopperSheetItem",
+      "type": "item",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_sheet_item"
+    },
+    {
+      "name": "Turbofuelitem3",
+      "type": "item",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "turbofuelitem_3"
+    },
+    {
+      "name": "Turbofuelitem",
+      "type": "item",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "turbofuelitem"
+    },
+    {
+      "name": "Turbofuelrecipe2",
+      "type": "recipe",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "turbofuelrecipe_2"
+    },
+    {
+      "name": "Turbofuelrecipe3",
+      "type": "recipe",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "turbofuelrecipe_3"
+    },
+    {
+      "name": "Turbofuelmk3",
+      "type": "fuel",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "turbofuelmk_3"
+    },
+    {
+      "name": "Turbofuelmk2",
+      "type": "fuel",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "turbofuelmk_2"
+    },
+    {
+      "name": "Redstoneingotrecipe",
+      "type": "recipe",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "redstoneingotrecipe"
+    },
+    {
+      "name": "Coppersheetrecipe",
+      "type": "recipe",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coppersheetrecipe"
+    },
+    {
+      "name": "Turbofuelitem2",
+      "type": "item",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "turbofuelitem_2"
     }
   ],
   "variable_elements": [
+    {
+      "name": "hub_z",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
     {
       "name": "hub_x",
       "type": "number",
@@ -803,19 +922,12 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
-    },
-    {
-      "name": "hub_z",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
     }
   ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
       "block.mega_project.iron_ore_node_block_inactive": "Iron Ore Node Block Inactive",
-      "block.mega_project.coal_node": "Coal Node(active)",
       "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
       "block.mega_project.caterium_node_block_inactive": "Caterium Node Block Inactive",
       "block.mega_project.copper_ore": "Copper Ore",
@@ -845,7 +957,6 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.15.2",
-    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.megaproject",
     "lockBaseModFiles": false
   },
