@@ -7,6 +7,8 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.Entity;
 
 import net.mcreator.megaproject.block.IronOreNodeBlockBlock;
 import net.mcreator.megaproject.block.CateriumNODEblockBlock;
@@ -21,6 +23,11 @@ public class NodeScannerRightClickedOnBlockProcedure extends MegaProjectModEleme
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				System.err.println("Failed to load dependency entity for procedure NodeScannerRightClickedOnBlock!");
+			return;
+		}
 		if (dependencies.get("itemstack") == null) {
 			if (!dependencies.containsKey("itemstack"))
 				System.err.println("Failed to load dependency itemstack for procedure NodeScannerRightClickedOnBlock!");
@@ -46,6 +53,7 @@ public class NodeScannerRightClickedOnBlockProcedure extends MegaProjectModEleme
 				System.err.println("Failed to load dependency world for procedure NodeScannerRightClickedOnBlock!");
 			return;
 		}
+		Entity entity = (Entity) dependencies.get("entity");
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
@@ -65,11 +73,9 @@ public class NodeScannerRightClickedOnBlockProcedure extends MegaProjectModEleme
 					for (int index2 = 0; index2 < (int) (100); index2++) {
 						if (((world.getBlockState(new BlockPos((int) (x + (sx)), (int) (y + (sy)), (int) (z + (sz)))))
 								.getBlock() == IronOreNodeBlockBlock.block.getDefaultState().getBlock())) {
-							{
-								MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
-								if (mcserv != null)
-									mcserv.getPlayerList().sendMessage(new StringTextComponent((("Iron Node Found On:") + "" + ("  X:") + ""
-											+ (((x + (sx)) + 1)) + "" + ("  Y:") + "" + ((y + (sy))) + "" + ("  Z:") + "" + ((z + (sz))))));
+							if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+								((PlayerEntity) entity).sendStatusMessage(new StringTextComponent((("Iron Node Found On:") + "" + ("  X:") + ""
+										+ (((x + (sx)) + 1)) + "" + ("  Y:") + "" + ((y + (sy))) + "" + ("  Z:") + "" + ((z + (sz))))), (false));
 							}
 							found = (boolean) (true);
 						}
@@ -96,11 +102,9 @@ public class NodeScannerRightClickedOnBlockProcedure extends MegaProjectModEleme
 					for (int index5 = 0; index5 < (int) (100); index5++) {
 						if (((world.getBlockState(new BlockPos((int) (x + (sx)), (int) (y + (sy)), (int) (z + (sz)))))
 								.getBlock() == CateriumNODEblockBlock.block.getDefaultState().getBlock())) {
-							{
-								MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
-								if (mcserv != null)
-									mcserv.getPlayerList().sendMessage(new StringTextComponent((("Caterium Node Found On:") + "" + ("  X:") + ""
-											+ (((x + (sx)) + 1)) + "" + ("  Y:") + "" + ((y + (sy))) + "" + ("  Z:") + "" + ((z + (sz))))));
+							if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+								((PlayerEntity) entity).sendStatusMessage(new StringTextComponent((("Caterium Node Found On:") + "" + ("  X:") + ""
+										+ (((x + (sx)) + 1)) + "" + ("  Y:") + "" + ((y + (sy))) + "" + ("  Z:") + "" + ((z + (sz))))), (false));
 							}
 							found = (boolean) (true);
 						}

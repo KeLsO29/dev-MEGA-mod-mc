@@ -5,7 +5,7 @@
     "renderType": 0,
     "texture": "caterium_ingot",
     "customModelName": "Normal",
-    "name": "Caterium",
+    "name": "Caterium Ingot",
     "rarity": "COMMON",
     "creativeTab": {
       "value": "MISC"

@@ -284,6 +284,10 @@
       "metadata": {
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
             "name": "itemstack",
             "type": "itemstack"
           },
@@ -325,27 +329,6 @@
       "registry_name": "node_scanner_item_is_craftedsmelted",
       "metadata": {
         "dependencies": [
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          }
-        ]
-      }
-    },
-    {
-      "name": "NodeScannerRightClickedInAir",
-      "type": "procedure",
-      "sortid": 17,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "node_scanner_right_clicked_in_air",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
           {
             "name": "itemstack",
             "type": "itemstack"
@@ -466,6 +449,71 @@
           }
         ]
       }
+    },
+    {
+      "name": "NodeScannerModesKeybindOnKeyPressed",
+      "type": "procedure",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "node_scanner_modes_keybind_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NodeScannerModesKeybind",
+      "type": "keybind",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "node_scanner_modes_keybind"
+    },
+    {
+      "name": "Ironnodestructure",
+      "type": "structure",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ironnodestructure"
+    },
+    {
+      "name": "IronnodestructureAdditionalGenerationCondition",
+      "type": "procedure",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ironnodestructure_additional_generation_condition",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -475,10 +523,11 @@
       "block.mega_project.iron_ore_node_block": "Iron Ore Node Block(active)",
       "item.mega_project.node_scanner": "Node Scanner",
       "block.mega_project.iron_ore_node_block_inactive": "Iron Ore Node Block Inactive",
+      "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
       "block.mega_project.caterium_node_block_inactive": "Caterium Node Block Inactive",
       "block.mega_project.caterium_block": "Block of Caterium",
-      "key.mcreator.adminmenukeybind": "Adminmenukeybind",
-      "item.mega_project.caterium_ingot": "Caterium",
+      "key.mcreator.adminmenukeybind": "Admin Menu",
+      "item.mega_project.caterium_ingot": "Caterium Ingot",
       "block.mega_project.caterium_ore": "Caterium Ore",
       "block.mega_project.caterium_nod_eblock": "Caterium  Node Block (active)"
     }
@@ -496,6 +545,7 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.15.2",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.megaproject",
     "lockBaseModFiles": false
   },
