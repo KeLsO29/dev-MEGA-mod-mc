@@ -1,24 +1,31 @@
 
 package net.mcreator.megaproject.item;
 
+import net.minecraftforge.registries.ObjectHolder;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.api.distmarker.Dist;
+
+import net.minecraft.item.Rarity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.Item;
+import net.minecraft.block.BlockState;
+
+import net.mcreator.megaproject.MegaProjectModElements;
+
 @MegaProjectModElements.ModElement.Tag
 public class Turbofuelitem3Item extends MegaProjectModElements.ModElement {
-
 	@ObjectHolder("mega_project:turbofuelitem_3")
 	public static final Item block = null;
-
 	public Turbofuelitem3Item(MegaProjectModElements instance) {
 		super(instance, 33);
-
 	}
 
 	@Override
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
-
 	public static class ItemCustom extends Item {
-
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64).rarity(Rarity.COMMON));
 			setRegistryName("turbofuelitem_3");
@@ -44,7 +51,5 @@ public class Turbofuelitem3Item extends MegaProjectModElements.ModElement {
 		public boolean hasEffect(ItemStack itemstack) {
 			return true;
 		}
-
 	}
-
 }
