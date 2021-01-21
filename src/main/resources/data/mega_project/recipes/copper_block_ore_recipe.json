@@ -3,7 +3,7 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "mega_project:copper_block"
+      "item": "mega_project:unknown_element"
     }
   ],
   "result": {

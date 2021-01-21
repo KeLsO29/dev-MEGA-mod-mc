@@ -333,27 +333,6 @@
       }
     },
     {
-      "name": "NodeScannerRightClickedInAir",
-      "type": "procedure",
-      "sortid": 17,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "node_scanner_right_clicked_in_air",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          }
-        ]
-      }
-    },
-    {
       "name": "AdminMenu",
       "type": "gui",
       "sortid": 17,
@@ -468,15 +447,6 @@
       }
     },
     {
-      "name": "CopperIngot",
-      "type": "item",
-      "sortid": 22,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "copper_ingot"
-    },
-    {
       "name": "CopperOre",
       "type": "block",
       "sortid": 23,
@@ -486,13 +456,31 @@
       "registry_name": "copper_ore"
     },
     {
-      "name": "CopperBlock",
-      "type": "block",
-      "sortid": 24,
+      "name": "CopperSheet",
+      "type": "item",
+      "sortid": 28,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "copper_block"
+      "registry_name": "copper_sheet"
+    },
+    {
+      "name": "CopperOreSmelting",
+      "type": "recipe",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_ore_smelting"
+    },
+    {
+      "name": "CopperIngot",
+      "type": "item",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_ingot"
     },
     {
       "name": "CopperOreBlockRecipe",
@@ -513,24 +501,6 @@
       "registry_name": "copper_block_ore_recipe"
     },
     {
-      "name": "CopperOreSmelting",
-      "type": "recipe",
-      "sortid": 27,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "copper_ore_smelting"
-    },
-    {
-      "name": "CopperSheet",
-      "type": "item",
-      "sortid": 28,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "copper_sheet"
-    },
-    {
       "name": "Coppersheet",
       "type": "recipe",
       "sortid": 28,
@@ -538,6 +508,80 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "coppersheet"
+    },
+    {
+      "name": "CopperBlock",
+      "type": "block",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_block"
+    },
+    {
+      "name": "NodeScannerModesKeybind",
+      "type": "keybind",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "node_scanner_modes_keybind"
+    },
+    {
+      "name": "NodeScannerModesKeybindOnKeyPressed",
+      "type": "procedure",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "node_scanner_modes_keybind_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Ironnodestructure",
+      "type": "structure",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ironnodestructure"
+    },
+    {
+      "name": "IronnodestructureAdditionalGenerationCondition",
+      "type": "procedure",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ironnodestructure_additional_generation_condition",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -546,12 +590,10 @@
     "en_us": {
       "item.mega_project.copper_sheet": "Copper Sheet",
       "block.mega_project.iron_ore_node_block_inactive": "Iron Ore Node Block Inactive",
+      "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
       "block.mega_project.caterium_node_block_inactive": "Caterium Node Block Inactive",
-      "block.mega_project.copper_ore": "Copper Ore",
       "block.mega_project.caterium_ore": "Caterium Ore",
-      "block.mega_project.copper_block": "Block of Copper",
       "block.mega_project.iron_ore_node_block": "Iron Ore Node Block(active)",
-      "item.mega_project.copper_ingot": "Copper",
       "item.mega_project.node_scanner": "Node Scanner",
       "block.mega_project.caterium_block": "Block of Caterium",
       "key.mcreator.adminmenukeybind": "Adminmenukeybind",

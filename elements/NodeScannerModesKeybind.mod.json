@@ -2,11 +2,11 @@
   "_fv": 13,
   "_type": "keybind",
   "definition": {
-    "triggerKey": "F12",
-    "keyBindingName": "Admin Menu",
+    "triggerKey": "V",
+    "keyBindingName": "Node Scanner Modes",
     "keyBindingCategoryKey": "misc",
     "onKeyPressed": {
-      "name": "AdminmenukeybindOnKeyPressed"
+      "name": "NodeScannerModesKeybindOnKeyPressed"
     }
   }
 }
