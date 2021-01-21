@@ -30,11 +30,8 @@
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
-    "onRightClickedOnBlock": {
+    "onRightClickedInAir": {
       "name": "NodeScannerRightClickedOnBlock"
-    },
-    "onCrafted": {
-      "name": "NodeScannerItemIsCraftedsmelted"
     }
   }
 }

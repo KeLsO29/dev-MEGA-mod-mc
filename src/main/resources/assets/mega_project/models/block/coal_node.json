@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "mega_project:blocks/coal_ore",
+    "up": "mega_project:blocks/coal_node_top",
+    "north": "mega_project:blocks/coal_ore",
+    "east": "mega_project:blocks/coal_ore",
+    "south": "mega_project:blocks/coal_ore",
+    "west": "mega_project:blocks/coal_ore",
+    "particle": "mega_project:blocks/coal_ore"
+  }
+}

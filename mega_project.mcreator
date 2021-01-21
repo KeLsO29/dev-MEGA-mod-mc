@@ -320,23 +320,6 @@
       "registry_name": "node_scanner"
     },
     {
-      "name": "NodeScannerItemIsCraftedsmelted",
-      "type": "procedure",
-      "sortid": 16,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "node_scanner_item_is_craftedsmelted",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "itemstack",
-            "type": "itemstack"
-          }
-        ]
-      }
-    },
-    {
       "name": "AdminMenu",
       "type": "gui",
       "sortid": 17,
@@ -496,15 +479,6 @@
       "registry_name": "copper_block_ore_recipe"
     },
     {
-      "name": "Coppersheet",
-      "type": "recipe",
-      "sortid": 28,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "coppersheet"
-    },
-    {
       "name": "CopperBlock",
       "type": "block",
       "sortid": 24,
@@ -577,21 +551,281 @@
           }
         ]
       }
+    },
+    {
+      "name": "CateriumNodeGrassAdditionalGenerationCondition",
+      "type": "procedure",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "caterium_node_grass_additional_generation_condition",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CateriumNodeGrass",
+      "type": "structure",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "caterium_node_grass"
+    },
+    {
+      "name": "CoalNode",
+      "type": "block",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coal_node"
+    },
+    {
+      "name": "CoalNodeInactive",
+      "type": "block",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coal_node_inactive"
+    },
+    {
+      "name": "CoalNodeUpdateTick",
+      "type": "procedure",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coal_node_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CoalNodeBlockIsPlacedBy",
+      "type": "procedure",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coal_node_block_is_placed_by",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CoalNodeInactiveUpdateTick",
+      "type": "procedure",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coal_node_inactive_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CoalNodestructureAdditionalGenerationCondition",
+      "type": "procedure",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coal_nodestructure_additional_generation_condition",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CoalNodestructure",
+      "type": "structure",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coal_nodestructure"
+    },
+    {
+      "name": "Hub",
+      "type": "block",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hub"
+    },
+    {
+      "name": "HubGUI",
+      "type": "gui",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hub_gui"
+    },
+    {
+      "name": "HubBlockIsPlacedBy",
+      "type": "procedure",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hub_block_is_placed_by",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
-  "variable_elements": [],
+  "variable_elements": [
+    {
+      "name": "hub_x",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "hub_y",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "hub_z",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    }
+  ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
       "block.mega_project.iron_ore_node_block_inactive": "Iron Ore Node Block Inactive",
+      "block.mega_project.coal_node": "Coal Node(active)",
       "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
       "block.mega_project.caterium_node_block_inactive": "Caterium Node Block Inactive",
       "block.mega_project.copper_ore": "Copper Ore",
       "block.mega_project.caterium_ore": "Caterium Ore",
       "block.mega_project.copper_block": "Block of Copper",
+      "block.mega_project.coal_node_inactive": "Coal Node Inactive",
       "block.mega_project.iron_ore_node_block": "Iron Ore Node Block(active)",
       "item.mega_project.copper_ingot": "Copper",
       "item.mega_project.node_scanner": "Node Scanner",
+      "block.mega_project.hub": "Hub",
       "block.mega_project.caterium_block": "Block of Caterium",
       "key.mcreator.adminmenukeybind": "Admin Menu",
       "item.mega_project.caterium_ingot": "Caterium Ingot",
@@ -611,6 +845,7 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "forge-1.15.2",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.megaproject",
     "lockBaseModFiles": false
   },
