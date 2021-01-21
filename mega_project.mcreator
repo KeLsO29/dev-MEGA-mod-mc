@@ -466,20 +466,96 @@
           }
         ]
       }
+    },
+    {
+      "name": "CopperIngot",
+      "type": "item",
+      "sortid": 22,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_ingot"
+    },
+    {
+      "name": "CopperOre",
+      "type": "block",
+      "sortid": 23,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_ore"
+    },
+    {
+      "name": "CopperBlock",
+      "type": "block",
+      "sortid": 24,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_block"
+    },
+    {
+      "name": "CopperOreBlockRecipe",
+      "type": "recipe",
+      "sortid": 25,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_ore_block_recipe"
+    },
+    {
+      "name": "CopperBlockOreRecipe",
+      "type": "recipe",
+      "sortid": 26,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_block_ore_recipe"
+    },
+    {
+      "name": "CopperOreSmelting",
+      "type": "recipe",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_ore_smelting"
+    },
+    {
+      "name": "CopperSheet",
+      "type": "item",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_sheet"
+    },
+    {
+      "name": "Coppersheet",
+      "type": "recipe",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "coppersheet"
     }
   ],
   "variable_elements": [],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "block.mega_project.iron_ore_node_block": "Iron Ore Node Block(active)",
-      "item.mega_project.node_scanner": "Node Scanner",
+      "item.mega_project.copper_sheet": "Copper Sheet",
       "block.mega_project.iron_ore_node_block_inactive": "Iron Ore Node Block Inactive",
       "block.mega_project.caterium_node_block_inactive": "Caterium Node Block Inactive",
+      "block.mega_project.copper_ore": "Copper Ore",
+      "block.mega_project.caterium_ore": "Caterium Ore",
+      "block.mega_project.copper_block": "Block of Copper",
+      "block.mega_project.iron_ore_node_block": "Iron Ore Node Block(active)",
+      "item.mega_project.copper_ingot": "Copper",
+      "item.mega_project.node_scanner": "Node Scanner",
       "block.mega_project.caterium_block": "Block of Caterium",
       "key.mcreator.adminmenukeybind": "Adminmenukeybind",
       "item.mega_project.caterium_ingot": "Caterium",
-      "block.mega_project.caterium_ore": "Caterium Ore",
       "block.mega_project.caterium_nod_eblock": "Caterium  Node Block (active)"
     }
   },

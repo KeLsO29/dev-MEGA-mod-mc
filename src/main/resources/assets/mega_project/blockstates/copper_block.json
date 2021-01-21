@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "mega_project:block/copper_block"
+    }
+  }
+}

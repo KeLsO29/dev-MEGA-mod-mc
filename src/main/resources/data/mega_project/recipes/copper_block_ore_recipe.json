@@ -1,0 +1,13 @@
+{
+  "group": "mega_project",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mega_project:copper_block"
+    }
+  ],
+  "result": {
+    "item": "mega_project:copper_ingot",
+    "count": 9
+  }
+}
