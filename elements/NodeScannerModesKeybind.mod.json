@@ -4,9 +4,6 @@
   "definition": {
     "triggerKey": "V",
     "keyBindingName": "Node Scanner Modes",
-    "keyBindingCategoryKey": "misc",
-    "onKeyPressed": {
-      "name": "NodeScannerModesKeybindOnKeyPressed"
-    }
+    "keyBindingCategoryKey": "misc"
   }
 }
