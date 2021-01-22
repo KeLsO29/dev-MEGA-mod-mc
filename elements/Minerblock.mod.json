@@ -47,7 +47,7 @@
     "material": {
       "value": "IRON"
     },
-    "tickRate": 10,
+    "tickRate": 20,
     "tickRandomly": false,
     "isReplaceable": false,
     "colorOnMap": "DEFAULT",
@@ -60,7 +60,7 @@
     "fireSpreadSpeed": 0,
     "isLadder": false,
     "slipperiness": 0.6,
-    "reactionToPushing": "NORMAL",
+    "reactionToPushing": "BLOCK",
     "isNotColidable": false,
     "soundOnStep": {
       "value": "METAL"
@@ -94,6 +94,12 @@
     "fluidRestrictions": [],
     "onTickUpdate": {
       "name": "MinerblockUpdateTick"
+    },
+    "onDestroyedByPlayer": {
+      "name": "MinerblockBlockDestroyedByPlayer"
+    },
+    "onBlockPlayedBy": {
+      "name": "MinerblockBlockIsPlacedBy"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

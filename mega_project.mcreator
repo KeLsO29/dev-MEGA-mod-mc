@@ -900,14 +900,53 @@
       "registry_name": "minerblock"
     },
     {
-      "name": "MinerblockUpdateTick",
+      "name": "GeneratorMK1ClientDisplayRandomTick",
       "type": "procedure",
-      "sortid": 43,
+      "sortid": 51,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "minerblock_update_tick",
+      "registry_name": "generator_mk_1_client_display_random_tick",
       "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GeneratorMK1",
+      "type": "block",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "generator_mk_1"
+    },
+    {
+      "name": "GeneratorWorkingLabel",
+      "type": "procedure",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "generator_working_label",
+      "metadata": {
+        "return_type": "LOGIC",
         "dependencies": [
           {
             "name": "x",
@@ -950,18 +989,30 @@
       }
     },
     {
-      "name": "NodeScannerModesKeybindOnKeyPressed",
+      "name": "GeneratorMK1UpdateTick",
       "type": "procedure",
-      "sortid": 45,
+      "sortid": 49,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "node_scanner_modes_keybind_on_key_pressed",
+      "registry_name": "generator_mk_1_update_tick",
       "metadata": {
         "dependencies": [
           {
-            "name": "entity",
-            "type": "entity"
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       }
@@ -1000,15 +1051,6 @@
       }
     },
     {
-      "name": "GeneratorMK1",
-      "type": "block",
-      "sortid": 47,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "generator_mk_1"
-    },
-    {
       "name": "GeneratorMK1Gui",
       "type": "gui",
       "sortid": 48,
@@ -1018,13 +1060,13 @@
       "registry_name": "generator_mk_1_gui"
     },
     {
-      "name": "GeneratorMK1UpdateTick",
+      "name": "MinerblockUpdateTick",
       "type": "procedure",
-      "sortid": 49,
+      "sortid": 43,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "generator_mk_1_update_tick",
+      "registry_name": "minerblock_update_tick",
       "metadata": {
         "dependencies": [
           {
@@ -1047,81 +1089,21 @@
       }
     },
     {
-      "name": "GeneratorWorkingLabel",
+      "name": "NodeScannerModesKeybindOnKeyPressed",
       "type": "procedure",
-      "sortid": 50,
-      "compiles": true,
+      "sortid": 42,
+      "compiles": false,
       "locked_code": false,
       "ids": {},
-      "registry_name": "generator_working_label",
-      "metadata": {
-        "return_type": "LOGIC",
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "GeneratorMK1ClientDisplayRandomTick",
-      "type": "procedure",
-      "sortid": 51,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "generator_mk_1_client_display_random_tick",
+      "registry_name": "node_scanner_modes_keybind_on_key_pressed",
       "metadata": {
         "dependencies": [
           {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
+            "name": "entity",
+            "type": "entity"
           }
         ]
       }
-    },
-    {
-      "name": "CircuitBoarditem",
-      "type": "item",
-      "sortid": 52,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "circuit_boarditem"
-    },
-    {
-      "name": "CircuitBoardrecipe",
-      "type": "recipe",
-      "sortid": 53,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "circuit_boardrecipe"
     },
     {
       "name": "Constructorblock",
@@ -1133,13 +1115,13 @@
       "registry_name": "constructorblock"
     },
     {
-      "name": "Constructorrecipe",
+      "name": "CircuitBoardrecipe",
       "type": "recipe",
-      "sortid": 55,
+      "sortid": 53,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "constructorrecipe"
+      "registry_name": "circuit_boardrecipe"
     },
     {
       "name": "Constructorgui",
@@ -1149,26 +1131,104 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "constructorgui"
+    },
+    {
+      "name": "CircuitBoarditem",
+      "type": "item",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "circuit_boarditem"
+    },
+    {
+      "name": "Constructorrecipe",
+      "type": "recipe",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "constructorrecipe"
+    },
+    {
+      "name": "MinerblockBlockIsPlacedBy",
+      "type": "procedure",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "minerblock_block_is_placed_by",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MinerblockBlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "minerblock_block_destroyed_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
     {
-      "name": "hub_z",
+      "name": "hub_coal_save",
       "type": "number",
-      "scope": "map",
+      "scope": "player_persistent",
       "value": "0"
     },
     {
-      "name": "hub_x",
-      "type": "number",
-      "scope": "map",
-      "value": "0"
-    },
-    {
-      "name": "hub_y",
-      "type": "number",
-      "scope": "map",
-      "value": "0"
+      "name": "placed_hub",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
     },
     {
       "name": "hub_iron_save",
@@ -1177,9 +1237,9 @@
       "value": "0"
     },
     {
-      "name": "hub_coal_save",
+      "name": "production",
       "type": "number",
-      "scope": "player_persistent",
+      "scope": "map",
       "value": "0"
     },
     {
@@ -1195,46 +1255,50 @@
       "value": "0"
     },
     {
-      "name": "placed_hub",
-      "type": "logic",
+      "name": "hub_z",
+      "type": "number",
       "scope": "player_persistent",
-      "value": "false"
+      "value": "0"
     },
     {
-      "name": "production",
+      "name": "hub_x",
       "type": "number",
-      "scope": "map",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "hub_y",
+      "type": "number",
+      "scope": "player_persistent",
       "value": "0"
     }
   ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "item.mega_project.turbofuelitem_2": "Turbofuel Mk.2",
       "block.mega_project.iron_ore_node_block_inactive": "Iron Ore Node Block Inactive",
+      "item.mega_project.turbofuelitem_3": "Turbofuel Mk.3",
+      "block.mega_project.generator_mk_1": "Generator MK 1",
       "block.mega_project.coal_node": "Coal Node(active)",
       "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
       "item.mega_project.turbofuelitem": "Turbofuel Mk.1",
-      "item.mega_project.redstoneingotitem": "Redstone Ingot",
-      "block.mega_project.caterium_ore": "Caterium Ore",
-      "block.mega_project.copper_block": "Block of Copper",
-      "item.mega_project.copper_ingot": "Copper",
-      "block.mega_project.constructorblock": "Constructor",
-      "block.mega_project.caterium_block": "Block of Caterium",
-      "item.mega_project.caterium_ingot": "Caterium Ingot",
-      "block.mega_project.caterium_nod_eblock": "Caterium  Node Block (active)",
-      "item.mega_project.turbofuelitem_2": "Turbofuel Mk.2",
-      "item.mega_project.turbofuelitem_3": "Turbofuel Mk.3",
-      "block.mega_project.generator_mk_1": "Generator MK 1",
       "block.mega_project.caterium_node_block_inactive": "Caterium Node Block Inactive",
       "block.mega_project.minerblock": "Miner",
+      "item.mega_project.redstoneingotitem": "Redstone Ingot",
       "block.mega_project.copper_ore": "Copper Ore",
+      "block.mega_project.caterium_ore": "Caterium Ore",
+      "block.mega_project.copper_block": "Block of Copper",
       "block.mega_project.coal_node_inactive": "Coal Node Inactive",
       "block.mega_project.iron_ore_node_block": "Iron Ore Node Block(active)",
+      "item.mega_project.copper_ingot": "Copper",
       "item.mega_project.node_scanner": "Node Scanner",
       "block.mega_project.hub": "Hub",
+      "block.mega_project.caterium_block": "Block of Caterium",
       "key.mcreator.adminmenukeybind": "Admin Menu",
+      "item.mega_project.caterium_ingot": "Caterium Ingot",
       "item.mega_project.copper_sheet_item": "Copper Sheet",
-      "item.mega_project.circuit_boarditem": "Circuit Board"
+      "block.mega_project.caterium_nod_eblock": "Caterium  Node Block (active)"
     }
   },
   "workspaceSettings": {
