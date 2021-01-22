@@ -497,23 +497,6 @@
       "registry_name": "node_scanner_modes_keybind"
     },
     {
-      "name": "NodeScannerModesKeybindOnKeyPressed",
-      "type": "procedure",
-      "sortid": 22,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "node_scanner_modes_keybind_on_key_pressed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
       "name": "Ironnodestructure",
       "type": "structure",
       "sortid": 23,
@@ -906,6 +889,23 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "turbofuelitem_2"
+    },
+    {
+      "name": "NodeScannerModesKeybindOnKeyPressed",
+      "type": "procedure",
+      "sortid": 42,
+      "compiles": false,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "node_scanner_modes_keybind_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
