@@ -77,34 +77,24 @@ public class HubPlayerStartsToDestroyProcedure extends MegaProjectModElements.Mo
 				capability.syncPlayerVariables(entity);
 			});
 		}
-		{
-			double _setval = (double) (new Object() {
-				public double getValue(BlockPos pos, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getDouble(tag);
-					return -1;
-				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Caterium"));
-			entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.hub_caterium_save = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
-		{
-			double _setval = (double) (new Object() {
-				public double getValue(BlockPos pos, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getDouble(tag);
-					return -1;
-				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Energy"));
-			entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.hub_energy_save = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
+		MegaProjectModVariables.MapVariables.get(world).hub_caterium_save = (double) (new Object() {
+			public double getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getDouble(tag);
+				return -1;
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "Caterium"));
+		MegaProjectModVariables.MapVariables.get(world).syncData(world);
+		MegaProjectModVariables.MapVariables.get(world).hub_energy_save = (double) (new Object() {
+			public double getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getDouble(tag);
+				return -1;
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "Energy"));
+		MegaProjectModVariables.MapVariables.get(world).syncData(world);
 		if (entity instanceof PlayerEntity && !entity.world.isRemote) {
 			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Materials and Energy Saved."), (false));
 		}

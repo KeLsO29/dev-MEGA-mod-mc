@@ -1253,31 +1253,31 @@
     {
       "name": "hub_caterium_save",
       "type": "number",
-      "scope": "player_persistent",
+      "scope": "map",
       "value": "0"
     },
     {
       "name": "hub_energy_save",
       "type": "number",
-      "scope": "player_persistent",
+      "scope": "map",
       "value": "0"
     },
     {
       "name": "hub_z",
       "type": "number",
-      "scope": "player_persistent",
+      "scope": "map",
       "value": "0"
     },
     {
       "name": "hub_x",
       "type": "number",
-      "scope": "player_persistent",
+      "scope": "map",
       "value": "0"
     },
     {
       "name": "hub_y",
       "type": "number",
-      "scope": "player_persistent",
+      "scope": "map",
       "value": "0"
     }
   ],
