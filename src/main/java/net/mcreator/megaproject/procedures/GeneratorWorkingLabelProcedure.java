@@ -1,17 +1,11 @@
 package net.mcreator.megaproject.procedures;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.tileentity.TileEntity;
-
-import net.mcreator.megaproject.MegaProjectModElements;
-
-import java.util.Map;
-
 @MegaProjectModElements.ModElement.Tag
 public class GeneratorWorkingLabelProcedure extends MegaProjectModElements.ModElement {
+
 	public GeneratorWorkingLabelProcedure(MegaProjectModElements instance) {
 		super(instance, 50);
+
 	}
 
 	public static boolean executeProcedure(Map<String, Object> dependencies) {
@@ -35,10 +29,12 @@ public class GeneratorWorkingLabelProcedure extends MegaProjectModElements.ModEl
 				System.err.println("Failed to load dependency world for procedure GeneratorWorkingLabel!");
 			return false;
 		}
+
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
+
 		if ((new Object() {
 			public boolean getValue(BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
@@ -50,5 +46,7 @@ public class GeneratorWorkingLabelProcedure extends MegaProjectModElements.ModEl
 			return (true);
 		}
 		return (false);
+
 	}
+
 }

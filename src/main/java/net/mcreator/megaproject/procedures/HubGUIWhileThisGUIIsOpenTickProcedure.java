@@ -1,29 +1,11 @@
 package net.mcreator.megaproject.procedures;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.item.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.inventory.container.Slot;
-import net.minecraft.inventory.container.Container;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.BlockState;
-
-import net.mcreator.megaproject.block.CateriumOreBlock;
-import net.mcreator.megaproject.MegaProjectModVariables;
-import net.mcreator.megaproject.MegaProjectModElements;
-
-import java.util.function.Supplier;
-import java.util.Map;
-
 @MegaProjectModElements.ModElement.Tag
 public class HubGUIWhileThisGUIIsOpenTickProcedure extends MegaProjectModElements.ModElement {
+
 	public HubGUIWhileThisGUIIsOpenTickProcedure(MegaProjectModElements instance) {
 		super(instance, 44);
+
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -37,8 +19,10 @@ public class HubGUIWhileThisGUIIsOpenTickProcedure extends MegaProjectModElement
 				System.err.println("Failed to load dependency world for procedure HubGUIWhileThisGUIIsOpenTick!");
 			return;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
 		IWorld world = (IWorld) dependencies.get("world");
+
 		if ((((new Object() {
 			public int getAmount(int sltid) {
 				if (entity instanceof ServerPlayerEntity) {
@@ -61,9 +45,13 @@ public class HubGUIWhileThisGUIIsOpenTickProcedure extends MegaProjectModElement
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(
-				new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
-						(int) (MegaProjectModVariables.MapVariables.get(world).hub_y), (int) (MegaProjectModVariables.MapVariables.get(world).hub_z)),
+		}.getValue(new BlockPos(
+				(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
+				(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
+				(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
 				"Iron"))))) {
 			if (entity instanceof PlayerEntity) {
 				Container _current = ((PlayerEntity) entity).openContainer;
@@ -78,8 +66,13 @@ public class HubGUIWhileThisGUIIsOpenTickProcedure extends MegaProjectModElement
 				}
 			}
 			if (!world.getWorld().isRemote) {
-				BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
-						(int) (MegaProjectModVariables.MapVariables.get(world).hub_y), (int) (MegaProjectModVariables.MapVariables.get(world).hub_z));
+				BlockPos _bp = new BlockPos(
+						(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
+						(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
+						(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z));
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
@@ -90,9 +83,15 @@ public class HubGUIWhileThisGUIIsOpenTickProcedure extends MegaProjectModElement
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
-							(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
-							(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Iron")) - 64));
+					}.getValue(new BlockPos(
+							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
+							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
+							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
+							"Iron")) - 64));
+
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 		}
@@ -118,9 +117,13 @@ public class HubGUIWhileThisGUIIsOpenTickProcedure extends MegaProjectModElement
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(
-				new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
-						(int) (MegaProjectModVariables.MapVariables.get(world).hub_y), (int) (MegaProjectModVariables.MapVariables.get(world).hub_z)),
+		}.getValue(new BlockPos(
+				(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
+				(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
+				(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
 				"Coal"))))) {
 			if (entity instanceof PlayerEntity) {
 				Container _current = ((PlayerEntity) entity).openContainer;
@@ -135,8 +138,13 @@ public class HubGUIWhileThisGUIIsOpenTickProcedure extends MegaProjectModElement
 				}
 			}
 			if (!world.getWorld().isRemote) {
-				BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
-						(int) (MegaProjectModVariables.MapVariables.get(world).hub_y), (int) (MegaProjectModVariables.MapVariables.get(world).hub_z));
+				BlockPos _bp = new BlockPos(
+						(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
+						(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
+						(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z));
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
@@ -147,9 +155,15 @@ public class HubGUIWhileThisGUIIsOpenTickProcedure extends MegaProjectModElement
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
-							(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
-							(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Coal")) - 64));
+					}.getValue(new BlockPos(
+							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
+							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
+							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
+							"Coal")) - 64));
+
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 		}
@@ -175,9 +189,13 @@ public class HubGUIWhileThisGUIIsOpenTickProcedure extends MegaProjectModElement
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(
-				new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
-						(int) (MegaProjectModVariables.MapVariables.get(world).hub_y), (int) (MegaProjectModVariables.MapVariables.get(world).hub_z)),
+		}.getValue(new BlockPos(
+				(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
+				(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
+				(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
 				"Caterium"))))) {
 			if (entity instanceof PlayerEntity) {
 				Container _current = ((PlayerEntity) entity).openContainer;
@@ -192,8 +210,13 @@ public class HubGUIWhileThisGUIIsOpenTickProcedure extends MegaProjectModElement
 				}
 			}
 			if (!world.getWorld().isRemote) {
-				BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
-						(int) (MegaProjectModVariables.MapVariables.get(world).hub_y), (int) (MegaProjectModVariables.MapVariables.get(world).hub_z));
+				BlockPos _bp = new BlockPos(
+						(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
+						(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
+						(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+								.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z));
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
@@ -204,11 +227,19 @@ public class HubGUIWhileThisGUIIsOpenTickProcedure extends MegaProjectModElement
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
-							(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
-							(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Caterium")) - 64));
+					}.getValue(new BlockPos(
+							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
+							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
+							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
+							"Caterium")) - 64));
+
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 		}
+
 	}
+
 }

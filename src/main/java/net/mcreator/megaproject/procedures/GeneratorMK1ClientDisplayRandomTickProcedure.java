@@ -1,18 +1,11 @@
 package net.mcreator.megaproject.procedures;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.particles.ParticleTypes;
-
-import net.mcreator.megaproject.MegaProjectModElements;
-
-import java.util.Map;
-
 @MegaProjectModElements.ModElement.Tag
 public class GeneratorMK1ClientDisplayRandomTickProcedure extends MegaProjectModElements.ModElement {
+
 	public GeneratorMK1ClientDisplayRandomTickProcedure(MegaProjectModElements instance) {
 		super(instance, 51);
+
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -36,10 +29,12 @@ public class GeneratorMK1ClientDisplayRandomTickProcedure extends MegaProjectMod
 				System.err.println("Failed to load dependency world for procedure GeneratorMK1ClientDisplayRandomTick!");
 			return;
 		}
+
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
+
 		if (((new Object() {
 			public boolean getValue(BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
@@ -50,5 +45,7 @@ public class GeneratorMK1ClientDisplayRandomTickProcedure extends MegaProjectMod
 		}.getValue(new BlockPos((int) x, (int) y, (int) z), "Working")) == (true))) {
 			world.addParticle(ParticleTypes.SMOKE, (x + 0.5), y, (z + 0.5), 0, 0.1, 0);
 		}
+
 	}
+
 }
