@@ -143,8 +143,7 @@ public class HubBlockIsPlacedByProcedure extends MegaProjectModElements.ModEleme
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
-					_tileEntity.getTileData().putDouble("Caterium", ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new MegaProjectModVariables.PlayerVariables())).hub_caterium_save));
+					_tileEntity.getTileData().putDouble("Caterium", (MegaProjectModVariables.MapVariables.get(world).hub_caterium_save));
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (!world.getWorld().isRemote) {
@@ -152,8 +151,7 @@ public class HubBlockIsPlacedByProcedure extends MegaProjectModElements.ModEleme
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
-					_tileEntity.getTileData().putDouble("Energy", ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new MegaProjectModVariables.PlayerVariables())).hub_energy_save));
+					_tileEntity.getTileData().putDouble("Energy", (MegaProjectModVariables.MapVariables.get(world).hub_energy_save));
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			MegaProjectModVariables.MapVariables.get(world).hub_x = (double) x;

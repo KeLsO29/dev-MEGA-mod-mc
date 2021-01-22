@@ -36,13 +36,6 @@ public class NodeScannerModesKeybindOnKeyPressedProcedure extends MegaProjectMod
 			} else if ((((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
 					.getString("NodeMaterial"))).equals("Caterium"))) {
 				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-						.putString("NodeMaterial", "Coal");
-				if (entity instanceof PlayerEntity && !entity.world.isRemote) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Now Scanning for Coal"), (true));
-				}
-			} else if ((((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-					.getString("NodeMaterial"))).equals("Coal"))) {
-				((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
 						.putString("NodeMaterial", "Iron");
 				if (entity instanceof PlayerEntity && !entity.world.isRemote) {
 					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Now Scanning for Iron"), (true));
