@@ -1,8 +1,10 @@
 package net.mcreator.megaproject.procedures;
 
 import net.minecraft.world.IWorld;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.block.BlockState;
 
@@ -48,50 +50,123 @@ public class HubBlockIsPlacedByProcedure extends MegaProjectModElements.ModEleme
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if (!world.getWorld().isRemote) {
-			BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-			TileEntity _tileEntity = world.getTileEntity(_bp);
-			BlockState _bs = world.getBlockState(_bp);
-			if (_tileEntity != null)
-				_tileEntity.getTileData().putDouble("Coal", 0);
-			world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-		}
-		if (!world.getWorld().isRemote) {
-			BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-			TileEntity _tileEntity = world.getTileEntity(_bp);
-			BlockState _bs = world.getBlockState(_bp);
-			if (_tileEntity != null)
-				_tileEntity.getTileData().putDouble("Iron", 0);
-			world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-		}
-		if (!world.getWorld().isRemote) {
-			BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-			TileEntity _tileEntity = world.getTileEntity(_bp);
-			BlockState _bs = world.getBlockState(_bp);
-			if (_tileEntity != null)
-				_tileEntity.getTileData().putDouble("Caterium", 0);
-			world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-		}
-		{
-			double _setval = (double) x;
-			entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.hub_x = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
-		{
-			double _setval = (double) y;
-			entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.hub_y = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
-		{
-			double _setval = (double) z;
-			entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.hub_z = _setval;
-				capability.syncPlayerVariables(entity);
-			});
+		if ((((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new MegaProjectModVariables.PlayerVariables())).placed_hub) == (false))) {
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Coal", 0);
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Iron", 0);
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Caterium", 0);
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Energy", 0);
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Production", 0);
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Consume", 0);
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			MegaProjectModVariables.MapVariables.get(world).hub_x = (double) x;
+			MegaProjectModVariables.MapVariables.get(world).syncData(world);
+			MegaProjectModVariables.MapVariables.get(world).hub_y = (double) y;
+			MegaProjectModVariables.MapVariables.get(world).syncData(world);
+			MegaProjectModVariables.MapVariables.get(world).hub_z = (double) z;
+			MegaProjectModVariables.MapVariables.get(world).syncData(world);
+			if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent((("New hub.") + "" + ("Hub Location") + ""
+						+ ((MegaProjectModVariables.MapVariables.get(world).hub_x)) + "" + ((MegaProjectModVariables.MapVariables.get(world).hub_y))
+						+ "" + ((MegaProjectModVariables.MapVariables.get(world).hub_z)))), (false));
+			}
+			{
+				boolean _setval = (boolean) (true);
+				entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.placed_hub = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		} else if ((((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new MegaProjectModVariables.PlayerVariables())).placed_hub) == (true))) {
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Coal", ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new MegaProjectModVariables.PlayerVariables())).hub_coal_save));
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Iron", ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new MegaProjectModVariables.PlayerVariables())).hub_iron_save));
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Caterium", ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new MegaProjectModVariables.PlayerVariables())).hub_caterium_save));
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Energy", ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new MegaProjectModVariables.PlayerVariables())).hub_energy_save));
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			MegaProjectModVariables.MapVariables.get(world).hub_x = (double) x;
+			MegaProjectModVariables.MapVariables.get(world).syncData(world);
+			MegaProjectModVariables.MapVariables.get(world).hub_y = (double) y;
+			MegaProjectModVariables.MapVariables.get(world).syncData(world);
+			MegaProjectModVariables.MapVariables.get(world).hub_z = (double) z;
+			MegaProjectModVariables.MapVariables.get(world).syncData(world);
+			if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent((("Hub Loaded, ") + "" + ("Hub Location") + ""
+						+ ((MegaProjectModVariables.MapVariables.get(world).hub_x)) + "" + ((MegaProjectModVariables.MapVariables.get(world).hub_y))
+						+ "" + ((MegaProjectModVariables.MapVariables.get(world).hub_z)))), (false));
+			}
 		}
 	}
 }

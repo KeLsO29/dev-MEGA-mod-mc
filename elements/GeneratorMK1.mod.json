@@ -2,32 +2,34 @@
   "_fv": 13,
   "_type": "block",
   "definition": {
-    "texture": "minerfaces",
-    "textureTop": "",
-    "textureLeft": "",
-    "textureFront": "",
-    "textureRight": "",
-    "textureBack": "",
-    "renderType": 2,
-    "customModelName": "miner:default",
+    "texture": "smoker_bottom",
+    "textureTop": "f_top",
+    "textureLeft": "furnace_side",
+    "textureFront": "generator_mk1",
+    "textureRight": "_f_side",
+    "textureBack": "_f_side",
+    "renderType": 10,
+    "customModelName": "Normal",
     "rotationMode": 0,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
     "itemTexture": "",
     "particleTexture": "",
-    "hasTransparency": true,
+    "hasTransparency": false,
     "connectedSides": false,
-    "transparencyType": "TRANSLUCENT",
+    "transparencyType": "SOLID",
     "mx": 0.0,
     "my": 0.0,
     "mz": 0.0,
     "Mx": 1.0,
     "My": 1.0,
     "Mz": 1.0,
-    "name": "Miner",
-    "specialInfo": [],
-    "hardness": 1.0,
-    "resistance": 10.0,
+    "name": "Generator MK 1",
+    "specialInfo": [
+      "Generates 25 power per second which store inside Hub."
+    ],
+    "hardness": 15.0,
+    "resistance": 20.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
@@ -43,11 +45,11 @@
     "enchantPowerBonus": 0.0,
     "plantsGrowOn": false,
     "canProvidePower": false,
-    "lightOpacity": 0,
+    "lightOpacity": 255,
     "material": {
-      "value": "IRON"
+      "value": "ROCK"
     },
-    "tickRate": 10,
+    "tickRate": 20,
     "tickRandomly": false,
     "isReplaceable": false,
     "colorOnMap": "DEFAULT",
@@ -63,7 +65,7 @@
     "reactionToPushing": "NORMAL",
     "isNotColidable": false,
     "soundOnStep": {
-      "value": "METAL"
+      "value": "STONE"
     },
     "luminance": 0.0,
     "unbreakable": false,
@@ -76,9 +78,9 @@
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
     "hasInventory": true,
-    "guiBoundTo": "<NONE>",
-    "openGUIOnRightClick": false,
-    "inventorySize": 9,
+    "guiBoundTo": "GeneratorMK1Gui",
+    "openGUIOnRightClick": true,
+    "inventorySize": 1,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
@@ -93,7 +95,10 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onTickUpdate": {
-      "name": "MinerblockUpdateTick"
+      "name": "GeneratorMK1UpdateTick"
+    },
+    "onRandomUpdateEvent": {
+      "name": "GeneratorMK1ClientDisplayRandomTick"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

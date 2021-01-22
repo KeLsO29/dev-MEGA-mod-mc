@@ -75,10 +75,10 @@
     "particleSpawningShape": "Spread",
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
-    "hasInventory": false,
+    "hasInventory": true,
     "guiBoundTo": "HubGUI",
     "openGUIOnRightClick": true,
-    "inventorySize": 9,
+    "inventorySize": 3,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
@@ -92,6 +92,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onStartToDestroy": {
+      "name": "HubPlayerStartsToDestroy"
+    },
     "onBlockPlayedBy": {
       "name": "HubBlockIsPlacedBy"
     },

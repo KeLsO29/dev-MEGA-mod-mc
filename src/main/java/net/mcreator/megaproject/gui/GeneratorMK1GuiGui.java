@@ -12,9 +12,7 @@ import net.minecraftforge.fml.network.IContainerFactory;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -36,7 +34,7 @@ import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.megaproject.procedures.HubGUIWhileThisGUIIsOpenTickProcedure;
+import net.mcreator.megaproject.procedures.GeneratorWorkingLabelProcedure;
 import net.mcreator.megaproject.MegaProjectModElements;
 import net.mcreator.megaproject.MegaProjectMod;
 
@@ -44,19 +42,20 @@ import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
 
+import com.google.common.collect.ImmutableMap;
+
 @MegaProjectModElements.ModElement.Tag
-public class HubGUIGui extends MegaProjectModElements.ModElement {
+public class GeneratorMK1GuiGui extends MegaProjectModElements.ModElement {
 	public static HashMap guistate = new HashMap();
 	private static ContainerType<GuiContainerMod> containerType = null;
-	public HubGUIGui(MegaProjectModElements instance) {
-		super(instance, 36);
+	public GeneratorMK1GuiGui(MegaProjectModElements instance) {
+		super(instance, 48);
 		elements.addNetworkMessage(ButtonPressedMessage.class, ButtonPressedMessage::buffer, ButtonPressedMessage::new,
 				ButtonPressedMessage::handler);
 		elements.addNetworkMessage(GUISlotChangedMessage.class, GUISlotChangedMessage::buffer, GUISlotChangedMessage::new,
 				GUISlotChangedMessage::handler);
 		containerType = new ContainerType<>(new GuiContainerModFactory());
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
-		MinecraftForge.EVENT_BUS.register(this);
 	}
 
 	@OnlyIn(Dist.CLIENT)
@@ -65,25 +64,8 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 	}
 
 	@SubscribeEvent
-	public void onPlayerTick(TickEvent.PlayerTickEvent event) {
-		PlayerEntity entity = event.player;
-		if (event.phase == TickEvent.Phase.END && entity.openContainer instanceof GuiContainerMod) {
-			World world = entity.world;
-			double x = entity.getPosX();
-			double y = entity.getPosY();
-			double z = entity.getPosZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("world", world);
-				HubGUIWhileThisGUIIsOpenTickProcedure.executeProcedure($_dependencies);
-			}
-		}
-	}
-
-	@SubscribeEvent
 	public void registerContainer(RegistryEvent.Register<ContainerType<?>> event) {
-		event.getRegistry().register(containerType.setRegistryName("hub_gui"));
+		event.getRegistry().register(containerType.setRegistryName("generator_mk_1_gui"));
 	}
 	public static class GuiContainerModFactory implements IContainerFactory {
 		public GuiContainerMod create(int id, PlayerInventory inv, PacketBuffer extraData) {
@@ -102,7 +84,7 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 			super(containerType, id);
 			this.entity = inv.player;
 			this.world = inv.player.world;
-			this.internal = new ItemStackHandler(3);
+			this.internal = new ItemStackHandler(1);
 			BlockPos pos = null;
 			if (extraData != null) {
 				pos = extraData.readBlockPos();
@@ -140,31 +122,15 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 					}
 				}
 			}
-			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 82, 47) {
-				@Override
-				public boolean isItemValid(ItemStack stack) {
-					return false;
-				}
-			}));
-			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 82, 27) {
-				@Override
-				public boolean isItemValid(ItemStack stack) {
-					return false;
-				}
-			}));
-			this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 82, 7) {
-				@Override
-				public boolean isItemValid(ItemStack stack) {
-					return false;
-				}
+			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 78, 37) {
 			}));
 			int si;
 			int sj;
 			for (si = 0; si < 3; ++si)
 				for (sj = 0; sj < 9; ++sj)
-					this.addSlot(new Slot(inv, sj + (si + 1) * 9, 110 + 8 + sj * 18, 31 + 84 + si * 18));
+					this.addSlot(new Slot(inv, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
 			for (si = 0; si < 9; ++si)
-				this.addSlot(new Slot(inv, si, 110 + 8 + si * 18, 31 + 142));
+				this.addSlot(new Slot(inv, si, 0 + 8 + si * 18, 0 + 142));
 		}
 
 		public Map<Integer, Slot> get() {
@@ -183,18 +149,18 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 			if (slot != null && slot.getHasStack()) {
 				ItemStack itemstack1 = slot.getStack();
 				itemstack = itemstack1.copy();
-				if (index < 3) {
-					if (!this.mergeItemStack(itemstack1, 3, this.inventorySlots.size(), true)) {
+				if (index < 1) {
+					if (!this.mergeItemStack(itemstack1, 1, this.inventorySlots.size(), true)) {
 						return ItemStack.EMPTY;
 					}
 					slot.onSlotChange(itemstack1, itemstack);
-				} else if (!this.mergeItemStack(itemstack1, 0, 3, false)) {
-					if (index < 3 + 27) {
-						if (!this.mergeItemStack(itemstack1, 3 + 27, this.inventorySlots.size(), true)) {
+				} else if (!this.mergeItemStack(itemstack1, 0, 1, false)) {
+					if (index < 1 + 27) {
+						if (!this.mergeItemStack(itemstack1, 1 + 27, this.inventorySlots.size(), true)) {
 							return ItemStack.EMPTY;
 						}
 					} else {
-						if (!this.mergeItemStack(itemstack1, 3, 3 + 27, false)) {
+						if (!this.mergeItemStack(itemstack1, 1, 1 + 27, false)) {
 							return ItemStack.EMPTY;
 						}
 					}
@@ -331,10 +297,10 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 			this.y = container.y;
 			this.z = container.z;
 			this.entity = container.entity;
-			this.xSize = 396;
-			this.ySize = 228;
+			this.xSize = 176;
+			this.ySize = 166;
 		}
-		private static final ResourceLocation texture = new ResourceLocation("mega_project:textures/hub_gui.png");
+		private static final ResourceLocation texture = new ResourceLocation("mega_project:textures/generator_mk_1_gui.png");
 		@Override
 		public void render(int mouseX, int mouseY, float partialTicks) {
 			this.renderBackground();
@@ -367,10 +333,9 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-			this.font.drawString("HUB", 184, 3, -16777216);
-			this.font.drawString("Iron Mined", 7, 47, -12829636);
-			this.font.drawString("Coal Mined", 7, 29, -12829636);
-			this.font.drawString("Caterium Mined", 7, 11, -12829636);
+			this.font.drawString("Generator MK1", 53, 3, -52429);
+			if (GeneratorWorkingLabelProcedure.executeProcedure(ImmutableMap.of("x", x, "y", y, "z", z, "world", world)))
+				this.font.drawString("Working", 70, 14, -13369549);
 			this.font.drawString("" + (new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
@@ -378,32 +343,7 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Coal")) + "", 103, 29, -12829636);
-			this.font.drawString("" + (new Object() {
-				public double getValue(BlockPos pos, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getDouble(tag);
-					return 0;
-				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Iron")) + "", 103, 47, -12829636);
-			this.font.drawString("" + (new Object() {
-				public double getValue(BlockPos pos, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getDouble(tag);
-					return 0;
-				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Caterium")) + "", 103, 11, -12829636);
-			this.font.drawString("Energy:", 151, 201, -16724737);
-			this.font.drawString("" + (new Object() {
-				public double getValue(BlockPos pos, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getDouble(tag);
-					return 0;
-				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Energy")) + "", 191, 202, -12829636);
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "GeneratorEnergy")) + "", 78, 62, -16777216);
 		}
 
 		@Override

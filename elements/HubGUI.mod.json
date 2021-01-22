@@ -34,8 +34,8 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #0",
-          "x": 221,
-          "y": 53
+          "x": 97,
+          "y": 52
         }
       },
       {
@@ -88,8 +88,8 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #1",
-          "x": 221,
-          "y": 35
+          "x": 97,
+          "y": 32
         }
       },
       {
@@ -103,21 +103,8 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #2",
-          "x": 221,
-          "y": 17
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "<BNBT:number:Iron>",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "<BNBT:number:Iron>",
-          "x": 114,
-          "y": 53
+          "x": 97,
+          "y": 12
         }
       },
       {
@@ -129,8 +116,21 @@
             "falpha": 0.0
           },
           "name": "<BNBT:number:Coal>",
-          "x": 114,
+          "x": 119,
           "y": 35
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:number:Iron>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:number:Iron>",
+          "x": 119,
+          "y": 53
         }
       },
       {
@@ -142,10 +142,39 @@
             "falpha": 0.0
           },
           "name": "<BNBT:number:Caterium>",
-          "x": 114,
+          "x": 119,
           "y": 17
         }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Energy:",
+          "color": {
+            "value": -16724737,
+            "falpha": 0.0
+          },
+          "name": "Energy:",
+          "x": 167,
+          "y": 207
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:number:Energy>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:number:Energy>",
+          "x": 207,
+          "y": 208
+        }
       }
-    ]
+    ],
+    "onTick": {
+      "name": "HubGUIWhileThisGUIIsOpenTick"
+    }
   }
 }
