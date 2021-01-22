@@ -1,0 +1,9 @@
+{
+  "parent": "mega_project:custom/miner",
+  "textures": {
+    "all": "mega_project:blocks/minerfaces",
+    "particle": "mega_project:blocks/minerfaces",
+    "0": "mega_project:blocks/iron_block_orig",
+    "1": "mega_project:blocks/minerfaces"
+  }
+}

@@ -14,6 +14,10 @@ import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.common.capabilities.Capability;
 
+import net.minecraft.world.storage.WorldSavedData;
+import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.IWorld;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Direction;
 import net.minecraft.network.PacketBuffer;
@@ -28,6 +32,8 @@ import java.util.function.Supplier;
 
 public class MegaProjectModVariables {
 	public MegaProjectModVariables(MegaProjectModElements elements) {
+		elements.addNetworkMessage(WorldSavedDataSyncMessage.class, WorldSavedDataSyncMessage::buffer, WorldSavedDataSyncMessage::new,
+				WorldSavedDataSyncMessage::handler);
 		elements.addNetworkMessage(PlayerVariablesSyncMessage.class, PlayerVariablesSyncMessage::buffer, PlayerVariablesSyncMessage::new,
 				PlayerVariablesSyncMessage::handler);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::init);
@@ -35,6 +41,134 @@ public class MegaProjectModVariables {
 
 	private void init(FMLCommonSetupEvent event) {
 		CapabilityManager.INSTANCE.register(PlayerVariables.class, new PlayerVariablesStorage(), PlayerVariables::new);
+	}
+
+	@SubscribeEvent
+	public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
+		if (!event.getPlayer().world.isRemote) {
+			WorldSavedData mapdata = MapVariables.get(event.getPlayer().world);
+			WorldSavedData worlddata = WorldVariables.get(event.getPlayer().world);
+			if (mapdata != null)
+				MegaProjectMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) event.getPlayer()),
+						new WorldSavedDataSyncMessage(0, mapdata));
+			if (worlddata != null)
+				MegaProjectMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) event.getPlayer()),
+						new WorldSavedDataSyncMessage(1, worlddata));
+		}
+	}
+
+	@SubscribeEvent
+	public void onPlayerChangedDimension(PlayerEvent.PlayerChangedDimensionEvent event) {
+		if (!event.getPlayer().world.isRemote) {
+			WorldSavedData worlddata = WorldVariables.get(event.getPlayer().world);
+			if (worlddata != null)
+				MegaProjectMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) event.getPlayer()),
+						new WorldSavedDataSyncMessage(1, worlddata));
+		}
+	}
+	public static class WorldVariables extends WorldSavedData {
+		public static final String DATA_NAME = "mega_project_worldvars";
+		public WorldVariables() {
+			super(DATA_NAME);
+		}
+
+		public WorldVariables(String s) {
+			super(s);
+		}
+
+		@Override
+		public void read(CompoundNBT nbt) {
+		}
+
+		@Override
+		public CompoundNBT write(CompoundNBT nbt) {
+			return nbt;
+		}
+
+		public void syncData(IWorld world) {
+			this.markDirty();
+			if (!world.getWorld().isRemote)
+				MegaProjectMod.PACKET_HANDLER.send(PacketDistributor.DIMENSION.with(world.getWorld().dimension::getType),
+						new WorldSavedDataSyncMessage(1, this));
+		}
+		static WorldVariables clientSide = new WorldVariables();
+		public static WorldVariables get(IWorld world) {
+			if (world.getWorld() instanceof ServerWorld) {
+				return ((ServerWorld) world.getWorld()).getSavedData().getOrCreate(WorldVariables::new, DATA_NAME);
+			} else {
+				return clientSide;
+			}
+		}
+	}
+
+	public static class MapVariables extends WorldSavedData {
+		public static final String DATA_NAME = "mega_project_mapvars";
+		public double production = 0;
+		public MapVariables() {
+			super(DATA_NAME);
+		}
+
+		public MapVariables(String s) {
+			super(s);
+		}
+
+		@Override
+		public void read(CompoundNBT nbt) {
+			production = nbt.getDouble("production");
+		}
+
+		@Override
+		public CompoundNBT write(CompoundNBT nbt) {
+			nbt.putDouble("production", production);
+			return nbt;
+		}
+
+		public void syncData(IWorld world) {
+			this.markDirty();
+			if (!world.getWorld().isRemote)
+				MegaProjectMod.PACKET_HANDLER.send(PacketDistributor.ALL.noArg(), new WorldSavedDataSyncMessage(0, this));
+		}
+		static MapVariables clientSide = new MapVariables();
+		public static MapVariables get(IWorld world) {
+			if (world.getWorld() instanceof ServerWorld) {
+				return world.getWorld().getServer().getWorld(DimensionType.OVERWORLD).getSavedData().getOrCreate(MapVariables::new, DATA_NAME);
+			} else {
+				return clientSide;
+			}
+		}
+	}
+
+	public static class WorldSavedDataSyncMessage {
+		public int type;
+		public WorldSavedData data;
+		public WorldSavedDataSyncMessage(PacketBuffer buffer) {
+			this.type = buffer.readInt();
+			this.data = this.type == 0 ? new MapVariables() : new WorldVariables();
+			this.data.read(buffer.readCompoundTag());
+		}
+
+		public WorldSavedDataSyncMessage(int type, WorldSavedData data) {
+			this.type = type;
+			this.data = data;
+		}
+
+		public static void buffer(WorldSavedDataSyncMessage message, PacketBuffer buffer) {
+			buffer.writeInt(message.type);
+			buffer.writeCompoundTag(message.data.write(new CompoundNBT()));
+		}
+
+		public static void handler(WorldSavedDataSyncMessage message, Supplier<NetworkEvent.Context> contextSupplier) {
+			NetworkEvent.Context context = contextSupplier.get();
+			context.enqueueWork(() -> {
+				if (!context.getDirection().getReceptionSide().isServer()) {
+					if (message.type == 0)
+						MapVariables.clientSide = (MapVariables) message.data;
+					else
+						WorldVariables.clientSide = (WorldVariables) message.data;
+				}
+			});
+			context.setPacketHandled(true);
+		}
 	}
 	@CapabilityInject(PlayerVariables.class)
 	public static Capability<PlayerVariables> PLAYER_VARIABLES_CAPABILITY = null;
@@ -70,6 +204,11 @@ public class MegaProjectModVariables {
 			nbt.putDouble("hub_z", instance.hub_z);
 			nbt.putDouble("hub_x", instance.hub_x);
 			nbt.putDouble("hub_y", instance.hub_y);
+			nbt.putDouble("hub_coal_save", instance.hub_coal_save);
+			nbt.putBoolean("placed_hub", instance.placed_hub);
+			nbt.putDouble("hub_iron_save", instance.hub_iron_save);
+			nbt.putDouble("hub_caterium_save", instance.hub_caterium_save);
+			nbt.putDouble("hub_energy_save", instance.hub_energy_save);
 			return nbt;
 		}
 
@@ -79,6 +218,11 @@ public class MegaProjectModVariables {
 			instance.hub_z = nbt.getDouble("hub_z");
 			instance.hub_x = nbt.getDouble("hub_x");
 			instance.hub_y = nbt.getDouble("hub_y");
+			instance.hub_coal_save = nbt.getDouble("hub_coal_save");
+			instance.placed_hub = nbt.getBoolean("placed_hub");
+			instance.hub_iron_save = nbt.getDouble("hub_iron_save");
+			instance.hub_caterium_save = nbt.getDouble("hub_caterium_save");
+			instance.hub_energy_save = nbt.getDouble("hub_energy_save");
 		}
 	}
 
@@ -86,6 +230,11 @@ public class MegaProjectModVariables {
 		public double hub_z = 0;
 		public double hub_x = 0;
 		public double hub_y = 0;
+		public double hub_coal_save = 0;
+		public boolean placed_hub = false;
+		public double hub_iron_save = 0;
+		public double hub_caterium_save = 0;
+		public double hub_energy_save = 0;
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
 				MegaProjectMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity),
@@ -121,6 +270,11 @@ public class MegaProjectModVariables {
 		clone.hub_z = original.hub_z;
 		clone.hub_x = original.hub_x;
 		clone.hub_y = original.hub_y;
+		clone.hub_coal_save = original.hub_coal_save;
+		clone.placed_hub = original.placed_hub;
+		clone.hub_iron_save = original.hub_iron_save;
+		clone.hub_caterium_save = original.hub_caterium_save;
+		clone.hub_energy_save = original.hub_energy_save;
 		if (!event.isWasDeath()) {
 		}
 	}
@@ -148,6 +302,11 @@ public class MegaProjectModVariables {
 					variables.hub_z = message.data.hub_z;
 					variables.hub_x = message.data.hub_x;
 					variables.hub_y = message.data.hub_y;
+					variables.hub_coal_save = message.data.hub_coal_save;
+					variables.placed_hub = message.data.placed_hub;
+					variables.hub_iron_save = message.data.hub_iron_save;
+					variables.hub_caterium_save = message.data.hub_caterium_save;
+					variables.hub_energy_save = message.data.hub_energy_save;
 				}
 			});
 			context.setPacketHandled(true);

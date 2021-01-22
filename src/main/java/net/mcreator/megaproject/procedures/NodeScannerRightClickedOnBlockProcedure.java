@@ -1,16 +1,14 @@
 package net.mcreator.megaproject.procedures;
 
-import net.minecraftforge.fml.server.ServerLifecycleHooks;
-
 import net.minecraft.world.IWorld;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.megaproject.block.IronOreNodeBlockBlock;
+import net.mcreator.megaproject.block.CoalNodeBlock;
 import net.mcreator.megaproject.block.CateriumNODEblockBlock;
 import net.mcreator.megaproject.MegaProjectModElements;
 
@@ -74,8 +72,10 @@ public class NodeScannerRightClickedOnBlockProcedure extends MegaProjectModEleme
 						if (((world.getBlockState(new BlockPos((int) (x + (sx)), (int) (y + (sy)), (int) (z + (sz)))))
 								.getBlock() == IronOreNodeBlockBlock.block.getDefaultState().getBlock())) {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote) {
-								((PlayerEntity) entity).sendStatusMessage(new StringTextComponent((("Iron Node Found On:") + "" + ("  X:") + ""
-										+ (((x + (sx)) + 1)) + "" + ("  Y:") + "" + ((y + (sy))) + "" + ("  Z:") + "" + ((z + (sz))))), (false));
+								((PlayerEntity) entity).sendStatusMessage(
+										new StringTextComponent((("Iron Node Found On:") + "" + ("  X:") + "" + (Math.round(((x + (sx)) + 1))) + ""
+												+ ("  Y:") + "" + (Math.round((y + (sy)))) + "" + ("  Z:") + "" + (Math.round((z + (sz)))))),
+										(false));
 							}
 							found = (boolean) (true);
 						}
@@ -86,10 +86,8 @@ public class NodeScannerRightClickedOnBlockProcedure extends MegaProjectModEleme
 				sx = (double) ((sx) + 1);
 			}
 			if (((found) == (false))) {
-				{
-					MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
-					if (mcserv != null)
-						mcserv.getPlayerList().sendMessage(new StringTextComponent("No Nodes Around"));
+				if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("No Nodes Around"), (false));
 				}
 			}
 		} else if (((((itemstack).getOrCreateTag().getString("NodeMaterial"))).equals("Caterium"))) {
@@ -103,8 +101,10 @@ public class NodeScannerRightClickedOnBlockProcedure extends MegaProjectModEleme
 						if (((world.getBlockState(new BlockPos((int) (x + (sx)), (int) (y + (sy)), (int) (z + (sz)))))
 								.getBlock() == CateriumNODEblockBlock.block.getDefaultState().getBlock())) {
 							if (entity instanceof PlayerEntity && !entity.world.isRemote) {
-								((PlayerEntity) entity).sendStatusMessage(new StringTextComponent((("Caterium Node Found On:") + "" + ("  X:") + ""
-										+ (((x + (sx)) + 1)) + "" + ("  Y:") + "" + ((y + (sy))) + "" + ("  Z:") + "" + ((z + (sz))))), (false));
+								((PlayerEntity) entity).sendStatusMessage(
+										new StringTextComponent((("Caterium Node Found On:") + "" + ("  X:") + "" + (Math.round(((x + (sx)) + 1)))
+												+ "" + ("  Y:") + "" + (Math.round((y + (sy)))) + "" + ("  Z:") + "" + (Math.round((z + (sz)))))),
+										(false));
 							}
 							found = (boolean) (true);
 						}
@@ -115,10 +115,37 @@ public class NodeScannerRightClickedOnBlockProcedure extends MegaProjectModEleme
 				sx = (double) ((sx) + 1);
 			}
 			if (((found) == (false))) {
-				{
-					MinecraftServer mcserv = ServerLifecycleHooks.getCurrentServer();
-					if (mcserv != null)
-						mcserv.getPlayerList().sendMessage(new StringTextComponent("No Nodes Around"));
+				if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("No Nodes Around"), (false));
+				}
+			}
+		} else if (((((itemstack).getOrCreateTag().getString("NodeMaterial"))).equals("Coal"))) {
+			sx = (double) (-50);
+			found = (boolean) (false);
+			for (int index6 = 0; index6 < (int) (100); index6++) {
+				sy = (double) (-50);
+				for (int index7 = 0; index7 < (int) (100); index7++) {
+					sz = (double) (-50);
+					for (int index8 = 0; index8 < (int) (100); index8++) {
+						if (((world.getBlockState(new BlockPos((int) (x + (sx)), (int) (y + (sy)), (int) (z + (sz)))))
+								.getBlock() == CoalNodeBlock.block.getDefaultState().getBlock())) {
+							if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+								((PlayerEntity) entity).sendStatusMessage(
+										new StringTextComponent((("Coal Node Found On:") + "" + ("  X:") + "" + (Math.round(((x + (sx)) + 1))) + ""
+												+ ("  Y:") + "" + (Math.round((y + (sy)))) + "" + ("  Z:") + "" + (Math.round((z + (sz)))))),
+										(false));
+							}
+							found = (boolean) (true);
+						}
+						sz = (double) ((sz) + 1);
+					}
+					sy = (double) ((sy) + 1);
+				}
+				sx = (double) ((sx) + 1);
+			}
+			if (((found) == (false))) {
+				if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("No Nodes Around"), (false));
 				}
 			}
 		}
