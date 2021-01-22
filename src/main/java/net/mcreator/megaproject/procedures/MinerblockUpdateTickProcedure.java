@@ -1,11 +1,23 @@
 package net.mcreator.megaproject.procedures;
 
+import net.minecraft.world.IWorld;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.entity.Entity;
+import net.minecraft.block.BlockState;
+
+import net.mcreator.megaproject.block.IronOreNodeBlockBlock;
+import net.mcreator.megaproject.block.CoalNodeBlock;
+import net.mcreator.megaproject.block.CateriumNODEblockBlock;
+import net.mcreator.megaproject.MegaProjectModVariables;
+import net.mcreator.megaproject.MegaProjectModElements;
+
+import java.util.Map;
+
 @MegaProjectModElements.ModElement.Tag
 public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModElement {
-
 	public MinerblockUpdateTickProcedure(MegaProjectModElements instance) {
 		super(instance, 43);
-
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -34,13 +46,11 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 				System.err.println("Failed to load dependency world for procedure MinerblockUpdateTick!");
 			return;
 		}
-
 		Entity entity = (Entity) dependencies.get("entity");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-
 		if (((new Object() {
 			public double getValue(BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
@@ -85,7 +95,6 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 									(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 											.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
 									"Coal")) + 1));
-
 						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
@@ -115,7 +124,6 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
 								"Energy")) - 5));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			} else if ((IronOreNodeBlockBlock.block.getDefaultState()
@@ -147,7 +155,6 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 									(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 											.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
 									"Iron")) + 1));
-
 						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
@@ -177,7 +184,6 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
 								"Energy")) - 5));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			} else if ((CateriumNODEblockBlock.block.getDefaultState()
@@ -209,7 +215,6 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 									(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 											.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
 									"Caterium")) + 1));
-
 						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
@@ -239,12 +244,9 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
 								"Energy")) - 5));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
 		}
-
 	}
-
 }

@@ -1,11 +1,21 @@
 package net.mcreator.megaproject.procedures;
 
+import net.minecraft.world.IWorld;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.Entity;
+
+import net.mcreator.megaproject.MegaProjectModVariables;
+import net.mcreator.megaproject.MegaProjectModElements;
+
+import java.util.Map;
+
 @MegaProjectModElements.ModElement.Tag
 public class HubPlayerStartsToDestroyProcedure extends MegaProjectModElements.ModElement {
-
 	public HubPlayerStartsToDestroyProcedure(MegaProjectModElements instance) {
 		super(instance, 46);
-
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -34,13 +44,11 @@ public class HubPlayerStartsToDestroyProcedure extends MegaProjectModElements.Mo
 				System.err.println("Failed to load dependency world for procedure HubPlayerStartsToDestroy!");
 			return;
 		}
-
 		Entity entity = (Entity) dependencies.get("entity");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-
 		{
 			double _setval = (double) (new Object() {
 				public double getValue(BlockPos pos, String tag) {
@@ -100,7 +108,5 @@ public class HubPlayerStartsToDestroyProcedure extends MegaProjectModElements.Mo
 		if (entity instanceof PlayerEntity && !entity.world.isRemote) {
 			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Materials and Energy Saved."), (false));
 		}
-
 	}
-
 }

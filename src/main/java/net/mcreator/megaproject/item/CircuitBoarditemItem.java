@@ -1,24 +1,29 @@
 
 package net.mcreator.megaproject.item;
 
+import net.minecraftforge.registries.ObjectHolder;
+
+import net.minecraft.item.Rarity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.Item;
+import net.minecraft.block.BlockState;
+
+import net.mcreator.megaproject.MegaProjectModElements;
+
 @MegaProjectModElements.ModElement.Tag
 public class CircuitBoarditemItem extends MegaProjectModElements.ModElement {
-
 	@ObjectHolder("mega_project:circuit_boarditem")
 	public static final Item block = null;
-
 	public CircuitBoarditemItem(MegaProjectModElements instance) {
 		super(instance, 52);
-
 	}
 
 	@Override
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
-
 	public static class ItemCustom extends Item {
-
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64).rarity(Rarity.COMMON));
 			setRegistryName("circuit_boarditem");
@@ -38,7 +43,5 @@ public class CircuitBoarditemItem extends MegaProjectModElements.ModElement {
 		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
 			return 1F;
 		}
-
 	}
-
 }
