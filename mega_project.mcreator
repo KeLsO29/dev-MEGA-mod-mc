@@ -1104,6 +1104,72 @@
           }
         ]
       }
+    },
+    {
+      "name": "MinerblockBlockIsPlacedBy",
+      "type": "procedure",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "minerblock_block_is_placed_by",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MinerblockBlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 53,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "minerblock_block_destroyed_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1165,29 +1231,29 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "item.mega_project.turbofuelitem_2": "Turbofuel Mk.2",
       "block.mega_project.iron_ore_node_block_inactive": "Iron Ore Node Block Inactive",
-      "item.mega_project.turbofuelitem_3": "Turbofuel Mk.3",
-      "block.mega_project.generator_mk_1": "Generator MK 1",
       "block.mega_project.coal_node": "Coal Node(active)",
       "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
       "item.mega_project.turbofuelitem": "Turbofuel Mk.1",
-      "block.mega_project.caterium_node_block_inactive": "Caterium Node Block Inactive",
-      "block.mega_project.minerblock": "Miner",
       "item.mega_project.redstoneingotitem": "Redstone Ingot",
-      "block.mega_project.copper_ore": "Copper Ore",
       "block.mega_project.caterium_ore": "Caterium Ore",
       "block.mega_project.copper_block": "Block of Copper",
+      "item.mega_project.copper_ingot": "Copper",
+      "block.mega_project.caterium_block": "Block of Caterium",
+      "item.mega_project.caterium_ingot": "Caterium Ingot",
+      "block.mega_project.caterium_nod_eblock": "Caterium  Node Block (active)",
+      "item.mega_project.turbofuelitem_2": "Turbofuel Mk.2",
+      "item.mega_project.turbofuelitem_3": "Turbofuel Mk.3",
+      "block.mega_project.generator_mk_1": "Generator MK 1",
+      "block.mega_project.caterium_node_block_inactive": "Caterium Node Block Inactive",
+      "block.mega_project.minerblock": "Miner",
+      "block.mega_project.copper_ore": "Copper Ore",
       "block.mega_project.coal_node_inactive": "Coal Node Inactive",
       "block.mega_project.iron_ore_node_block": "Iron Ore Node Block(active)",
-      "item.mega_project.copper_ingot": "Copper",
       "item.mega_project.node_scanner": "Node Scanner",
       "block.mega_project.hub": "Hub",
-      "block.mega_project.caterium_block": "Block of Caterium",
       "key.mcreator.adminmenukeybind": "Admin Menu",
-      "item.mega_project.caterium_ingot": "Caterium Ingot",
-      "item.mega_project.copper_sheet_item": "Copper Sheet",
-      "block.mega_project.caterium_nod_eblock": "Caterium  Node Block (active)"
+      "item.mega_project.copper_sheet_item": "Copper Sheet"
     }
   },
   "workspaceSettings": {

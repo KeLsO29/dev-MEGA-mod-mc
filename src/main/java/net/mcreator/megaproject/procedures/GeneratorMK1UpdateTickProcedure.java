@@ -108,7 +108,7 @@ public class GeneratorMK1UpdateTickProcedure extends MegaProjectModElements.ModE
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos((int) x, (int) y, (int) z), "GeneratorEnergy")) + 2000));
+					}.getValue(new BlockPos((int) x, (int) y, (int) z), "GeneratorEnergy")) + 1315));
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 		}
