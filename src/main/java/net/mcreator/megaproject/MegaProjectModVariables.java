@@ -103,7 +103,14 @@ public class MegaProjectModVariables {
 
 	public static class MapVariables extends WorldSavedData {
 		public static final String DATA_NAME = "mega_project_mapvars";
+		public double hub_coal_save = 0;
+		public double hub_iron_save = 0;
 		public double production = 0;
+		public double hub_caterium_save = 0;
+		public double hub_energy_save = 0;
+		public double hub_z = 0;
+		public double hub_x = 0;
+		public double hub_y = 0;
 		public MapVariables() {
 			super(DATA_NAME);
 		}
@@ -114,12 +121,26 @@ public class MegaProjectModVariables {
 
 		@Override
 		public void read(CompoundNBT nbt) {
+			hub_coal_save = nbt.getDouble("hub_coal_save");
+			hub_iron_save = nbt.getDouble("hub_iron_save");
 			production = nbt.getDouble("production");
+			hub_caterium_save = nbt.getDouble("hub_caterium_save");
+			hub_energy_save = nbt.getDouble("hub_energy_save");
+			hub_z = nbt.getDouble("hub_z");
+			hub_x = nbt.getDouble("hub_x");
+			hub_y = nbt.getDouble("hub_y");
 		}
 
 		@Override
 		public CompoundNBT write(CompoundNBT nbt) {
+			nbt.putDouble("hub_coal_save", hub_coal_save);
+			nbt.putDouble("hub_iron_save", hub_iron_save);
 			nbt.putDouble("production", production);
+			nbt.putDouble("hub_caterium_save", hub_caterium_save);
+			nbt.putDouble("hub_energy_save", hub_energy_save);
+			nbt.putDouble("hub_z", hub_z);
+			nbt.putDouble("hub_x", hub_x);
+			nbt.putDouble("hub_y", hub_y);
 			return nbt;
 		}
 
@@ -201,40 +222,19 @@ public class MegaProjectModVariables {
 		@Override
 		public INBT writeNBT(Capability<PlayerVariables> capability, PlayerVariables instance, Direction side) {
 			CompoundNBT nbt = new CompoundNBT();
-			nbt.putDouble("hub_coal_save", instance.hub_coal_save);
 			nbt.putBoolean("placed_hub", instance.placed_hub);
-			nbt.putDouble("hub_iron_save", instance.hub_iron_save);
-			nbt.putDouble("hub_caterium_save", instance.hub_caterium_save);
-			nbt.putDouble("hub_energy_save", instance.hub_energy_save);
-			nbt.putDouble("hub_z", instance.hub_z);
-			nbt.putDouble("hub_x", instance.hub_x);
-			nbt.putDouble("hub_y", instance.hub_y);
 			return nbt;
 		}
 
 		@Override
 		public void readNBT(Capability<PlayerVariables> capability, PlayerVariables instance, Direction side, INBT inbt) {
 			CompoundNBT nbt = (CompoundNBT) inbt;
-			instance.hub_coal_save = nbt.getDouble("hub_coal_save");
 			instance.placed_hub = nbt.getBoolean("placed_hub");
-			instance.hub_iron_save = nbt.getDouble("hub_iron_save");
-			instance.hub_caterium_save = nbt.getDouble("hub_caterium_save");
-			instance.hub_energy_save = nbt.getDouble("hub_energy_save");
-			instance.hub_z = nbt.getDouble("hub_z");
-			instance.hub_x = nbt.getDouble("hub_x");
-			instance.hub_y = nbt.getDouble("hub_y");
 		}
 	}
 
 	public static class PlayerVariables {
-		public double hub_coal_save = 0;
 		public boolean placed_hub = false;
-		public double hub_iron_save = 0;
-		public double hub_caterium_save = 0;
-		public double hub_energy_save = 0;
-		public double hub_z = 0;
-		public double hub_x = 0;
-		public double hub_y = 0;
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
 				MegaProjectMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity),
@@ -267,14 +267,7 @@ public class MegaProjectModVariables {
 		PlayerVariables original = ((PlayerVariables) event.getOriginal().getCapability(PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new PlayerVariables()));
 		PlayerVariables clone = ((PlayerVariables) event.getEntity().getCapability(PLAYER_VARIABLES_CAPABILITY, null).orElse(new PlayerVariables()));
-		clone.hub_coal_save = original.hub_coal_save;
 		clone.placed_hub = original.placed_hub;
-		clone.hub_iron_save = original.hub_iron_save;
-		clone.hub_caterium_save = original.hub_caterium_save;
-		clone.hub_energy_save = original.hub_energy_save;
-		clone.hub_z = original.hub_z;
-		clone.hub_x = original.hub_x;
-		clone.hub_y = original.hub_y;
 		if (!event.isWasDeath()) {
 		}
 	}
@@ -299,14 +292,7 @@ public class MegaProjectModVariables {
 				if (!context.getDirection().getReceptionSide().isServer()) {
 					PlayerVariables variables = ((PlayerVariables) Minecraft.getInstance().player.getCapability(PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new PlayerVariables()));
-					variables.hub_coal_save = message.data.hub_coal_save;
 					variables.placed_hub = message.data.placed_hub;
-					variables.hub_iron_save = message.data.hub_iron_save;
-					variables.hub_caterium_save = message.data.hub_caterium_save;
-					variables.hub_energy_save = message.data.hub_energy_save;
-					variables.hub_z = message.data.hub_z;
-					variables.hub_x = message.data.hub_x;
-					variables.hub_y = message.data.hub_y;
 				}
 			});
 			context.setPacketHandled(true);

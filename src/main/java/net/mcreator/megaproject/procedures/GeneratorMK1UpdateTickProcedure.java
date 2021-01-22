@@ -7,7 +7,6 @@ import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.entity.Entity;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.megaproject.item.TurbofuelitemItem;
@@ -25,11 +24,6 @@ public class GeneratorMK1UpdateTickProcedure extends MegaProjectModElements.ModE
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure GeneratorMK1UpdateTick!");
-			return;
-		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
 				System.err.println("Failed to load dependency x for procedure GeneratorMK1UpdateTick!");
@@ -50,7 +44,6 @@ public class GeneratorMK1UpdateTickProcedure extends MegaProjectModElements.ModE
 				System.err.println("Failed to load dependency world for procedure GeneratorMK1UpdateTick!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
@@ -136,13 +129,8 @@ public class GeneratorMK1UpdateTickProcedure extends MegaProjectModElements.ModE
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (!world.getWorld().isRemote) {
-				BlockPos _bp = new BlockPos(
-						(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
-						(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
-						(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z));
+				BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+						(int) (MegaProjectModVariables.MapVariables.get(world).hub_y), (int) (MegaProjectModVariables.MapVariables.get(world).hub_z));
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
@@ -153,14 +141,9 @@ public class GeneratorMK1UpdateTickProcedure extends MegaProjectModElements.ModE
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(new BlockPos(
-							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
-							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
-							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
-							"Energy")) + 25));
+					}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+							(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
+							(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) + 25));
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (!world.getWorld().isRemote) {

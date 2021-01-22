@@ -100,37 +100,16 @@ public class HubBlockIsPlacedByProcedure extends MegaProjectModElements.ModEleme
 					_tileEntity.getTileData().putDouble("Consume", 0);
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
-			{
-				double _setval = (double) x;
-				entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.hub_x = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			{
-				double _setval = (double) y;
-				entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.hub_y = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			{
-				double _setval = (double) z;
-				entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.hub_z = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
+			MegaProjectModVariables.MapVariables.get(world).hub_x = (double) x;
+			MegaProjectModVariables.MapVariables.get(world).syncData(world);
+			MegaProjectModVariables.MapVariables.get(world).hub_y = (double) y;
+			MegaProjectModVariables.MapVariables.get(world).syncData(world);
+			MegaProjectModVariables.MapVariables.get(world).hub_z = (double) z;
+			MegaProjectModVariables.MapVariables.get(world).syncData(world);
 			if (entity instanceof PlayerEntity && !entity.world.isRemote) {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent((("New hub.") + "" + ("Hub Location") + ""
-						+ (((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x))
-						+ ""
-						+ (((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y))
-						+ "" + (((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)))),
-						(false));
+						+ ((MegaProjectModVariables.MapVariables.get(world).hub_x)) + "" + ((MegaProjectModVariables.MapVariables.get(world).hub_y))
+						+ "" + ((MegaProjectModVariables.MapVariables.get(world).hub_z)))), (false));
 			}
 			{
 				boolean _setval = (boolean) (true);
@@ -146,8 +125,7 @@ public class HubBlockIsPlacedByProcedure extends MegaProjectModElements.ModEleme
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
-					_tileEntity.getTileData().putDouble("Coal", ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new MegaProjectModVariables.PlayerVariables())).hub_coal_save));
+					_tileEntity.getTileData().putDouble("Coal", (MegaProjectModVariables.MapVariables.get(world).hub_coal_save));
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (!world.getWorld().isRemote) {
@@ -155,8 +133,7 @@ public class HubBlockIsPlacedByProcedure extends MegaProjectModElements.ModEleme
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
-					_tileEntity.getTileData().putDouble("Iron", ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new MegaProjectModVariables.PlayerVariables())).hub_iron_save));
+					_tileEntity.getTileData().putDouble("Iron", (MegaProjectModVariables.MapVariables.get(world).hub_iron_save));
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (!world.getWorld().isRemote) {
@@ -175,37 +152,16 @@ public class HubBlockIsPlacedByProcedure extends MegaProjectModElements.ModEleme
 					_tileEntity.getTileData().putDouble("Energy", (MegaProjectModVariables.MapVariables.get(world).hub_energy_save));
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
-			{
-				double _setval = (double) x;
-				entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.hub_x = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			{
-				double _setval = (double) y;
-				entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.hub_y = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			{
-				double _setval = (double) z;
-				entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.hub_z = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
+			MegaProjectModVariables.MapVariables.get(world).hub_x = (double) x;
+			MegaProjectModVariables.MapVariables.get(world).syncData(world);
+			MegaProjectModVariables.MapVariables.get(world).hub_y = (double) y;
+			MegaProjectModVariables.MapVariables.get(world).syncData(world);
+			MegaProjectModVariables.MapVariables.get(world).hub_z = (double) z;
+			MegaProjectModVariables.MapVariables.get(world).syncData(world);
 			if (entity instanceof PlayerEntity && !entity.world.isRemote) {
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent((("Hub Loaded, ") + "" + ("Hub Location") + ""
-						+ (((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x))
-						+ ""
-						+ (((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y))
-						+ "" + (((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-								.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)))),
-						(false));
+						+ ((MegaProjectModVariables.MapVariables.get(world).hub_x)) + "" + ((MegaProjectModVariables.MapVariables.get(world).hub_y))
+						+ "" + ((MegaProjectModVariables.MapVariables.get(world).hub_z)))), (false));
 			}
 		}
 	}

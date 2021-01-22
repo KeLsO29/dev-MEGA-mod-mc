@@ -3,7 +3,6 @@ package net.mcreator.megaproject.procedures;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.entity.Entity;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.megaproject.block.IronOreNodeBlockBlock;
@@ -21,11 +20,6 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				System.err.println("Failed to load dependency entity for procedure MinerblockUpdateTick!");
-			return;
-		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
 				System.err.println("Failed to load dependency x for procedure MinerblockUpdateTick!");
@@ -46,7 +40,6 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 				System.err.println("Failed to load dependency world for procedure MinerblockUpdateTick!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
@@ -58,25 +51,17 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(new BlockPos(
-				(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
-				(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
-				(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-						.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
+		}.getValue(
+				new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+						(int) (MegaProjectModVariables.MapVariables.get(world).hub_y), (int) (MegaProjectModVariables.MapVariables.get(world).hub_z)),
 				"Energy")) >= 5)) {
 			if ((CoalNodeBlock.block.getDefaultState().getBlock() == (world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z)))
 					.getBlock())) {
 				if ((Math.random() < 0.7)) {
 					if (!world.getWorld().isRemote) {
-						BlockPos _bp = new BlockPos(
-								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
-								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
-								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z));
+						BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
+								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z));
 						TileEntity _tileEntity = world.getTileEntity(_bp);
 						BlockState _bs = world.getBlockState(_bp);
 						if (_tileEntity != null)
@@ -87,25 +72,16 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 										return tileEntity.getTileData().getDouble(tag);
 									return -1;
 								}
-							}.getValue(new BlockPos(
-									(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
-									(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
-									(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
-									"Coal")) + 1));
+							}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+									(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
+									(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Coal")) + 1));
 						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
 				if (!world.getWorld().isRemote) {
-					BlockPos _bp = new BlockPos(
-							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
-							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
-							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z));
+					BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+							(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
+							(int) (MegaProjectModVariables.MapVariables.get(world).hub_z));
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
@@ -116,27 +92,18 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos(
-								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
-								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
-								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
-								"Energy")) - 5));
+						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
+								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 5));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			} else if ((IronOreNodeBlockBlock.block.getDefaultState()
 					.getBlock() == (world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock())) {
 				if ((Math.random() < 0.7)) {
 					if (!world.getWorld().isRemote) {
-						BlockPos _bp = new BlockPos(
-								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
-								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
-								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z));
+						BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
+								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z));
 						TileEntity _tileEntity = world.getTileEntity(_bp);
 						BlockState _bs = world.getBlockState(_bp);
 						if (_tileEntity != null)
@@ -147,25 +114,16 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 										return tileEntity.getTileData().getDouble(tag);
 									return -1;
 								}
-							}.getValue(new BlockPos(
-									(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
-									(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
-									(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
-									"Iron")) + 1));
+							}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+									(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
+									(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Iron")) + 1));
 						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
 				if (!world.getWorld().isRemote) {
-					BlockPos _bp = new BlockPos(
-							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
-							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
-							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z));
+					BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+							(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
+							(int) (MegaProjectModVariables.MapVariables.get(world).hub_z));
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
@@ -176,27 +134,18 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos(
-								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
-								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
-								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
-								"Energy")) - 5));
+						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
+								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 5));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			} else if ((CateriumNODEblockBlock.block.getDefaultState()
 					.getBlock() == (world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock())) {
 				if ((Math.random() < 0.4)) {
 					if (!world.getWorld().isRemote) {
-						BlockPos _bp = new BlockPos(
-								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
-								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
-								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z));
+						BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
+								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z));
 						TileEntity _tileEntity = world.getTileEntity(_bp);
 						BlockState _bs = world.getBlockState(_bp);
 						if (_tileEntity != null)
@@ -207,25 +156,16 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 										return tileEntity.getTileData().getDouble(tag);
 									return -1;
 								}
-							}.getValue(new BlockPos(
-									(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
-									(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
-									(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-											.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
-									"Caterium")) + 1));
+							}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+									(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
+									(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Caterium")) + 1));
 						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
 				if (!world.getWorld().isRemote) {
-					BlockPos _bp = new BlockPos(
-							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
-							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
-							(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-									.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z));
+					BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+							(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
+							(int) (MegaProjectModVariables.MapVariables.get(world).hub_z));
 					TileEntity _tileEntity = world.getTileEntity(_bp);
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
@@ -236,14 +176,9 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 									return tileEntity.getTileData().getDouble(tag);
 								return -1;
 							}
-						}.getValue(new BlockPos(
-								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_x),
-								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_y),
-								(int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-										.orElse(new MegaProjectModVariables.PlayerVariables())).hub_z)),
-								"Energy")) - 5));
+						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
+								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 5));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
