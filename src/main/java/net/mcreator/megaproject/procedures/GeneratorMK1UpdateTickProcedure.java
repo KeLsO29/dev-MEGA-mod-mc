@@ -1,11 +1,26 @@
 package net.mcreator.megaproject.procedures;
 
+import net.minecraftforge.items.IItemHandlerModifiable;
+import net.minecraftforge.items.CapabilityItemHandler;
+
+import net.minecraft.world.IWorld;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.block.BlockState;
+
+import net.mcreator.megaproject.item.TurbofuelitemItem;
+import net.mcreator.megaproject.MegaProjectModVariables;
+import net.mcreator.megaproject.MegaProjectModElements;
+
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.Map;
+
 @MegaProjectModElements.ModElement.Tag
 public class GeneratorMK1UpdateTickProcedure extends MegaProjectModElements.ModElement {
-
 	public GeneratorMK1UpdateTickProcedure(MegaProjectModElements instance) {
 		super(instance, 49);
-
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -29,12 +44,10 @@ public class GeneratorMK1UpdateTickProcedure extends MegaProjectModElements.ModE
 				System.err.println("Failed to load dependency world for procedure GeneratorMK1UpdateTick!");
 			return;
 		}
-
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-
 		if (((new Object() {
 			public ItemStack getItemStack(BlockPos pos, int sltid) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
@@ -96,7 +109,6 @@ public class GeneratorMK1UpdateTickProcedure extends MegaProjectModElements.ModE
 							return -1;
 						}
 					}.getValue(new BlockPos((int) x, (int) y, (int) z), "GeneratorEnergy")) + 1315));
-
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 		}
@@ -114,7 +126,6 @@ public class GeneratorMK1UpdateTickProcedure extends MegaProjectModElements.ModE
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putBoolean("Working", (true));
-
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (!world.getWorld().isRemote) {
@@ -133,7 +144,6 @@ public class GeneratorMK1UpdateTickProcedure extends MegaProjectModElements.ModE
 					}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 							(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 							(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) + 25));
-
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (!world.getWorld().isRemote) {
@@ -149,7 +159,6 @@ public class GeneratorMK1UpdateTickProcedure extends MegaProjectModElements.ModE
 							return -1;
 						}
 					}.getValue(new BlockPos((int) x, (int) y, (int) z), "GeneratorEnergy")) - 1));
-
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 		} else {
@@ -159,11 +168,8 @@ public class GeneratorMK1UpdateTickProcedure extends MegaProjectModElements.ModE
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putBoolean("Working", (false));
-
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 		}
-
 	}
-
 }

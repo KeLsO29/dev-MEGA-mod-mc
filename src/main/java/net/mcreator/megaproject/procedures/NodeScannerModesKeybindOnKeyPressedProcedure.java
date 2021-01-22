@@ -1,11 +1,20 @@
 package net.mcreator.megaproject.procedures;
 
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.item.ItemStack;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Entity;
+
+import net.mcreator.megaproject.item.NodeScannerItem;
+import net.mcreator.megaproject.MegaProjectModElements;
+
+import java.util.Map;
+
 @MegaProjectModElements.ModElement.Tag
 public class NodeScannerModesKeybindOnKeyPressedProcedure extends MegaProjectModElements.ModElement {
-
 	public NodeScannerModesKeybindOnKeyPressedProcedure(MegaProjectModElements instance) {
-		super(instance, 42);
-
+		super(instance, 45);
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -14,9 +23,7 @@ public class NodeScannerModesKeybindOnKeyPressedProcedure extends MegaProjectMod
 				System.err.println("Failed to load dependency entity for procedure NodeScannerModesKeybindOnKeyPressed!");
 			return;
 		}
-
 		Entity entity = (Entity) dependencies.get("entity");
-
 		if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
 				.getItem() == new ItemStack(NodeScannerItem.block, (int) (1)).getItem())) {
 			if ((((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
@@ -38,7 +45,5 @@ public class NodeScannerModesKeybindOnKeyPressedProcedure extends MegaProjectMod
 						.putString("NodeMaterial", "Iron");
 			}
 		}
-
 	}
-
 }
