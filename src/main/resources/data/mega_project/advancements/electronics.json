@@ -1,0 +1,41 @@
+{
+  "display": {
+    "icon": {
+      "item": "mega_project:circuit_boarditem"
+    },
+    "title": {
+      "translate": "advancements.electronics.title"
+    },
+    "description": {
+      "translate": "advancements.electronics.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "electronics": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mega_project:copper_sheet_item",
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 1500,
+    "recipes": [
+      "mega_project:circuit_boardrecipe",
+      "mega_project:hub_recipe"
+    ]
+  },
+  "parent": "mega_project:copperadvancement"
+}

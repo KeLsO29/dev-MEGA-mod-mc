@@ -102,7 +102,7 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 			super(containerType, id);
 			this.entity = inv.player;
 			this.world = inv.player.world;
-			this.internal = new ItemStackHandler(3);
+			this.internal = new ItemStackHandler(4);
 			BlockPos pos = null;
 			if (extraData != null) {
 				pos = extraData.readBlockPos();
@@ -158,13 +158,19 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 					return false;
 				}
 			}));
+			this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 82, 67) {
+				@Override
+				public boolean isItemValid(ItemStack stack) {
+					return false;
+				}
+			}));
 			int si;
 			int sj;
 			for (si = 0; si < 3; ++si)
 				for (sj = 0; sj < 9; ++sj)
-					this.addSlot(new Slot(inv, sj + (si + 1) * 9, 110 + 8 + sj * 18, 31 + 84 + si * 18));
+					this.addSlot(new Slot(inv, sj + (si + 1) * 9, 223 + 8 + sj * 18, 31 + 84 + si * 18));
 			for (si = 0; si < 9; ++si)
-				this.addSlot(new Slot(inv, si, 110 + 8 + si * 18, 31 + 142));
+				this.addSlot(new Slot(inv, si, 223 + 8 + si * 18, 31 + 142));
 		}
 
 		public Map<Integer, Slot> get() {
@@ -183,18 +189,18 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 			if (slot != null && slot.getHasStack()) {
 				ItemStack itemstack1 = slot.getStack();
 				itemstack = itemstack1.copy();
-				if (index < 3) {
-					if (!this.mergeItemStack(itemstack1, 3, this.inventorySlots.size(), true)) {
+				if (index < 4) {
+					if (!this.mergeItemStack(itemstack1, 4, this.inventorySlots.size(), true)) {
 						return ItemStack.EMPTY;
 					}
 					slot.onSlotChange(itemstack1, itemstack);
-				} else if (!this.mergeItemStack(itemstack1, 0, 3, false)) {
-					if (index < 3 + 27) {
-						if (!this.mergeItemStack(itemstack1, 3 + 27, this.inventorySlots.size(), true)) {
+				} else if (!this.mergeItemStack(itemstack1, 0, 4, false)) {
+					if (index < 4 + 27) {
+						if (!this.mergeItemStack(itemstack1, 4 + 27, this.inventorySlots.size(), true)) {
 							return ItemStack.EMPTY;
 						}
 					} else {
-						if (!this.mergeItemStack(itemstack1, 3, 3 + 27, false)) {
+						if (!this.mergeItemStack(itemstack1, 4, 4 + 27, false)) {
 							return ItemStack.EMPTY;
 						}
 					}
@@ -368,9 +374,9 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 		@Override
 		protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
 			this.font.drawString("HUB", 184, 3, -16777216);
-			this.font.drawString("Iron Mined", 7, 47, -12829636);
-			this.font.drawString("Coal Mined", 7, 29, -12829636);
-			this.font.drawString("Caterium Mined", 7, 11, -12829636);
+			this.font.drawString("Iron Mined", 7, 50, -12829636);
+			this.font.drawString("Coal Mined", 8, 30, -12829636);
+			this.font.drawString("Caterium Mined", 6, 10, -12829636);
 			this.font.drawString("" + (new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
@@ -378,7 +384,7 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Coal")) + "", 103, 29, -12829636);
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Coal")) + "", 104, 29, -12829636);
 			this.font.drawString("" + (new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
@@ -386,7 +392,7 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Iron")) + "", 103, 47, -12829636);
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Iron")) + "", 104, 50, -12829636);
 			this.font.drawString("" + (new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
@@ -394,8 +400,8 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Caterium")) + "", 103, 11, -12829636);
-			this.font.drawString("Energy:", 151, 201, -16724737);
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Caterium")) + "", 104, 10, -12829636);
+			this.font.drawString("Energy:", 216, 3, -16724737);
 			this.font.drawString("" + (new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
@@ -403,7 +409,16 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Energy")) + "", 191, 202, -12829636);
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Energy")) + "", 254, 4, -12829636);
+			this.font.drawString("Copper Mined", 5, 70, -12829636);
+			this.font.drawString("" + (new Object() {
+				public double getValue(BlockPos pos, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getDouble(tag);
+					return 0;
+				}
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Copper")) + "", 104, 70, -12829636);
 		}
 
 		@Override

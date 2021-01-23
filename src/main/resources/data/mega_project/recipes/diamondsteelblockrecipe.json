@@ -1,0 +1,42 @@
+{
+  "group": "diamond_steel_block",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "mega_project:diamondsteelitem"
+    },
+    "1": {
+      "item": "mega_project:diamondsteelitem"
+    },
+    "2": {
+      "item": "mega_project:diamondsteelitem"
+    },
+    "3": {
+      "item": "mega_project:diamondsteelitem"
+    },
+    "4": {
+      "item": "mega_project:diamondsteelitem"
+    },
+    "5": {
+      "item": "mega_project:diamondsteelitem"
+    },
+    "6": {
+      "item": "mega_project:diamondsteelitem"
+    },
+    "7": {
+      "item": "mega_project:diamondsteelitem"
+    },
+    "8": {
+      "item": "mega_project:diamondsteelitem"
+    }
+  },
+  "result": {
+    "item": "mega_project:diamond_steelblock",
+    "count": 1
+  }
+}

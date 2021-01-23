@@ -27,7 +27,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
-import net.mcreator.megaproject.item.CopperIngotItem;
 import net.mcreator.megaproject.MegaProjectModElements;
 
 import java.util.Random;
@@ -60,7 +59,7 @@ public class CopperOreBlock extends MegaProjectModElements.ModElement {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(CopperIngotItem.block, (int) (1)));
+			return Collections.singletonList(new ItemStack(this, 1));
 		}
 	}
 	@Override

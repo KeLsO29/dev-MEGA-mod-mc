@@ -1,0 +1,13 @@
+{
+  "group": "blockstoingots",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mega_project:steel_block"
+    }
+  ],
+  "result": {
+    "item": "mega_project:steelingot",
+    "count": 9
+  }
+}

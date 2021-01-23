@@ -1,7 +1,7 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "mega_project:blocks/copper_ore_block",
-    "particle": "mega_project:blocks/copper_ore_block"
+    "all": "mega_project:blocks/copper_block",
+    "particle": "mega_project:blocks/copper_block"
   }
 }

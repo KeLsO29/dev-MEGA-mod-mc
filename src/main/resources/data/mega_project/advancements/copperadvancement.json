@@ -1,0 +1,43 @@
+{
+  "display": {
+    "icon": {
+      "item": "mega_project:copper_sheet_item"
+    },
+    "title": {
+      "translate": "advancements.copperadvancement.title"
+    },
+    "description": {
+      "translate": "advancements.copperadvancement.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "copperadvancement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "mega_project:copper_ingot",
+            "count": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 500,
+    "recipes": [
+      "mega_project:copper_ore_smelting",
+      "mega_project:copper_ore_block_recipe",
+      "mega_project:copper_block_ore_recipe",
+      "mega_project:coppersheetrecipe"
+    ]
+  },
+  "parent": "minecraft:story/mine_stone"
+}

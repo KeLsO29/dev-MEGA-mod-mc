@@ -6,17 +6,17 @@
     "xpReward": 0.0,
     "cookingTime": 200,
     "recipeRetstackSize": 1,
-    "group": "",
+    "group": "circuitboard",
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": ""
+        "value": "CUSTOM:CateriumIngot"
       },
       {
-        "value": ""
+        "value": "CUSTOM:CopperSheetItem"
       },
       {
-        "value": ""
+        "value": "CUSTOM:CateriumIngot"
       },
       {
         "value": "CUSTOM:CateriumIngot"

@@ -10,6 +10,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.megaproject.item.TurbofuelitemItem;
+import net.mcreator.megaproject.item.Turbofuelitem3Item;
+import net.mcreator.megaproject.item.Turbofuelitem2Item;
 import net.mcreator.megaproject.MegaProjectModVariables;
 import net.mcreator.megaproject.MegaProjectModElements;
 
@@ -109,6 +111,134 @@ public class GeneratorMK1UpdateTickProcedure extends MegaProjectModElements.ModE
 							return -1;
 						}
 					}.getValue(new BlockPos((int) x, (int) y, (int) z), "GeneratorEnergy")) + 1315));
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+		}
+		if (((new Object() {
+			public ItemStack getItemStack(BlockPos pos, int sltid) {
+				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+				TileEntity _ent = world.getTileEntity(pos);
+				if (_ent != null) {
+					_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						_retval.set(capability.getStackInSlot(sltid).copy());
+					});
+				}
+				return _retval.get();
+			}
+		}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem() == new ItemStack(Turbofuelitem2Item.block, (int) (1))
+				.getItem())) {
+			{
+				TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+				if (_ent != null) {
+					final int _sltid = (int) (0);
+					final ItemStack _setstack = (new Object() {
+						public ItemStack getItemStack(BlockPos pos, int sltid) {
+							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+							TileEntity _ent = world.getTileEntity(pos);
+							if (_ent != null) {
+								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+									_retval.set(capability.getStackInSlot(sltid).copy());
+								});
+							}
+							return _retval.get();
+						}
+					}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0)));
+					_setstack.setCount((int) ((new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							AtomicInteger _retval = new AtomicInteger(0);
+							TileEntity _ent = world.getTileEntity(pos);
+							if (_ent != null) {
+								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+									_retval.set(capability.getStackInSlot(sltid).getCount());
+								});
+							}
+							return _retval.get();
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) - 1));
+					_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						if (capability instanceof IItemHandlerModifiable) {
+							((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
+						}
+					});
+				}
+			}
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("GeneratorEnergy", ((new Object() {
+						public double getValue(BlockPos pos, String tag) {
+							TileEntity tileEntity = world.getTileEntity(pos);
+							if (tileEntity != null)
+								return tileEntity.getTileData().getDouble(tag);
+							return -1;
+						}
+					}.getValue(new BlockPos((int) x, (int) y, (int) z), "GeneratorEnergy")) + 14800));
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+		}
+		if (((new Object() {
+			public ItemStack getItemStack(BlockPos pos, int sltid) {
+				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+				TileEntity _ent = world.getTileEntity(pos);
+				if (_ent != null) {
+					_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						_retval.set(capability.getStackInSlot(sltid).copy());
+					});
+				}
+				return _retval.get();
+			}
+		}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem() == new ItemStack(Turbofuelitem3Item.block, (int) (1))
+				.getItem())) {
+			{
+				TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+				if (_ent != null) {
+					final int _sltid = (int) (0);
+					final ItemStack _setstack = (new Object() {
+						public ItemStack getItemStack(BlockPos pos, int sltid) {
+							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+							TileEntity _ent = world.getTileEntity(pos);
+							if (_ent != null) {
+								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+									_retval.set(capability.getStackInSlot(sltid).copy());
+								});
+							}
+							return _retval.get();
+						}
+					}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0)));
+					_setstack.setCount((int) ((new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							AtomicInteger _retval = new AtomicInteger(0);
+							TileEntity _ent = world.getTileEntity(pos);
+							if (_ent != null) {
+								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+									_retval.set(capability.getStackInSlot(sltid).getCount());
+								});
+							}
+							return _retval.get();
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) - 1));
+					_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						if (capability instanceof IItemHandlerModifiable) {
+							((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
+						}
+					});
+				}
+			}
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("GeneratorEnergy", ((new Object() {
+						public double getValue(BlockPos pos, String tag) {
+							TileEntity tileEntity = world.getTileEntity(pos);
+							if (tileEntity != null)
+								return tileEntity.getTileData().getDouble(tag);
+							return -1;
+						}
+					}.getValue(new BlockPos((int) x, (int) y, (int) z), "GeneratorEnergy")) + 50000));
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 		}

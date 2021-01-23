@@ -1,9 +1,10 @@
 {
-  "group": "mega_project",
+  "group": "circuitboard",
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "012",
-    "345"
+    "345",
+    "678"
   ],
   "key": {
     "0": {
@@ -22,6 +23,15 @@
       "item": "mega_project:copper_sheet_item"
     },
     "5": {
+      "item": "mega_project:caterium_ingot"
+    },
+    "6": {
+      "item": "mega_project:caterium_ingot"
+    },
+    "7": {
+      "item": "mega_project:copper_sheet_item"
+    },
+    "8": {
       "item": "mega_project:caterium_ingot"
     }
   },

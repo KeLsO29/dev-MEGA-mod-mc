@@ -35,7 +35,7 @@
     },
     "destroyTool": "pickaxe",
     "customDrop": {
-      "value": "CUSTOM:CateriumIngot"
+      "value": ""
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -67,7 +67,7 @@
     },
     "luminance": 0.0,
     "unbreakable": false,
-    "breakHarvestLevel": 6,
+    "breakHarvestLevel": 2,
     "spawnParticles": false,
     "particleToSpawn": {
       "value": "EXPLOSION_NORMAL"
@@ -101,8 +101,8 @@
         "value": "Blocks.STONE"
       }
     ],
-    "frequencyPerChunks": 4,
-    "frequencyOnChunk": 2,
+    "frequencyPerChunks": 10,
+    "frequencyOnChunk": 5,
     "minGenerateHeight": 1,
     "maxGenerateHeight": 23
   }

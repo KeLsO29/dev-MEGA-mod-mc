@@ -1,0 +1,38 @@
+{
+  "display": {
+    "background": "minecraft:textures/block/stone.png",
+    "icon": {
+      "item": "mega_project:hub"
+    },
+    "title": {
+      "translate": "advancements.hub_crafted_achievment.title"
+    },
+    "description": {
+      "translate": "advancements.hub_crafted_achievment.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "hub_crafted_achievment": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "item": {
+          "item": "mega_project:hub"
+        }
+      }
+    }
+  },
+  "rewards": {
+    "experience": 1500,
+    "recipes": [
+      "mega_project:node_scanner_recipe",
+      "mega_project:miner_mk_1recipe",
+      "mega_project:generator_mk_1recipe",
+      "mega_project:constructorrecipe",
+      "mega_project:charger_blockrecipe"
+    ]
+  }
+}

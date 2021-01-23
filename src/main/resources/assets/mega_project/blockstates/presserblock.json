@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "mega_project:block/presserblock"
+    },
+    "facing=east": {
+      "model": "mega_project:block/presserblock",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "mega_project:block/presserblock",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mega_project:block/presserblock",
+      "y": 270
+    }
+  }
+}

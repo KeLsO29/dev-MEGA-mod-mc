@@ -89,15 +89,7 @@ public class HubBlockIsPlacedByProcedure extends MegaProjectModElements.ModEleme
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
-					_tileEntity.getTileData().putDouble("Production", 0);
-				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-			}
-			if (!world.getWorld().isRemote) {
-				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-				TileEntity _tileEntity = world.getTileEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_tileEntity != null)
-					_tileEntity.getTileData().putDouble("Consume", 0);
+					_tileEntity.getTileData().putDouble("Copper", 0);
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			MegaProjectModVariables.MapVariables.get(world).hub_x = (double) x;
@@ -125,8 +117,7 @@ public class HubBlockIsPlacedByProcedure extends MegaProjectModElements.ModEleme
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
-					_tileEntity.getTileData().putDouble("Coal", ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new MegaProjectModVariables.PlayerVariables())).hub_coal_save));
+					_tileEntity.getTileData().putDouble("Coal", (MegaProjectModVariables.MapVariables.get(world).hub_coal_save));
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (!world.getWorld().isRemote) {
@@ -134,8 +125,7 @@ public class HubBlockIsPlacedByProcedure extends MegaProjectModElements.ModEleme
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
-					_tileEntity.getTileData().putDouble("Iron", ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-							.orElse(new MegaProjectModVariables.PlayerVariables())).hub_iron_save));
+					_tileEntity.getTileData().putDouble("Iron", (MegaProjectModVariables.MapVariables.get(world).hub_iron_save));
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (!world.getWorld().isRemote) {
@@ -152,6 +142,14 @@ public class HubBlockIsPlacedByProcedure extends MegaProjectModElements.ModEleme
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putDouble("Energy", (MegaProjectModVariables.MapVariables.get(world).hub_energy_save));
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Copper", (MegaProjectModVariables.MapVariables.get(world).hub_copper_save));
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			MegaProjectModVariables.MapVariables.get(world).hub_x = (double) x;

@@ -48,9 +48,11 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.ISidedInventory;
+import net.minecraft.fluid.IFluidState;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.client.Minecraft;
 import net.minecraft.block.material.Material;
@@ -61,6 +63,8 @@ import net.minecraft.block.Block;
 
 import net.mcreator.megaproject.procedures.GeneratorMK1UpdateTickProcedure;
 import net.mcreator.megaproject.procedures.GeneratorMK1ClientDisplayRandomTickProcedure;
+import net.mcreator.megaproject.procedures.GeneratorMK1BlockIsPlacedByProcedure;
+import net.mcreator.megaproject.procedures.GeneratorMK1BlockDestroyedByPlayerProcedure;
 import net.mcreator.megaproject.gui.GeneratorMK1GuiGui;
 import net.mcreator.megaproject.MegaProjectModElements;
 
@@ -185,6 +189,41 @@ public class GeneratorMK1Block extends MegaProjectModElements.ModElement {
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
 				GeneratorMK1ClientDisplayRandomTickProcedure.executeProcedure($_dependencies);
+			}
+		}
+
+		@Override
+		public boolean removedByPlayer(BlockState state, World world, BlockPos pos, PlayerEntity entity, boolean willHarvest, IFluidState fluid) {
+			boolean retval = super.removedByPlayer(state, world, pos, entity, willHarvest, fluid);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				GeneratorMK1BlockDestroyedByPlayerProcedure.executeProcedure($_dependencies);
+			}
+			return retval;
+		}
+
+		@Override
+		public void onBlockPlacedBy(World world, BlockPos pos, BlockState state, LivingEntity entity, ItemStack itemstack) {
+			super.onBlockPlacedBy(world, pos, state, entity, itemstack);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				GeneratorMK1BlockIsPlacedByProcedure.executeProcedure($_dependencies);
 			}
 		}
 

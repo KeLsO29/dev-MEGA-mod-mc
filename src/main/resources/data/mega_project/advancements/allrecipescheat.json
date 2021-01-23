@@ -1,0 +1,47 @@
+{
+  "display": {
+    "background": "minecraft:textures/block/stone.png",
+    "icon": {
+      "item": "minecraft:barrier"
+    },
+    "title": {
+      "translate": "advancements.allrecipescheat.title"
+    },
+    "description": {
+      "translate": "advancements.allrecipescheat.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "allrecipescheat": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 1,
+    "recipes": [
+      "mega_project:caterium_ore_block_recipe",
+      "mega_project:caterium_block_ore_recipe",
+      "mega_project:caterium_ore_smelting",
+      "mega_project:copper_ore_smelting",
+      "mega_project:copper_ore_block_recipe",
+      "mega_project:copper_block_ore_recipe",
+      "mega_project:turbofuelrecipe_1",
+      "mega_project:turbofuelrecipe_2",
+      "mega_project:turbofuelrecipe_3",
+      "mega_project:redstoneingotrecipe",
+      "mega_project:coppersheetrecipe",
+      "mega_project:circuit_boardrecipe",
+      "mega_project:constructorrecipe",
+      "mega_project:node_scanner_recipe",
+      "mega_project:miner_mk_1recipe",
+      "mega_project:generator_mk_1recipe",
+      "mega_project:hub_recipe",
+      "mega_project:charger_blockrecipe",
+      "mega_project:steel_block_recipe"
+    ]
+  }
+}

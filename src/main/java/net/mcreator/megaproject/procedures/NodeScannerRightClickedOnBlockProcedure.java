@@ -7,11 +7,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
+import net.mcreator.megaproject.block.MinerblockBlock;
 import net.mcreator.megaproject.block.IronOreNodeBlockBlock;
+import net.mcreator.megaproject.block.CopperNodeBlock;
 import net.mcreator.megaproject.block.CoalNodeBlock;
 import net.mcreator.megaproject.block.CateriumNODEblockBlock;
 import net.mcreator.megaproject.MegaProjectModElements;
 
+import java.util.Random;
 import java.util.Map;
 
 @MegaProjectModElements.ModElement.Tag
@@ -61,92 +64,163 @@ public class NodeScannerRightClickedOnBlockProcedure extends MegaProjectModEleme
 		double sx = 0;
 		double sy = 0;
 		double sz = 0;
-		if (((((itemstack).getOrCreateTag().getString("NodeMaterial"))).equals("Iron"))) {
-			sx = (double) (-50);
-			found = (boolean) (false);
-			for (int index0 = 0; index0 < (int) (100); index0++) {
-				sy = (double) (-50);
-				for (int index1 = 0; index1 < (int) (100); index1++) {
-					sz = (double) (-50);
-					for (int index2 = 0; index2 < (int) (100); index2++) {
-						if (((world.getBlockState(new BlockPos((int) (x + (sx)), (int) (y + (sy)), (int) (z + (sz)))))
-								.getBlock() == IronOreNodeBlockBlock.block.getDefaultState().getBlock())) {
-							if (entity instanceof PlayerEntity && !entity.world.isRemote) {
-								((PlayerEntity) entity).sendStatusMessage(
-										new StringTextComponent((("Iron Node Found On:") + "" + ("  X:") + "" + (Math.round(((x + (sx)) + 1))) + ""
-												+ ("  Y:") + "" + (Math.round((y + (sy)))) + "" + ("  Z:") + "" + (Math.round((z + (sz)))))),
-										(false));
-							}
-							found = (boolean) (true);
-						}
-						sz = (double) ((sz) + 1);
+		if (((((itemstack)).getDamage()) < 98)) {
+			if (((((itemstack).getOrCreateTag().getString("NodeMaterial"))).equals("Iron"))) {
+				{
+					ItemStack _ist = (itemstack);
+					if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
+						_ist.shrink(1);
+						_ist.setDamage(0);
 					}
-					sy = (double) ((sy) + 1);
 				}
-				sx = (double) ((sx) + 1);
-			}
-			if (((found) == (false))) {
-				if (entity instanceof PlayerEntity && !entity.world.isRemote) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("No Nodes Around"), (false));
-				}
-			}
-		} else if (((((itemstack).getOrCreateTag().getString("NodeMaterial"))).equals("Caterium"))) {
-			sx = (double) (-50);
-			found = (boolean) (false);
-			for (int index3 = 0; index3 < (int) (100); index3++) {
-				sy = (double) (-50);
-				for (int index4 = 0; index4 < (int) (100); index4++) {
-					sz = (double) (-50);
-					for (int index5 = 0; index5 < (int) (100); index5++) {
-						if (((world.getBlockState(new BlockPos((int) (x + (sx)), (int) (y + (sy)), (int) (z + (sz)))))
-								.getBlock() == CateriumNODEblockBlock.block.getDefaultState().getBlock())) {
-							if (entity instanceof PlayerEntity && !entity.world.isRemote) {
-								((PlayerEntity) entity).sendStatusMessage(
-										new StringTextComponent((("Caterium Node Found On:") + "" + ("  X:") + "" + (Math.round(((x + (sx)) + 1)))
-												+ "" + ("  Y:") + "" + (Math.round((y + (sy)))) + "" + ("  Z:") + "" + (Math.round((z + (sz)))))),
-										(false));
+				sx = (double) (-50);
+				found = (boolean) (false);
+				for (int index0 = 0; index0 < (int) (100); index0++) {
+					sy = (double) (-50);
+					for (int index1 = 0; index1 < (int) (100); index1++) {
+						sz = (double) (-50);
+						for (int index2 = 0; index2 < (int) (100); index2++) {
+							if ((((world.getBlockState(new BlockPos((int) (x + (sx)), (int) (y + (sy)), (int) (z + (sz)))))
+									.getBlock() == IronOreNodeBlockBlock.block.getDefaultState().getBlock())
+									&& (!((world.getBlockState(new BlockPos((int) (x + (sx)), (int) ((y + (sy)) + 1), (int) (z + (sz)))))
+											.getBlock() == MinerblockBlock.block.getDefaultState().getBlock())))) {
+								if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+									((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+											(("Free Iron Node Found On:") + "" + ("  X:") + "" + (Math.round(((x + (sx)) + 1))) + "" + ("  Y:") + ""
+													+ (Math.round((y + (sy)))) + "" + ("  Z:") + "" + (Math.round((z + (sz)))))),
+											(false));
+								}
+								found = (boolean) (true);
 							}
-							found = (boolean) (true);
+							sz = (double) ((sz) + 1);
 						}
-						sz = (double) ((sz) + 1);
+						sy = (double) ((sy) + 1);
 					}
-					sy = (double) ((sy) + 1);
+					sx = (double) ((sx) + 1);
 				}
-				sx = (double) ((sx) + 1);
-			}
-			if (((found) == (false))) {
-				if (entity instanceof PlayerEntity && !entity.world.isRemote) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("No Nodes Around"), (false));
+				if (((found) == (false))) {
+					if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("No Free Iron Nodes Around"), (false));
+					}
 				}
-			}
-		} else if (((((itemstack).getOrCreateTag().getString("NodeMaterial"))).equals("Coal"))) {
-			sx = (double) (-50);
-			found = (boolean) (false);
-			for (int index6 = 0; index6 < (int) (100); index6++) {
-				sy = (double) (-50);
-				for (int index7 = 0; index7 < (int) (100); index7++) {
-					sz = (double) (-50);
-					for (int index8 = 0; index8 < (int) (100); index8++) {
-						if (((world.getBlockState(new BlockPos((int) (x + (sx)), (int) (y + (sy)), (int) (z + (sz)))))
-								.getBlock() == CoalNodeBlock.block.getDefaultState().getBlock())) {
-							if (entity instanceof PlayerEntity && !entity.world.isRemote) {
-								((PlayerEntity) entity).sendStatusMessage(
-										new StringTextComponent((("Coal Node Found On:") + "" + ("  X:") + "" + (Math.round(((x + (sx)) + 1))) + ""
-												+ ("  Y:") + "" + (Math.round((y + (sy)))) + "" + ("  Z:") + "" + (Math.round((z + (sz)))))),
-										(false));
+			} else if (((((itemstack).getOrCreateTag().getString("NodeMaterial"))).equals("Caterium"))) {
+				{
+					ItemStack _ist = (itemstack);
+					if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
+						_ist.shrink(1);
+						_ist.setDamage(0);
+					}
+				}
+				sx = (double) (-50);
+				found = (boolean) (false);
+				for (int index3 = 0; index3 < (int) (100); index3++) {
+					sy = (double) (-50);
+					for (int index4 = 0; index4 < (int) (100); index4++) {
+						sz = (double) (-50);
+						for (int index5 = 0; index5 < (int) (100); index5++) {
+							if ((((world.getBlockState(new BlockPos((int) (x + (sx)), (int) (y + (sy)), (int) (z + (sz)))))
+									.getBlock() == CateriumNODEblockBlock.block.getDefaultState().getBlock())
+									&& (!((world.getBlockState(new BlockPos((int) (x + (sx)), (int) ((y + (sy)) + 1), (int) (z + (sz)))))
+											.getBlock() == MinerblockBlock.block.getDefaultState().getBlock())))) {
+								if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+									((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+											(("Free Caterium Node Found On:") + "" + ("  X:") + "" + (Math.round(((x + (sx)) + 1))) + "" + ("  Y:")
+													+ "" + (Math.round((y + (sy)))) + "" + ("  Z:") + "" + (Math.round((z + (sz)))))),
+											(false));
+								}
+								found = (boolean) (true);
 							}
-							found = (boolean) (true);
+							sz = (double) ((sz) + 1);
 						}
-						sz = (double) ((sz) + 1);
+						sy = (double) ((sy) + 1);
 					}
-					sy = (double) ((sy) + 1);
+					sx = (double) ((sx) + 1);
 				}
-				sx = (double) ((sx) + 1);
+				if (((found) == (false))) {
+					if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("No Free Caterium Nodes Around"), (false));
+					}
+				}
+			} else if (((((itemstack).getOrCreateTag().getString("NodeMaterial"))).equals("Coal"))) {
+				{
+					ItemStack _ist = (itemstack);
+					if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
+						_ist.shrink(1);
+						_ist.setDamage(0);
+					}
+				}
+				sx = (double) (-50);
+				found = (boolean) (false);
+				for (int index6 = 0; index6 < (int) (100); index6++) {
+					sy = (double) (-50);
+					for (int index7 = 0; index7 < (int) (100); index7++) {
+						sz = (double) (-50);
+						for (int index8 = 0; index8 < (int) (100); index8++) {
+							if ((((world.getBlockState(new BlockPos((int) (x + (sx)), (int) (y + (sy)), (int) (z + (sz)))))
+									.getBlock() == CoalNodeBlock.block.getDefaultState().getBlock())
+									&& (!((world.getBlockState(new BlockPos((int) (x + (sx)), (int) ((y + (sy)) + 1), (int) (z + (sz)))))
+											.getBlock() == MinerblockBlock.block.getDefaultState().getBlock())))) {
+								if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+									((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+											(("Free Coal Node Found On:") + "" + ("  X:") + "" + (Math.round(((x + (sx)) + 1))) + "" + ("  Y:") + ""
+													+ (Math.round((y + (sy)))) + "" + ("  Z:") + "" + (Math.round((z + (sz)))))),
+											(false));
+								}
+								found = (boolean) (true);
+							}
+							sz = (double) ((sz) + 1);
+						}
+						sy = (double) ((sy) + 1);
+					}
+					sx = (double) ((sx) + 1);
+				}
+				if (((found) == (false))) {
+					if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("No Free Coal Nodes Around"), (false));
+					}
+				}
+			} else if (((((itemstack).getOrCreateTag().getString("NodeMaterial"))).equals("Copper"))) {
+				{
+					ItemStack _ist = (itemstack);
+					if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
+						_ist.shrink(1);
+						_ist.setDamage(0);
+					}
+				}
+				sx = (double) (-50);
+				found = (boolean) (false);
+				for (int index9 = 0; index9 < (int) (100); index9++) {
+					sy = (double) (-50);
+					for (int index10 = 0; index10 < (int) (100); index10++) {
+						sz = (double) (-50);
+						for (int index11 = 0; index11 < (int) (100); index11++) {
+							if ((((world.getBlockState(new BlockPos((int) (x + (sx)), (int) (y + (sy)), (int) (z + (sz)))))
+									.getBlock() == CopperNodeBlock.block.getDefaultState().getBlock())
+									&& (!((world.getBlockState(new BlockPos((int) (x + (sx)), (int) ((y + (sy)) + 1), (int) (z + (sz)))))
+											.getBlock() == MinerblockBlock.block.getDefaultState().getBlock())))) {
+								if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+									((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+											(("Free Copper Node Found On:") + "" + ("  X:") + "" + (Math.round(((x + (sx)) + 1))) + "" + ("  Y:") + ""
+													+ (Math.round((y + (sy)))) + "" + ("  Z:") + "" + (Math.round((z + (sz)))))),
+											(false));
+								}
+								found = (boolean) (true);
+							}
+							sz = (double) ((sz) + 1);
+						}
+						sy = (double) ((sy) + 1);
+					}
+					sx = (double) ((sx) + 1);
+				}
+				if (((found) == (false))) {
+					if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("No Free Copper Nodes Around"), (false));
+					}
+				}
 			}
-			if (((found) == (false))) {
-				if (entity instanceof PlayerEntity && !entity.world.isRemote) {
-					((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("No Nodes Around"), (false));
-				}
+		} else {
+			if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Low Battery!"), (false));
 			}
 		}
 	}

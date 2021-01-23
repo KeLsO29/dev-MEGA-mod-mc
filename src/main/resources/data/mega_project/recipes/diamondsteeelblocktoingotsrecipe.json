@@ -1,0 +1,13 @@
+{
+  "group": "blockstoingots",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "mega_project:diamond_steelblock"
+    }
+  ],
+  "result": {
+    "item": "mega_project:diamondsteelitem",
+    "count": 9
+  }
+}

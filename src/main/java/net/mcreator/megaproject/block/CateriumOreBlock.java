@@ -27,7 +27,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
-import net.mcreator.megaproject.item.CateriumIngotItem;
 import net.mcreator.megaproject.MegaProjectModElements;
 
 import java.util.Random;
@@ -51,7 +50,7 @@ public class CateriumOreBlock extends MegaProjectModElements.ModElement {
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(9f, 12.041123426403463f).lightValue(0)
-					.harvestLevel(6).harvestTool(ToolType.PICKAXE));
+					.harvestLevel(2).harvestTool(ToolType.PICKAXE));
 			setRegistryName("caterium_ore");
 		}
 
@@ -60,7 +59,7 @@ public class CateriumOreBlock extends MegaProjectModElements.ModElement {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(CateriumIngotItem.block, (int) (1)));
+			return Collections.singletonList(new ItemStack(this, 1));
 		}
 	}
 	@Override
@@ -82,7 +81,7 @@ public class CateriumOreBlock extends MegaProjectModElements.ModElement {
 				if (blockAt.getBlock() == Blocks.STONE.getDefaultState().getBlock())
 					blockCriteria = true;
 				return blockCriteria;
-			}), block.getDefaultState(), 2)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(4, 1, 1, 23))));
+			}), block.getDefaultState(), 5)).withPlacement(Placement.COUNT_RANGE.configure(new CountRangeConfig(10, 1, 1, 23))));
 		}
 	}
 }

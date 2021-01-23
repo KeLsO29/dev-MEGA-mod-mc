@@ -49,34 +49,24 @@ public class HubPlayerStartsToDestroyProcedure extends MegaProjectModElements.Mo
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		{
-			double _setval = (double) (new Object() {
-				public double getValue(BlockPos pos, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getDouble(tag);
-					return -1;
-				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Iron"));
-			entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.hub_iron_save = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
-		{
-			double _setval = (double) (new Object() {
-				public double getValue(BlockPos pos, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getDouble(tag);
-					return -1;
-				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Coal"));
-			entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.hub_coal_save = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
+		MegaProjectModVariables.MapVariables.get(world).hub_iron_save = (double) (new Object() {
+			public double getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getDouble(tag);
+				return -1;
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "Iron"));
+		MegaProjectModVariables.MapVariables.get(world).syncData(world);
+		MegaProjectModVariables.MapVariables.get(world).hub_coal_save = (double) (new Object() {
+			public double getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getDouble(tag);
+				return -1;
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "Coal"));
+		MegaProjectModVariables.MapVariables.get(world).syncData(world);
 		MegaProjectModVariables.MapVariables.get(world).hub_caterium_save = (double) (new Object() {
 			public double getValue(BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
@@ -94,6 +84,15 @@ public class HubPlayerStartsToDestroyProcedure extends MegaProjectModElements.Mo
 				return -1;
 			}
 		}.getValue(new BlockPos((int) x, (int) y, (int) z), "Energy"));
+		MegaProjectModVariables.MapVariables.get(world).syncData(world);
+		MegaProjectModVariables.MapVariables.get(world).hub_copper_save = (double) (new Object() {
+			public double getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getDouble(tag);
+				return -1;
+			}
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "Copper"));
 		MegaProjectModVariables.MapVariables.get(world).syncData(world);
 		if (entity instanceof PlayerEntity && !entity.world.isRemote) {
 			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Materials and Energy Saved."), (false));

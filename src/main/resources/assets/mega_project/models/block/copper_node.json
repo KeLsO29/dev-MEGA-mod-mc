@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "mega_project:blocks/copper_ore",
+    "up": "mega_project:blocks/copper_node_block",
+    "north": "mega_project:blocks/copper_ore",
+    "east": "mega_project:blocks/copper_ore",
+    "south": "mega_project:blocks/copper_ore",
+    "west": "mega_project:blocks/copper_ore",
+    "particle": "mega_project:blocks/copper_ore"
+  }
+}

@@ -60,7 +60,8 @@ public class MinerblockBlockDestroyedByPlayerProcedure extends MegaProjectModEle
 		}
 		if (entity instanceof PlayerEntity && !entity.world.isRemote) {
 			((PlayerEntity) entity).sendStatusMessage(
-					new StringTextComponent("Chunk Force Unloaded!  Other Miners in range 16 blocks may be affected. Make sure you replace them."),
+					new StringTextComponent(
+							"Chunk Force Unloaded!  Other Miners/Generators in range 16 blocks may be affected. Make sure you replace them."),
 					(false));
 		}
 	}

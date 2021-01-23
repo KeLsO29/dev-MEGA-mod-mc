@@ -1,0 +1,30 @@
+{
+  "group": "nodescanner",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " 1 ",
+    " 4 ",
+    "678"
+  ],
+  "key": {
+    "1": {
+      "item": "mega_project:redstoneingotitem"
+    },
+    "4": {
+      "item": "minecraft:diamond"
+    },
+    "6": {
+      "item": "mega_project:circuit_boarditem"
+    },
+    "7": {
+      "item": "mega_project:circuit_boarditem"
+    },
+    "8": {
+      "item": "mega_project:circuit_boarditem"
+    }
+  },
+  "result": {
+    "item": "mega_project:node_scanner_tool",
+    "count": 1
+  }
+}

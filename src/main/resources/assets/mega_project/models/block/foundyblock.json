@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "mega_project:blocks/smoker_bottom",
+    "up": "mega_project:blocks/fondry_top",
+    "north": "mega_project:blocks/foundry_front",
+    "east": "mega_project:blocks/furnace_side",
+    "south": "mega_project:blocks/furnace_side",
+    "west": "mega_project:blocks/furnace_side",
+    "particle": "mega_project:blocks/smoker_bottom"
+  }
+}
