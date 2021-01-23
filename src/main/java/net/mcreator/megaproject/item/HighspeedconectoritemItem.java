@@ -12,11 +12,11 @@ import net.minecraft.block.BlockState;
 import net.mcreator.megaproject.MegaProjectModElements;
 
 @MegaProjectModElements.ModElement.Tag
-public class SteelingotItem extends MegaProjectModElements.ModElement {
-	@ObjectHolder("mega_project:steelingot")
+public class HighspeedconectoritemItem extends MegaProjectModElements.ModElement {
+	@ObjectHolder("mega_project:highspeedconectoritem")
 	public static final Item block = null;
-	public SteelingotItem(MegaProjectModElements instance) {
-		super(instance, 86);
+	public HighspeedconectoritemItem(MegaProjectModElements instance) {
+		super(instance, 102);
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public class SteelingotItem extends MegaProjectModElements.ModElement {
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64).rarity(Rarity.UNCOMMON));
-			setRegistryName("steelingot");
+			setRegistryName("highspeedconectoritem");
 		}
 
 		@Override

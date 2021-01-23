@@ -1735,6 +1735,18 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
           }
         ]
       }
@@ -1933,6 +1945,15 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "foundryrecipe"
+    },
+    {
+      "name": "Highspeedconectoritem",
+      "type": "item",
+      "sortid": 102,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "highspeedconectoritem"
     }
   ],
   "variable_elements": [
@@ -2036,32 +2057,55 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
+      "block.mega_project.steel_block": "Steel Block",
+      "advancements.turbo_fueladvancement.descr": "Turbo Fuel!",
       "block.mega_project.iron_ore_node_block_inactive": "Iron Ore Node Block Inactive",
-      "block.mega_project.coal_node": "Coal Node(active)",
-      "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
       "item.mega_project.turbofuelitem": "Turbofuel Mk.1",
+      "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
       "item.mega_project.redstoneingotitem": "Redstone Ingot",
       "block.mega_project.caterium_ore": "Caterium Ore",
       "block.mega_project.copper_block": "Block of Copper",
-      "item.mega_project.copper_ingot": "Copper",
-      "block.mega_project.constructorblock": "Constructor",
+      "block.mega_project.copper_node_inactve": "Copper Node(inactive)",
+      "advancements.copperadvancement.title": "Copper",
+      "block.mega_project.diamond_steelblock": "Diamond Steel",
       "block.mega_project.copper_node": "Copper Node(active)",
       "block.mega_project.presserblock": "Presser",
       "block.mega_project.caterium_block": "Block of Caterium",
       "item.mega_project.caterium_ingot": "Caterium Ingot",
-      "block.mega_project.caterium_nod_eblock": "Caterium  Node Block (active)",
-      "item.mega_project.turbofuelitem_2": "Turbofuel Mk.2",
-      "item.mega_project.turbofuelitem_3": "Turbofuel Mk.3",
-      "block.mega_project.generator_mk_1": "Generator MK 1",
+      "item.mega_project.node_scanner_tool": "Node Scanner",
+      "advancements.copperadvancement.descr": "Cooper!",
+      "advancements.allrecipescheat.title": "All Recipes Cheat",
       "block.mega_project.caterium_node_block_inactive": "Caterium Node Block Inactive",
       "block.mega_project.minerblock": "Miner",
-      "block.mega_project.copper_ore": "Copper Ore",
-      "block.mega_project.coal_node_inactive": "Coal Node Inactive",
+      "item.mega_project.steelingot": "Steel Ingot",
       "block.mega_project.iron_ore_node_block": "Iron Ore Node Block(active)",
-      "item.mega_project.node_scanner": "Node Scanner",
+      "advancements.cateriumadvancement.title": "Caterium",
+      "item.mega_project.highspeedconectoritem": "Highspeedconector",
+      "advancements.hub_crafted_achievment.title": "Hub Crafted",
       "block.mega_project.hub": "Hub",
       "key.mcreator.adminmenukeybind": "Admin Menu",
       "item.mega_project.copper_sheet_item": "Copper Sheet",
+      "advancements.turbo_fueladvancement.title": "Turbo Fuel",
+      "block.mega_project.coal_node": "Coal Node(active)",
+      "advancements.electronics.descr": "Electronics!",
+      "advancements.electronics.title": "Electronics",
+      "block.mega_project.chargerblock": "Charger",
+      "item.mega_project.copper_ingot": "Copper",
+      "advancements.rudit_ingotadvancement.title": "Rudit Ingot",
+      "block.mega_project.constructorblock": "Constructor",
+      "advancements.rudit_ingotadvancement.descr": "Advanced Redstone",
+      "block.mega_project.caterium_nod_eblock": "Caterium  Node Block (active)",
+      "advancements.allrecipescheat.descr": "Unlock Recipe Cheat",
+      "block.mega_project.foundyblock": "Foundy",
+      "item.mega_project.turbofuelitem_2": "Turbofuel Mk.2",
+      "block.mega_project.generator_mk_1": "Generator MK 1",
+      "item.mega_project.turbofuelitem_3": "Turbofuel Mk.3",
+      "block.mega_project.copper_ore": "Copper Ore",
+      "block.mega_project.coal_node_inactive": "Coal Node Inactive",
+      "item.mega_project.node_scanner": "Node Scanner",
+      "item.mega_project.diamondsteelitem": "Diamond Steel Ingot",
+      "advancements.hub_crafted_achievment.descr": "You Enter MENALOMANS Way",
+      "advancements.cateriumadvancement.descr": "Caterium!",
       "item.mega_project.circuit_boarditem": "Circuit Board"
     }
   },

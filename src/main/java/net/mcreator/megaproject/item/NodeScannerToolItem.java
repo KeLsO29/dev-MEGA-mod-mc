@@ -1,12 +1,38 @@
 
 package net.mcreator.megaproject.item;
 
+import net.minecraftforge.registries.ObjectHolder;
+
+import net.minecraft.world.World;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.Hand;
+import net.minecraft.util.ActionResult;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.Item;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.block.BlockState;
+
+import net.mcreator.megaproject.procedures.NodeScannerRightClickedOnBlockProcedure;
+import net.mcreator.megaproject.MegaProjectModElements;
+
+import java.util.Map;
+import java.util.List;
+import java.util.HashMap;
+
+import com.google.common.collect.Multimap;
+
 @MegaProjectModElements.ModElement.Tag
 public class NodeScannerToolItem extends MegaProjectModElements.ModElement {
-
 	@ObjectHolder("mega_project:node_scanner_tool")
 	public static final Item block = null;
-
 	public NodeScannerToolItem(MegaProjectModElements instance) {
 		super(instance, 62);
 	}
@@ -14,7 +40,6 @@ public class NodeScannerToolItem extends MegaProjectModElements.ModElement {
 	@Override
 	public void initElements() {
 		elements.items.add(() -> new ItemToolCustom() {
-
 			@Override
 			public void addInformation(ItemStack itemstack, World world, List<ITextComponent> list, ITooltipFlag flag) {
 				super.addInformation(itemstack, world, list, flag);
@@ -30,24 +55,19 @@ public class NodeScannerToolItem extends MegaProjectModElements.ModElement {
 				double z = entity.getPosZ();
 				{
 					Map<String, Object> $_dependencies = new HashMap<>();
-
 					$_dependencies.put("entity", entity);
 					$_dependencies.put("itemstack", itemstack);
 					$_dependencies.put("x", x);
 					$_dependencies.put("y", y);
 					$_dependencies.put("z", z);
 					$_dependencies.put("world", world);
-
 					NodeScannerRightClickedOnBlockProcedure.executeProcedure($_dependencies);
 				}
 				return retval;
 			}
-
 		}.setRegistryName("node_scanner_tool"));
 	}
-
 	private static class ItemToolCustom extends Item {
-
 		protected ItemToolCustom() {
 			super(new Item.Properties().group(ItemGroup.TOOLS).maxDamage(100));
 		}
@@ -83,10 +103,7 @@ public class NodeScannerToolItem extends MegaProjectModElements.ModElement {
 				multimap.put(SharedMonsterAttributes.ATTACK_SPEED.getName(),
 						new AttributeModifier(ATTACK_SPEED_MODIFIER, "Tool modifier", -4, AttributeModifier.Operation.ADDITION));
 			}
-
 			return multimap;
 		}
-
 	}
-
 }
