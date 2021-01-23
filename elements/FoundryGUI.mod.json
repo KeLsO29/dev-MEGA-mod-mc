@@ -19,8 +19,8 @@
             "falpha": 0.0
           },
           "name": "Foundry",
-          "x": 196,
-          "y": 42
+          "x": 195,
+          "y": 41
         }
       },
       {
@@ -60,6 +60,22 @@
           "name": "Slot #2",
           "x": 204,
           "y": 89
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Working",
+          "color": {
+            "value": -16738048,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "GeneratorWorkingLabel"
+          },
+          "name": "Working",
+          "x": 195,
+          "y": 71
         }
       }
     ]

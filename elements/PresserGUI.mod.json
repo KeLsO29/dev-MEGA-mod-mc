@@ -47,6 +47,22 @@
           "x": 249,
           "y": 69
         }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Working",
+          "color": {
+            "value": -16738048,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "GeneratorWorkingLabel"
+          },
+          "name": "Working",
+          "x": 192,
+          "y": 70
+        }
       }
     ]
   }

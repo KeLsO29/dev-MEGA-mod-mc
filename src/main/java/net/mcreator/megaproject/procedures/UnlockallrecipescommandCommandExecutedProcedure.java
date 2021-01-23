@@ -1,11 +1,21 @@
 package net.mcreator.megaproject.procedures;
 
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.entity.Entity;
+import net.minecraft.advancements.AdvancementProgress;
+import net.minecraft.advancements.Advancement;
+
+import net.mcreator.megaproject.MegaProjectModElements;
+
+import java.util.Map;
+import java.util.Iterator;
+
 @MegaProjectModElements.ModElement.Tag
 public class UnlockallrecipescommandCommandExecutedProcedure extends MegaProjectModElements.ModElement {
-
 	public UnlockallrecipescommandCommandExecutedProcedure(MegaProjectModElements instance) {
 		super(instance, 91);
-
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -14,12 +24,10 @@ public class UnlockallrecipescommandCommandExecutedProcedure extends MegaProject
 				System.err.println("Failed to load dependency entity for procedure UnlockallrecipescommandCommandExecuted!");
 			return;
 		}
-
 		Entity entity = (Entity) dependencies.get("entity");
-
 		if (entity instanceof ServerPlayerEntity) {
 			Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
-					.getAdvancement(new ResourceLocation("mega_project:@registryname"));
+					.getAdvancement(new ResourceLocation("mega_project:allrecipescheat"));
 			AdvancementProgress _ap = ((ServerPlayerEntity) entity).getAdvancements().getProgress(_adv);
 			if (!_ap.isDone()) {
 				Iterator _iterator = _ap.getRemaningCriteria().iterator();
@@ -29,7 +37,5 @@ public class UnlockallrecipescommandCommandExecutedProcedure extends MegaProject
 				}
 			}
 		}
-
 	}
-
 }

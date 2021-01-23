@@ -36,12 +36,21 @@
       "mega_project:coppersheetrecipe",
       "mega_project:circuit_boardrecipe",
       "mega_project:constructorrecipe",
-      "mega_project:node_scanner_recipe",
-      "mega_project:miner_mk_1recipe",
-      "mega_project:generator_mk_1recipe",
       "mega_project:hub_recipe",
+      "mega_project:steelblocktoingotsrecipe",
+      "mega_project:node_scanner_recipe",
+      "mega_project:steel_block_recipe",
+      "mega_project:generator_mk_1recipe",
       "mega_project:charger_blockrecipe",
-      "mega_project:steel_block_recipe"
+      "mega_project:miner_mk_1recipe",
+      "mega_project:diamondsteelblockrecipe",
+      "mega_project:diamondsteeelblocktoingotsrecipe",
+      "mega_project:foundryrecipe",
+      "mega_project:generator_mk_2recipe",
+      "mega_project:presserrecipe",
+      "mega_project:diamondsteelswordrecipe",
+      "mega_project:diamondsteelpickaxerecipe",
+      "mega_project:diamondsteelaxerecipe"
     ]
   }
 }

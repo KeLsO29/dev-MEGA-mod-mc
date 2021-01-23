@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "mega_project:block/generatormk_2"
+    },
+    "facing=east": {
+      "model": "mega_project:block/generatormk_2",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "mega_project:block/generatormk_2",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mega_project:block/generatormk_2",
+      "y": 270
+    }
+  }
+}

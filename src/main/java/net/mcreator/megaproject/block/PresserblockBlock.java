@@ -106,7 +106,7 @@ public class PresserblockBlock extends MegaProjectModElements.ModElement {
 
 		@Override
 		public int tickRate(IWorldReader world) {
-			return 80;
+			return 160;
 		}
 
 		@Override
