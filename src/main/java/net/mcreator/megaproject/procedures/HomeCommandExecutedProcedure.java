@@ -1,20 +1,11 @@
 package net.mcreator.megaproject.procedures;
 
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-
-import net.mcreator.megaproject.MegaProjectModVariables;
-import net.mcreator.megaproject.MegaProjectModElements;
-
-import java.util.Map;
-import java.util.Collections;
-
 @MegaProjectModElements.ModElement.Tag
 public class HomeCommandExecutedProcedure extends MegaProjectModElements.ModElement {
+
 	public HomeCommandExecutedProcedure(MegaProjectModElements instance) {
 		super(instance, 81);
+
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -38,10 +29,12 @@ public class HomeCommandExecutedProcedure extends MegaProjectModElements.ModElem
 				System.err.println("Failed to load dependency z for procedure HomeCommandExecuted!");
 			return;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
+
 		{
 			double _setval = (double) x;
 			entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -86,5 +79,7 @@ public class HomeCommandExecutedProcedure extends MegaProjectModElements.ModElem
 		if (entity instanceof PlayerEntity && !entity.world.isRemote) {
 			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Now you are at home."), (true));
 		}
+
 	}
+
 }

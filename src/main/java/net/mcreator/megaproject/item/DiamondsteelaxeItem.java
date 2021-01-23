@@ -1,20 +1,12 @@
 
 package net.mcreator.megaproject.item;
 
-import net.minecraftforge.registries.ObjectHolder;
-
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Item;
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.AxeItem;
-
-import net.mcreator.megaproject.MegaProjectModElements;
-
 @MegaProjectModElements.ModElement.Tag
 public class DiamondsteelaxeItem extends MegaProjectModElements.ModElement {
+
 	@ObjectHolder("mega_project:diamondsteelaxe")
 	public static final Item block = null;
+
 	public DiamondsteelaxeItem(MegaProjectModElements instance) {
 		super(instance, 112);
 	}
@@ -46,6 +38,8 @@ public class DiamondsteelaxeItem extends MegaProjectModElements.ModElement {
 				return Ingredient.EMPTY;
 			}
 		}, 1, 1f, new Item.Properties().group(ItemGroup.TOOLS)) {
+
 		}.setRegistryName("diamondsteelaxe"));
 	}
+
 }

@@ -1947,13 +1947,22 @@
       "registry_name": "foundryrecipe"
     },
     {
-      "name": "Generatormk2",
-      "type": "block",
-      "sortid": 102,
+      "name": "GeneratorMK2recipe",
+      "type": "recipe",
+      "sortid": 106,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "generatormk_2"
+      "registry_name": "generator_mk_2recipe"
+    },
+    {
+      "name": "Diamondsteelaxe",
+      "type": "tool",
+      "sortid": 112,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamondsteelaxe"
     },
     {
       "name": "GeneratorMK2GUI",
@@ -1994,6 +2003,60 @@
       }
     },
     {
+      "name": "Diamondsteelpickaxerecipe",
+      "type": "recipe",
+      "sortid": 111,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamondsteelpickaxerecipe"
+    },
+    {
+      "name": "DiamondSteelSword",
+      "type": "tool",
+      "sortid": 108,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamond_steel_sword"
+    },
+    {
+      "name": "Generatormk2",
+      "type": "block",
+      "sortid": 102,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "generatormk_2"
+    },
+    {
+      "name": "Presserrecipe",
+      "type": "recipe",
+      "sortid": 107,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "presserrecipe"
+    },
+    {
+      "name": "Diamondsteelaxerecipe",
+      "type": "recipe",
+      "sortid": 113,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamondsteelaxerecipe"
+    },
+    {
+      "name": "DiamondSteelpickaxe",
+      "type": "tool",
+      "sortid": 109,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamond_steelpickaxe"
+    },
+    {
       "name": "Generatormk2ClientDisplayRandomTick",
       "type": "procedure",
       "sortid": 105,
@@ -2023,78 +2086,6 @@
       }
     },
     {
-      "name": "GeneratorMK2recipe",
-      "type": "recipe",
-      "sortid": 106,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "generator_mk_2recipe"
-    },
-    {
-      "name": "Presserrecipe",
-      "type": "recipe",
-      "sortid": 107,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "presserrecipe"
-    },
-    {
-      "name": "DiamondSteelSword",
-      "type": "tool",
-      "sortid": 108,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "diamond_steel_sword"
-    },
-    {
-      "name": "DiamondSteelpickaxe",
-      "type": "tool",
-      "sortid": 109,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "diamond_steelpickaxe"
-    },
-    {
-      "name": "Diamondsteelswordrecipe",
-      "type": "recipe",
-      "sortid": 110,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "diamondsteelswordrecipe"
-    },
-    {
-      "name": "Diamondsteelpickaxerecipe",
-      "type": "recipe",
-      "sortid": 111,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "diamondsteelpickaxerecipe"
-    },
-    {
-      "name": "Diamondsteelaxe",
-      "type": "tool",
-      "sortid": 112,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "diamondsteelaxe"
-    },
-    {
-      "name": "Diamondsteelaxerecipe",
-      "type": "recipe",
-      "sortid": 113,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "diamondsteelaxerecipe"
-    },
-    {
       "name": "Moreredstone",
       "type": "procedure",
       "sortid": 114,
@@ -2122,6 +2113,24 @@
           }
         ]
       }
+    },
+    {
+      "name": "Diamondsteelswordrecipe",
+      "type": "recipe",
+      "sortid": 110,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamondsteelswordrecipe"
+    },
+    {
+      "name": "Highspeedconectoritem",
+      "type": "item",
+      "sortid": 102,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "highspeedconectoritem"
     }
   ],
   "variable_elements": [
