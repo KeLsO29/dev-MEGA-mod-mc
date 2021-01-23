@@ -8,35 +8,35 @@
   ],
   "key": {
     "0": {
-      "item": "mega_project:steelingot"
+      "item": "mega_project:unknown_element"
     },
     "1": {
-      "item": "mega_project:steelingot"
+      "item": "mega_project:unknown_element"
     },
     "2": {
-      "item": "mega_project:steelingot"
+      "item": "mega_project:unknown_element"
     },
     "3": {
-      "item": "mega_project:steelingot"
+      "item": "mega_project:unknown_element"
     },
     "4": {
-      "item": "mega_project:steelingot"
+      "item": "mega_project:unknown_element"
     },
     "5": {
-      "item": "mega_project:steelingot"
+      "item": "mega_project:unknown_element"
     },
     "6": {
-      "item": "mega_project:steelingot"
+      "item": "mega_project:unknown_element"
     },
     "7": {
-      "item": "mega_project:steelingot"
+      "item": "mega_project:unknown_element"
     },
     "8": {
-      "item": "mega_project:steelingot"
+      "item": "mega_project:unknown_element"
     }
   },
   "result": {
-    "item": "mega_project:steel_block",
+    "item": "mega_project:unknown_element",
     "count": 1
   }
 }

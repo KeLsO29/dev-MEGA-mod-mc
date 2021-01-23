@@ -3,11 +3,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "mega_project:steel_block"
+      "item": "mega_project:unknown_element"
     }
   ],
   "result": {
-    "item": "mega_project:steelingot",
+    "item": "mega_project:unknown_element",
     "count": 9
   }
 }

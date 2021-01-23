@@ -1,26 +1,11 @@
 package net.mcreator.megaproject.procedures;
 
-import net.minecraftforge.items.IItemHandlerModifiable;
-import net.minecraftforge.items.CapabilityItemHandler;
-
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.block.BlockState;
-
-import net.mcreator.megaproject.item.NodeScannerToolItem;
-import net.mcreator.megaproject.MegaProjectModVariables;
-import net.mcreator.megaproject.MegaProjectModElements;
-
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.Random;
-import java.util.Map;
-
 @MegaProjectModElements.ModElement.Tag
 public class ChargerblockUpdateTickProcedure extends MegaProjectModElements.ModElement {
+
 	public ChargerblockUpdateTickProcedure(MegaProjectModElements instance) {
 		super(instance, 76);
+
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -44,10 +29,12 @@ public class ChargerblockUpdateTickProcedure extends MegaProjectModElements.ModE
 				System.err.println("Failed to load dependency world for procedure ChargerblockUpdateTick!");
 			return;
 		}
+
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
+
 		if ((((new Object() {
 			public double getValue(BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
@@ -98,6 +85,7 @@ public class ChargerblockUpdateTickProcedure extends MegaProjectModElements.ModE
 					}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 							(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 							(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 10));
+
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			{
@@ -118,5 +106,7 @@ public class ChargerblockUpdateTickProcedure extends MegaProjectModElements.ModE
 				}
 			}
 		}
+
 	}
+
 }

@@ -1208,31 +1208,13 @@
       }
     },
     {
-      "name": "NodeScannerRecipe",
-      "type": "recipe",
-      "sortid": 57,
+      "name": "TurboFueladvancement",
+      "type": "achievement",
+      "sortid": 72,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "node_scanner_recipe"
-    },
-    {
-      "name": "MinerMK1recipe",
-      "type": "recipe",
-      "sortid": 58,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "miner_mk_1recipe"
-    },
-    {
-      "name": "GeneratorMK1recipe",
-      "type": "recipe",
-      "sortid": 59,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "generator_mk_1recipe"
+      "registry_name": "turbo_fueladvancement"
     },
     {
       "name": "HubRECIPE",
@@ -1244,13 +1226,59 @@
       "registry_name": "hub_recipe"
     },
     {
-      "name": "HubCraftedAchievment",
+      "name": "Electronics",
       "type": "achievement",
-      "sortid": 61,
+      "sortid": 70,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "hub_crafted_achievment"
+      "registry_name": "electronics"
+    },
+    {
+      "name": "BackcommandCommandExecuted",
+      "type": "procedure",
+      "sortid": 82,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "backcommand_command_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FoundyblockUpdateTick",
+      "type": "procedure",
+      "sortid": 85,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "foundyblock_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     },
     {
       "name": "NodeScannerTool",
@@ -1262,40 +1290,13 @@
       "registry_name": "node_scanner_tool"
     },
     {
-      "name": "Copperadvancement",
-      "type": "achievement",
-      "sortid": 63,
+      "name": "Diamondsteelitem",
+      "type": "item",
+      "sortid": 93,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "copperadvancement"
-    },
-    {
-      "name": "Cateriumadvancement",
-      "type": "achievement",
-      "sortid": 64,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "cateriumadvancement"
-    },
-    {
-      "name": "CopperNode",
-      "type": "block",
-      "sortid": 65,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "copper_node"
-    },
-    {
-      "name": "CopperNodeInactve",
-      "type": "block",
-      "sortid": 66,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "copper_node_inactve"
+      "registry_name": "diamondsteelitem"
     },
     {
       "name": "CopperNodeUpdateTick",
@@ -1327,188 +1328,13 @@
       }
     },
     {
-      "name": "CopperNodeInactveUpdateTick",
-      "type": "procedure",
-      "sortid": 68,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "copper_node_inactve_update_tick",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "CopperNodeStructureAdditionalGenerationCondition",
-      "type": "procedure",
-      "sortid": 69,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "copper_node_structure_additional_generation_condition",
-      "metadata": {
-        "return_type": "LOGIC",
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "CopperNodeStructure",
-      "type": "structure",
-      "sortid": 69,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "copper_node_structure"
-    },
-    {
-      "name": "Electronics",
-      "type": "achievement",
-      "sortid": 70,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "electronics"
-    },
-    {
-      "name": "RuditIngotadvancement",
-      "type": "achievement",
-      "sortid": 71,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "rudit_ingotadvancement"
-    },
-    {
-      "name": "TurboFueladvancement",
-      "type": "achievement",
-      "sortid": 72,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "turbo_fueladvancement"
-    },
-    {
-      "name": "CopperNodeBlockIsPlacedBy",
-      "type": "procedure",
-      "sortid": 73,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "copper_node_block_is_placed_by",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Chargerblock",
+      "name": "DiamondSteelblock",
       "type": "block",
-      "sortid": 74,
+      "sortid": 94,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "chargerblock"
-    },
-    {
-      "name": "Chargergui",
-      "type": "gui",
-      "sortid": 75,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "chargergui"
-    },
-    {
-      "name": "ChargerblockUpdateTick",
-      "type": "procedure",
-      "sortid": 76,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "chargerblock_update_tick",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "ChargerBlockrecipe",
-      "type": "recipe",
-      "sortid": 77,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "charger_blockrecipe"
+      "registry_name": "diamond_steelblock"
     },
     {
       "name": "GeneratorMK1BlockDestroyedByPlayer",
@@ -1577,200 +1403,22 @@
       }
     },
     {
-      "name": "SethomeCommandExecuted",
-      "type": "procedure",
-      "sortid": 80,
+      "name": "Steelblocktoingotsrecipe",
+      "type": "recipe",
+      "sortid": 96,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "sethome_command_executed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          }
-        ]
-      }
+      "registry_name": "steelblocktoingotsrecipe"
     },
     {
-      "name": "Sethome",
-      "type": "command",
-      "sortid": 80,
+      "name": "NodeScannerRecipe",
+      "type": "recipe",
+      "sortid": 57,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "sethome"
-    },
-    {
-      "name": "HomeCommandExecuted",
-      "type": "procedure",
-      "sortid": 81,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "home_command_executed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Home",
-      "type": "command",
-      "sortid": 81,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "home"
-    },
-    {
-      "name": "BackcommandCommandExecuted",
-      "type": "procedure",
-      "sortid": 82,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "backcommand_command_executed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Backcommand",
-      "type": "command",
-      "sortid": 82,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "backcommand"
-    },
-    {
-      "name": "Foundyblock",
-      "type": "block",
-      "sortid": 83,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "foundyblock"
-    },
-    {
-      "name": "FoundryGUI",
-      "type": "gui",
-      "sortid": 84,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "foundry_gui"
-    },
-    {
-      "name": "FoundyblockUpdateTick",
-      "type": "procedure",
-      "sortid": 85,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "foundyblock_update_tick",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Steelingot",
-      "type": "item",
-      "sortid": 86,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "steelingot"
-    },
-    {
-      "name": "FoundyblockClientDisplayRandomTick",
-      "type": "procedure",
-      "sortid": 87,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "foundyblock_client_display_random_tick",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "SteelBlock",
-      "type": "block",
-      "sortid": 88,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "steel_block"
+      "registry_name": "node_scanner_recipe"
     },
     {
       "name": "SteelBlockRecipe",
@@ -1780,15 +1428,6 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "steel_block_recipe"
-    },
-    {
-      "name": "Allrecipescheat",
-      "type": "achievement",
-      "sortid": 90,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "allrecipescheat"
     },
     {
       "name": "UnlockallrecipescommandCommandExecuted",
@@ -1808,76 +1447,117 @@
       }
     },
     {
-      "name": "Unlockallrecipescommand",
+      "name": "GeneratorMK1recipe",
+      "type": "recipe",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "generator_mk_1recipe"
+    },
+    {
+      "name": "CopperNodeInactveUpdateTick",
+      "type": "procedure",
+      "sortid": 68,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_node_inactve_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Sethome",
       "type": "command",
-      "sortid": 91,
+      "sortid": 80,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "unlockallrecipescommand"
+      "registry_name": "sethome"
     },
     {
-      "name": "Foundryrecipe",
-      "type": "recipe",
-      "sortid": 92,
+      "name": "RuditIngotadvancement",
+      "type": "achievement",
+      "sortid": 71,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "foundryrecipe"
+      "registry_name": "rudit_ingotadvancement"
     },
     {
-      "name": "Diamondsteelitem",
+      "name": "CopperNodeStructureAdditionalGenerationCondition",
+      "type": "procedure",
+      "sortid": 69,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_node_structure_additional_generation_condition",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Chargergui",
+      "type": "gui",
+      "sortid": 75,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chargergui"
+    },
+    {
+      "name": "Steelingot",
       "type": "item",
-      "sortid": 93,
+      "sortid": 86,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "diamondsteelitem"
+      "registry_name": "steelingot"
     },
     {
-      "name": "DiamondSteelblock",
-      "type": "block",
-      "sortid": 94,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "diamond_steelblock"
-    },
-    {
-      "name": "Diamondsteelblockrecipe",
+      "name": "ChargerBlockrecipe",
       "type": "recipe",
-      "sortid": 95,
+      "sortid": 77,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "diamondsteelblockrecipe"
-    },
-    {
-      "name": "Steelblocktoingotsrecipe",
-      "type": "recipe",
-      "sortid": 96,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "steelblocktoingotsrecipe"
-    },
-    {
-      "name": "Diamondsteeelblocktoingotsrecipe",
-      "type": "recipe",
-      "sortid": 97,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "diamondsteeelblocktoingotsrecipe"
-    },
-    {
-      "name": "Presserblock",
-      "type": "block",
-      "sortid": 98,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "presserblock"
+      "registry_name": "charger_blockrecipe"
     },
     {
       "name": "PresserGUI",
@@ -1887,6 +1567,75 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "presser_gui"
+    },
+    {
+      "name": "CopperNode",
+      "type": "block",
+      "sortid": 65,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_node"
+    },
+    {
+      "name": "SteelBlock",
+      "type": "block",
+      "sortid": 88,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "steel_block"
+    },
+    {
+      "name": "MinerMK1recipe",
+      "type": "recipe",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "miner_mk_1recipe"
+    },
+    {
+      "name": "HubCraftedAchievment",
+      "type": "achievement",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "hub_crafted_achievment"
+    },
+    {
+      "name": "CopperNodeBlockIsPlacedBy",
+      "type": "procedure",
+      "sortid": 73,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_node_block_is_placed_by",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     },
     {
       "name": "PresserblockUpdateTick",
@@ -1918,6 +1667,218 @@
       }
     },
     {
+      "name": "Cateriumadvancement",
+      "type": "achievement",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cateriumadvancement"
+    },
+    {
+      "name": "Diamondsteelblockrecipe",
+      "type": "recipe",
+      "sortid": 95,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamondsteelblockrecipe"
+    },
+    {
+      "name": "ChargerblockUpdateTick",
+      "type": "procedure",
+      "sortid": 76,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chargerblock_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Presserblock",
+      "type": "block",
+      "sortid": 98,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "presserblock"
+    },
+    {
+      "name": "HomeCommandExecuted",
+      "type": "procedure",
+      "sortid": 81,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "home_command_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Allrecipescheat",
+      "type": "achievement",
+      "sortid": 90,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "allrecipescheat"
+    },
+    {
+      "name": "Unlockallrecipescommand",
+      "type": "command",
+      "sortid": 91,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "unlockallrecipescommand"
+    },
+    {
+      "name": "Copperadvancement",
+      "type": "achievement",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copperadvancement"
+    },
+    {
+      "name": "Home",
+      "type": "command",
+      "sortid": 81,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "home"
+    },
+    {
+      "name": "Backcommand",
+      "type": "command",
+      "sortid": 82,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "backcommand"
+    },
+    {
+      "name": "SethomeCommandExecuted",
+      "type": "procedure",
+      "sortid": 80,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sethome_command_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CopperNodeInactve",
+      "type": "block",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_node_inactve"
+    },
+    {
+      "name": "Diamondsteeelblocktoingotsrecipe",
+      "type": "recipe",
+      "sortid": 97,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamondsteeelblocktoingotsrecipe"
+    },
+    {
+      "name": "FoundryGUI",
+      "type": "gui",
+      "sortid": 84,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "foundry_gui"
+    },
+    {
+      "name": "FoundyblockClientDisplayRandomTick",
+      "type": "procedure",
+      "sortid": 87,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "foundyblock_client_display_random_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Chargerblock",
+      "type": "block",
+      "sortid": 74,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "chargerblock"
+    },
+    {
       "name": "PresserblockClientDisplayRandomTick",
       "type": "procedure",
       "sortid": 101,
@@ -1945,21 +1906,36 @@
           }
         ]
       }
+    },
+    {
+      "name": "CopperNodeStructure",
+      "type": "structure",
+      "sortid": 69,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_node_structure"
+    },
+    {
+      "name": "Foundyblock",
+      "type": "block",
+      "sortid": 83,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "foundyblock"
+    },
+    {
+      "name": "Foundryrecipe",
+      "type": "recipe",
+      "sortid": 92,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "foundryrecipe"
     }
   ],
   "variable_elements": [
-    {
-      "name": "hub_coal_save",
-      "type": "number",
-      "scope": "map",
-      "value": "0"
-    },
-    {
-      "name": "production",
-      "type": "number",
-      "scope": "map",
-      "value": "0"
-    },
     {
       "name": "placed_hub",
       "type": "logic",
@@ -1967,7 +1943,7 @@
       "value": "false"
     },
     {
-      "name": "hub_iron_save",
+      "name": "production",
       "type": "number",
       "scope": "map",
       "value": "0"
@@ -2003,19 +1979,7 @@
       "value": "0"
     },
     {
-      "name": "hub_copper_save",
-      "type": "number",
-      "scope": "map",
-      "value": "0"
-    },
-    {
-      "name": "player_home_x",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
-    },
-    {
-      "name": "player_home_y",
+      "name": "player_back_y",
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
@@ -2033,7 +1997,19 @@
       "value": "0"
     },
     {
-      "name": "player_back_y",
+      "name": "player_home_y",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "hub_copper_save",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "player_home_x",
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
@@ -2043,58 +2019,49 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "hub_coal_save",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "hub_iron_save",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "block.mega_project.steel_block": "Steel Block",
-      "advancements.turbo_fueladvancement.descr": "Turbo Fuel!",
       "block.mega_project.iron_ore_node_block_inactive": "Iron Ore Node Block Inactive",
-      "item.mega_project.turbofuelitem": "Turbofuel Mk.1",
+      "block.mega_project.coal_node": "Coal Node(active)",
       "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
+      "item.mega_project.turbofuelitem": "Turbofuel Mk.1",
       "item.mega_project.redstoneingotitem": "Redstone Ingot",
-      "block.mega_project.copper_block": "Block of Copper",
       "block.mega_project.caterium_ore": "Caterium Ore",
-      "block.mega_project.copper_node_inactve": "Copper Node(inactive)",
-      "advancements.copperadvancement.title": "Copper",
-      "block.mega_project.diamond_steelblock": "Diamond Steel",
+      "block.mega_project.copper_block": "Block of Copper",
+      "item.mega_project.copper_ingot": "Copper",
+      "block.mega_project.constructorblock": "Constructor",
       "block.mega_project.copper_node": "Copper Node(active)",
       "block.mega_project.presserblock": "Presser",
       "block.mega_project.caterium_block": "Block of Caterium",
       "item.mega_project.caterium_ingot": "Caterium Ingot",
-      "item.mega_project.node_scanner_tool": "Node Scanner",
-      "advancements.copperadvancement.descr": "Cooper!",
-      "advancements.allrecipescheat.title": "All Recipes Cheat",
+      "block.mega_project.caterium_nod_eblock": "Caterium  Node Block (active)",
+      "item.mega_project.turbofuelitem_2": "Turbofuel Mk.2",
+      "item.mega_project.turbofuelitem_3": "Turbofuel Mk.3",
+      "block.mega_project.generator_mk_1": "Generator MK 1",
       "block.mega_project.caterium_node_block_inactive": "Caterium Node Block Inactive",
       "block.mega_project.minerblock": "Miner",
-      "item.mega_project.steelingot": "Steel Ingot",
+      "block.mega_project.copper_ore": "Copper Ore",
+      "block.mega_project.coal_node_inactive": "Coal Node Inactive",
       "block.mega_project.iron_ore_node_block": "Iron Ore Node Block(active)",
-      "advancements.cateriumadvancement.title": "Caterium",
-      "advancements.hub_crafted_achievment.title": "Hub Crafted",
+      "item.mega_project.node_scanner": "Node Scanner",
       "block.mega_project.hub": "Hub",
       "key.mcreator.adminmenukeybind": "Admin Menu",
       "item.mega_project.copper_sheet_item": "Copper Sheet",
-      "advancements.turbo_fueladvancement.title": "Turbo Fuel",
-      "block.mega_project.coal_node": "Coal Node(active)",
-      "advancements.electronics.descr": "Electronics!",
-      "advancements.electronics.title": "Electronics",
-      "block.mega_project.chargerblock": "Charger",
-      "item.mega_project.copper_ingot": "Copper",
-      "advancements.rudit_ingotadvancement.title": "Rudit Ingot",
-      "block.mega_project.constructorblock": "Constructor",
-      "advancements.rudit_ingotadvancement.descr": "Advanced Redstone",
-      "block.mega_project.caterium_nod_eblock": "Caterium  Node Block (active)",
-      "block.mega_project.foundyblock": "Foundy",
-      "advancements.allrecipescheat.descr": "Unlock Recipe Cheat",
-      "item.mega_project.turbofuelitem_2": "Turbofuel Mk.2",
-      "block.mega_project.generator_mk_1": "Generator MK 1",
-      "item.mega_project.turbofuelitem_3": "Turbofuel Mk.3",
-      "block.mega_project.copper_ore": "Copper Ore",
-      "block.mega_project.coal_node_inactive": "Coal Node Inactive",
-      "advancements.hub_crafted_achievment.descr": "You Enter MENALOMANS Way",
-      "item.mega_project.diamondsteelitem": "Diamond Steel Ingot",
-      "advancements.cateriumadvancement.descr": "Caterium!",
       "item.mega_project.circuit_boarditem": "Circuit Board"
     }
   },
