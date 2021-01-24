@@ -1,0 +1,26 @@
+{
+  "_fv": 13,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "diamond_steel_shovel",
+    "customModelName": "Normal",
+    "name": "Diamondstellshovel",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "TOOLS"
+    },
+    "toolType": "Spade",
+    "harvestLevel": 3,
+    "efficiency": 15.0,
+    "attackSpeed": 2.0,
+    "enchantability": 2,
+    "damageVsEntity": 9.0,
+    "usageCount": 115144,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

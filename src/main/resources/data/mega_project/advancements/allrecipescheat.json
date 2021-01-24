@@ -51,7 +51,9 @@
       "mega_project:presserrecipe",
       "mega_project:diamondsteelaxerecipe",
       "mega_project:diamondsteelswordrecipe",
-      "mega_project:highspeedconenctorrecipe"
+      "mega_project:highspeedconenctorrecipe",
+      "mega_project:diamondsteelshovelrecipe",
+      "mega_project:electricfurnancemk_1recipe"
     ]
   }
 }

@@ -2202,6 +2202,109 @@
           }
         ]
       }
+    },
+    {
+      "name": "Diamondstellshovel",
+      "type": "tool",
+      "sortid": 118,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamondstellshovel"
+    },
+    {
+      "name": "Diamondsteelshovelrecipe",
+      "type": "recipe",
+      "sortid": 119,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamondsteelshovelrecipe"
+    },
+    {
+      "name": "ElectricFurnanceBlock",
+      "type": "block",
+      "sortid": 120,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "electric_furnance_block"
+    },
+    {
+      "name": "ElectricFurnance",
+      "type": "gui",
+      "sortid": 121,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "electric_furnance"
+    },
+    {
+      "name": "ElectricFurnanceBlockUpdateTick",
+      "type": "procedure",
+      "sortid": 122,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "electric_furnance_block_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ElectricFurnanceBlockClientDisplayRandomTick",
+      "type": "procedure",
+      "sortid": 123,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "electric_furnance_block_client_display_random_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Electricfurnancemk1recipe",
+      "type": "recipe",
+      "sortid": 124,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "electricfurnancemk_1recipe"
     }
   ],
   "variable_elements": [
@@ -2339,6 +2442,7 @@
       "advancements.electronics.descr": "Electronics!",
       "advancements.electronics.title": "Electronics",
       "block.mega_project.chargerblock": "Charger",
+      "block.mega_project.electric_furnance_block": "Electric Furnance",
       "item.mega_project.copper_ingot": "Copper",
       "advancements.rudit_ingotadvancement.title": "Rudit Ingot",
       "block.mega_project.constructorblock": "Constructor",
@@ -2355,6 +2459,7 @@
       "block.mega_project.coal_node_inactive": "Coal Node Inactive",
       "item.mega_project.diamond_steel_sword": "Diamond Steel Sword",
       "item.mega_project.node_scanner": "Node Scanner",
+      "item.mega_project.diamondstellshovel": "Diamondstellshovel",
       "item.mega_project.diamondsteelitem": "Diamond Steel Ingot",
       "advancements.hub_crafted_achievment.descr": "You Enter MENALOMANS Way",
       "advancements.cateriumadvancement.descr": "Caterium!",

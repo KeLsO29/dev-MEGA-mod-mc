@@ -42,7 +42,9 @@
       "Presserrecipe",
       "Diamondsteelaxerecipe",
       "Diamondsteelswordrecipe",
-      "Highspeedconenctorrecipe"
+      "Highspeedconenctorrecipe",
+      "Diamondsteelshovelrecipe",
+      "Electricfurnancemk1recipe"
     ],
     "rewardFunction": "No function",
     "rewardXP": 1,
