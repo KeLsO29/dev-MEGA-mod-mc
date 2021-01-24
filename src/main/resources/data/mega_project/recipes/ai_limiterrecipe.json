@@ -1,0 +1,42 @@
+{
+  "group": "ailimiter",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "mega_project:highspeedconectoritem"
+    },
+    "1": {
+      "item": "mega_project:circuit_boarditem"
+    },
+    "2": {
+      "item": "mega_project:highspeedconectoritem"
+    },
+    "3": {
+      "item": "mega_project:circuit_boarditem"
+    },
+    "4": {
+      "item": "mega_project:steel_block"
+    },
+    "5": {
+      "item": "mega_project:circuit_boarditem"
+    },
+    "6": {
+      "item": "mega_project:highspeedconectoritem"
+    },
+    "7": {
+      "item": "mega_project:circuit_boarditem"
+    },
+    "8": {
+      "item": "mega_project:highspeedconectoritem"
+    }
+  },
+  "result": {
+    "item": "mega_project:ai_limiteritem",
+    "count": 1
+  }
+}

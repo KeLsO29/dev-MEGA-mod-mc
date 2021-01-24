@@ -2204,22 +2204,13 @@
       }
     },
     {
-      "name": "Diamondstellshovel",
-      "type": "tool",
-      "sortid": 118,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "diamondstellshovel"
-    },
-    {
-      "name": "Diamondsteelshovelrecipe",
+      "name": "Electricfurnancemk1recipe",
       "type": "recipe",
-      "sortid": 119,
+      "sortid": 124,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "diamondsteelshovelrecipe"
+      "registry_name": "electricfurnancemk_1recipe"
     },
     {
       "name": "ElectricFurnanceBlock",
@@ -2231,13 +2222,13 @@
       "registry_name": "electric_furnance_block"
     },
     {
-      "name": "ElectricFurnance",
-      "type": "gui",
-      "sortid": 121,
+      "name": "Diamondstellshovel",
+      "type": "tool",
+      "sortid": 118,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "electric_furnance"
+      "registry_name": "diamondstellshovel"
     },
     {
       "name": "ElectricFurnanceBlockUpdateTick",
@@ -2298,13 +2289,40 @@
       }
     },
     {
-      "name": "Electricfurnancemk1recipe",
+      "name": "Diamondsteelshovelrecipe",
       "type": "recipe",
-      "sortid": 124,
+      "sortid": 119,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "electricfurnancemk_1recipe"
+      "registry_name": "diamondsteelshovelrecipe"
+    },
+    {
+      "name": "ElectricFurnance",
+      "type": "gui",
+      "sortid": 121,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "electric_furnance"
+    },
+    {
+      "name": "AiLimiteritem",
+      "type": "item",
+      "sortid": 118,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ai_limiteritem"
+    },
+    {
+      "name": "AiLimiterrecipe",
+      "type": "recipe",
+      "sortid": 119,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ai_limiterrecipe"
     }
   ],
   "variable_elements": [
@@ -2411,15 +2429,15 @@
       "block.mega_project.steel_block": "Steel Block",
       "advancements.turbo_fueladvancement.descr": "Turbo Fuel!",
       "block.mega_project.iron_ore_node_block_inactive": "Iron Ore Node Block Inactive",
-      "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
       "item.mega_project.turbofuelitem": "Turbofuel Mk.1",
+      "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
       "item.mega_project.redstoneingotitem": "Redstone Ingot",
       "block.mega_project.generatormk_2": "Generator MK2",
-      "block.mega_project.copper_block": "Block of Copper",
       "block.mega_project.caterium_ore": "Caterium Ore",
+      "block.mega_project.copper_block": "Block of Copper",
       "block.mega_project.copper_node_inactve": "Copper Node(inactive)",
-      "block.mega_project.diamond_steelblock": "Diamond Steel",
       "advancements.copperadvancement.title": "Copper",
+      "block.mega_project.diamond_steelblock": "Diamond Steel",
       "block.mega_project.copper_node": "Copper Node(active)",
       "block.mega_project.presserblock": "Presser",
       "block.mega_project.caterium_block": "Block of Caterium",
@@ -2459,7 +2477,6 @@
       "block.mega_project.coal_node_inactive": "Coal Node Inactive",
       "item.mega_project.diamond_steel_sword": "Diamond Steel Sword",
       "item.mega_project.node_scanner": "Node Scanner",
-      "item.mega_project.diamondstellshovel": "Diamondstellshovel",
       "item.mega_project.diamondsteelitem": "Diamond Steel Ingot",
       "advancements.hub_crafted_achievment.descr": "You Enter MENALOMANS Way",
       "advancements.cateriumadvancement.descr": "Caterium!",
