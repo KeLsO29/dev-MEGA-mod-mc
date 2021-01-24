@@ -6,41 +6,41 @@
     "xpReward": 0.0,
     "cookingTime": 200,
     "recipeRetstackSize": 1,
-    "group": "presser",
+    "group": "highspeedconnector",
     "recipeShapeless": false,
     "recipeSlots": [
       {
+        "value": "CUSTOM:CopperSheetItem"
+      },
+      {
+        "value": "CUSTOM:CopperSheetItem"
+      },
+      {
+        "value": "CUSTOM:CopperSheetItem"
+      },
+      {
+        "value": "CUSTOM:CircuitBoarditem"
+      },
+      {
+        "value": "CUSTOM:CateriumBlock"
+      },
+      {
+        "value": "CUSTOM:CircuitBoarditem"
+      },
+      {
         "value": "CUSTOM:SteelBlock"
       },
       {
-        "value": "Blocks.PISTON"
-      },
-      {
-        "value": "CUSTOM:SteelBlock"
-      },
-      {
-        "value": "Blocks.PISTON"
-      },
-      {
-        "value": "CUSTOM:Highspeedconectoritem"
-      },
-      {
-        "value": "Blocks.PISTON"
-      },
-      {
-        "value": "CUSTOM:SteelBlock"
-      },
-      {
-        "value": "Blocks.PISTON"
+        "value": "CUSTOM:CircuitBoarditem"
       },
       {
         "value": "CUSTOM:SteelBlock"
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:Presserblock"
+      "value": "CUSTOM:Highspeedconectoritem"
     },
-    "name": "presserrecipe",
+    "name": "highspeedconenctorrecipe",
     "namespace": "mod"
   }
 }

@@ -191,7 +191,7 @@ public class FoundyblockBlock extends MegaProjectModElements.ModElement {
 				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {
-						return new StringTextComponent("Foundy");
+						return new StringTextComponent("Foundry");
 					}
 
 					@Override
@@ -323,7 +323,7 @@ public class FoundyblockBlock extends MegaProjectModElements.ModElement {
 
 		@Override
 		public ITextComponent getDisplayName() {
-			return new StringTextComponent("Foundy");
+			return new StringTextComponent("Foundry");
 		}
 
 		@Override

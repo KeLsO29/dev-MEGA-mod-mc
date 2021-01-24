@@ -11,7 +11,7 @@
       "item": "mega_project:diamond_steelblock"
     },
     "1": {
-      "item": "mega_project:circuit_boarditem"
+      "item": "mega_project:highspeedconectoritem"
     },
     "2": {
       "item": "mega_project:diamond_steelblock"
@@ -29,14 +29,14 @@
       "item": "mega_project:diamond_steelblock"
     },
     "7": {
-      "item": "mega_project:circuit_boarditem"
+      "item": "mega_project:highspeedconectoritem"
     },
     "8": {
       "item": "mega_project:diamond_steelblock"
     }
   },
   "result": {
-    "item": "mega_project:unknown_element",
+    "item": "mega_project:generatormk_2",
     "count": 1
   }
 }

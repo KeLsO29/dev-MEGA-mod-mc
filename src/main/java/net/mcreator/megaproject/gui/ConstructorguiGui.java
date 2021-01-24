@@ -34,12 +34,15 @@ import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.megaproject.procedures.GeneratorWorkingLabelProcedure;
 import net.mcreator.megaproject.MegaProjectModElements;
 import net.mcreator.megaproject.MegaProjectMod;
 
 import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
+
+import com.google.common.collect.ImmutableMap;
 
 @MegaProjectModElements.ModElement.Tag
 public class ConstructorguiGui extends MegaProjectModElements.ModElement {
@@ -119,9 +122,9 @@ public class ConstructorguiGui extends MegaProjectModElements.ModElement {
 					}
 				}
 			}
-			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 40, 40) {
+			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 89, 58) {
 			}));
-			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 292, 40) {
+			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 197, 58) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
 					return false;
@@ -131,9 +134,9 @@ public class ConstructorguiGui extends MegaProjectModElements.ModElement {
 			int sj;
 			for (si = 0; si < 3; ++si)
 				for (sj = 0; sj < 9; ++sj)
-					this.addSlot(new Slot(inv, sj + (si + 1) * 9, 177 + 8 + sj * 18, 67 + 84 + si * 18));
+					this.addSlot(new Slot(inv, sj + (si + 1) * 9, 64 + 8 + sj * 18, 62 + 84 + si * 18));
 			for (si = 0; si < 9; ++si)
-				this.addSlot(new Slot(inv, si, 177 + 8 + si * 18, 67 + 142));
+				this.addSlot(new Slot(inv, si, 64 + 8 + si * 18, 62 + 142));
 		}
 
 		public Map<Integer, Slot> get() {
@@ -300,7 +303,7 @@ public class ConstructorguiGui extends MegaProjectModElements.ModElement {
 			this.y = container.y;
 			this.z = container.z;
 			this.entity = container.entity;
-			this.xSize = 350;
+			this.xSize = 304;
 			this.ySize = 230;
 		}
 		private static final ResourceLocation texture = new ResourceLocation("mega_project:textures/constructorgui.png");
@@ -336,7 +339,9 @@ public class ConstructorguiGui extends MegaProjectModElements.ModElement {
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-			this.font.drawString("CONSTRUCTOR", 147, 12, -16777216);
+			this.font.drawString("CONSTRUCTOR", 124, 12, -16777216);
+			if (GeneratorWorkingLabelProcedure.executeProcedure(ImmutableMap.of("x", x, "y", y, "z", z, "world", world)))
+				this.font.drawString("Working", 133, 93, -16711936);
 		}
 
 		@Override

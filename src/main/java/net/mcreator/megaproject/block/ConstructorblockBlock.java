@@ -14,7 +14,9 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.ToolType;
 
 import net.minecraft.world.storage.loot.LootContext;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
@@ -48,19 +50,25 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
+import net.mcreator.megaproject.procedures.ConstructorblockUpdateTickProcedure;
+import net.mcreator.megaproject.procedures.ConstructorblockBlockIsPlacedByProcedure;
 import net.mcreator.megaproject.gui.ConstructorguiGui;
 import net.mcreator.megaproject.MegaProjectModElements;
 
 import javax.annotation.Nullable;
 
 import java.util.stream.IntStream;
+import java.util.Random;
+import java.util.Map;
 import java.util.List;
+import java.util.HashMap;
 import java.util.Collections;
 
 import io.netty.buffer.Unpooled;
@@ -97,6 +105,11 @@ public class ConstructorblockBlock extends MegaProjectModElements.ModElement {
 		}
 
 		@Override
+		public int tickRate(IWorldReader world) {
+			return 40;
+		}
+
+		@Override
 		protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
 			builder.add(FACING);
 		}
@@ -121,6 +134,49 @@ public class ConstructorblockBlock extends MegaProjectModElements.ModElement {
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
 			return Collections.singletonList(new ItemStack(this, 1));
+		}
+
+		@Override
+		public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean moving) {
+			super.onBlockAdded(state, world, pos, oldState, moving);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
+		}
+
+		@Override
+		public void tick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+			super.tick(state, world, pos, random);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				ConstructorblockUpdateTickProcedure.executeProcedure($_dependencies);
+			}
+			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
+		}
+
+		@Override
+		public void onBlockPlacedBy(World world, BlockPos pos, BlockState state, LivingEntity entity, ItemStack itemstack) {
+			super.onBlockPlacedBy(world, pos, state, entity, itemstack);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				ConstructorblockBlockIsPlacedByProcedure.executeProcedure($_dependencies);
+			}
 		}
 
 		@Override
@@ -281,6 +337,8 @@ public class ConstructorblockBlock extends MegaProjectModElements.ModElement {
 
 		@Override
 		public boolean isItemValidForSlot(int index, ItemStack stack) {
+			if (index == 1)
+				return false;
 			return true;
 		}
 
@@ -296,6 +354,8 @@ public class ConstructorblockBlock extends MegaProjectModElements.ModElement {
 
 		@Override
 		public boolean canExtractItem(int index, ItemStack stack, Direction direction) {
+			if (index == 0)
+				return false;
 			return true;
 		}
 		private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());

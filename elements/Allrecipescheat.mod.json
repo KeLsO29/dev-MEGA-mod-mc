@@ -38,10 +38,11 @@
       "Diamondsteeelblocktoingotsrecipe",
       "Foundryrecipe",
       "GeneratorMK2recipe",
-      "Presserrecipe",
-      "Diamondsteelswordrecipe",
       "Diamondsteelpickaxerecipe",
-      "Diamondsteelaxerecipe"
+      "Presserrecipe",
+      "Diamondsteelaxerecipe",
+      "Diamondsteelswordrecipe",
+      "Highspeedconenctorrecipe"
     ],
     "rewardFunction": "No function",
     "rewardXP": 1,

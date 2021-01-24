@@ -47,10 +47,11 @@
       "mega_project:diamondsteeelblocktoingotsrecipe",
       "mega_project:foundryrecipe",
       "mega_project:generator_mk_2recipe",
-      "mega_project:presserrecipe",
-      "mega_project:diamondsteelswordrecipe",
       "mega_project:diamondsteelpickaxerecipe",
-      "mega_project:diamondsteelaxerecipe"
+      "mega_project:presserrecipe",
+      "mega_project:diamondsteelaxerecipe",
+      "mega_project:diamondsteelswordrecipe",
+      "mega_project:highspeedconenctorrecipe"
     ]
   }
 }

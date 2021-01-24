@@ -2131,6 +2131,77 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "highspeedconectoritem"
+    },
+    {
+      "name": "Highspeedconenctorrecipe",
+      "type": "recipe",
+      "sortid": 115,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "highspeedconenctorrecipe"
+    },
+    {
+      "name": "ConstructorblockUpdateTick",
+      "type": "procedure",
+      "sortid": 116,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "constructorblock_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ConstructorblockBlockIsPlacedBy",
+      "type": "procedure",
+      "sortid": 117,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "constructorblock_block_is_placed_by",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -2237,15 +2308,15 @@
       "block.mega_project.steel_block": "Steel Block",
       "advancements.turbo_fueladvancement.descr": "Turbo Fuel!",
       "block.mega_project.iron_ore_node_block_inactive": "Iron Ore Node Block Inactive",
-      "item.mega_project.turbofuelitem": "Turbofuel Mk.1",
       "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
+      "item.mega_project.turbofuelitem": "Turbofuel Mk.1",
       "item.mega_project.redstoneingotitem": "Redstone Ingot",
       "block.mega_project.generatormk_2": "Generator MK2",
-      "block.mega_project.caterium_ore": "Caterium Ore",
       "block.mega_project.copper_block": "Block of Copper",
+      "block.mega_project.caterium_ore": "Caterium Ore",
       "block.mega_project.copper_node_inactve": "Copper Node(inactive)",
-      "advancements.copperadvancement.title": "Copper",
       "block.mega_project.diamond_steelblock": "Diamond Steel",
+      "advancements.copperadvancement.title": "Copper",
       "block.mega_project.copper_node": "Copper Node(active)",
       "block.mega_project.presserblock": "Presser",
       "block.mega_project.caterium_block": "Block of Caterium",
@@ -2258,6 +2329,7 @@
       "item.mega_project.steelingot": "Steel Ingot",
       "block.mega_project.iron_ore_node_block": "Iron Ore Node Block(active)",
       "advancements.cateriumadvancement.title": "Caterium",
+      "item.mega_project.highspeedconectoritem": "High Speed Connector",
       "advancements.hub_crafted_achievment.title": "Hub Crafted",
       "block.mega_project.hub": "Hub",
       "key.mcreator.adminmenukeybind": "Admin Menu",
@@ -2274,7 +2346,7 @@
       "advancements.rudit_ingotadvancement.descr": "Advanced Redstone",
       "block.mega_project.caterium_nod_eblock": "Caterium  Node Block (active)",
       "advancements.allrecipescheat.descr": "Unlock Recipe Cheat",
-      "block.mega_project.foundyblock": "Foundy",
+      "block.mega_project.foundyblock": "Foundry",
       "item.mega_project.diamond_steelpickaxe": "Diamond Steel Pickaxe",
       "item.mega_project.turbofuelitem_2": "Turbofuel Mk.2",
       "block.mega_project.generator_mk_1": "Generator MK 1",
