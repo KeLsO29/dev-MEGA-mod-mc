@@ -14,7 +14,7 @@ import net.minecraft.block.BlockState;
 import net.mcreator.megaproject.item.TurbofuelitemItem;
 import net.mcreator.megaproject.item.Turbofuelitem3Item;
 import net.mcreator.megaproject.item.Turbofuelitem2Item;
-import net.mcreator.megaproject.block.GeneratorMK1inactiveBlock;
+import net.mcreator.megaproject.block.GeneratorMK2inactiveBlock;
 import net.mcreator.megaproject.MegaProjectModVariables;
 import net.mcreator.megaproject.MegaProjectModElements;
 
@@ -344,7 +344,7 @@ public class Generatormk2UpdateTickProcedure extends MegaProjectModElements.ModE
 				}
 				{
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-					BlockState _bs = GeneratorMK1inactiveBlock.block.getDefaultState();
+					BlockState _bs = GeneratorMK2inactiveBlock.block.getDefaultState();
 					BlockState _bso = world.getBlockState(_bp);
 					for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
 						IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());

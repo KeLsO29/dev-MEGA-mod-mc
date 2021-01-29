@@ -158,7 +158,7 @@ public class DiamondsteelswordguiGui extends MegaProjectModElements.ModElement {
 		public void init(Minecraft minecraft, int width, int height) {
 			super.init(minecraft, width, height);
 			minecraft.keyboardListener.enableRepeatEvents(true);
-			this.addButton(new Button(this.guiLeft + 37, this.guiTop + 25, 95, 20, "Lighting Power", e -> {
+			this.addButton(new Button(this.guiLeft + 37, this.guiTop + 25, 95, 20, "Throw", e -> {
 				MegaProjectMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(0, x, y, z));
 				handleButtonAction(entity, 0, x, y, z);
 			}));

@@ -22,7 +22,7 @@
     "repairItems": [],
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
-    "onRightClickedOnBlock": {
+    "onRightClickedInAir": {
       "name": "DiamondSteelSwordRightClickedOnBlock"
     }
   }

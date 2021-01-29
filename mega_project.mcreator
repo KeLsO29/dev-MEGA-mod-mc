@@ -3554,6 +3554,41 @@
           {
             "name": "entity",
             "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Pocketchestitem",
+      "type": "item",
+      "sortid": 194,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pocketchestitem"
+    },
+    {
+      "name": "Pocketchest",
+      "type": "gui",
+      "sortid": 195,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pocketchest"
+    },
+    {
+      "name": "PocketchestitemRightClickedOnBlock",
+      "type": "procedure",
+      "sortid": 196,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pocketchestitem_right_clicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
           },
           {
             "name": "x",
@@ -3573,6 +3608,24 @@
           }
         ]
       }
+    },
+    {
+      "name": "Pocketchestrecipe",
+      "type": "recipe",
+      "sortid": 197,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pocketchestrecipe"
+    },
+    {
+      "name": "DiamondsteelswordRangedItem",
+      "type": "gun",
+      "sortid": 199,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamondsteelsword_ranged_item"
     }
   ],
   "variable_elements": [
@@ -3734,8 +3787,8 @@
       "advancements.turbo_fueladvancement.descr": "Turbo Fuel!",
       "block.mega_project.copper_extractor": "Copper Extractor",
       "block.mega_project.iron_ore_node_block_inactive": "Iron Ore Node Block Inactive",
-      "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
       "item.mega_project.turbofuelitem": "Turbofuel Mk.1",
+      "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
       "item.mega_project.redstoneingotitem": "Redstone Ingot",
       "block.mega_project.coal_extractor": "Coal Extractor",
       "block.mega_project.generator_mk_2inactive": "Generator MK 2",
@@ -3750,6 +3803,7 @@
       "block.mega_project.copper_node": "Copper Node(active)",
       "block.mega_project.presserblock": "Presser",
       "block.mega_project.minerinactive": "Miner MK1",
+      "item.mega_project.diamondsteelsword_ranged_item": "Diamond Steel Sword Ranged",
       "block.mega_project.caterium_block": "Block of Caterium",
       "item.mega_project.caterium_ingot": "Caterium Ingot",
       "block.mega_project.electric_funanceinactive": "Electric Funance MK1",
@@ -3795,6 +3849,7 @@
       "item.mega_project.turbofuelitem_2": "Turbofuel Mk.2",
       "block.mega_project.generator_mk_1": "Generator MK 1",
       "item.mega_project.turbofuelitem_3": "Turbofuel Mk.3",
+      "item.mega_project.pocketchestitem": "Pocket Chest",
       "block.mega_project.copper_ore": "Copper Ore",
       "item.mega_project.diamond_steel_armor_boots": "DiamondS teel Boots",
       "block.mega_project.coal_node_inactive": "Coal Node Inactive",

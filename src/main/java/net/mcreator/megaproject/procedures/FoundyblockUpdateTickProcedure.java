@@ -110,18 +110,30 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 							return _retval.get();
 						}
 					}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (1))).getItem() == new ItemStack(Items.COAL, (int) (1)).getItem())))
-					&& ((new Object() {
-						public int getAmount(BlockPos pos, int sltid) {
-							AtomicInteger _retval = new AtomicInteger(0);
+					&& (((new Object() {
+						public ItemStack getItemStack(BlockPos pos, int sltid) {
+							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 							TileEntity _ent = world.getTileEntity(pos);
 							if (_ent != null) {
 								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-									_retval.set(capability.getStackInSlot(sltid).getCount());
+									_retval.set(capability.getStackInSlot(sltid).copy());
 								});
 							}
 							return _retval.get();
 						}
-					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (2))) < 64))) {
+					}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (1))).getItem() == new ItemStack(SteelingotItem.block, (int) (1))
+							.getItem()) && ((new Object() {
+								public int getAmount(BlockPos pos, int sltid) {
+									AtomicInteger _retval = new AtomicInteger(0);
+									TileEntity _ent = world.getTileEntity(pos);
+									if (_ent != null) {
+										_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+											_retval.set(capability.getStackInSlot(sltid).getCount());
+										});
+									}
+									return _retval.get();
+								}
+							}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (2))) < 64)))) {
 				if (!world.getWorld().isRemote) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -288,18 +300,30 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 						}
 					}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (1))).getItem() == new ItemStack(Items.DIAMOND, (int) (1))
 							.getItem())))
-					&& ((new Object() {
-						public int getAmount(BlockPos pos, int sltid) {
-							AtomicInteger _retval = new AtomicInteger(0);
+					&& (((new Object() {
+						public ItemStack getItemStack(BlockPos pos, int sltid) {
+							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 							TileEntity _ent = world.getTileEntity(pos);
 							if (_ent != null) {
 								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-									_retval.set(capability.getStackInSlot(sltid).getCount());
+									_retval.set(capability.getStackInSlot(sltid).copy());
 								});
 							}
 							return _retval.get();
 						}
-					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (2))) < 64))) {
+					}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (1)))
+							.getItem() == new ItemStack(DiamondsteelitemItem.block, (int) (1)).getItem()) && ((new Object() {
+								public int getAmount(BlockPos pos, int sltid) {
+									AtomicInteger _retval = new AtomicInteger(0);
+									TileEntity _ent = world.getTileEntity(pos);
+									if (_ent != null) {
+										_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+											_retval.set(capability.getStackInSlot(sltid).getCount());
+										});
+									}
+									return _retval.get();
+								}
+							}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (2))) < 64)))) {
 				if (!world.getWorld().isRemote) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
