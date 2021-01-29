@@ -3554,18 +3554,34 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       }
     },
     {
-      "name": "Pocketchestitem",
-      "type": "item",
-      "sortid": 194,
+      "name": "Pocketchestrecipe",
+      "type": "recipe",
+      "sortid": 197,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "pocketchestitem"
+      "registry_name": "pocketchestrecipe"
     },
     {
       "name": "Pocketchest",
@@ -3610,15 +3626,6 @@
       }
     },
     {
-      "name": "Pocketchestrecipe",
-      "type": "recipe",
-      "sortid": 197,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "pocketchestrecipe"
-    },
-    {
       "name": "DiamondsteelswordRangedItem",
       "type": "gun",
       "sortid": 199,
@@ -3626,6 +3633,220 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "diamondsteelsword_ranged_item"
+    },
+    {
+      "name": "Pocketchestitem",
+      "type": "item",
+      "sortid": 194,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pocketchestitem"
+    },
+    {
+      "name": "Cateriumwirerecipe",
+      "type": "recipe",
+      "sortid": 199,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cateriumwirerecipe"
+    },
+    {
+      "name": "SolarpanelblockinactiveUpdateTick",
+      "type": "procedure",
+      "sortid": 202,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "solarpanelblockinactive_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Diamondscrewitem",
+      "type": "item",
+      "sortid": 194,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamondscrewitem"
+    },
+    {
+      "name": "Cateriumrodrecipe",
+      "type": "recipe",
+      "sortid": 198,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cateriumrodrecipe"
+    },
+    {
+      "name": "SolarpanelblockinactiveBlockIsPlacedBy",
+      "type": "procedure",
+      "sortid": 205,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "solarpanelblockinactive_block_is_placed_by",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Cateriumroditem",
+      "type": "item",
+      "sortid": 196,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cateriumroditem"
+    },
+    {
+      "name": "Solarpanelblockinactive",
+      "type": "block",
+      "sortid": 201,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "solarpanelblockinactive"
+    },
+    {
+      "name": "Diamondscrewrecipe",
+      "type": "recipe",
+      "sortid": 195,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamondscrewrecipe"
+    },
+    {
+      "name": "SolarpanelblockactiveBlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 204,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "solarpanelblockactive_block_destroyed_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Solarpanelrecipe",
+      "type": "recipe",
+      "sortid": 206,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "solarpanelrecipe"
+    },
+    {
+      "name": "Cateriumwireitem",
+      "type": "item",
+      "sortid": 197,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cateriumwireitem"
+    },
+    {
+      "name": "Solarpanelblockactive",
+      "type": "block",
+      "sortid": 200,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "solarpanelblockactive"
+    },
+    {
+      "name": "SolarpanelblockactiveUpdateTick",
+      "type": "procedure",
+      "sortid": 203,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "solarpanelblockactive_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -3791,6 +4012,7 @@
       "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
       "item.mega_project.redstoneingotitem": "Redstone Ingot",
       "block.mega_project.coal_extractor": "Coal Extractor",
+      "block.mega_project.solarpanelblockactive": " Solar panel Active",
       "block.mega_project.generator_mk_2inactive": "Generator MK 2",
       "block.mega_project.generatormk_2": "Generator MK2",
       "block.mega_project.copper_block": "Block of Copper",
@@ -3803,7 +4025,6 @@
       "block.mega_project.copper_node": "Copper Node(active)",
       "block.mega_project.presserblock": "Presser",
       "block.mega_project.minerinactive": "Miner MK1",
-      "item.mega_project.diamondsteelsword_ranged_item": "Diamond Steel Sword Ranged",
       "block.mega_project.caterium_block": "Block of Caterium",
       "item.mega_project.caterium_ingot": "Caterium Ingot",
       "block.mega_project.electric_funanceinactive": "Electric Funance MK1",
@@ -3849,7 +4070,6 @@
       "item.mega_project.turbofuelitem_2": "Turbofuel Mk.2",
       "block.mega_project.generator_mk_1": "Generator MK 1",
       "item.mega_project.turbofuelitem_3": "Turbofuel Mk.3",
-      "item.mega_project.pocketchestitem": "Pocket Chest",
       "block.mega_project.copper_ore": "Copper Ore",
       "item.mega_project.diamond_steel_armor_boots": "DiamondS teel Boots",
       "block.mega_project.coal_node_inactive": "Coal Node Inactive",

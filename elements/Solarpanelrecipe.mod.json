@@ -6,17 +6,23 @@
     "xpReward": 0.0,
     "cookingTime": 200,
     "recipeRetstackSize": 1,
-    "group": "ailimiter",
+    "group": "",
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "CUSTOM:Highspeedconectoritem"
-      },
-      {
-        "value": "CUSTOM:CircuitBoarditem"
+        "value": "CUSTOM:Cateriumwireitem"
       },
       {
         "value": "CUSTOM:Highspeedconectoritem"
+      },
+      {
+        "value": "CUSTOM:Cateriumwireitem"
+      },
+      {
+        "value": "CUSTOM:Cateriumwireitem"
+      },
+      {
+        "value": "CUSTOM:AiLimiteritem"
       },
       {
         "value": "CUSTOM:Cateriumwireitem"
@@ -25,22 +31,16 @@
         "value": "CUSTOM:SteelBlock"
       },
       {
-        "value": "CUSTOM:Cateriumwireitem"
+        "value": "CUSTOM:Diamondsteelplate"
       },
       {
-        "value": "CUSTOM:Highspeedconectoritem"
-      },
-      {
-        "value": "CUSTOM:CircuitBoarditem"
-      },
-      {
-        "value": "CUSTOM:Highspeedconectoritem"
+        "value": "CUSTOM:SteelBlock"
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:AiLimiteritem"
+      "value": "CUSTOM:Solarpanelblockinactive"
     },
-    "name": "ai_limiterrecipe",
+    "name": "solarpanelrecipe",
     "namespace": "mod"
   }
 }

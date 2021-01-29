@@ -6,41 +6,41 @@
     "xpReward": 0.0,
     "cookingTime": 200,
     "recipeRetstackSize": 1,
-    "group": "nodescanner",
+    "group": "",
     "recipeShapeless": false,
     "recipeSlots": [
       {
         "value": ""
       },
       {
-        "value": "CUSTOM:Redstoneingotitem"
+        "value": "CUSTOM:Screw"
       },
       {
         "value": ""
       },
       {
-        "value": "CUSTOM:Cateriumwireitem"
+        "value": ""
       },
       {
         "value": "Items.DIAMOND"
       },
       {
-        "value": "CUSTOM:Cateriumwireitem"
+        "value": ""
       },
       {
-        "value": "CUSTOM:CircuitBoarditem"
+        "value": ""
       },
       {
-        "value": "CUSTOM:CircuitBoarditem"
+        "value": ""
       },
       {
-        "value": "CUSTOM:CircuitBoarditem"
+        "value": ""
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:NodeScannerTool"
+      "value": "CUSTOM:Diamondscrewitem"
     },
-    "name": "node_scanner_recipe",
+    "name": "diamondscrewrecipe",
     "namespace": "mod"
   }
 }
