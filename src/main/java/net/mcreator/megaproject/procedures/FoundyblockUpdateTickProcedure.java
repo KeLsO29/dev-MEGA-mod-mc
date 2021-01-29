@@ -218,7 +218,66 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 50));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-			} else {
+			}
+		} else {
+			if ((!(((((new Object() {
+				public int getAmount(BlockPos pos, int sltid) {
+					AtomicInteger _retval = new AtomicInteger(0);
+					TileEntity _ent = world.getTileEntity(pos);
+					if (_ent != null) {
+						_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+							_retval.set(capability.getStackInSlot(sltid).getCount());
+						});
+					}
+					return _retval.get();
+				}
+			}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) >= 2) && ((new Object() {
+				public ItemStack getItemStack(BlockPos pos, int sltid) {
+					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+					TileEntity _ent = world.getTileEntity(pos);
+					if (_ent != null) {
+						_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+							_retval.set(capability.getStackInSlot(sltid).copy());
+						});
+					}
+					return _retval.get();
+				}
+			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem() == new ItemStack(Items.IRON_INGOT, (int) (1)).getItem()))
+					&& (((new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							AtomicInteger _retval = new AtomicInteger(0);
+							TileEntity _ent = world.getTileEntity(pos);
+							if (_ent != null) {
+								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+									_retval.set(capability.getStackInSlot(sltid).getCount());
+								});
+							}
+							return _retval.get();
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) >= 2) && ((new Object() {
+						public ItemStack getItemStack(BlockPos pos, int sltid) {
+							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+							TileEntity _ent = world.getTileEntity(pos);
+							if (_ent != null) {
+								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+									_retval.set(capability.getStackInSlot(sltid).copy());
+								});
+							}
+							return _retval.get();
+						}
+					}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (1))).getItem() == new ItemStack(Items.COAL, (int) (1)).getItem())))
+					&& ((new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							AtomicInteger _retval = new AtomicInteger(0);
+							TileEntity _ent = world.getTileEntity(pos);
+							if (_ent != null) {
+								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+									_retval.set(capability.getStackInSlot(sltid).getCount());
+								});
+							}
+							return _retval.get();
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (2))) < 64)))) {
 				if (!world.getWorld().isRemote) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -227,15 +286,6 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 						_tileEntity.getTileData().putBoolean("Working", (false));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-			}
-		} else {
-			if (!world.getWorld().isRemote) {
-				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-				TileEntity _tileEntity = world.getTileEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_tileEntity != null)
-					_tileEntity.getTileData().putBoolean("Working", (false));
-				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 		}
 		if ((5000 < (new Object() {
@@ -407,7 +457,67 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 5000));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-			} else {
+			}
+		} else {
+			if ((!(((((new Object() {
+				public int getAmount(BlockPos pos, int sltid) {
+					AtomicInteger _retval = new AtomicInteger(0);
+					TileEntity _ent = world.getTileEntity(pos);
+					if (_ent != null) {
+						_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+							_retval.set(capability.getStackInSlot(sltid).getCount());
+						});
+					}
+					return _retval.get();
+				}
+			}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) >= 16) && ((new Object() {
+				public ItemStack getItemStack(BlockPos pos, int sltid) {
+					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+					TileEntity _ent = world.getTileEntity(pos);
+					if (_ent != null) {
+						_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+							_retval.set(capability.getStackInSlot(sltid).copy());
+						});
+					}
+					return _retval.get();
+				}
+			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem() == new ItemStack(SteelingotItem.block, (int) (1))
+					.getItem())) && (((new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							AtomicInteger _retval = new AtomicInteger(0);
+							TileEntity _ent = world.getTileEntity(pos);
+							if (_ent != null) {
+								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+									_retval.set(capability.getStackInSlot(sltid).getCount());
+								});
+							}
+							return _retval.get();
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) >= 4) && ((new Object() {
+						public ItemStack getItemStack(BlockPos pos, int sltid) {
+							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+							TileEntity _ent = world.getTileEntity(pos);
+							if (_ent != null) {
+								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+									_retval.set(capability.getStackInSlot(sltid).copy());
+								});
+							}
+							return _retval.get();
+						}
+					}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (1))).getItem() == new ItemStack(Items.DIAMOND, (int) (1))
+							.getItem())))
+					&& ((new Object() {
+						public int getAmount(BlockPos pos, int sltid) {
+							AtomicInteger _retval = new AtomicInteger(0);
+							TileEntity _ent = world.getTileEntity(pos);
+							if (_ent != null) {
+								_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+									_retval.set(capability.getStackInSlot(sltid).getCount());
+								});
+							}
+							return _retval.get();
+						}
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (2))) < 64)))) {
 				if (!world.getWorld().isRemote) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -417,23 +527,6 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
-		} else {
-			if (!world.getWorld().isRemote) {
-				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-				TileEntity _tileEntity = world.getTileEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_tileEntity != null)
-					_tileEntity.getTileData().putBoolean("Working", (false));
-				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-			}
-		}
-		if (!world.getWorld().isRemote) {
-			BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-			TileEntity _tileEntity = world.getTileEntity(_bp);
-			BlockState _bs = world.getBlockState(_bp);
-			if (_tileEntity != null)
-				_tileEntity.getTileData().putBoolean("Working", (false));
-			world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 		}
 	}
 }
