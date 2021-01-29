@@ -1,0 +1,29 @@
+{
+  "group": "diamondsteelarmorhelmet",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "3 5"
+  ],
+  "key": {
+    "0": {
+      "item": "mega_project:diamondsteelplate"
+    },
+    "1": {
+      "item": "mega_project:diamondsteelplate"
+    },
+    "2": {
+      "item": "mega_project:diamondsteelplate"
+    },
+    "3": {
+      "item": "mega_project:diamondsteelplate"
+    },
+    "5": {
+      "item": "mega_project:diamondsteelplate"
+    }
+  },
+  "result": {
+    "item": "mega_project:diamond_steel_armor_helmet",
+    "count": 1
+  }
+}

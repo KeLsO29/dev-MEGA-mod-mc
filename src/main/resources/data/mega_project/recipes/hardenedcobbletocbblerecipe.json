@@ -1,0 +1,16 @@
+{
+  "group": "hrd_cbble",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0"
+  ],
+  "key": {
+    "0": {
+      "item": "mega_project:hardenedcobble"
+    }
+  },
+  "result": {
+    "item": "minecraft:cobblestone",
+    "count": 9
+  }
+}

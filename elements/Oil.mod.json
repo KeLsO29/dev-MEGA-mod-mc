@@ -1,0 +1,21 @@
+{
+  "_fv": 13,
+  "_type": "fluid",
+  "definition": {
+    "name": "Oil",
+    "textureStill": "oil_1",
+    "textureFlowing": "oil_1",
+    "luminosity": 0,
+    "density": 1000,
+    "viscosity": 800,
+    "isGas": false,
+    "type": "WATER",
+    "generateBucket": true,
+    "creativeTab": {
+      "value": "MISC"
+    },
+    "frequencyOnChunks": 0,
+    "spawnWorldTypes": [],
+    "restrictionBiomes": []
+  }
+}

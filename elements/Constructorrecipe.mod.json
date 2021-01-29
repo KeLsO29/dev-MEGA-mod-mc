@@ -38,7 +38,7 @@
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:Constructorblock"
+      "value": "CUSTOM:Constructorinactive"
     },
     "name": "constructorrecipe",
     "namespace": "mod"

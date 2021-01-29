@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "mega_project:block/constructorinactive"
+    },
+    "facing=east": {
+      "model": "mega_project:block/constructorinactive",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "mega_project:block/constructorinactive",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mega_project:block/constructorinactive",
+      "y": 270
+    }
+  }
+}

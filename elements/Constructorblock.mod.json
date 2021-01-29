@@ -31,11 +31,11 @@
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "BUILDING_BLOCKS"
+      "value": "No creative tab entry"
     },
     "destroyTool": "pickaxe",
     "customDrop": {
-      "value": ""
+      "value": "CUSTOM:Constructorinactive"
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -98,6 +98,9 @@
     "fluidRestrictions": [],
     "onTickUpdate": {
       "name": "ConstructorblockUpdateTick"
+    },
+    "onDestroyedByPlayer": {
+      "name": "ConstructorblockBlockDestroyedByPlayer"
     },
     "onBlockPlayedBy": {
       "name": "ConstructorblockBlockIsPlacedBy"

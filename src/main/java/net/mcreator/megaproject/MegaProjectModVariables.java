@@ -23,6 +23,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.nbt.INBT;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
@@ -68,6 +69,9 @@ public class MegaProjectModVariables {
 	}
 	public static class WorldVariables extends WorldSavedData {
 		public static final String DATA_NAME = "mega_project_worldvars";
+		public ItemStack foundrymk1_igredience1 = ItemStack.EMPTY;
+		public ItemStack foundrymk1_product = ItemStack.EMPTY;
+		public ItemStack foundrymk1_igredience2 = ItemStack.EMPTY;
 		public WorldVariables() {
 			super(DATA_NAME);
 		}
@@ -78,10 +82,16 @@ public class MegaProjectModVariables {
 
 		@Override
 		public void read(CompoundNBT nbt) {
+			foundrymk1_igredience1 = ItemStack.read(nbt.getCompound("foundrymk1_igredience1"));
+			foundrymk1_product = ItemStack.read(nbt.getCompound("foundrymk1_product"));
+			foundrymk1_igredience2 = ItemStack.read(nbt.getCompound("foundrymk1_igredience2"));
 		}
 
 		@Override
 		public CompoundNBT write(CompoundNBT nbt) {
+			nbt.put("foundrymk1_igredience1", foundrymk1_igredience1.write(new CompoundNBT()));
+			nbt.put("foundrymk1_product", foundrymk1_product.write(new CompoundNBT()));
+			nbt.put("foundrymk1_igredience2", foundrymk1_igredience2.write(new CompoundNBT()));
 			return nbt;
 		}
 
@@ -103,13 +113,16 @@ public class MegaProjectModVariables {
 
 	public static class MapVariables extends WorldSavedData {
 		public static final String DATA_NAME = "mega_project_mapvars";
-		public double production = 0;
 		public double hub_caterium_save = 0;
+		public double production = 0;
 		public double hub_energy_save = 0;
 		public double hub_z = 0;
 		public double hub_x = 0;
 		public double hub_y = 0;
 		public double hub_copper_save = 0;
+		public double hub_oil_save = 0;
+		public double total_comsuption = 0;
+		public double total_production = 0;
 		public MapVariables() {
 			super(DATA_NAME);
 		}
@@ -120,24 +133,30 @@ public class MegaProjectModVariables {
 
 		@Override
 		public void read(CompoundNBT nbt) {
-			production = nbt.getDouble("production");
 			hub_caterium_save = nbt.getDouble("hub_caterium_save");
+			production = nbt.getDouble("production");
 			hub_energy_save = nbt.getDouble("hub_energy_save");
 			hub_z = nbt.getDouble("hub_z");
 			hub_x = nbt.getDouble("hub_x");
 			hub_y = nbt.getDouble("hub_y");
 			hub_copper_save = nbt.getDouble("hub_copper_save");
+			hub_oil_save = nbt.getDouble("hub_oil_save");
+			total_comsuption = nbt.getDouble("total_comsuption");
+			total_production = nbt.getDouble("total_production");
 		}
 
 		@Override
 		public CompoundNBT write(CompoundNBT nbt) {
-			nbt.putDouble("production", production);
 			nbt.putDouble("hub_caterium_save", hub_caterium_save);
+			nbt.putDouble("production", production);
 			nbt.putDouble("hub_energy_save", hub_energy_save);
 			nbt.putDouble("hub_z", hub_z);
 			nbt.putDouble("hub_x", hub_x);
 			nbt.putDouble("hub_y", hub_y);
 			nbt.putDouble("hub_copper_save", hub_copper_save);
+			nbt.putDouble("hub_oil_save", hub_oil_save);
+			nbt.putDouble("total_comsuption", total_comsuption);
+			nbt.putDouble("total_production", total_production);
 			return nbt;
 		}
 
@@ -228,6 +247,9 @@ public class MegaProjectModVariables {
 			nbt.putDouble("player_back_z", instance.player_back_z);
 			nbt.putDouble("hub_coal_save", instance.hub_coal_save);
 			nbt.putDouble("hub_iron_save", instance.hub_iron_save);
+			nbt.putBoolean("diamondsteel_itembuffer", instance.diamondsteel_itembuffer);
+			nbt.putDouble("player_rock_points", instance.player_rock_points);
+			nbt.putDouble("player_minnig_level", instance.player_minnig_level);
 			return nbt;
 		}
 
@@ -243,6 +265,9 @@ public class MegaProjectModVariables {
 			instance.player_back_z = nbt.getDouble("player_back_z");
 			instance.hub_coal_save = nbt.getDouble("hub_coal_save");
 			instance.hub_iron_save = nbt.getDouble("hub_iron_save");
+			instance.diamondsteel_itembuffer = nbt.getBoolean("diamondsteel_itembuffer");
+			instance.player_rock_points = nbt.getDouble("player_rock_points");
+			instance.player_minnig_level = nbt.getDouble("player_minnig_level");
 		}
 	}
 
@@ -256,6 +281,9 @@ public class MegaProjectModVariables {
 		public double player_back_z = 0;
 		public double hub_coal_save = 0;
 		public double hub_iron_save = 0;
+		public boolean diamondsteel_itembuffer = false;
+		public double player_rock_points = 0;
+		public double player_minnig_level = 1.0;
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
 				MegaProjectMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity),
@@ -297,6 +325,9 @@ public class MegaProjectModVariables {
 		clone.player_back_z = original.player_back_z;
 		clone.hub_coal_save = original.hub_coal_save;
 		clone.hub_iron_save = original.hub_iron_save;
+		clone.diamondsteel_itembuffer = original.diamondsteel_itembuffer;
+		clone.player_rock_points = original.player_rock_points;
+		clone.player_minnig_level = original.player_minnig_level;
 		if (!event.isWasDeath()) {
 		}
 	}
@@ -330,6 +361,9 @@ public class MegaProjectModVariables {
 					variables.player_back_z = message.data.player_back_z;
 					variables.hub_coal_save = message.data.hub_coal_save;
 					variables.hub_iron_save = message.data.hub_iron_save;
+					variables.diamondsteel_itembuffer = message.data.diamondsteel_itembuffer;
+					variables.player_rock_points = message.data.player_rock_points;
+					variables.player_minnig_level = message.data.player_minnig_level;
 				}
 			});
 			context.setPacketHandled(true);

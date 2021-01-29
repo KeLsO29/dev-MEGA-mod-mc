@@ -6,12 +6,15 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.state.IProperty;
+import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.megaproject.item.SteelingotItem;
 import net.mcreator.megaproject.item.DiamondsteelitemItem;
+import net.mcreator.megaproject.block.FoundryinactiveBlock;
 import net.mcreator.megaproject.MegaProjectModVariables;
 import net.mcreator.megaproject.MegaProjectModElements;
 
@@ -50,7 +53,7 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if ((50 < (new Object() {
+		if ((100 < (new Object() {
 			public double getValue(BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
@@ -95,7 +98,7 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 							}
 							return _retval.get();
 						}
-					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) >= 2) && ((new Object() {
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) >= 1) && ((new Object() {
 						public ItemStack getItemStack(BlockPos pos, int sltid) {
 							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 							TileEntity _ent = world.getTileEntity(pos);
@@ -126,6 +129,26 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putBoolean("Working", (true));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+				if (((new Object() {
+					public boolean getValue(BlockPos pos, String tag) {
+						TileEntity tileEntity = world.getTileEntity(pos);
+						if (tileEntity != null)
+							return tileEntity.getTileData().getBoolean(tag);
+						return false;
+					}
+				}.getValue(new BlockPos((int) x, (int) y, (int) z), "Counted")) == (false))) {
+					MegaProjectModVariables.MapVariables
+							.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) + 100);
+					MegaProjectModVariables.MapVariables.get(world).syncData(world);
+					if (!world.getWorld().isRemote) {
+						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+						TileEntity _tileEntity = world.getTileEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_tileEntity != null)
+							_tileEntity.getTileData().putBoolean("Counted", (true));
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					}
 				}
 				{
 					TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
@@ -167,7 +190,7 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 								}
 								return _retval.get();
 							}
-						}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) - 2));
+						}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) - 1));
 						_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 							if (capability instanceof IItemHandlerModifiable) {
 								((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
@@ -215,41 +238,10 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 							}
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
-								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 50));
+								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 100));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-			} else {
-				if (!world.getWorld().isRemote) {
-					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-					TileEntity _tileEntity = world.getTileEntity(_bp);
-					BlockState _bs = world.getBlockState(_bp);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().putBoolean("Working", (false));
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-				}
-			}
-		} else {
-			if (!world.getWorld().isRemote) {
-				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-				TileEntity _tileEntity = world.getTileEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_tileEntity != null)
-					_tileEntity.getTileData().putBoolean("Working", (false));
-				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-			}
-		}
-		if ((5000 < (new Object() {
-			public double getValue(BlockPos pos, String tag) {
-				TileEntity tileEntity = world.getTileEntity(pos);
-				if (tileEntity != null)
-					return tileEntity.getTileData().getDouble(tag);
-				return -1;
-			}
-		}.getValue(
-				new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
-						(int) (MegaProjectModVariables.MapVariables.get(world).hub_y), (int) (MegaProjectModVariables.MapVariables.get(world).hub_z)),
-				"Energy")))) {
-			if ((((((new Object() {
+			} else if ((((((new Object() {
 				public int getAmount(BlockPos pos, int sltid) {
 					AtomicInteger _retval = new AtomicInteger(0);
 					TileEntity _ent = world.getTileEntity(pos);
@@ -260,7 +252,7 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 					}
 					return _retval.get();
 				}
-			}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) >= 16) && ((new Object() {
+			}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) >= 8) && ((new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					TileEntity _ent = world.getTileEntity(pos);
@@ -315,6 +307,26 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putBoolean("Working", (true));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+				if (((new Object() {
+					public boolean getValue(BlockPos pos, String tag) {
+						TileEntity tileEntity = world.getTileEntity(pos);
+						if (tileEntity != null)
+							return tileEntity.getTileData().getBoolean(tag);
+						return false;
+					}
+				}.getValue(new BlockPos((int) x, (int) y, (int) z), "Counted")) == (false))) {
+					MegaProjectModVariables.MapVariables
+							.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) + 100);
+					MegaProjectModVariables.MapVariables.get(world).syncData(world);
+					if (!world.getWorld().isRemote) {
+						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+						TileEntity _tileEntity = world.getTileEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_tileEntity != null)
+							_tileEntity.getTileData().putBoolean("Counted", (true));
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					}
 				}
 				{
 					TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
@@ -404,7 +416,7 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 							}
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
-								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 5000));
+								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 100));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			} else {
@@ -416,6 +428,43 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 						_tileEntity.getTileData().putBoolean("Working", (false));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
+				MegaProjectModVariables.MapVariables
+						.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) - 100);
+				MegaProjectModVariables.MapVariables.get(world).syncData(world);
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putBoolean("Counted", (false));
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
+				{
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					BlockState _bs = FoundryinactiveBlock.block.getDefaultState();
+					BlockState _bso = world.getBlockState(_bp);
+					for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+						IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
+						if (_bs.has(_property))
+							_bs = _bs.with(_property, (Comparable) entry.getValue());
+					}
+					TileEntity _te = world.getTileEntity(_bp);
+					CompoundNBT _bnbt = null;
+					if (_te != null) {
+						_bnbt = _te.write(new CompoundNBT());
+						_te.remove();
+					}
+					world.setBlockState(_bp, _bs, 3);
+					if (_bnbt != null) {
+						_te = world.getTileEntity(_bp);
+						if (_te != null) {
+							try {
+								_te.read(_bnbt);
+							} catch (Exception ignored) {
+							}
+						}
+					}
+				}
 			}
 		} else {
 			if (!world.getWorld().isRemote) {
@@ -426,14 +475,43 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 					_tileEntity.getTileData().putBoolean("Working", (false));
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
-		}
-		if (!world.getWorld().isRemote) {
-			BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-			TileEntity _tileEntity = world.getTileEntity(_bp);
-			BlockState _bs = world.getBlockState(_bp);
-			if (_tileEntity != null)
-				_tileEntity.getTileData().putBoolean("Working", (false));
-			world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			MegaProjectModVariables.MapVariables
+					.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) - 100);
+			MegaProjectModVariables.MapVariables.get(world).syncData(world);
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putBoolean("Counted", (false));
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			{
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				BlockState _bs = FoundryinactiveBlock.block.getDefaultState();
+				BlockState _bso = world.getBlockState(_bp);
+				for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+					IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
+					if (_bs.has(_property))
+						_bs = _bs.with(_property, (Comparable) entry.getValue());
+				}
+				TileEntity _te = world.getTileEntity(_bp);
+				CompoundNBT _bnbt = null;
+				if (_te != null) {
+					_bnbt = _te.write(new CompoundNBT());
+					_te.remove();
+				}
+				world.setBlockState(_bp, _bs, 3);
+				if (_bnbt != null) {
+					_te = world.getTileEntity(_bp);
+					if (_te != null) {
+						try {
+							_te.read(_bnbt);
+						} catch (Exception ignored) {
+						}
+					}
+				}
+			}
 		}
 	}
 }

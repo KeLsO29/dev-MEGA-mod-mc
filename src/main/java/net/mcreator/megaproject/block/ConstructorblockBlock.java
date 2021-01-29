@@ -38,7 +38,6 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.BlockItem;
@@ -47,6 +46,7 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.ISidedInventory;
+import net.minecraft.fluid.IFluidState;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
@@ -59,6 +59,7 @@ import net.minecraft.block.Block;
 
 import net.mcreator.megaproject.procedures.ConstructorblockUpdateTickProcedure;
 import net.mcreator.megaproject.procedures.ConstructorblockBlockIsPlacedByProcedure;
+import net.mcreator.megaproject.procedures.ConstructorblockBlockDestroyedByPlayerProcedure;
 import net.mcreator.megaproject.gui.ConstructorguiGui;
 import net.mcreator.megaproject.MegaProjectModElements;
 
@@ -87,8 +88,7 @@ public class ConstructorblockBlock extends MegaProjectModElements.ModElement {
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items
-				.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)).setRegistryName(block.getRegistryName()));
+		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(null)).setRegistryName(block.getRegistryName()));
 	}
 
 	@SubscribeEvent
@@ -133,7 +133,7 @@ public class ConstructorblockBlock extends MegaProjectModElements.ModElement {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(this, 1));
+			return Collections.singletonList(new ItemStack(ConstructorinactiveBlock.block, (int) (1)));
 		}
 
 		@Override
@@ -160,6 +160,20 @@ public class ConstructorblockBlock extends MegaProjectModElements.ModElement {
 				ConstructorblockUpdateTickProcedure.executeProcedure($_dependencies);
 			}
 			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
+		}
+
+		@Override
+		public boolean removedByPlayer(BlockState state, World world, BlockPos pos, PlayerEntity entity, boolean willHarvest, IFluidState fluid) {
+			boolean retval = super.removedByPlayer(state, world, pos, entity, willHarvest, fluid);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("world", world);
+				ConstructorblockBlockDestroyedByPlayerProcedure.executeProcedure($_dependencies);
+			}
+			return retval;
 		}
 
 		@Override

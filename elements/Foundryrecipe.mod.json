@@ -38,7 +38,7 @@
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:Foundyblock"
+      "value": "CUSTOM:Foundryinactive"
     },
     "name": "foundryrecipe",
     "namespace": "mod"

@@ -52,8 +52,23 @@
       "mega_project:diamondsteelaxerecipe",
       "mega_project:diamondsteelswordrecipe",
       "mega_project:highspeedconenctorrecipe",
+      "mega_project:electricfurnancemk_1recipe",
       "mega_project:diamondsteelshovelrecipe",
-      "mega_project:electricfurnancemk_1recipe"
+      "mega_project:ai_limiterrecipe",
+      "mega_project:ironextractorrecipe",
+      "mega_project:cateriumextractorrecipe",
+      "mega_project:coalextractorrecipe",
+      "mega_project:copperextractorrecipe",
+      "mega_project:screwrecipe",
+      "mega_project:ironplaterecipe",
+      "mega_project:hardenedcobblerecipe",
+      "mega_project:hardenedcobbletocbblerecipe",
+      "mega_project:diamondsteelplaterecipe",
+      "mega_project:heavyironblockrecipe",
+      "mega_project:diamond_steel_armor_helmet_recipe",
+      "mega_project:diamond_steel_armor_body_recipe",
+      "mega_project:diamond_steel_armor_leggings_recipe",
+      "mega_project:diamond_steel_armor_boots_recipe"
     ]
   }
 }

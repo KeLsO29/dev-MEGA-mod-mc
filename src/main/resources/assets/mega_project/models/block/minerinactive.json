@@ -1,0 +1,9 @@
+{
+  "parent": "mega_project:custom/miner_inactive",
+  "textures": {
+    "all": "mega_project:blocks/minerfaces_inactive",
+    "particle": "mega_project:blocks/minerfaces_inactive",
+    "0": "mega_project:blocks/iron_block_orig",
+    "1": "mega_project:blocks/minerfaces_inactive"
+  }
+}
