@@ -3,15 +3,21 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     " 1 ",
-    " 4 ",
+    "345",
     "678"
   ],
   "key": {
     "1": {
       "item": "mega_project:redstoneingotitem"
     },
+    "3": {
+      "item": "mega_project:cateriumwireitem"
+    },
     "4": {
       "item": "minecraft:diamond"
+    },
+    "5": {
+      "item": "mega_project:cateriumwireitem"
     },
     "6": {
       "item": "mega_project:circuit_boarditem"

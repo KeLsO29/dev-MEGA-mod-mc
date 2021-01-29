@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "mega_project:blocks/solarpanelside",
+    "up": "mega_project:blocks/solarpanel_inactive",
+    "north": "mega_project:blocks/solarpanelside",
+    "east": "mega_project:blocks/solarpanelside",
+    "south": "mega_project:blocks/solarpanelside",
+    "west": "mega_project:blocks/solarpanelside",
+    "particle": "mega_project:blocks/solarpanelside"
+  }
+}

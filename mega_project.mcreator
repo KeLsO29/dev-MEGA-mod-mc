@@ -3458,7 +3458,12 @@
       "ids": {},
       "registry_name": "electric_furnance_block_block_destroyed_by_player",
       "metadata": {
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       }
     },
     {
@@ -3479,7 +3484,12 @@
       "ids": {},
       "registry_name": "constructorblock_block_destroyed_by_player",
       "metadata": {
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       }
     },
     {
@@ -3563,6 +3573,211 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "diamond_steel_armor_boots_recipe"
+    },
+    {
+      "name": "Diamondscrewitem",
+      "type": "item",
+      "sortid": 194,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamondscrewitem"
+    },
+    {
+      "name": "Diamondscrewrecipe",
+      "type": "recipe",
+      "sortid": 195,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamondscrewrecipe"
+    },
+    {
+      "name": "Cateriumroditem",
+      "type": "item",
+      "sortid": 196,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cateriumroditem"
+    },
+    {
+      "name": "Cateriumwireitem",
+      "type": "item",
+      "sortid": 197,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cateriumwireitem"
+    },
+    {
+      "name": "Cateriumrodrecipe",
+      "type": "recipe",
+      "sortid": 198,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cateriumrodrecipe"
+    },
+    {
+      "name": "Cateriumwirerecipe",
+      "type": "recipe",
+      "sortid": 199,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cateriumwirerecipe"
+    },
+    {
+      "name": "Solarpanelblockactive",
+      "type": "block",
+      "sortid": 200,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "solarpanelblockactive"
+    },
+    {
+      "name": "Solarpanelblockinactive",
+      "type": "block",
+      "sortid": 201,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "solarpanelblockinactive"
+    },
+    {
+      "name": "SolarpanelblockinactiveUpdateTick",
+      "type": "procedure",
+      "sortid": 202,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "solarpanelblockinactive_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SolarpanelblockactiveUpdateTick",
+      "type": "procedure",
+      "sortid": 203,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "solarpanelblockactive_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SolarpanelblockactiveBlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 204,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "solarpanelblockactive_block_destroyed_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SolarpanelblockinactiveBlockIsPlacedBy",
+      "type": "procedure",
+      "sortid": 205,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "solarpanelblockinactive_block_is_placed_by",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Solarpanelrecipe",
+      "type": "recipe",
+      "sortid": 206,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "solarpanelrecipe"
     }
   ],
   "variable_elements": [
@@ -3722,45 +3937,67 @@
     "en_us": {
       "block.mega_project.steel_block": "Steel Block",
       "advancements.turbo_fueladvancement.descr": "Turbo Fuel!",
+      "block.mega_project.copper_extractor": "Copper Extractor",
       "block.mega_project.iron_ore_node_block_inactive": "Iron Ore Node Block Inactive",
-      "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
       "item.mega_project.turbofuelitem": "Turbofuel Mk.1",
+      "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
       "item.mega_project.redstoneingotitem": "Redstone Ingot",
+      "block.mega_project.coal_extractor": "Coal Extractor",
+      "block.mega_project.solarpanelblockactive": " Solar panel Active",
       "block.mega_project.generatormk_2": "Generator MK2",
-      "block.mega_project.copper_block": "Block of Copper",
+      "block.mega_project.generator_mk_2inactive": "Generator MK 2",
       "block.mega_project.caterium_ore": "Caterium Ore",
+      "block.mega_project.copper_block": "Block of Copper",
       "block.mega_project.copper_node_inactve": "Copper Node(inactive)",
-      "block.mega_project.diamond_steelblock": "Diamond Steel",
+      "block.mega_project.caterium_extractor": "Caterium Extractor",
+      "item.mega_project.screw": "Screw",
       "advancements.copperadvancement.title": "Copper",
+      "block.mega_project.diamond_steelblock": "Diamond Steel",
       "block.mega_project.copper_node": "Copper Node(active)",
       "block.mega_project.presserblock": "Presser",
+      "block.mega_project.minerinactive": "Miner MK1",
       "block.mega_project.caterium_block": "Block of Caterium",
       "item.mega_project.caterium_ingot": "Caterium Ingot",
+      "block.mega_project.electric_funanceinactive": "Electric Funance MK1",
+      "block.mega_project.solarpanelblockinactive": "Solar panel ",
       "item.mega_project.node_scanner_tool": "Node Scanner",
       "advancements.copperadvancement.descr": "Cooper!",
       "item.mega_project.ai_limiteritem": "Ai Limiter",
       "advancements.allrecipescheat.title": "All Recipes Cheat",
+      "item.mega_project.diamond_steel_armor_leggings": "Diamond Steel Leggings",
       "block.mega_project.caterium_node_block_inactive": "Caterium Node Block Inactive",
       "block.mega_project.minerblock": "Miner",
+      "block.mega_project.hardenedcobble": "Hardened Cobble",
       "item.mega_project.steelingot": "Steel Ingot",
       "block.mega_project.iron_ore_node_block": "Iron Ore Node Block(active)",
       "advancements.cateriumadvancement.title": "Caterium",
       "item.mega_project.highspeedconectoritem": "High Speed Connector",
+      "key.mcreator.diamond_pickaxe_menu": "Diamond Tools Menu",
+      "item.mega_project.diamond_steel_armor_helmet": "Diamond Steel Helmet",
       "advancements.hub_crafted_achievment.title": "Hub Crafted",
       "block.mega_project.hub": "Hub",
       "key.mcreator.adminmenukeybind": "Admin Menu",
+      "block.mega_project.constructorinactive": "Constructor",
+      "item.mega_project.cateriumwireitem": "Caterium wire",
       "item.mega_project.copper_sheet_item": "Copper Sheet",
       "advancements.turbo_fueladvancement.title": "Turbo Fuel",
+      "item.mega_project.ironplate": "Iron Plate",
+      "block.mega_project.ironextractor": "Iron Extractor",
       "block.mega_project.coal_node": "Coal Node(active)",
+      "block.mega_project.heavyironblock": "Heavy Iron",
       "advancements.electronics.descr": "Electronics!",
+      "item.mega_project.cateriumroditem": "Caterium rod",
       "advancements.electronics.title": "Electronics",
       "block.mega_project.chargerblock": "Charger",
       "block.mega_project.electric_furnance_block": "Electric Furnance",
       "item.mega_project.copper_ingot": "Copper",
       "advancements.rudit_ingotadvancement.title": "Rudit Ingot",
+      "block.mega_project.foundryinactive": "Foundry",
       "block.mega_project.constructorblock": "Constructor",
       "item.mega_project.diamondsteelaxe": "Diamond Steel Axe",
       "advancements.rudit_ingotadvancement.descr": "Advanced Redstone",
+      "item.mega_project.diamond_steel_armor_chestplate": "Diamond Steel Chestplate",
+      "item.mega_project.diamondscrewitem": "Diamond screw",
       "block.mega_project.caterium_nod_eblock": "Caterium  Node Block (active)",
       "advancements.allrecipescheat.descr": "Unlock Recipe Cheat",
       "block.mega_project.foundyblock": "Foundry",
@@ -3769,13 +4006,18 @@
       "block.mega_project.generator_mk_1": "Generator MK 1",
       "item.mega_project.turbofuelitem_3": "Turbofuel Mk.3",
       "block.mega_project.copper_ore": "Copper Ore",
+      "item.mega_project.diamond_steel_armor_boots": "DiamondS teel Boots",
       "block.mega_project.coal_node_inactive": "Coal Node Inactive",
+      "fluid.oil": "Oil",
       "item.mega_project.diamond_steel_sword": "Diamond Steel Sword",
+      "item.mega_project.oil_bucket": "Oil Bucket",
       "item.mega_project.node_scanner": "Node Scanner",
       "item.mega_project.diamondstellshovel": "Diamondstellshovel",
+      "block.mega_project.generator_mk_1inactive": "Generator MK 1",
       "item.mega_project.diamondsteelitem": "Diamond Steel Ingot",
       "advancements.hub_crafted_achievment.descr": "You Enter MENALOMANS Way",
       "advancements.cateriumadvancement.descr": "Caterium!",
+      "item.mega_project.diamondsteelplate": "Diamond Steel Plate",
       "item.mega_project.circuit_boarditem": "Circuit Board"
     }
   },

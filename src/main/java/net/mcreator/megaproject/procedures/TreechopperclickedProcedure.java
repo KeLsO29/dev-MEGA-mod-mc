@@ -1,11 +1,19 @@
 package net.mcreator.megaproject.procedures;
 
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.item.ItemStack;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Entity;
+
+import net.mcreator.megaproject.MegaProjectModElements;
+
+import java.util.Map;
+
 @MegaProjectModElements.ModElement.Tag
 public class TreechopperclickedProcedure extends MegaProjectModElements.ModElement {
-
 	public TreechopperclickedProcedure(MegaProjectModElements instance) {
 		super(instance, 189);
-
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -14,9 +22,7 @@ public class TreechopperclickedProcedure extends MegaProjectModElements.ModEleme
 				System.err.println("Failed to load dependency entity for procedure Treechopperclicked!");
 			return;
 		}
-
 		Entity entity = (Entity) dependencies.get("entity");
-
 		if (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
 				.getBoolean("TreeChopper")) == (true))) {
 			((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
@@ -31,7 +37,5 @@ public class TreechopperclickedProcedure extends MegaProjectModElements.ModEleme
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Tree Chopper Activated!"), (true));
 			}
 		}
-
 	}
-
 }
