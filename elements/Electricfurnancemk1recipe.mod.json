@@ -38,7 +38,7 @@
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:ElectricFurnanceBlock"
+      "value": "CUSTOM:ElectricFunanceinactive"
     },
     "name": "electricfurnancemk_1recipe",
     "namespace": "mod"

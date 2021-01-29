@@ -48,6 +48,7 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.ISidedInventory;
+import net.minecraft.fluid.IFluidState;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
@@ -60,6 +61,7 @@ import net.minecraft.block.Block;
 
 import net.mcreator.megaproject.procedures.Generatormk2UpdateTickProcedure;
 import net.mcreator.megaproject.procedures.Generatormk2ClientDisplayRandomTickProcedure;
+import net.mcreator.megaproject.procedures.Generatormk2BlockDestroyedByPlayerProcedure;
 import net.mcreator.megaproject.gui.GeneratorMK2GUIGui;
 import net.mcreator.megaproject.MegaProjectModElements;
 
@@ -178,6 +180,24 @@ public class Generatormk2Block extends MegaProjectModElements.ModElement {
 				$_dependencies.put("world", world);
 				Generatormk2ClientDisplayRandomTickProcedure.executeProcedure($_dependencies);
 			}
+		}
+
+		@Override
+		public boolean removedByPlayer(BlockState state, World world, BlockPos pos, PlayerEntity entity, boolean willHarvest, IFluidState fluid) {
+			boolean retval = super.removedByPlayer(state, world, pos, entity, willHarvest, fluid);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				Generatormk2BlockDestroyedByPlayerProcedure.executeProcedure($_dependencies);
+			}
+			return retval;
 		}
 
 		@Override

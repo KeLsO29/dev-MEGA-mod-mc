@@ -31,11 +31,11 @@
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "BUILDING_BLOCKS"
+      "value": "No creative tab entry"
     },
     "destroyTool": "Not specified",
     "customDrop": {
-      "value": ""
+      "value": "CUSTOM:ElectricFunanceinactive"
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -101,6 +101,9 @@
     },
     "onRandomUpdateEvent": {
       "name": "ElectricFurnanceBlockClientDisplayRandomTick"
+    },
+    "onDestroyedByPlayer": {
+      "name": "ElectricFurnanceBlockBlockDestroyedByPlayer"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

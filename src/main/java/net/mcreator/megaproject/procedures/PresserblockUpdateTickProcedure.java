@@ -83,7 +83,7 @@ public class PresserblockUpdateTickProcedure extends MegaProjectModElements.ModE
 							}
 							return _retval.get();
 						}
-					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) >= 8))) {
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) >= 6))) {
 				if (!world.getWorld().isRemote) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -108,7 +108,7 @@ public class PresserblockUpdateTickProcedure extends MegaProjectModElements.ModE
 								}
 								return _retval.get();
 							}
-						}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) - 8));
+						}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) - 6));
 						_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 							if (capability instanceof IItemHandlerModifiable) {
 								((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);

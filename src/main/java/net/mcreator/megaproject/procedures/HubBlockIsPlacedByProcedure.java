@@ -73,6 +73,14 @@ public class HubBlockIsPlacedByProcedure extends MegaProjectModElements.ModEleme
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Oil", 0);
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
 					_tileEntity.getTileData().putDouble("Caterium", 0);
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
@@ -128,6 +136,14 @@ public class HubBlockIsPlacedByProcedure extends MegaProjectModElements.ModEleme
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putDouble("Iron", ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 							.orElse(new MegaProjectModVariables.PlayerVariables())).hub_iron_save));
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Oil", (MegaProjectModVariables.MapVariables.get(world).hub_oil_save));
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			if (!world.getWorld().isRemote) {

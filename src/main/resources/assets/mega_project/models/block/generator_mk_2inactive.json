@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "mega_project:blocks/generatormk2_bottom",
+    "up": "mega_project:blocks/generatormk2_top",
+    "north": "mega_project:blocks/generator_mk2_inactive",
+    "east": "mega_project:blocks/generatormk2_side",
+    "south": "mega_project:blocks/generatormk2_side",
+    "west": "mega_project:blocks/generatormk2_side",
+    "particle": "mega_project:blocks/generatormk2_bottom"
+  }
+}

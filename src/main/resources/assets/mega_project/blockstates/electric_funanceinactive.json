@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "mega_project:block/electric_funanceinactive"
+    },
+    "facing=east": {
+      "model": "mega_project:block/electric_funanceinactive",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "mega_project:block/electric_funanceinactive",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mega_project:block/electric_funanceinactive",
+      "y": 270
+    }
+  }
+}

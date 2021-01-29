@@ -47,7 +47,7 @@
             "falpha": 0.0
           },
           "name": "Iron Mined",
-          "x": 23,
+          "x": 22,
           "y": 56
         }
       },
@@ -60,7 +60,7 @@
             "falpha": 0.0
           },
           "name": "Coal Mined",
-          "x": 24,
+          "x": 23,
           "y": 36
         }
       },
@@ -211,6 +211,71 @@
           "name": "<BNBT:number:Copper>",
           "x": 120,
           "y": 76
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Oil Mined",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Oil Mined",
+          "x": 22,
+          "y": 98
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:integer:total_comsuption> MW",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<VAR:integer:total_comsuption> MW",
+          "x": 331,
+          "y": 106
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Total Comsuption:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Total Comsuption:",
+          "x": 245,
+          "y": 106
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Total Production:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Total Production:",
+          "x": 245,
+          "y": 95
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:integer:total_production> MW",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<VAR:integer:total_production> MW",
+          "x": 331,
+          "y": 96
         }
       }
     ],

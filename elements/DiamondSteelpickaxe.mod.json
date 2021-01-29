@@ -21,6 +21,12 @@
     "hasGlow": false,
     "repairItems": [],
     "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false
+    "damageOnCrafting": false,
+    "onItemInUseTick": {
+      "name": "DiamondSteelpickaxeToolInHandTick"
+    },
+    "onBlockDestroyedWithTool": {
+      "name": "DiamondSteelpickaxeBlockDestroyedWithTool"
+    }
   }
 }

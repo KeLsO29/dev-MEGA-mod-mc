@@ -38,7 +38,7 @@
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:Minerblock"
+      "value": "CUSTOM:Minerinactive"
     },
     "name": "miner_mk_1recipe",
     "namespace": "mod"

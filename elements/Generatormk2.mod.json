@@ -98,6 +98,9 @@
     "onRandomUpdateEvent": {
       "name": "Generatormk2ClientDisplayRandomTick"
     },
+    "onDestroyedByPlayer": {
+      "name": "Generatormk2BlockDestroyedByPlayer"
+    },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [
