@@ -69,26 +69,6 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 						_tileEntity.getTileData().putBoolean("Wokirng", (true));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-				if (((new Object() {
-					public boolean getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "Counted")) == (false))) {
-					MegaProjectModVariables.MapVariables
-							.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) + 5);
-					MegaProjectModVariables.MapVariables.get(world).syncData(world);
-					if (!world.getWorld().isRemote) {
-						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-						TileEntity _tileEntity = world.getTileEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_tileEntity != null)
-							_tileEntity.getTileData().putBoolean("Counted", (true));
-						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-					}
-				}
 				if ((Math.random() < 0.5)) {
 					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
@@ -138,26 +118,6 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putBoolean("Wokirng", (true));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-				}
-				if (((new Object() {
-					public boolean getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "Counted")) == (false))) {
-					MegaProjectModVariables.MapVariables
-							.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) + 5);
-					MegaProjectModVariables.MapVariables.get(world).syncData(world);
-					if (!world.getWorld().isRemote) {
-						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-						TileEntity _tileEntity = world.getTileEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_tileEntity != null)
-							_tileEntity.getTileData().putBoolean("Counted", (true));
-						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-					}
 				}
 				if ((Math.random() < 0.5)) {
 					if (!world.getWorld().isRemote) {
@@ -209,26 +169,6 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 						_tileEntity.getTileData().putBoolean("Wokirng", (true));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-				if (((new Object() {
-					public boolean getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "Counted")) == (false))) {
-					MegaProjectModVariables.MapVariables
-							.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) + 5);
-					MegaProjectModVariables.MapVariables.get(world).syncData(world);
-					if (!world.getWorld().isRemote) {
-						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-						TileEntity _tileEntity = world.getTileEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_tileEntity != null)
-							_tileEntity.getTileData().putBoolean("Counted", (true));
-						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-					}
-				}
 				if ((Math.random() < 0.3)) {
 					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
@@ -279,26 +219,6 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 						_tileEntity.getTileData().putBoolean("Wokirng", (true));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-				if (((new Object() {
-					public boolean getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "Counted")) == (false))) {
-					MegaProjectModVariables.MapVariables
-							.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) + 5);
-					MegaProjectModVariables.MapVariables.get(world).syncData(world);
-					if (!world.getWorld().isRemote) {
-						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-						TileEntity _tileEntity = world.getTileEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_tileEntity != null)
-							_tileEntity.getTileData().putBoolean("Counted", (true));
-						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-					}
-				}
 				if ((Math.random() < 0.3)) {
 					if (!world.getWorld().isRemote) {
 						BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
@@ -340,51 +260,13 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 					}
 				}
 			} else {
-				if (((new Object() {
-					public boolean getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "Counted")) == (true))) {
-					MegaProjectModVariables.MapVariables
-							.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) - 5);
-					MegaProjectModVariables.MapVariables.get(world).syncData(world);
-					if (!world.getWorld().isRemote) {
-						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-						TileEntity _tileEntity = world.getTileEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_tileEntity != null)
-							_tileEntity.getTileData().putBoolean("Counted", (false));
-						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-					}
-					{
-						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-						BlockState _bs = MinerinactiveBlock.block.getDefaultState();
-						BlockState _bso = world.getBlockState(_bp);
-						for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-							IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-							if (_bs.has(_property))
-								_bs = _bs.with(_property, (Comparable) entry.getValue());
-						}
-						TileEntity _te = world.getTileEntity(_bp);
-						CompoundNBT _bnbt = null;
-						if (_te != null) {
-							_bnbt = _te.write(new CompoundNBT());
-							_te.remove();
-						}
-						world.setBlockState(_bp, _bs, 3);
-						if (_bnbt != null) {
-							_te = world.getTileEntity(_bp);
-							if (_te != null) {
-								try {
-									_te.read(_bnbt);
-								} catch (Exception ignored) {
-								}
-							}
-						}
-					}
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putBoolean("Wokirng", (false));
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				{
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
@@ -421,52 +303,6 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putBoolean("Wokirng", (false));
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-			}
-			if (((new Object() {
-				public boolean getValue(BlockPos pos, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getBoolean(tag);
-					return false;
-				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Counted")) == (true))) {
-				MegaProjectModVariables.MapVariables
-						.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) - 5);
-				MegaProjectModVariables.MapVariables.get(world).syncData(world);
-				if (!world.getWorld().isRemote) {
-					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-					TileEntity _tileEntity = world.getTileEntity(_bp);
-					BlockState _bs = world.getBlockState(_bp);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().putBoolean("Counted", (false));
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-				}
-				{
-					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-					BlockState _bs = MinerinactiveBlock.block.getDefaultState();
-					BlockState _bso = world.getBlockState(_bp);
-					for (Map.Entry<IProperty<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
-						IProperty _property = _bs.getBlock().getStateContainer().getProperty(entry.getKey().getName());
-						if (_bs.has(_property))
-							_bs = _bs.with(_property, (Comparable) entry.getValue());
-					}
-					TileEntity _te = world.getTileEntity(_bp);
-					CompoundNBT _bnbt = null;
-					if (_te != null) {
-						_bnbt = _te.write(new CompoundNBT());
-						_te.remove();
-					}
-					world.setBlockState(_bp, _bs, 3);
-					if (_bnbt != null) {
-						_te = world.getTileEntity(_bp);
-						if (_te != null) {
-							try {
-								_te.read(_bnbt);
-							} catch (Exception ignored) {
-							}
-						}
-					}
-				}
 			}
 			{
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);

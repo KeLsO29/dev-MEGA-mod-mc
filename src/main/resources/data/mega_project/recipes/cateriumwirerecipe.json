@@ -8,35 +8,35 @@
   ],
   "key": {
     "0": {
-      "item": "mega_project:unknown_element"
+      "item": "mega_project:cateriumroditem"
     },
     "1": {
-      "item": "mega_project:unknown_element"
+      "item": "mega_project:cateriumroditem"
     },
     "2": {
-      "item": "mega_project:unknown_element"
+      "item": "mega_project:cateriumroditem"
     },
     "3": {
-      "item": "mega_project:unknown_element"
+      "item": "mega_project:cateriumroditem"
     },
     "4": {
       "item": "minecraft:iron_block"
     },
     "5": {
-      "item": "mega_project:unknown_element"
+      "item": "mega_project:cateriumroditem"
     },
     "6": {
-      "item": "mega_project:unknown_element"
+      "item": "mega_project:cateriumroditem"
     },
     "7": {
-      "item": "mega_project:unknown_element"
+      "item": "mega_project:cateriumroditem"
     },
     "8": {
-      "item": "mega_project:unknown_element"
+      "item": "mega_project:cateriumroditem"
     }
   },
   "result": {
-    "item": "mega_project:unknown_element",
+    "item": "mega_project:cateriumwireitem",
     "count": 1
   }
 }

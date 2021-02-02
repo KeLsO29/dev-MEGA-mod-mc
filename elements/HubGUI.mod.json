@@ -225,58 +225,6 @@
           "x": 22,
           "y": 98
         }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "<VAR:integer:total_comsuption> MW",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "<VAR:integer:total_comsuption> MW",
-          "x": 331,
-          "y": 106
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Total Comsuption:",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Total Comsuption:",
-          "x": 245,
-          "y": 106
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Total Production:",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Total Production:",
-          "x": 245,
-          "y": 95
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "<VAR:integer:total_production> MW",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "<VAR:integer:total_production> MW",
-          "x": 331,
-          "y": 96
-        }
       }
     ],
     "onTick": {

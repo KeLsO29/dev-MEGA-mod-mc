@@ -37,7 +37,6 @@ import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.megaproject.procedures.HubGUIWhileThisGUIIsOpenTickProcedure;
-import net.mcreator.megaproject.MegaProjectModVariables;
 import net.mcreator.megaproject.MegaProjectModElements;
 import net.mcreator.megaproject.MegaProjectMod;
 
@@ -421,10 +420,6 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 				}
 			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Copper")) + "", 104, 70, -12829636);
 			this.font.drawString("Oil Mined", 6, 92, -12829636);
-			this.font.drawString("" + (int) (MegaProjectModVariables.MapVariables.get(world).total_comsuption) + " MW", 315, 100, -12829636);
-			this.font.drawString("Total Comsuption:", 229, 100, -12829636);
-			this.font.drawString("Total Production:", 229, 89, -12829636);
-			this.font.drawString("" + (int) (MegaProjectModVariables.MapVariables.get(world).total_production) + " MW", 315, 90, -12829636);
 		}
 
 		@Override

@@ -24,17 +24,17 @@ public class LightingpowertonclickProcedure extends MegaProjectModElements.ModEl
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		if (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
-				.getBoolean("Throw")) == (true))) {
-			((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag().putBoolean("Throw",
-					(false));
+				.getBoolean("ThorPower")) == (true))) {
+			((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
+					.putBoolean("ThorPower", (false));
 			if (entity instanceof PlayerEntity && !entity.world.isRemote) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Throw Deactivated"), (false));
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Thor Power OFF"), (true));
 			}
 		} else {
-			((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag().putBoolean("Throw",
-					(true));
+			((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
+					.putBoolean("ThorPower", (true));
 			if (entity instanceof PlayerEntity && !entity.world.isRemote) {
-				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Throw Activated"), (false));
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Thor Power ON"), (true));
 			}
 		}
 	}

@@ -133,26 +133,6 @@ public class ElectricFurnanceBlockUpdateTickProcedure extends MegaProjectModElem
 						_tileEntity.getTileData().putBoolean("Working", (true));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-				if (((false) == (new Object() {
-					public boolean getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "Counted")))) {
-					MegaProjectModVariables.MapVariables
-							.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) + 100);
-					MegaProjectModVariables.MapVariables.get(world).syncData(world);
-					if (!world.getWorld().isRemote) {
-						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-						TileEntity _tileEntity = world.getTileEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_tileEntity != null)
-							_tileEntity.getTileData().putBoolean("Counted", (true));
-						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-					}
-				}
 				{
 					TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 					if (_ent != null) {
@@ -314,26 +294,6 @@ public class ElectricFurnanceBlockUpdateTickProcedure extends MegaProjectModElem
 						});
 					}
 				}
-				if (((false) == (new Object() {
-					public boolean getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "Counted")))) {
-					MegaProjectModVariables.MapVariables
-							.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) + 100);
-					MegaProjectModVariables.MapVariables.get(world).syncData(world);
-					if (!world.getWorld().isRemote) {
-						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-						TileEntity _tileEntity = world.getTileEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_tileEntity != null)
-							_tileEntity.getTileData().putBoolean("Counted", (true));
-						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-					}
-				}
 				if (!world.getWorld().isRemote) {
 					BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 							(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
@@ -455,26 +415,6 @@ public class ElectricFurnanceBlockUpdateTickProcedure extends MegaProjectModElem
 								((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
 							}
 						});
-					}
-				}
-				if (((false) == (new Object() {
-					public boolean getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "Counted")))) {
-					MegaProjectModVariables.MapVariables
-							.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) + 100);
-					MegaProjectModVariables.MapVariables.get(world).syncData(world);
-					if (!world.getWorld().isRemote) {
-						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-						TileEntity _tileEntity = world.getTileEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_tileEntity != null)
-							_tileEntity.getTileData().putBoolean("Counted", (true));
-						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
 				if (!world.getWorld().isRemote) {
@@ -600,26 +540,6 @@ public class ElectricFurnanceBlockUpdateTickProcedure extends MegaProjectModElem
 						});
 					}
 				}
-				if (((false) == (new Object() {
-					public boolean getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "Counted")))) {
-					MegaProjectModVariables.MapVariables
-							.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) + 100);
-					MegaProjectModVariables.MapVariables.get(world).syncData(world);
-					if (!world.getWorld().isRemote) {
-						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-						TileEntity _tileEntity = world.getTileEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_tileEntity != null)
-							_tileEntity.getTileData().putBoolean("Counted", (true));
-						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-					}
-				}
 				if (!world.getWorld().isRemote) {
 					BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 							(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
@@ -741,26 +661,6 @@ public class ElectricFurnanceBlockUpdateTickProcedure extends MegaProjectModElem
 								((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
 							}
 						});
-					}
-				}
-				if (((false) == (new Object() {
-					public boolean getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "Counted")))) {
-					MegaProjectModVariables.MapVariables
-							.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) + 100);
-					MegaProjectModVariables.MapVariables.get(world).syncData(world);
-					if (!world.getWorld().isRemote) {
-						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-						TileEntity _tileEntity = world.getTileEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_tileEntity != null)
-							_tileEntity.getTileData().putBoolean("Counted", (true));
-						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
 				if (!world.getWorld().isRemote) {
@@ -886,26 +786,6 @@ public class ElectricFurnanceBlockUpdateTickProcedure extends MegaProjectModElem
 						});
 					}
 				}
-				if (((false) == (new Object() {
-					public boolean getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "Counted")))) {
-					MegaProjectModVariables.MapVariables
-							.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) + 100);
-					MegaProjectModVariables.MapVariables.get(world).syncData(world);
-					if (!world.getWorld().isRemote) {
-						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-						TileEntity _tileEntity = world.getTileEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_tileEntity != null)
-							_tileEntity.getTileData().putBoolean("Counted", (true));
-						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-					}
-				}
 				if (!world.getWorld().isRemote) {
 					BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 							(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
@@ -1027,26 +907,6 @@ public class ElectricFurnanceBlockUpdateTickProcedure extends MegaProjectModElem
 								((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
 							}
 						});
-					}
-				}
-				if (((false) == (new Object() {
-					public boolean getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "Counted")))) {
-					MegaProjectModVariables.MapVariables
-							.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) + 100);
-					MegaProjectModVariables.MapVariables.get(world).syncData(world);
-					if (!world.getWorld().isRemote) {
-						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-						TileEntity _tileEntity = world.getTileEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_tileEntity != null)
-							_tileEntity.getTileData().putBoolean("Counted", (true));
-						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
 				if (!world.getWorld().isRemote) {
@@ -1172,26 +1032,6 @@ public class ElectricFurnanceBlockUpdateTickProcedure extends MegaProjectModElem
 						});
 					}
 				}
-				if (((false) == (new Object() {
-					public boolean getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "Counted")))) {
-					MegaProjectModVariables.MapVariables
-							.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) + 100);
-					MegaProjectModVariables.MapVariables.get(world).syncData(world);
-					if (!world.getWorld().isRemote) {
-						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-						TileEntity _tileEntity = world.getTileEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_tileEntity != null)
-							_tileEntity.getTileData().putBoolean("Counted", (true));
-						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-					}
-				}
 				if (!world.getWorld().isRemote) {
 					BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 							(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
@@ -1313,26 +1153,6 @@ public class ElectricFurnanceBlockUpdateTickProcedure extends MegaProjectModElem
 								((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _setstack);
 							}
 						});
-					}
-				}
-				if (((false) == (new Object() {
-					public boolean getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "Counted")))) {
-					MegaProjectModVariables.MapVariables
-							.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) + 100);
-					MegaProjectModVariables.MapVariables.get(world).syncData(world);
-					if (!world.getWorld().isRemote) {
-						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-						TileEntity _tileEntity = world.getTileEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_tileEntity != null)
-							_tileEntity.getTileData().putBoolean("Counted", (true));
-						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 				}
 				if (!world.getWorld().isRemote) {
@@ -1458,26 +1278,6 @@ public class ElectricFurnanceBlockUpdateTickProcedure extends MegaProjectModElem
 						});
 					}
 				}
-				if (((false) == (new Object() {
-					public boolean getValue(BlockPos pos, String tag) {
-						TileEntity tileEntity = world.getTileEntity(pos);
-						if (tileEntity != null)
-							return tileEntity.getTileData().getBoolean(tag);
-						return false;
-					}
-				}.getValue(new BlockPos((int) x, (int) y, (int) z), "Counted")))) {
-					MegaProjectModVariables.MapVariables
-							.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) + 100);
-					MegaProjectModVariables.MapVariables.get(world).syncData(world);
-					if (!world.getWorld().isRemote) {
-						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-						TileEntity _tileEntity = world.getTileEntity(_bp);
-						BlockState _bs = world.getBlockState(_bp);
-						if (_tileEntity != null)
-							_tileEntity.getTileData().putBoolean("Counted", (true));
-						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-					}
-				}
 				if (!world.getWorld().isRemote) {
 					BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 							(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
@@ -1504,17 +1304,6 @@ public class ElectricFurnanceBlockUpdateTickProcedure extends MegaProjectModElem
 					BlockState _bs = world.getBlockState(_bp);
 					if (_tileEntity != null)
 						_tileEntity.getTileData().putBoolean("Working", (false));
-					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-				}
-				MegaProjectModVariables.MapVariables
-						.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) - 100);
-				MegaProjectModVariables.MapVariables.get(world).syncData(world);
-				if (!world.getWorld().isRemote) {
-					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-					TileEntity _tileEntity = world.getTileEntity(_bp);
-					BlockState _bs = world.getBlockState(_bp);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().putBoolean("Counted", (false));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				{
@@ -1551,17 +1340,6 @@ public class ElectricFurnanceBlockUpdateTickProcedure extends MegaProjectModElem
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putBoolean("Working", (false));
-				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
-			}
-			MegaProjectModVariables.MapVariables
-					.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) - 100);
-			MegaProjectModVariables.MapVariables.get(world).syncData(world);
-			if (!world.getWorld().isRemote) {
-				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-				TileEntity _tileEntity = world.getTileEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_tileEntity != null)
-					_tileEntity.getTileData().putBoolean("Counted", (false));
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 			{

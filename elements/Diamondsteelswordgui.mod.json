@@ -26,13 +26,13 @@
       {
         "type": "button",
         "data": {
-          "text": "Throw",
+          "text": "Thor Power",
           "onClick": {
             "name": "Lightingpowertonclick"
           },
           "width": 95,
           "height": 20,
-          "name": "Throw",
+          "name": "Thor Power",
           "x": 163,
           "y": 62
         }

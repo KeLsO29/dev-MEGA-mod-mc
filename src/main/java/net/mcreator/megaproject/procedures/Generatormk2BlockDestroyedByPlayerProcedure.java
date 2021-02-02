@@ -10,7 +10,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 
-import net.mcreator.megaproject.MegaProjectModVariables;
 import net.mcreator.megaproject.MegaProjectModElements;
 
 import java.util.Map;
@@ -65,8 +64,5 @@ public class Generatormk2BlockDestroyedByPlayerProcedure extends MegaProjectModE
 							"Chunk Force Unloaded!  Other Miners/Generators in range 16 blocks may be affected. Make sure you replace them."),
 					(false));
 		}
-		MegaProjectModVariables.MapVariables
-				.get(world).total_production = (double) ((MegaProjectModVariables.MapVariables.get(world).total_production) - 500);
-		MegaProjectModVariables.MapVariables.get(world).syncData(world);
 	}
 }

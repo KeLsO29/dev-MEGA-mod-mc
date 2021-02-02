@@ -10,7 +10,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.command.ICommandSource;
 import net.minecraft.command.CommandSource;
 
-import net.mcreator.megaproject.MegaProjectModVariables;
 import net.mcreator.megaproject.MegaProjectModElements;
 
 import java.util.Map;
@@ -52,9 +51,6 @@ public class FoundyblockBlockDestroyedByPlayerProcedure extends MegaProjectModEl
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		MegaProjectModVariables.MapVariables
-				.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) - 100);
-		MegaProjectModVariables.MapVariables.get(world).syncData(world);
 		if (!world.getWorld().isRemote && world.getWorld().getServer() != null) {
 			world.getWorld().getServer().getCommandManager().handleCommand(
 					new CommandSource(ICommandSource.DUMMY, new Vec3d(x, y, z), Vec2f.ZERO, (ServerWorld) world, 4, "", new StringTextComponent(""),

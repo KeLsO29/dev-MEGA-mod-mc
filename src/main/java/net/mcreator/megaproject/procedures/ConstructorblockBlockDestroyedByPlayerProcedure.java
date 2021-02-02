@@ -1,8 +1,5 @@
 package net.mcreator.megaproject.procedures;
 
-import net.minecraft.world.IWorld;
-
-import net.mcreator.megaproject.MegaProjectModVariables;
 import net.mcreator.megaproject.MegaProjectModElements;
 
 import java.util.Map;
@@ -14,14 +11,5 @@ public class ConstructorblockBlockDestroyedByPlayerProcedure extends MegaProject
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				System.err.println("Failed to load dependency world for procedure ConstructorblockBlockDestroyedByPlayer!");
-			return;
-		}
-		IWorld world = (IWorld) dependencies.get("world");
-		MegaProjectModVariables.MapVariables
-				.get(world).total_comsuption = (double) ((MegaProjectModVariables.MapVariables.get(world).total_comsuption) - 20);
-		MegaProjectModVariables.MapVariables.get(world).syncData(world);
 	}
 }

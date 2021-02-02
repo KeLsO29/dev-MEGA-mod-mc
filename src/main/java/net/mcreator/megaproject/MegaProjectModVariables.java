@@ -23,7 +23,6 @@ import net.minecraft.util.Direction;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.nbt.INBT;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
@@ -69,9 +68,6 @@ public class MegaProjectModVariables {
 	}
 	public static class WorldVariables extends WorldSavedData {
 		public static final String DATA_NAME = "mega_project_worldvars";
-		public ItemStack foundrymk1_igredience1 = ItemStack.EMPTY;
-		public ItemStack foundrymk1_product = ItemStack.EMPTY;
-		public ItemStack foundrymk1_igredience2 = ItemStack.EMPTY;
 		public WorldVariables() {
 			super(DATA_NAME);
 		}
@@ -82,16 +78,10 @@ public class MegaProjectModVariables {
 
 		@Override
 		public void read(CompoundNBT nbt) {
-			foundrymk1_igredience1 = ItemStack.read(nbt.getCompound("foundrymk1_igredience1"));
-			foundrymk1_product = ItemStack.read(nbt.getCompound("foundrymk1_product"));
-			foundrymk1_igredience2 = ItemStack.read(nbt.getCompound("foundrymk1_igredience2"));
 		}
 
 		@Override
 		public CompoundNBT write(CompoundNBT nbt) {
-			nbt.put("foundrymk1_igredience1", foundrymk1_igredience1.write(new CompoundNBT()));
-			nbt.put("foundrymk1_product", foundrymk1_product.write(new CompoundNBT()));
-			nbt.put("foundrymk1_igredience2", foundrymk1_igredience2.write(new CompoundNBT()));
 			return nbt;
 		}
 
@@ -121,8 +111,6 @@ public class MegaProjectModVariables {
 		public double hub_y = 0;
 		public double hub_copper_save = 0;
 		public double hub_oil_save = 0;
-		public double total_comsuption = 0;
-		public double total_production = 0;
 		public MapVariables() {
 			super(DATA_NAME);
 		}
@@ -141,8 +129,6 @@ public class MegaProjectModVariables {
 			hub_y = nbt.getDouble("hub_y");
 			hub_copper_save = nbt.getDouble("hub_copper_save");
 			hub_oil_save = nbt.getDouble("hub_oil_save");
-			total_comsuption = nbt.getDouble("total_comsuption");
-			total_production = nbt.getDouble("total_production");
 		}
 
 		@Override
@@ -155,8 +141,6 @@ public class MegaProjectModVariables {
 			nbt.putDouble("hub_y", hub_y);
 			nbt.putDouble("hub_copper_save", hub_copper_save);
 			nbt.putDouble("hub_oil_save", hub_oil_save);
-			nbt.putDouble("total_comsuption", total_comsuption);
-			nbt.putDouble("total_production", total_production);
 			return nbt;
 		}
 
