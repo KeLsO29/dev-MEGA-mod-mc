@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "mega_project:blocks/respawn_anchor_top_off",
+    "particle": "mega_project:blocks/respawn_anchor_top_off"
+  }
+}

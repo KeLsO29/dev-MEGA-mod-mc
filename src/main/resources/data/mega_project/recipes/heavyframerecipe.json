@@ -1,0 +1,39 @@
+{
+  "group": "heavframe_block",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "3 5",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "mega_project:heavyironblock"
+    },
+    "1": {
+      "item": "mega_project:ironplate"
+    },
+    "2": {
+      "item": "mega_project:heavyironblock"
+    },
+    "3": {
+      "item": "mega_project:modularframe"
+    },
+    "5": {
+      "item": "mega_project:modularframe"
+    },
+    "6": {
+      "item": "mega_project:heavyironblock"
+    },
+    "7": {
+      "item": "mega_project:ironplate"
+    },
+    "8": {
+      "item": "mega_project:heavyironblock"
+    }
+  },
+  "result": {
+    "item": "mega_project:heavyframe",
+    "count": 1
+  }
+}

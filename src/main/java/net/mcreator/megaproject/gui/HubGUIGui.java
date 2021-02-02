@@ -36,13 +36,17 @@ import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.megaproject.procedures.PermadayshowcondidionProcedure;
 import net.mcreator.megaproject.procedures.HubGUIWhileThisGUIIsOpenTickProcedure;
+import net.mcreator.megaproject.MegaProjectModVariables;
 import net.mcreator.megaproject.MegaProjectModElements;
 import net.mcreator.megaproject.MegaProjectMod;
 
 import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
+
+import com.google.common.collect.ImmutableMap;
 
 @MegaProjectModElements.ModElement.Tag
 public class HubGUIGui extends MegaProjectModElements.ModElement {
@@ -102,7 +106,7 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 			super(containerType, id);
 			this.entity = inv.player;
 			this.world = inv.player.world;
-			this.internal = new ItemStackHandler(4);
+			this.internal = new ItemStackHandler(5);
 			BlockPos pos = null;
 			if (extraData != null) {
 				pos = extraData.readBlockPos();
@@ -140,29 +144,31 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 					}
 				}
 			}
-			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 82, 47) {
+			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 83, 51) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
 					return false;
 				}
 			}));
-			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 82, 27) {
+			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 83, 33) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
 					return false;
 				}
 			}));
-			this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 82, 7) {
+			this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 83, 15) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
 					return false;
 				}
 			}));
-			this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 82, 67) {
+			this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 83, 69) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
 					return false;
 				}
+			}));
+			this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 303, 202) {
 			}));
 			int si;
 			int sj;
@@ -189,18 +195,18 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 			if (slot != null && slot.getHasStack()) {
 				ItemStack itemstack1 = slot.getStack();
 				itemstack = itemstack1.copy();
-				if (index < 4) {
-					if (!this.mergeItemStack(itemstack1, 4, this.inventorySlots.size(), true)) {
+				if (index < 5) {
+					if (!this.mergeItemStack(itemstack1, 5, this.inventorySlots.size(), true)) {
 						return ItemStack.EMPTY;
 					}
 					slot.onSlotChange(itemstack1, itemstack);
-				} else if (!this.mergeItemStack(itemstack1, 0, 4, false)) {
-					if (index < 4 + 27) {
-						if (!this.mergeItemStack(itemstack1, 4 + 27, this.inventorySlots.size(), true)) {
+				} else if (!this.mergeItemStack(itemstack1, 0, 5, false)) {
+					if (index < 5 + 27) {
+						if (!this.mergeItemStack(itemstack1, 5 + 27, this.inventorySlots.size(), true)) {
 							return ItemStack.EMPTY;
 						}
 					} else {
-						if (!this.mergeItemStack(itemstack1, 4, 4 + 27, false)) {
+						if (!this.mergeItemStack(itemstack1, 5, 5 + 27, false)) {
 							return ItemStack.EMPTY;
 						}
 					}
@@ -373,10 +379,10 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-			this.font.drawString("HUB", 184, 3, -16777216);
-			this.font.drawString("Iron Mined", 6, 50, -12829636);
-			this.font.drawString("Coal Mined", 7, 30, -12829636);
-			this.font.drawString("Caterium Mined", 6, 10, -12829636);
+			this.font.drawString("HUB", 192, 2, -16777216);
+			this.font.drawString("Iron Mined", 8, 54, -12829636);
+			this.font.drawString("Coal Mined", 8, 35, -12829636);
+			this.font.drawString("Caterium Mined", 8, 17, -12829636);
 			this.font.drawString("" + (new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
@@ -384,7 +390,7 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Coal")) + "", 104, 29, -12829636);
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Coal")) + "", 104, 35, -12829636);
 			this.font.drawString("" + (new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
@@ -392,7 +398,7 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Iron")) + "", 104, 50, -12829636);
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Iron")) + "", 104, 54, -12829636);
 			this.font.drawString("" + (new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
@@ -400,8 +406,8 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Caterium")) + "", 104, 10, -12829636);
-			this.font.drawString("Energy:", 216, 3, -16724737);
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Caterium")) + "", 103, 17, -12829636);
+			this.font.drawString("Energy:", 8, 2, -16724737);
 			this.font.drawString("" + (new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
@@ -409,8 +415,8 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Energy")) + "", 254, 4, -12829636);
-			this.font.drawString("Copper Mined", 5, 70, -12829636);
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Energy")) + "", 44, 2, -12829636);
+			this.font.drawString("Copper Mined", 7, 71, -12829636);
 			this.font.drawString("" + (new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
@@ -418,8 +424,13 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Copper")) + "", 104, 70, -12829636);
-			this.font.drawString("Oil Mined", 6, 92, -12829636);
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Copper")) + "", 105, 72, -12829636);
+			this.font.drawString("Oil Mined", 8, 119, -12829636);
+			this.font.drawString("Upgrades", 290, 189, -12829636);
+			this.font.drawString("" + (MegaProjectModVariables.MapVariables.get(world).miners_level) + "", 352, 211, -12829636);
+			this.font.drawString("Miner Levels", 331, 200, -12829636);
+			if (PermadayshowcondidionProcedure.executeProcedure(ImmutableMap.of("world", world)))
+				this.font.drawString("Perma Day activated!", 253, 7, -16738048);
 		}
 
 		@Override

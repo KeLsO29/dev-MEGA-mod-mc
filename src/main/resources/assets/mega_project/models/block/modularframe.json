@@ -1,0 +1,8 @@
+{
+  "parent": "mega_project:custom/modular_frame",
+  "textures": {
+    "all": "mega_project:blocks/cauldron_top",
+    "particle": "mega_project:blocks/cauldron_top",
+    "0": "mega_project:blocks/iron_block_orig"
+  }
+}

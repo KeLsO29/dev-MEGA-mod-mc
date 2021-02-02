@@ -1,0 +1,8 @@
+{
+  "parent": "mega_project:custom/heavy_frame",
+  "textures": {
+    "all": "mega_project:blocks/heavyiron_block",
+    "particle": "mega_project:blocks/heavyiron_block",
+    "0": "mega_project:blocks/heavyiron_block"
+  }
+}

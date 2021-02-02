@@ -2,31 +2,31 @@
   "_fv": 13,
   "_type": "block",
   "definition": {
-    "texture": "hub1_top",
+    "texture": "heavyiron_block",
     "textureTop": "",
     "textureLeft": "",
     "textureFront": "",
     "textureRight": "",
     "textureBack": "",
     "renderType": 2,
-    "customModelName": "hub_1_fixed:default",
-    "rotationMode": 1,
+    "customModelName": "heavy_frame:default",
+    "rotationMode": 0,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
     "itemTexture": "",
     "particleTexture": "",
     "hasTransparency": true,
     "connectedSides": false,
-    "transparencyType": "SOLID",
+    "transparencyType": "TRANSLUCENT",
     "mx": 0.0,
     "my": 0.0,
     "mz": 0.0,
     "Mx": 1.0,
     "My": 1.0,
     "Mz": 1.0,
-    "name": "Hub",
+    "name": "Heavy Frame",
     "specialInfo": [],
-    "hardness": 25.0,
+    "hardness": 20.0,
     "resistance": 10.0,
     "hasGravity": false,
     "isWaterloggable": false,
@@ -45,7 +45,7 @@
     "canProvidePower": false,
     "lightOpacity": 0,
     "material": {
-      "value": "IRON"
+      "value": "ANVIL"
     },
     "tickRate": 10,
     "tickRandomly": false,
@@ -63,7 +63,7 @@
     "reactionToPushing": "NORMAL",
     "isNotColidable": false,
     "soundOnStep": {
-      "value": "METAL"
+      "value": "ANVIL"
     },
     "luminance": 0.0,
     "unbreakable": false,
@@ -75,10 +75,10 @@
     "particleSpawningShape": "Spread",
     "particleSpawningRadious": 0.5,
     "particleAmount": 4,
-    "hasInventory": true,
-    "guiBoundTo": "HubGUI",
-    "openGUIOnRightClick": true,
-    "inventorySize": 5,
+    "hasInventory": false,
+    "guiBoundTo": "<NONE>",
+    "openGUIOnRightClick": false,
+    "inventorySize": 9,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,
@@ -92,12 +92,6 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
-    "onStartToDestroy": {
-      "name": "HubPlayerStartsToDestroy"
-    },
-    "onBlockPlayedBy": {
-      "name": "HubBlockIsPlacedBy"
-    },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [

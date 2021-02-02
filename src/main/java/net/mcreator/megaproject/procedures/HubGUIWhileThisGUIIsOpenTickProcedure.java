@@ -1,6 +1,7 @@
 package net.mcreator.megaproject.procedures;
 
 import net.minecraft.world.IWorld;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.item.Items;
@@ -13,6 +14,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
 
+import net.mcreator.megaproject.item.PermadayupgradeItem;
 import net.mcreator.megaproject.block.CopperOreBlock;
 import net.mcreator.megaproject.block.CateriumOreBlock;
 import net.mcreator.megaproject.MegaProjectModVariables;
@@ -266,6 +268,40 @@ public class HubGUIWhileThisGUIIsOpenTickProcedure extends MegaProjectModElement
 							(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 							(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Copper")) - 64));
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+		}
+		if (((new Object() {
+			public ItemStack getItemStack(int sltid) {
+				Entity _ent = entity;
+				if (_ent instanceof ServerPlayerEntity) {
+					Container _current = ((ServerPlayerEntity) _ent).openContainer;
+					if (_current instanceof Supplier) {
+						Object invobj = ((Supplier) _current).get();
+						if (invobj instanceof Map) {
+							return ((Slot) ((Map) invobj).get(sltid)).getStack();
+						}
+					}
+				}
+				return ItemStack.EMPTY;
+			}
+		}.getItemStack((int) (4))).getItem() == new ItemStack(PermadayupgradeItem.block, (int) (1)).getItem())) {
+			{
+				Entity _ent = entity;
+				if (_ent instanceof ServerPlayerEntity) {
+					Container _current = ((ServerPlayerEntity) _ent).openContainer;
+					if (_current instanceof Supplier) {
+						Object invobj = ((Supplier) _current).get();
+						if (invobj instanceof Map) {
+							((Slot) ((Map) invobj).get((int) (4))).decrStackSize((int) (1));
+							_current.detectAndSendChanges();
+						}
+					}
+				}
+			}
+			MegaProjectModVariables.MapVariables.get(world).haarp_permaday = (boolean) (true);
+			MegaProjectModVariables.MapVariables.get(world).syncData(world);
+			if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Permaday activated!"), (false));
 			}
 		}
 	}

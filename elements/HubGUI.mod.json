@@ -19,8 +19,8 @@
             "falpha": 0.0
           },
           "name": "HUB",
-          "x": 200,
-          "y": 9
+          "x": 208,
+          "y": 8
         }
       },
       {
@@ -34,8 +34,8 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #0",
-          "x": 97,
-          "y": 52
+          "x": 98,
+          "y": 56
         }
       },
       {
@@ -47,8 +47,8 @@
             "falpha": 0.0
           },
           "name": "Iron Mined",
-          "x": 22,
-          "y": 56
+          "x": 24,
+          "y": 60
         }
       },
       {
@@ -60,8 +60,8 @@
             "falpha": 0.0
           },
           "name": "Coal Mined",
-          "x": 23,
-          "y": 36
+          "x": 24,
+          "y": 41
         }
       },
       {
@@ -73,8 +73,8 @@
             "falpha": 0.0
           },
           "name": "Caterium Mined",
-          "x": 22,
-          "y": 16
+          "x": 24,
+          "y": 23
         }
       },
       {
@@ -88,8 +88,8 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #1",
-          "x": 97,
-          "y": 32
+          "x": 98,
+          "y": 38
         }
       },
       {
@@ -103,8 +103,8 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #2",
-          "x": 97,
-          "y": 12
+          "x": 98,
+          "y": 20
         }
       },
       {
@@ -117,7 +117,7 @@
           },
           "name": "<BNBT:number:Coal>",
           "x": 120,
-          "y": 35
+          "y": 41
         }
       },
       {
@@ -130,7 +130,7 @@
           },
           "name": "<BNBT:number:Iron>",
           "x": 120,
-          "y": 56
+          "y": 60
         }
       },
       {
@@ -142,8 +142,8 @@
             "falpha": 0.0
           },
           "name": "<BNBT:number:Caterium>",
-          "x": 120,
-          "y": 16
+          "x": 119,
+          "y": 23
         }
       },
       {
@@ -155,8 +155,8 @@
             "falpha": 0.0
           },
           "name": "Energy:",
-          "x": 232,
-          "y": 9
+          "x": 24,
+          "y": 8
         }
       },
       {
@@ -168,8 +168,8 @@
             "falpha": 0.0
           },
           "name": "<BNBT:number:Energy>",
-          "x": 270,
-          "y": 10
+          "x": 60,
+          "y": 8
         }
       },
       {
@@ -181,8 +181,8 @@
             "falpha": 0.0
           },
           "name": "Copper Mined",
-          "x": 21,
-          "y": 76
+          "x": 23,
+          "y": 77
         }
       },
       {
@@ -196,8 +196,8 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #3",
-          "x": 97,
-          "y": 72
+          "x": 98,
+          "y": 74
         }
       },
       {
@@ -209,8 +209,8 @@
             "falpha": 0.0
           },
           "name": "<BNBT:number:Copper>",
-          "x": 120,
-          "y": 76
+          "x": 121,
+          "y": 78
         }
       },
       {
@@ -222,8 +222,81 @@
             "falpha": 0.0
           },
           "name": "Oil Mined",
-          "x": 22,
-          "y": 98
+          "x": 24,
+          "y": 125
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Upgrades",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Upgrades",
+          "x": 306,
+          "y": 195
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:miners_level>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<VAR:miners_level>",
+          "x": 368,
+          "y": 217
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Miner Levels",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Miner Levels",
+          "x": 347,
+          "y": 206
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "color": {
+            "value": -16737793,
+            "falpha": 0.0
+          },
+          "id": 4,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #4",
+          "x": 318,
+          "y": 207
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Perma Day activated!",
+          "color": {
+            "value": -16738048,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "Permadayshowcondidion"
+          },
+          "name": "Perma Day activated!",
+          "x": 269,
+          "y": 13
         }
       }
     ],
