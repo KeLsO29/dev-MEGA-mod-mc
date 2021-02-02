@@ -195,7 +195,6 @@ public class ElectricFurnanceBlockBlock extends MegaProjectModElements.ModElemen
 			int z = pos.getZ();
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("world", world);
 				ElectricFurnanceBlockBlockDestroyedByPlayerProcedure.executeProcedure($_dependencies);
 			}
 			return retval;

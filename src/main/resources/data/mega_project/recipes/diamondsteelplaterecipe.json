@@ -8,13 +8,13 @@
   ],
   "key": {
     "0": {
-      "item": "mega_project:screw"
+      "item": "mega_project:diamondscrewitem"
     },
     "1": {
       "item": "mega_project:ironplate"
     },
     "2": {
-      "item": "mega_project:screw"
+      "item": "mega_project:diamondscrewitem"
     },
     "3": {
       "item": "mega_project:heavyironblock"
@@ -26,13 +26,13 @@
       "item": "mega_project:heavyironblock"
     },
     "6": {
-      "item": "mega_project:screw"
+      "item": "mega_project:diamondscrewitem"
     },
     "7": {
       "item": "mega_project:ironplate"
     },
     "8": {
-      "item": "mega_project:screw"
+      "item": "mega_project:diamondscrewitem"
     }
   },
   "result": {

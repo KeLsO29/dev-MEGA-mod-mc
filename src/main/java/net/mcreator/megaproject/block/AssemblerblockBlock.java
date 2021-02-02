@@ -11,12 +11,10 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.ToolType;
 
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.world.World;
-import net.minecraft.world.IWorldReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
@@ -38,6 +36,7 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.BlockItem;
@@ -46,21 +45,17 @@ import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.ISidedInventory;
-import net.minecraft.fluid.IFluidState;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
-import net.mcreator.megaproject.procedures.ConstructorblockUpdateTickProcedure;
-import net.mcreator.megaproject.procedures.ConstructorblockBlockIsPlacedByProcedure;
-import net.mcreator.megaproject.procedures.ConstructorblockBlockDestroyedByPlayerProcedure;
-import net.mcreator.megaproject.gui.ConstructorguiGui;
+import net.mcreator.megaproject.procedures.AssemblerblockUpdateTickProcedure;
+import net.mcreator.megaproject.gui.AssemblerguiGui;
 import net.mcreator.megaproject.MegaProjectModElements;
 
 import javax.annotation.Nullable;
@@ -75,38 +70,32 @@ import java.util.Collections;
 import io.netty.buffer.Unpooled;
 
 @MegaProjectModElements.ModElement.Tag
-public class ConstructorblockBlock extends MegaProjectModElements.ModElement {
-	@ObjectHolder("mega_project:constructorblock")
+public class AssemblerblockBlock extends MegaProjectModElements.ModElement {
+	@ObjectHolder("mega_project:assemblerblock")
 	public static final Block block = null;
-	@ObjectHolder("mega_project:constructorblock")
+	@ObjectHolder("mega_project:assemblerblock")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
-	public ConstructorblockBlock(MegaProjectModElements instance) {
-		super(instance, 54);
+	public AssemblerblockBlock(MegaProjectModElements instance) {
+		super(instance, 209);
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
 	}
 
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(null)).setRegistryName(block.getRegistryName()));
+		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(block.getRegistryName()));
 	}
 
 	@SubscribeEvent
 	public void registerTileEntity(RegistryEvent.Register<TileEntityType<?>> event) {
-		event.getRegistry().register(TileEntityType.Builder.create(CustomTileEntity::new, block).build(null).setRegistryName("constructorblock"));
+		event.getRegistry().register(TileEntityType.Builder.create(CustomTileEntity::new, block).build(null).setRegistryName("assemblerblock"));
 	}
 	public static class CustomBlock extends Block {
 		public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
 		public CustomBlock() {
-			super(Block.Properties.create(Material.IRON).sound(SoundType.ANVIL).hardnessAndResistance(15f, 10f).lightValue(0).harvestLevel(1)
-					.harvestTool(ToolType.PICKAXE));
+			super(Block.Properties.create(Material.IRON).sound(SoundType.ANVIL).hardnessAndResistance(20f, 10f).lightValue(0));
 			this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH));
-			setRegistryName("constructorblock");
-		}
-
-		@Override
-		public int tickRate(IWorldReader world) {
-			return 40;
+			setRegistryName("assemblerblock");
 		}
 
 		@Override
@@ -133,7 +122,7 @@ public class ConstructorblockBlock extends MegaProjectModElements.ModElement {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(ConstructorinactiveBlock.block, (int) (1)));
+			return Collections.singletonList(new ItemStack(AssemblerinactiveblockBlock.block, (int) (1)));
 		}
 
 		@Override
@@ -157,39 +146,9 @@ public class ConstructorblockBlock extends MegaProjectModElements.ModElement {
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-				ConstructorblockUpdateTickProcedure.executeProcedure($_dependencies);
+				AssemblerblockUpdateTickProcedure.executeProcedure($_dependencies);
 			}
 			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
-		}
-
-		@Override
-		public boolean removedByPlayer(BlockState state, World world, BlockPos pos, PlayerEntity entity, boolean willHarvest, IFluidState fluid) {
-			boolean retval = super.removedByPlayer(state, world, pos, entity, willHarvest, fluid);
-			int x = pos.getX();
-			int y = pos.getY();
-			int z = pos.getZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				ConstructorblockBlockDestroyedByPlayerProcedure.executeProcedure($_dependencies);
-			}
-			return retval;
-		}
-
-		@Override
-		public void onBlockPlacedBy(World world, BlockPos pos, BlockState state, LivingEntity entity, ItemStack itemstack) {
-			super.onBlockPlacedBy(world, pos, state, entity, itemstack);
-			int x = pos.getX();
-			int y = pos.getY();
-			int z = pos.getZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				ConstructorblockBlockIsPlacedByProcedure.executeProcedure($_dependencies);
-			}
 		}
 
 		@Override
@@ -203,12 +162,12 @@ public class ConstructorblockBlock extends MegaProjectModElements.ModElement {
 				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {
-						return new StringTextComponent("Constructor");
+						return new StringTextComponent("Assembler");
 					}
 
 					@Override
 					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
-						return new ConstructorguiGui.GuiContainerMod(id, inventory,
+						return new AssemblerguiGui.GuiContainerMod(id, inventory,
 								new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
 					}
 				}, new BlockPos(x, y, z));
@@ -267,7 +226,7 @@ public class ConstructorblockBlock extends MegaProjectModElements.ModElement {
 	}
 
 	public static class CustomTileEntity extends LockableLootTileEntity implements ISidedInventory {
-		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(2, ItemStack.EMPTY);
+		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(3, ItemStack.EMPTY);
 		protected CustomTileEntity() {
 			super(tileEntityType);
 		}
@@ -320,7 +279,7 @@ public class ConstructorblockBlock extends MegaProjectModElements.ModElement {
 
 		@Override
 		public ITextComponent getDefaultName() {
-			return new StringTextComponent("constructorblock");
+			return new StringTextComponent("assemblerblock");
 		}
 
 		@Override
@@ -330,12 +289,12 @@ public class ConstructorblockBlock extends MegaProjectModElements.ModElement {
 
 		@Override
 		public Container createMenu(int id, PlayerInventory player) {
-			return new ConstructorguiGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
+			return new AssemblerguiGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
 		}
 
 		@Override
 		public ITextComponent getDisplayName() {
-			return new StringTextComponent("Constructor");
+			return new StringTextComponent("Assembler");
 		}
 
 		@Override
@@ -350,7 +309,7 @@ public class ConstructorblockBlock extends MegaProjectModElements.ModElement {
 
 		@Override
 		public boolean isItemValidForSlot(int index, ItemStack stack) {
-			if (index == 1)
+			if (index == 2)
 				return false;
 			return true;
 		}
@@ -368,6 +327,8 @@ public class ConstructorblockBlock extends MegaProjectModElements.ModElement {
 		@Override
 		public boolean canExtractItem(int index, ItemStack stack, Direction direction) {
 			if (index == 0)
+				return false;
+			if (index == 1)
 				return false;
 			return true;
 		}

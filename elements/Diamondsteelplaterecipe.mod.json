@@ -10,13 +10,13 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "CUSTOM:Screw"
+        "value": "CUSTOM:Diamondscrewitem"
       },
       {
         "value": "CUSTOM:Ironplate"
       },
       {
-        "value": "CUSTOM:Screw"
+        "value": "CUSTOM:Diamondscrewitem"
       },
       {
         "value": "CUSTOM:Heavyironblock"
@@ -28,13 +28,13 @@
         "value": "CUSTOM:Heavyironblock"
       },
       {
-        "value": "CUSTOM:Screw"
+        "value": "CUSTOM:Diamondscrewitem"
       },
       {
         "value": "CUSTOM:Ironplate"
       },
       {
-        "value": "CUSTOM:Screw"
+        "value": "CUSTOM:Diamondscrewitem"
       }
     ],
     "recipeReturnStack": {

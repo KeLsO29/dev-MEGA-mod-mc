@@ -3832,6 +3832,104 @@
           }
         ]
       }
+    },
+    {
+      "name": "RecipeCHangeritem",
+      "type": "item",
+      "sortid": 207,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "recipe_c_hangeritem"
+    },
+    {
+      "name": "RecipeCHangeritemRightClickedOnBlock",
+      "type": "procedure",
+      "sortid": 208,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "recipe_c_hangeritem_right_clicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Assemblerblock",
+      "type": "block",
+      "sortid": 209,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "assemblerblock"
+    },
+    {
+      "name": "Assemblerinactiveblock",
+      "type": "block",
+      "sortid": 210,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "assemblerinactiveblock"
+    },
+    {
+      "name": "Assemblergui",
+      "type": "gui",
+      "sortid": 211,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "assemblergui"
+    },
+    {
+      "name": "AssemblerblockUpdateTick",
+      "type": "procedure",
+      "sortid": 212,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "assemblerblock_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -3975,6 +4073,7 @@
       "block.mega_project.copper_node_inactve": "Copper Node(inactive)",
       "block.mega_project.caterium_extractor": "Caterium Extractor",
       "item.mega_project.screw": "Screw",
+      "block.mega_project.assemblerblock": "Assembler",
       "advancements.copperadvancement.title": "Copper",
       "block.mega_project.diamond_steelblock": "Diamond Steel",
       "block.mega_project.copper_node": "Copper Node(active)",
@@ -4034,9 +4133,11 @@
       "item.mega_project.diamond_steel_armor_boots": "DiamondS teel Boots",
       "block.mega_project.coal_node_inactive": "Coal Node Inactive",
       "fluid.oil": "Oil",
+      "item.mega_project.recipe_c_hangeritem": "Recipe Hanger",
       "item.mega_project.diamond_steel_sword": "Diamond Steel Sword",
       "item.mega_project.oil_bucket": "Oil Bucket",
       "item.mega_project.node_scanner": "Node Scanner",
+      "block.mega_project.assemblerinactiveblock": "Assembler",
       "item.mega_project.diamondstellshovel": "Diamondstellshovel",
       "block.mega_project.generator_mk_1inactive": "Generator MK 1",
       "item.mega_project.diamondsteelitem": "Diamond Steel Ingot",
