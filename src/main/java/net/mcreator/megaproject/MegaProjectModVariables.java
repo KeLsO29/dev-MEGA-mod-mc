@@ -111,9 +111,9 @@ public class MegaProjectModVariables {
 		public double hub_y = 0;
 		public double hub_copper_save = 0;
 		public double hub_oil_save = 0;
+		public boolean haarp_norain = false;
 		public double miners_level = 1.0;
 		public boolean haarp_permaday = false;
-		public boolean haarp_norain = false;
 		public MapVariables() {
 			super(DATA_NAME);
 		}
@@ -132,9 +132,9 @@ public class MegaProjectModVariables {
 			hub_y = nbt.getDouble("hub_y");
 			hub_copper_save = nbt.getDouble("hub_copper_save");
 			hub_oil_save = nbt.getDouble("hub_oil_save");
+			haarp_norain = nbt.getBoolean("haarp_norain");
 			miners_level = nbt.getDouble("miners_level");
 			haarp_permaday = nbt.getBoolean("haarp_permaday");
-			haarp_norain = nbt.getBoolean("haarp_norain");
 		}
 
 		@Override
@@ -147,9 +147,9 @@ public class MegaProjectModVariables {
 			nbt.putDouble("hub_y", hub_y);
 			nbt.putDouble("hub_copper_save", hub_copper_save);
 			nbt.putDouble("hub_oil_save", hub_oil_save);
+			nbt.putBoolean("haarp_norain", haarp_norain);
 			nbt.putDouble("miners_level", miners_level);
 			nbt.putBoolean("haarp_permaday", haarp_permaday);
-			nbt.putBoolean("haarp_norain", haarp_norain);
 			return nbt;
 		}
 

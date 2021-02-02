@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "mega_project:block/assemblerblock"
+    },
+    "facing=east": {
+      "model": "mega_project:block/assemblerblock",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "mega_project:block/assemblerblock",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mega_project:block/assemblerblock",
+      "y": 270
+    }
+  }
+}

@@ -3834,40 +3834,33 @@
       }
     },
     {
-      "name": "Modularframe",
-      "type": "block",
-      "sortid": 207,
+      "name": "HaarpUpdateTick",
+      "type": "procedure",
+      "sortid": 214,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "modularframe"
-    },
-    {
-      "name": "Heavyframe",
-      "type": "block",
-      "sortid": 208,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "heavyframe"
-    },
-    {
-      "name": "Modularframerecipe",
-      "type": "recipe",
-      "sortid": 209,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "modularframerecipe"
-    },
-    {
-      "name": "Heavyframerecipe",
-      "type": "recipe",
-      "sortid": 210,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "heavyframerecipe"
+      "registry_name": "haarp_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     },
     {
       "name": "Haarp",
@@ -3879,13 +3872,53 @@
       "registry_name": "haarp"
     },
     {
-      "name": "Haarpinactive",
+      "name": "Heavyframe",
       "type": "block",
-      "sortid": 212,
+      "sortid": 208,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "haarpinactive"
+      "registry_name": "heavyframe"
+    },
+    {
+      "name": "Modularframe",
+      "type": "block",
+      "sortid": 207,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "modularframe"
+    },
+    {
+      "name": "Modularframerecipe",
+      "type": "recipe",
+      "sortid": 209,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "modularframerecipe"
+    },
+    {
+      "name": "Permadayupgrade",
+      "type": "item",
+      "sortid": 215,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "permadayupgrade"
+    },
+    {
+      "name": "Permadayshowcondidion",
+      "type": "procedure",
+      "sortid": 216,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "permadayshowcondidion",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": []
+      }
     },
     {
       "name": "HaarpinactiveUpdateTick",
@@ -3917,13 +3950,73 @@
       }
     },
     {
-      "name": "HaarpUpdateTick",
-      "type": "procedure",
-      "sortid": 214,
+      "name": "Heavyframerecipe",
+      "type": "recipe",
+      "sortid": 210,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "haarp_update_tick",
+      "registry_name": "heavyframerecipe"
+    },
+    {
+      "name": "Haarpinactive",
+      "type": "block",
+      "sortid": 212,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "haarpinactive"
+    },
+    {
+      "name": "RecipeCHangeritemRightClickedOnBlock",
+      "type": "procedure",
+      "sortid": 208,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "recipe_c_hangeritem_right_clicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RecipeCHangeritem",
+      "type": "item",
+      "sortid": 207,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "recipe_c_hangeritem"
+    },
+    {
+      "name": "AssemblerblockUpdateTick",
+      "type": "procedure",
+      "sortid": 212,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "assemblerblock_update_tick",
       "metadata": {
         "dependencies": [
           {
@@ -3946,31 +4039,31 @@
       }
     },
     {
-      "name": "Permadayupgrade",
-      "type": "item",
-      "sortid": 215,
+      "name": "Assemblerinactiveblock",
+      "type": "block",
+      "sortid": 210,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "permadayupgrade"
+      "registry_name": "assemblerinactiveblock"
     },
     {
-      "name": "Permadayshowcondidion",
-      "type": "procedure",
-      "sortid": 216,
+      "name": "Assemblergui",
+      "type": "gui",
+      "sortid": 211,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "permadayshowcondidion",
-      "metadata": {
-        "return_type": "LOGIC",
-        "dependencies": [
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
+      "registry_name": "assemblergui"
+    },
+    {
+      "name": "Assemblerblock",
+      "type": "block",
+      "sortid": 209,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "assemblerblock"
     }
   ],
   "variable_elements": [
@@ -4095,6 +4188,12 @@
       "value": "1.0"
     },
     {
+      "name": "haarp_norain",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
       "name": "miners_level",
       "type": "number",
       "scope": "map",
@@ -4102,12 +4201,6 @@
     },
     {
       "name": "haarp_permaday",
-      "type": "logic",
-      "scope": "map",
-      "value": "false"
-    },
-    {
-      "name": "haarp_norain",
       "type": "logic",
       "scope": "map",
       "value": "false"
@@ -4141,13 +4234,11 @@
       "item.mega_project.caterium_ingot": "Caterium Ingot",
       "block.mega_project.electric_funanceinactive": "Electric Funance MK1",
       "block.mega_project.solarpanelblockinactive": "Solar panel ",
-      "block.mega_project.modularframe": "Modular Frame",
       "item.mega_project.node_scanner_tool": "Node Scanner",
       "advancements.copperadvancement.descr": "Cooper!",
       "item.mega_project.ai_limiteritem": "Ai Limiter",
       "advancements.allrecipescheat.title": "All Recipes Cheat",
       "item.mega_project.diamond_steel_armor_leggings": "Diamond Steel Leggings",
-      "item.mega_project.permadayupgrade": "Perma Day Upgrade",
       "block.mega_project.caterium_node_block_inactive": "Caterium Node Block Inactive",
       "block.mega_project.minerblock": "Miner",
       "block.mega_project.hardenedcobble": "Hardened Cobble",
@@ -4170,7 +4261,6 @@
       "block.mega_project.heavyironblock": "Heavy Iron",
       "advancements.electronics.descr": "Electronics!",
       "item.mega_project.cateriumroditem": "Caterium rod",
-      "block.mega_project.heavyframe": "Heavy Frame",
       "advancements.electronics.title": "Electronics",
       "block.mega_project.chargerblock": "Charger",
       "block.mega_project.electric_furnance_block": "Electric Furnance",
@@ -4180,11 +4270,9 @@
       "block.mega_project.constructorblock": "Constructor",
       "item.mega_project.diamondsteelaxe": "Diamond Steel Axe",
       "advancements.rudit_ingotadvancement.descr": "Advanced Redstone",
-      "block.mega_project.haarpinactive": "Haarp!",
       "item.mega_project.diamond_steel_armor_chestplate": "Diamond Steel Chestplate",
       "item.mega_project.diamondscrewitem": "Diamond screw",
       "block.mega_project.caterium_nod_eblock": "Caterium  Node Block (active)",
-      "block.mega_project.haarp": "Haarp!",
       "advancements.allrecipescheat.descr": "Unlock Recipe Cheat",
       "block.mega_project.foundyblock": "Foundry",
       "item.mega_project.diamond_steelpickaxe": "Diamond Steel Pickaxe",
