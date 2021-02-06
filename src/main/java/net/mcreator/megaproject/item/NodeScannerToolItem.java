@@ -10,7 +10,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ActionResult;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -21,6 +20,7 @@ import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.megaproject.procedures.NodeScannerRightClickedOnBlockProcedure;
+import net.mcreator.megaproject.itemgroup.ProjectMEGAItemGroup;
 import net.mcreator.megaproject.MegaProjectModElements;
 
 import java.util.Map;
@@ -69,7 +69,7 @@ public class NodeScannerToolItem extends MegaProjectModElements.ModElement {
 	}
 	private static class ItemToolCustom extends Item {
 		protected ItemToolCustom() {
-			super(new Item.Properties().group(ItemGroup.TOOLS).maxDamage(100));
+			super(new Item.Properties().group(ProjectMEGAItemGroup.tab).maxDamage(100));
 		}
 
 		@Override

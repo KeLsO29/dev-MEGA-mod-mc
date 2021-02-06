@@ -106,7 +106,7 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 			super(containerType, id);
 			this.entity = inv.player;
 			this.world = inv.player.world;
-			this.internal = new ItemStackHandler(5);
+			this.internal = new ItemStackHandler(6);
 			BlockPos pos = null;
 			if (extraData != null) {
 				pos = extraData.readBlockPos();
@@ -144,39 +144,45 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 					}
 				}
 			}
-			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 83, 51) {
+			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 90, 55) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
 					return false;
 				}
 			}));
-			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 83, 33) {
+			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 90, 37) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
 					return false;
 				}
 			}));
-			this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 83, 15) {
+			this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 90, 19) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
 					return false;
 				}
 			}));
-			this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 83, 69) {
+			this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 90, 73) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
 					return false;
 				}
 			}));
-			this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 303, 202) {
+			this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 302, 201) {
+			}));
+			this.customSlots.put(5, this.addSlot(new SlotItemHandler(internal, 5, 90, 91) {
+				@Override
+				public boolean isItemValid(ItemStack stack) {
+					return false;
+				}
 			}));
 			int si;
 			int sj;
 			for (si = 0; si < 3; ++si)
 				for (sj = 0; sj < 9; ++sj)
-					this.addSlot(new Slot(inv, sj + (si + 1) * 9, 223 + 8 + sj * 18, 31 + 84 + si * 18));
+					this.addSlot(new Slot(inv, sj + (si + 1) * 9, 223 + 8 + sj * 18, 27 + 84 + si * 18));
 			for (si = 0; si < 9; ++si)
-				this.addSlot(new Slot(inv, si, 223 + 8 + si * 18, 31 + 142));
+				this.addSlot(new Slot(inv, si, 223 + 8 + si * 18, 27 + 142));
 		}
 
 		public Map<Integer, Slot> get() {
@@ -195,18 +201,18 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 			if (slot != null && slot.getHasStack()) {
 				ItemStack itemstack1 = slot.getStack();
 				itemstack = itemstack1.copy();
-				if (index < 5) {
-					if (!this.mergeItemStack(itemstack1, 5, this.inventorySlots.size(), true)) {
+				if (index < 6) {
+					if (!this.mergeItemStack(itemstack1, 6, this.inventorySlots.size(), true)) {
 						return ItemStack.EMPTY;
 					}
 					slot.onSlotChange(itemstack1, itemstack);
-				} else if (!this.mergeItemStack(itemstack1, 0, 5, false)) {
-					if (index < 5 + 27) {
-						if (!this.mergeItemStack(itemstack1, 5 + 27, this.inventorySlots.size(), true)) {
+				} else if (!this.mergeItemStack(itemstack1, 0, 6, false)) {
+					if (index < 6 + 27) {
+						if (!this.mergeItemStack(itemstack1, 6 + 27, this.inventorySlots.size(), true)) {
 							return ItemStack.EMPTY;
 						}
 					} else {
-						if (!this.mergeItemStack(itemstack1, 5, 5 + 27, false)) {
+						if (!this.mergeItemStack(itemstack1, 6, 6 + 27, false)) {
 							return ItemStack.EMPTY;
 						}
 					}
@@ -379,10 +385,10 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-			this.font.drawString("HUB", 192, 2, -16777216);
-			this.font.drawString("Iron Mined", 8, 54, -12829636);
-			this.font.drawString("Coal Mined", 8, 35, -12829636);
-			this.font.drawString("Caterium Mined", 8, 17, -12829636);
+			this.font.drawString("HUB", 197, 3, -16777216);
+			this.font.drawString("Iron Mined", 11, 58, -12829636);
+			this.font.drawString("Coal Mined", 11, 40, -12829636);
+			this.font.drawString("Caterium Mined", 6, 22, -12829636);
 			this.font.drawString("" + (new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
@@ -390,7 +396,7 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Coal")) + "", 104, 35, -12829636);
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Coal")) + "", 121, 40, -12829636);
 			this.font.drawString("" + (new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
@@ -398,7 +404,7 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Iron")) + "", 104, 54, -12829636);
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Iron")) + "", 121, 58, -12829636);
 			this.font.drawString("" + (new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
@@ -406,8 +412,8 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Caterium")) + "", 103, 17, -12829636);
-			this.font.drawString("Energy:", 8, 2, -16724737);
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Caterium")) + "", 121, 23, -12829636);
+			this.font.drawString("Energy:", 7, 5, -16724737);
 			this.font.drawString("" + (new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
@@ -415,8 +421,8 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Energy")) + "", 44, 2, -12829636);
-			this.font.drawString("Copper Mined", 7, 71, -12829636);
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Energy")) + "", 46, 6, -12829636);
+			this.font.drawString("Copper Mined", 7, 76, -12829636);
 			this.font.drawString("" + (new Object() {
 				public double getValue(BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
@@ -424,13 +430,22 @@ public class HubGUIGui extends MegaProjectModElements.ModElement {
 						return tileEntity.getTileData().getDouble(tag);
 					return 0;
 				}
-			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Copper")) + "", 105, 72, -12829636);
-			this.font.drawString("Oil Mined", 8, 119, -12829636);
-			this.font.drawString("Upgrades", 290, 189, -12829636);
-			this.font.drawString("" + (MegaProjectModVariables.MapVariables.get(world).miners_level) + "", 352, 211, -12829636);
-			this.font.drawString("Miner Levels", 331, 200, -12829636);
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Copper")) + "", 121, 76, -12829636);
+			this.font.drawString("Upgrades", 290, 188, -12829636);
+			this.font.drawString("" + (MegaProjectModVariables.MapVariables.get(world).miners_level) + "", 347, 210, -12829636);
+			this.font.drawString("Miner Levels", 330, 198, -12829636);
 			if (PermadayshowcondidionProcedure.executeProcedure(ImmutableMap.of("world", world)))
-				this.font.drawString("Perma Day activated!", 253, 7, -16738048);
+				this.font.drawString("Perma Day activated!", 257, 16, -16738048);
+			this.font.drawString("HAARP Status", 275, 4, -12829636);
+			this.font.drawString("SandStone Mined", 6, 94, -12829636);
+			this.font.drawString("" + (new Object() {
+				public double getValue(BlockPos pos, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getDouble(tag);
+					return 0;
+				}
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "SandStone")) + "", 121, 94, -12829636);
 		}
 
 		@Override

@@ -8,6 +8,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.megaproject.block.MinerblockBlock;
+import net.mcreator.megaproject.block.LimestoneactiveBlock;
 import net.mcreator.megaproject.block.IronOreNodeBlockBlock;
 import net.mcreator.megaproject.block.CopperNodeBlock;
 import net.mcreator.megaproject.block.CoalNodeBlock;
@@ -59,14 +60,16 @@ public class MinerinactiveUpdateTickProcedure extends MegaProjectModElements.Mod
 				new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 						(int) (MegaProjectModVariables.MapVariables.get(world).hub_y), (int) (MegaProjectModVariables.MapVariables.get(world).hub_z)),
 				"Energy")) >= 5)
-				&& (((CoalNodeBlock.block.getDefaultState().getBlock() == (world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z)))
+				&& ((LimestoneactiveBlock.block.getDefaultState().getBlock() == (world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z)))
 						.getBlock())
-						|| (IronOreNodeBlockBlock.block.getDefaultState()
-								.getBlock() == (world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock()))
-						|| ((CateriumNODEblockBlock.block.getDefaultState()
-								.getBlock() == (world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock())
-								|| (CopperNodeBlock.block.getDefaultState()
-										.getBlock() == (world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock()))))) {
+						|| (((CoalNodeBlock.block.getDefaultState().getBlock() == (world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z)))
+								.getBlock())
+								|| (IronOreNodeBlockBlock.block.getDefaultState()
+										.getBlock() == (world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock()))
+								|| ((CateriumNODEblockBlock.block.getDefaultState()
+										.getBlock() == (world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock())
+										|| (CopperNodeBlock.block.getDefaultState()
+												.getBlock() == (world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock())))))) {
 			{
 				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 				BlockState _bs = MinerblockBlock.block.getDefaultState();

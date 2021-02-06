@@ -1,0 +1,42 @@
+{
+  "group": "haarprecipe",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "mega_project:steel_block"
+    },
+    "1": {
+      "item": "mega_project:control_unit"
+    },
+    "2": {
+      "item": "mega_project:steel_block"
+    },
+    "3": {
+      "item": "mega_project:control_unit"
+    },
+    "4": {
+      "item": "mega_project:cpu"
+    },
+    "5": {
+      "item": "mega_project:control_unit"
+    },
+    "6": {
+      "item": "mega_project:steel_block"
+    },
+    "7": {
+      "item": "mega_project:control_unit"
+    },
+    "8": {
+      "item": "mega_project:steel_block"
+    }
+  },
+  "result": {
+    "item": "mega_project:haarpinactive",
+    "count": 1
+  }
+}

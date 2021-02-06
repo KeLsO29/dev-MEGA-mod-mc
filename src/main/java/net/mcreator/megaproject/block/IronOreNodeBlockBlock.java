@@ -9,7 +9,6 @@ import net.minecraft.world.World;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
 import net.minecraft.entity.LivingEntity;
@@ -20,6 +19,7 @@ import net.minecraft.block.Block;
 
 import net.mcreator.megaproject.procedures.IronOreNodeBlockUpdateTickProcedure;
 import net.mcreator.megaproject.procedures.IronOreNodeBlockBlockIsPlacedByProcedure;
+import net.mcreator.megaproject.itemgroup.ProjectMEGAItemGroup;
 import net.mcreator.megaproject.MegaProjectModElements;
 
 import java.util.Random;
@@ -40,7 +40,7 @@ public class IronOreNodeBlockBlock extends MegaProjectModElements.ModElement {
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items
-				.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)).setRegistryName(block.getRegistryName()));
+				.add(() -> new BlockItem(block, new Item.Properties().group(ProjectMEGAItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 	public static class CustomBlock extends Block {
 		public CustomBlock() {

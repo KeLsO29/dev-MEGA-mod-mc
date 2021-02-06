@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "mega_project:blocks/extractor_sandstone",
+    "particle": "mega_project:blocks/extractor_sandstone"
+  }
+}

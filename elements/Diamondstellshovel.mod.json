@@ -8,7 +8,7 @@
     "name": "Diamondstellshovel",
     "specialInfo": [],
     "creativeTab": {
-      "value": "TOOLS"
+      "value": "CUSTOM:ProjectMEGA"
     },
     "toolType": "Spade",
     "harvestLevel": 3,

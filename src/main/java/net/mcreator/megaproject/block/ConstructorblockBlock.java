@@ -60,6 +60,7 @@ import net.minecraft.block.Block;
 import net.mcreator.megaproject.procedures.ConstructorblockUpdateTickProcedure;
 import net.mcreator.megaproject.procedures.ConstructorblockBlockIsPlacedByProcedure;
 import net.mcreator.megaproject.procedures.ConstructorblockBlockDestroyedByPlayerProcedure;
+import net.mcreator.megaproject.itemgroup.ProjectMEGAItemGroup;
 import net.mcreator.megaproject.gui.ConstructorguiGui;
 import net.mcreator.megaproject.MegaProjectModElements;
 
@@ -88,7 +89,8 @@ public class ConstructorblockBlock extends MegaProjectModElements.ModElement {
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(null)).setRegistryName(block.getRegistryName()));
+		elements.items
+				.add(() -> new BlockItem(block, new Item.Properties().group(ProjectMEGAItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	@SubscribeEvent
@@ -106,7 +108,7 @@ public class ConstructorblockBlock extends MegaProjectModElements.ModElement {
 
 		@Override
 		public int tickRate(IWorldReader world) {
-			return 40;
+			return 30;
 		}
 
 		@Override
@@ -133,7 +135,7 @@ public class ConstructorblockBlock extends MegaProjectModElements.ModElement {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
-			return Collections.singletonList(new ItemStack(ConstructorinactiveBlock.block, (int) (1)));
+			return Collections.singletonList(new ItemStack(this, 1));
 		}
 
 		@Override

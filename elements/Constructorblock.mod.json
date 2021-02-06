@@ -31,11 +31,11 @@
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "No creative tab entry"
+      "value": "CUSTOM:ProjectMEGA"
     },
     "destroyTool": "pickaxe",
     "customDrop": {
-      "value": "CUSTOM:Constructorinactive"
+      "value": ""
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -47,7 +47,7 @@
     "material": {
       "value": "IRON"
     },
-    "tickRate": 40,
+    "tickRate": 30,
     "tickRandomly": false,
     "isReplaceable": false,
     "colorOnMap": "DEFAULT",

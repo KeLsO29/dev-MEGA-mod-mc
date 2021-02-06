@@ -15,7 +15,6 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItem;
 import net.minecraft.fluid.IFluidState;
@@ -32,6 +31,7 @@ import net.minecraft.block.Block;
 import net.mcreator.megaproject.procedures.MinerinactiveUpdateTickProcedure;
 import net.mcreator.megaproject.procedures.MinerblockBlockIsPlacedByProcedure;
 import net.mcreator.megaproject.procedures.MinerBlockINACTIVEdestroyedbyplayerProcedure;
+import net.mcreator.megaproject.itemgroup.ProjectMEGAItemGroup;
 import net.mcreator.megaproject.MegaProjectModElements;
 
 import java.util.Random;
@@ -52,7 +52,7 @@ public class MinerinactiveBlock extends MegaProjectModElements.ModElement {
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items
-				.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)).setRegistryName(block.getRegistryName()));
+				.add(() -> new BlockItem(block, new Item.Properties().group(ProjectMEGAItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override

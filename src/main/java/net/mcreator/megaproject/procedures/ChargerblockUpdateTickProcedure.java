@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.megaproject.item.NodeScannerToolItem;
+import net.mcreator.megaproject.item.BuildertoolItem;
 import net.mcreator.megaproject.MegaProjectModVariables;
 import net.mcreator.megaproject.MegaProjectModElements;
 
@@ -58,7 +59,7 @@ public class ChargerblockUpdateTickProcedure extends MegaProjectModElements.ModE
 		}.getValue(
 				new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 						(int) (MegaProjectModVariables.MapVariables.get(world).hub_y), (int) (MegaProjectModVariables.MapVariables.get(world).hub_z)),
-				"Energy")) > 0) && (((new Object() {
+				"Energy")) > 10) && (((new Object() {
 					public ItemStack getItemStack(BlockPos pos, int sltid) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 						TileEntity _ent = world.getTileEntity(pos);
@@ -105,6 +106,76 @@ public class ChargerblockUpdateTickProcedure extends MegaProjectModElements.ModE
 				if (_ent != null) {
 					final int _sltid = (int) (0);
 					final int _amount = (int) (-1);
+					_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						if (capability instanceof IItemHandlerModifiable) {
+							ItemStack _stk = capability.getStackInSlot(_sltid).copy();
+							if (_stk.attemptDamageItem(_amount, new Random(), null)) {
+								_stk.shrink(1);
+								_stk.setDamage(0);
+							}
+							((IItemHandlerModifiable) capability).setStackInSlot(_sltid, _stk);
+						}
+					});
+				}
+			}
+		}
+		if ((((new Object() {
+			public double getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getDouble(tag);
+				return -1;
+			}
+		}.getValue(
+				new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+						(int) (MegaProjectModVariables.MapVariables.get(world).hub_y), (int) (MegaProjectModVariables.MapVariables.get(world).hub_z)),
+				"Energy")) > 50) && (((new Object() {
+					public ItemStack getItemStack(BlockPos pos, int sltid) {
+						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+						TileEntity _ent = world.getTileEntity(pos);
+						if (_ent != null) {
+							_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+								_retval.set(capability.getStackInSlot(sltid).copy());
+							});
+						}
+						return _retval.get();
+					}
+				}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem() == new ItemStack(BuildertoolItem.block, (int) (1))
+						.getItem()) && ((((new Object() {
+							public ItemStack getItemStack(BlockPos pos, int sltid) {
+								AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+								TileEntity _ent = world.getTileEntity(pos);
+								if (_ent != null) {
+									_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+										_retval.set(capability.getStackInSlot(sltid).copy());
+									});
+								}
+								return _retval.get();
+							}
+						}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0)))).getDamage()) > 1)))) {
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+						(int) (MegaProjectModVariables.MapVariables.get(world).hub_y), (int) (MegaProjectModVariables.MapVariables.get(world).hub_z));
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("Energy", ((new Object() {
+						public double getValue(BlockPos pos, String tag) {
+							TileEntity tileEntity = world.getTileEntity(pos);
+							if (tileEntity != null)
+								return tileEntity.getTileData().getDouble(tag);
+							return -1;
+						}
+					}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+							(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
+							(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 50));
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+			{
+				TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
+				if (_ent != null) {
+					final int _sltid = (int) (0);
+					final int _amount = (int) (-5);
 					_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
 						if (capability instanceof IItemHandlerModifiable) {
 							ItemStack _stk = capability.getStackInSlot(_sltid).copy();

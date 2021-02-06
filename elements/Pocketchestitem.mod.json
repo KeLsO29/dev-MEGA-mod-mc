@@ -8,9 +8,9 @@
     "name": "Pocket Chest",
     "rarity": "COMMON",
     "creativeTab": {
-      "value": "MISC"
+      "value": "CUSTOM:ProjectMEGA"
     },
-    "stackSize": 64,
+    "stackSize": 1,
     "enchantability": 0,
     "useDuration": 0,
     "toolType": 1.0,
@@ -27,9 +27,6 @@
     "hasGlow": false,
     "guiBoundTo": "Pocketchest",
     "inventorySize": 147,
-    "inventoryStackSize": 64,
-    "onRightClickedOnBlock": {
-      "name": "PocketchestitemRightClickedOnBlock"
-    }
+    "inventoryStackSize": 64
   }
 }

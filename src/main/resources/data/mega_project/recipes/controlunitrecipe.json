@@ -1,0 +1,42 @@
+{
+  "group": "controlunitrecipe",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "mega_project:highspeedconectoritem"
+    },
+    "1": {
+      "item": "mega_project:circuit_boarditem"
+    },
+    "2": {
+      "item": "mega_project:highspeedconectoritem"
+    },
+    "3": {
+      "item": "mega_project:ai_limiteritem"
+    },
+    "4": {
+      "item": "mega_project:diamondsteelplate"
+    },
+    "5": {
+      "item": "mega_project:ai_limiteritem"
+    },
+    "6": {
+      "item": "mega_project:cateriumwireitem"
+    },
+    "7": {
+      "item": "mega_project:cateriumwireitem"
+    },
+    "8": {
+      "item": "mega_project:cateriumwireitem"
+    }
+  },
+  "result": {
+    "item": "mega_project:control_unit",
+    "count": 1
+  }
+}

@@ -3,8 +3,8 @@
   "_type": "gui",
   "definition": {
     "type": 1,
-    "width": 208,
-    "height": 203,
+    "width": 179,
+    "height": 195,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 15,
     "renderBgLayer": true,
@@ -19,8 +19,8 @@
             "falpha": 0.0
           },
           "name": "Assembler",
-          "x": 195,
-          "y": 35
+          "x": 191,
+          "y": 27
         }
       },
       {
@@ -37,8 +37,8 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #0",
-          "x": 150,
-          "y": 62
+          "x": 149,
+          "y": 40
         }
       },
       {
@@ -51,8 +51,8 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #1",
-          "x": 258,
-          "y": 62
+          "x": 262,
+          "y": 40
         }
       },
       {
@@ -62,8 +62,8 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #2",
-          "x": 204,
-          "y": 98
+          "x": 203,
+          "y": 59
         }
       },
       {
@@ -79,7 +79,34 @@
           },
           "name": "Working",
           "x": 195,
-          "y": 71
+          "y": 43
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Change Recipe",
+          "onClick": {
+            "name": "AssemblerChangeRecipeONclick"
+          },
+          "width": 90,
+          "height": 20,
+          "name": "Change Recipe",
+          "x": 168,
+          "y": 111
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Recipe: <BNBT:text:Recipe>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Recipe: <BNBT:text:Recipe>",
+          "x": 157,
+          "y": 92
         }
       }
     ]

@@ -39,7 +39,6 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.BlockItem;
@@ -61,6 +60,7 @@ import net.minecraft.block.Block;
 
 import net.mcreator.megaproject.procedures.GeneratorMK1inactiveUpdateTickProcedure;
 import net.mcreator.megaproject.procedures.GeneratorMK1BlockIsPlacedByProcedure;
+import net.mcreator.megaproject.itemgroup.ProjectMEGAItemGroup;
 import net.mcreator.megaproject.gui.GeneratorMK1GuiGui;
 import net.mcreator.megaproject.MegaProjectModElements;
 
@@ -90,7 +90,7 @@ public class GeneratorMK1inactiveBlock extends MegaProjectModElements.ModElement
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items
-				.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)).setRegistryName(block.getRegistryName()));
+				.add(() -> new BlockItem(block, new Item.Properties().group(ProjectMEGAItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	@SubscribeEvent

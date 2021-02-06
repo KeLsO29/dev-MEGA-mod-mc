@@ -37,7 +37,6 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.BlockItem;
@@ -56,6 +55,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
 import net.mcreator.megaproject.procedures.ElectricFunanceinactiveUpdateTickProcedure;
+import net.mcreator.megaproject.itemgroup.ProjectMEGAItemGroup;
 import net.mcreator.megaproject.gui.ElectricFurnanceGui;
 import net.mcreator.megaproject.MegaProjectModElements;
 
@@ -85,7 +85,7 @@ public class ElectricFunanceinactiveBlock extends MegaProjectModElements.ModElem
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items
-				.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)).setRegistryName(block.getRegistryName()));
+				.add(() -> new BlockItem(block, new Item.Properties().group(ProjectMEGAItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	@SubscribeEvent
@@ -170,7 +170,7 @@ public class ElectricFunanceinactiveBlock extends MegaProjectModElements.ModElem
 				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {
-						return new StringTextComponent("Electric Funance MK1");
+						return new StringTextComponent("Electric Furnace MK1");
 					}
 
 					@Override
@@ -302,7 +302,7 @@ public class ElectricFunanceinactiveBlock extends MegaProjectModElements.ModElem
 
 		@Override
 		public ITextComponent getDisplayName() {
-			return new StringTextComponent("Electric Funance MK1");
+			return new StringTextComponent("Electric Furnace MK1");
 		}
 
 		@Override

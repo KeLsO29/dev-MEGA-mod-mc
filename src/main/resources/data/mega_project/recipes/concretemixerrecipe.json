@@ -1,0 +1,39 @@
+{
+  "group": "concretemixer",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "3 5",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "mega_project:steel_block"
+    },
+    "1": {
+      "item": "mega_project:ai_limiteritem"
+    },
+    "2": {
+      "item": "mega_project:steel_block"
+    },
+    "3": {
+      "item": "mega_project:ironplate"
+    },
+    "5": {
+      "item": "mega_project:ironplate"
+    },
+    "6": {
+      "item": "mega_project:steel_block"
+    },
+    "7": {
+      "item": "mega_project:ironplate"
+    },
+    "8": {
+      "item": "mega_project:steel_block"
+    }
+  },
+  "result": {
+    "item": "mega_project:concretemixer",
+    "count": 1
+  }
+}

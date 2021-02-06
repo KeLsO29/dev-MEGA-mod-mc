@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "mega_project:blocks/ghost_mark",
+    "particle": "mega_project:blocks/ghost_mark"
+  }
+}

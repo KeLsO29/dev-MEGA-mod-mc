@@ -10,7 +10,7 @@
       "This scanner can scan for nodes in radius 50 blocks  \\. Need to be charged"
     ],
     "creativeTab": {
-      "value": "TOOLS"
+      "value": "CUSTOM:ProjectMEGA"
     },
     "toolType": "Special",
     "harvestLevel": 0,

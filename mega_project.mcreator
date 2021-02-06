@@ -2866,24 +2866,6 @@
       }
     },
     {
-      "name": "Oil",
-      "type": "fluid",
-      "sortid": 156,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "oil"
-    },
-    {
-      "name": "OilStructure",
-      "type": "structure",
-      "sortid": 157,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "oil_structure"
-    },
-    {
       "name": "GeneratorMK1inactive",
       "type": "block",
       "sortid": 158,
@@ -3310,44 +3292,6 @@
       }
     },
     {
-      "name": "Constructorinactive",
-      "type": "block",
-      "sortid": 176,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "constructorinactive"
-    },
-    {
-      "name": "ConstructorinactiveUpdateTick",
-      "type": "procedure",
-      "sortid": 177,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "constructorinactive_update_tick",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
       "name": "ConstructorblockBlockDestroyedByPlayer",
       "type": "procedure",
       "sortid": 178,
@@ -3585,39 +3529,6 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "pocketchest"
-    },
-    {
-      "name": "PocketchestitemRightClickedOnBlock",
-      "type": "procedure",
-      "sortid": 196,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "pocketchestitem_right_clicked_on_block",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
     },
     {
       "name": "Pocketchestitem",
@@ -3917,7 +3828,12 @@
       "registry_name": "permadayshowcondidion",
       "metadata": {
         "return_type": "LOGIC",
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
       }
     },
     {
@@ -3968,48 +3884,6 @@
       "registry_name": "haarpinactive"
     },
     {
-      "name": "RecipeCHangeritemRightClickedOnBlock",
-      "type": "procedure",
-      "sortid": 208,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "recipe_c_hangeritem_right_clicked_on_block",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "RecipeCHangeritem",
-      "type": "item",
-      "sortid": 207,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "recipe_c_hangeritem"
-    },
-    {
       "name": "AssemblerblockUpdateTick",
       "type": "procedure",
       "sortid": 212,
@@ -4039,15 +3913,6 @@
       }
     },
     {
-      "name": "Assemblerinactiveblock",
-      "type": "block",
-      "sortid": 210,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "assemblerinactiveblock"
-    },
-    {
       "name": "Assemblergui",
       "type": "gui",
       "sortid": 211,
@@ -4064,6 +3929,1007 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "assemblerblock"
+    },
+    {
+      "name": "ConstructorChangeRecipeOnclick",
+      "type": "procedure",
+      "sortid": 217,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "constructor_change_recipe_onclick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ProjectMEGA",
+      "type": "tab",
+      "sortid": 218,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "project_mega"
+    },
+    {
+      "name": "AssemblerChangeRecipeONclick",
+      "type": "procedure",
+      "sortid": 219,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "assembler_change_recipe_o_nclick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "HaarpBlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 220,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "haarp_block_destroyed_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Orangelog",
+      "type": "block",
+      "sortid": 221,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "orangelog"
+    },
+    {
+      "name": "Orangeleaves",
+      "type": "block",
+      "sortid": 222,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "orangeleaves"
+    },
+    {
+      "name": "DiamondSteelArmorGUI",
+      "type": "gui",
+      "sortid": 223,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamond_steel_armor_gui"
+    },
+    {
+      "name": "DSNightVisionONCLICK",
+      "type": "procedure",
+      "sortid": 224,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ds_night_vision_onclick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DSASpeedonlcick",
+      "type": "procedure",
+      "sortid": 225,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dsa_speedonlcick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DSAJetpackonclickl",
+      "type": "procedure",
+      "sortid": 226,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dsa_jetpackonclickl",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DiamondSteelArmorHelmetTickEvent",
+      "type": "procedure",
+      "sortid": 227,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamond_steel_armor_helmet_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DiamondSteelArmorBootsTickEvent",
+      "type": "procedure",
+      "sortid": 228,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamond_steel_armor_boots_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DSArmorkeybindOnKeyPressed",
+      "type": "procedure",
+      "sortid": 229,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ds_armorkeybind_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DSArmorkeybind",
+      "type": "keybind",
+      "sortid": 229,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ds_armorkeybind"
+    },
+    {
+      "name": "JetpackKeyBindOnKeyPressed",
+      "type": "procedure",
+      "sortid": 230,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "jetpack_key_bind_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "JetpackKeyBindOnKeyReleased",
+      "type": "procedure",
+      "sortid": 231,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "jetpack_key_bind_on_key_released",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "JetpackKeyBind",
+      "type": "keybind",
+      "sortid": 230,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "jetpack_key_bind"
+    },
+    {
+      "name": "DiamondSteelArmorBodyTickEvent",
+      "type": "procedure",
+      "sortid": 232,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamond_steel_armor_body_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Assemblerrecipue",
+      "type": "recipe",
+      "sortid": 233,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "assemblerrecipue"
+    },
+    {
+      "name": "MarkblockUpdateTick",
+      "type": "procedure",
+      "sortid": 234,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "markblock_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Markblock",
+      "type": "block",
+      "sortid": 234,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "markblock"
+    },
+    {
+      "name": "LimestoneactiveUpdateTick",
+      "type": "procedure",
+      "sortid": 235,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "limestoneactive_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Limestoneactive",
+      "type": "block",
+      "sortid": 235,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "limestoneactive"
+    },
+    {
+      "name": "LimestoneinactiveUpdateTick",
+      "type": "procedure",
+      "sortid": 236,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "limestoneinactive_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LimestoneinactiveBlockIsPlacedBy",
+      "type": "procedure",
+      "sortid": 237,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "limestoneinactive_block_is_placed_by",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Limestoneinactive",
+      "type": "block",
+      "sortid": 236,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "limestoneinactive"
+    },
+    {
+      "name": "Limestonenode",
+      "type": "structure",
+      "sortid": 238,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "limestonenode"
+    },
+    {
+      "name": "Concretemixer",
+      "type": "block",
+      "sortid": 239,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "concretemixer"
+    },
+    {
+      "name": "ConcreteMixerGUI",
+      "type": "gui",
+      "sortid": 240,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "concrete_mixer_gui"
+    },
+    {
+      "name": "Concrete",
+      "type": "item",
+      "sortid": 241,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "concrete"
+    },
+    {
+      "name": "ConcretemixerUpdateTick",
+      "type": "procedure",
+      "sortid": 242,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "concretemixer_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Sandstoneextractor",
+      "type": "block",
+      "sortid": 243,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sandstoneextractor"
+    },
+    {
+      "name": "SandstoneextractorUpdateTick",
+      "type": "procedure",
+      "sortid": 244,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sandstoneextractor_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Sandstoneextractorrecipe",
+      "type": "recipe",
+      "sortid": 245,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sandstoneextractorrecipe"
+    },
+    {
+      "name": "SandstoneextractorGUI",
+      "type": "gui",
+      "sortid": 246,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sandstoneextractor_gui"
+    },
+    {
+      "name": "Concretemixerrecipe",
+      "type": "recipe",
+      "sortid": 247,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "concretemixerrecipe"
+    },
+    {
+      "name": "Concreterecipe",
+      "type": "recipe",
+      "sortid": 248,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "concreterecipe"
+    },
+    {
+      "name": "ControlUnit",
+      "type": "item",
+      "sortid": 249,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "control_unit"
+    },
+    {
+      "name": "Controlunitrecipe",
+      "type": "recipe",
+      "sortid": 250,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "controlunitrecipe"
+    },
+    {
+      "name": "Cpu",
+      "type": "item",
+      "sortid": 251,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cpu"
+    },
+    {
+      "name": "Cpurecipe",
+      "type": "recipe",
+      "sortid": 252,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cpurecipe"
+    },
+    {
+      "name": "Haarprecipe",
+      "type": "recipe",
+      "sortid": 253,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "haarprecipe"
+    },
+    {
+      "name": "BuilderGUI",
+      "type": "gui",
+      "sortid": 255,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "builder_gui"
+    },
+    {
+      "name": "BuilderGUIThisGUIIsOpened",
+      "type": "procedure",
+      "sortid": 257,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "builder_gui_this_gui_is_opened",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ClearlagExecuted",
+      "type": "procedure",
+      "sortid": 259,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "clearlag_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ClearlagcommandCommandExecuted",
+      "type": "procedure",
+      "sortid": 260,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "clearlagcommand_command_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Clearlagcommand",
+      "type": "command",
+      "sortid": 260,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "clearlagcommand"
+    },
+    {
+      "name": "Position1blockBlockIsPlacedBy",
+      "type": "procedure",
+      "sortid": 261,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "position_1block_block_is_placed_by",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Position1block",
+      "type": "block",
+      "sortid": 261,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "position_1block"
+    },
+    {
+      "name": "Position2blockBlockIsPlacedBy",
+      "type": "procedure",
+      "sortid": 262,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "position_2block_block_is_placed_by",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Position2block",
+      "type": "block",
+      "sortid": 262,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "position_2block"
+    },
+    {
+      "name": "Buildertool",
+      "type": "tool",
+      "sortid": 263,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "buildertool"
+    },
+    {
+      "name": "BuildertoolRightClickedInAir",
+      "type": "procedure",
+      "sortid": 264,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "buildertool_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BuilderPreviewblock",
+      "type": "block",
+      "sortid": 265,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "builder_previewblock"
+    },
+    {
+      "name": "Builderclearprocedure",
+      "type": "procedure",
+      "sortid": 266,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "builderclearprocedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Builderbuildprocedure",
+      "type": "procedure",
+      "sortid": 267,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "builderbuildprocedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Buildrange",
+      "type": "enchantment",
+      "sortid": 268,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "buildrange"
+    },
+    {
+      "name": "Givememarkersbutton",
+      "type": "procedure",
+      "sortid": 269,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "givememarkersbutton",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BuilderGUNrecipe",
+      "type": "recipe",
+      "sortid": 270,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "builder_gu_nrecipe"
+    },
+    {
+      "name": "DSAWaterBreatheonclick",
+      "type": "procedure",
+      "sortid": 271,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dsa_water_breatheonclick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DSAslowfallingonclik",
+      "type": "procedure",
+      "sortid": 272,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ds_aslowfallingonclik",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -4154,13 +5020,13 @@
     {
       "name": "hub_coal_save",
       "type": "number",
-      "scope": "player_persistent",
+      "scope": "map",
       "value": "0"
     },
     {
       "name": "hub_iron_save",
       "type": "number",
-      "scope": "player_persistent",
+      "scope": "map",
       "value": "0"
     },
     {
@@ -4173,19 +5039,13 @@
       "name": "player_rock_points",
       "type": "number",
       "scope": "player_persistent",
-      "value": "0"
-    },
-    {
-      "name": "hub_oil_save",
-      "type": "number",
-      "scope": "map",
-      "value": "0"
+      "value": "0.0"
     },
     {
       "name": "player_minnig_level",
       "type": "number",
       "scope": "player_persistent",
-      "value": "1.0"
+      "value": "0.0"
     },
     {
       "name": "haarp_norain",
@@ -4204,110 +5064,205 @@
       "type": "logic",
       "scope": "map",
       "value": "false"
+    },
+    {
+      "name": "builder_pos1_x",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "builder_pos1_y",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "builder_pos1_z",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "builder_pos2_x",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "builder_pos2_y",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "builder_pos2_z",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "DSA_NightVision",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "DSA_Jetpack",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "DSA_Speed",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "hub_sandstone_save",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "buildgun_material",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "build_gun_pos_num",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "1.0"
     }
   ],
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "block.mega_project.steel_block": "Steel Block",
-      "advancements.turbo_fueladvancement.descr": "Turbo Fuel!",
-      "block.mega_project.copper_extractor": "Copper Extractor",
       "block.mega_project.iron_ore_node_block_inactive": "Iron Ore Node Block Inactive",
-      "item.mega_project.turbofuelitem": "Turbofuel Mk.1",
+      "block.mega_project.concretemixer": "Concrete Mixer",
       "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
-      "item.mega_project.redstoneingotitem": "Redstone Ingot",
-      "block.mega_project.coal_extractor": "Coal Extractor",
       "block.mega_project.solarpanelblockactive": " Solar panel Active",
-      "block.mega_project.generator_mk_2inactive": "Generator MK 2",
+      "item.mega_project.redstoneingotitem": "Redstone Ingot",
       "block.mega_project.generatormk_2": "Generator MK2",
-      "block.mega_project.copper_block": "Block of Copper",
-      "block.mega_project.caterium_ore": "Caterium Ore",
       "block.mega_project.copper_node_inactve": "Copper Node(inactive)",
-      "block.mega_project.caterium_extractor": "Caterium Extractor",
-      "item.mega_project.screw": "Screw",
-      "advancements.copperadvancement.title": "Copper",
+      "block.mega_project.assemblerblock": "Assembler",
       "block.mega_project.diamond_steelblock": "Diamond Steel",
       "block.mega_project.copper_node": "Copper Node(active)",
-      "block.mega_project.presserblock": "Presser",
       "block.mega_project.minerinactive": "Miner MK1",
+      "itemGroup.tabproject_mega": "Project MEGA",
       "block.mega_project.caterium_block": "Block of Caterium",
-      "item.mega_project.caterium_ingot": "Caterium Ingot",
-      "block.mega_project.electric_funanceinactive": "Electric Funance MK1",
+      "block.mega_project.electric_funanceinactive": "Electric Furnace MK1",
       "block.mega_project.solarpanelblockinactive": "Solar panel ",
+      "block.mega_project.modularframe": "Modular Frame",
       "item.mega_project.node_scanner_tool": "Node Scanner",
-      "advancements.copperadvancement.descr": "Cooper!",
+      "block.mega_project.builder_previewblock": "Builder Preview",
       "item.mega_project.ai_limiteritem": "Ai Limiter",
-      "advancements.allrecipescheat.title": "All Recipes Cheat",
-      "item.mega_project.diamond_steel_armor_leggings": "Diamond Steel Leggings",
+      "advancements.copperadvancement.descr": "Cooper!",
+      "block.mega_project.limestoneinactive": "Limestone (Inactive)",
+      "enchantment.mega_project.buildrange": "Build Range",
       "block.mega_project.caterium_node_block_inactive": "Caterium Node Block Inactive",
       "block.mega_project.minerblock": "Miner",
-      "block.mega_project.hardenedcobble": "Hardened Cobble",
       "item.mega_project.steelingot": "Steel Ingot",
       "block.mega_project.iron_ore_node_block": "Iron Ore Node Block(active)",
       "advancements.cateriumadvancement.title": "Caterium",
-      "item.mega_project.highspeedconectoritem": "High Speed Connector",
-      "key.mcreator.diamond_pickaxe_menu": "Diamond Tools Menu",
       "item.mega_project.diamond_steel_armor_helmet": "Diamond Steel Helmet",
-      "advancements.hub_crafted_achievment.title": "Hub Crafted",
       "block.mega_project.hub": "Hub",
       "key.mcreator.adminmenukeybind": "Admin Menu",
-      "block.mega_project.constructorinactive": "Constructor",
       "item.mega_project.cateriumwireitem": "Caterium wire",
       "item.mega_project.copper_sheet_item": "Copper Sheet",
       "advancements.turbo_fueladvancement.title": "Turbo Fuel",
       "item.mega_project.ironplate": "Iron Plate",
       "block.mega_project.ironextractor": "Iron Extractor",
       "block.mega_project.coal_node": "Coal Node(active)",
+      "advancements.electronics.title": "Electronics",
+      "block.mega_project.orangelog": "Oring Log",
+      "block.mega_project.chargerblock": "Charger",
+      "item.mega_project.copper_ingot": "Copper",
+      "item.mega_project.buildertool": "Builder Gun",
+      "block.mega_project.position_2block": "Position 2.",
+      "block.mega_project.constructorblock": "Constructor",
+      "block.mega_project.markblock": "Markblock",
+      "advancements.rudit_ingotadvancement.descr": "Advanced Redstone",
+      "block.mega_project.haarpinactive": "Haarp!",
+      "item.mega_project.diamond_steel_armor_chestplate": "Diamond Steel Chestplate",
+      "item.mega_project.diamondscrewitem": "Diamond screw",
+      "block.mega_project.haarp": "Haarp!",
+      "item.mega_project.turbofuelitem_2": "Turbofuel Mk.2",
+      "item.mega_project.turbofuelitem_3": "Turbofuel Mk.3",
+      "key.mcreator.ds_armorkeybind": "Diamond Steel Armor GUI",
+      "item.mega_project.diamond_steel_sword": "Diamond Steel Sword",
+      "item.mega_project.diamondstellshovel": "Diamondstellshovel",
+      "block.mega_project.generator_mk_1inactive": "Generator MK 1",
+      "item.mega_project.diamondsteelplate": "Diamond Steel Plate",
+      "item.mega_project.circuit_boarditem": "Circuit Board",
+      "block.mega_project.steel_block": "Steel Block",
+      "advancements.turbo_fueladvancement.descr": "Turbo Fuel!",
+      "block.mega_project.copper_extractor": "Copper Extractor",
+      "item.mega_project.turbofuelitem": "Turbofuel Mk.1",
+      "block.mega_project.coal_extractor": "Coal Extractor",
+      "block.mega_project.generator_mk_2inactive": "Generator MK 2",
+      "block.mega_project.copper_block": "Block of Copper",
+      "block.mega_project.caterium_ore": "Caterium Ore",
+      "block.mega_project.caterium_extractor": "Caterium Extractor",
+      "item.mega_project.screw": "Screw",
+      "advancements.copperadvancement.title": "Copper",
+      "block.mega_project.presserblock": "Presser",
+      "item.mega_project.caterium_ingot": "Caterium Ingot",
+      "advancements.allrecipescheat.title": "All Recipes Cheat",
+      "item.mega_project.diamond_steel_armor_leggings": "Diamond Steel Leggings",
+      "item.mega_project.permadayupgrade": "Perma Day Upgrade",
+      "block.mega_project.hardenedcobble": "Hardened Cobble",
+      "block.mega_project.sandstoneextractor": "SandStone Extractor",
+      "item.mega_project.highspeedconectoritem": "High Speed Connector",
+      "key.mcreator.diamond_pickaxe_menu": "Diamond Tools/Builder Menu",
+      "advancements.hub_crafted_achievment.title": "Hub Crafted",
+      "block.mega_project.orangeleaves": "Orig Leaves",
+      "item.mega_project.concrete": "Concrete",
       "block.mega_project.heavyironblock": "Heavy Iron",
       "advancements.electronics.descr": "Electronics!",
       "item.mega_project.cateriumroditem": "Caterium rod",
-      "advancements.electronics.title": "Electronics",
-      "block.mega_project.chargerblock": "Charger",
-      "block.mega_project.electric_furnance_block": "Electric Furnance",
-      "item.mega_project.copper_ingot": "Copper",
+      "block.mega_project.heavyframe": "Heavy Frame",
+      "block.mega_project.electric_furnance_block": "Electric Furnace",
+      "item.mega_project.cpu": "CPU",
       "advancements.rudit_ingotadvancement.title": "Rudit Ingot",
       "block.mega_project.foundryinactive": "Foundry",
-      "block.mega_project.constructorblock": "Constructor",
       "item.mega_project.diamondsteelaxe": "Diamond Steel Axe",
-      "advancements.rudit_ingotadvancement.descr": "Advanced Redstone",
-      "item.mega_project.diamond_steel_armor_chestplate": "Diamond Steel Chestplate",
-      "item.mega_project.diamondscrewitem": "Diamond screw",
       "block.mega_project.caterium_nod_eblock": "Caterium  Node Block (active)",
       "advancements.allrecipescheat.descr": "Unlock Recipe Cheat",
       "block.mega_project.foundyblock": "Foundry",
       "item.mega_project.diamond_steelpickaxe": "Diamond Steel Pickaxe",
-      "item.mega_project.turbofuelitem_2": "Turbofuel Mk.2",
+      "block.mega_project.limestoneactive": "Limestoneactive",
       "block.mega_project.generator_mk_1": "Generator MK 1",
-      "item.mega_project.turbofuelitem_3": "Turbofuel Mk.3",
       "item.mega_project.pocketchestitem": "Pocket Chest",
       "block.mega_project.copper_ore": "Copper Ore",
       "item.mega_project.diamond_steel_armor_boots": "DiamondS teel Boots",
       "block.mega_project.coal_node_inactive": "Coal Node Inactive",
-      "fluid.oil": "Oil",
-      "item.mega_project.diamond_steel_sword": "Diamond Steel Sword",
-      "item.mega_project.oil_bucket": "Oil Bucket",
       "item.mega_project.node_scanner": "Node Scanner",
-      "item.mega_project.diamondstellshovel": "Diamondstellshovel",
-      "block.mega_project.generator_mk_1inactive": "Generator MK 1",
+      "item.mega_project.control_unit": "Control Unit",
+      "key.mcreator.jetpack_key_bind": "Jetpack",
       "item.mega_project.diamondsteelitem": "Diamond Steel Ingot",
       "advancements.hub_crafted_achievment.descr": "You Enter MENALOMANS Way",
       "advancements.cateriumadvancement.descr": "Caterium!",
-      "item.mega_project.diamondsteelplate": "Diamond Steel Plate",
-      "item.mega_project.circuit_boarditem": "Circuit Board"
+      "block.mega_project.position_1block": "Position 1"
     }
   },
   "workspaceSettings": {
     "modid": "mega_project",
     "modName": "MEGA Project",
-    "version": "1.0.0",
-    "author": "matus, MCreator",
+    "version": "1.5.1",
+    "author": "dZ__, Kelso with MCreator",
     "websiteURL": "https://mcreator.net",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
-    "mcreatorDependencies": [],
+    "mcreatorDependencies": [
+      "just_enough_items"
+    ],
     "currentGenerator": "forge-1.15.2",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.megaproject",

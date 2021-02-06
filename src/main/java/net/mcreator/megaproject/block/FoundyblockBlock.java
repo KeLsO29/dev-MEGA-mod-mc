@@ -106,7 +106,7 @@ public class FoundyblockBlock extends MegaProjectModElements.ModElement {
 
 		@Override
 		public int tickRate(IWorldReader world) {
-			return 40;
+			return 30;
 		}
 
 		@Override

@@ -47,7 +47,7 @@
     "material": {
       "value": "ROCK"
     },
-    "tickRate": 40,
+    "tickRate": 30,
     "tickRandomly": false,
     "isReplaceable": false,
     "colorOnMap": "DEFAULT",
