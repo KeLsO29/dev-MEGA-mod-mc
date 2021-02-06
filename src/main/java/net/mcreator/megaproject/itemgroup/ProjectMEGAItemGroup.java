@@ -1,0 +1,29 @@
+
+package net.mcreator.megaproject.itemgroup;
+
+@MegaProjectModElements.ModElement.Tag
+public class ProjectMEGAItemGroup extends MegaProjectModElements.ModElement {
+
+	public ProjectMEGAItemGroup(MegaProjectModElements instance) {
+		super(instance, 218);
+	}
+
+	@Override
+	public void initElements() {
+		tab = new ItemGroup("tabproject_mega") {
+			@OnlyIn(Dist.CLIENT)
+			@Override
+			public ItemStack createIcon() {
+				return new ItemStack(CircuitBoarditemItem.block, (int) (1));
+			}
+
+			@OnlyIn(Dist.CLIENT)
+			public boolean hasSearchBar() {
+				return true;
+			}
+		}.setBackgroundImageName("item_search.png");
+	}
+
+	public static ItemGroup tab;
+
+}

@@ -8,7 +8,7 @@
     "name": "Diamond Steel Pickaxe",
     "specialInfo": [],
     "creativeTab": {
-      "value": "TOOLS"
+      "value": "CUSTOM:ProjectMEGA"
     },
     "toolType": "Pickaxe",
     "harvestLevel": 3,

@@ -8,7 +8,7 @@
     "name": "Caterium rod",
     "rarity": "COMMON",
     "creativeTab": {
-      "value": "MISC"
+      "value": "CUSTOM:ProjectMEGA"
     },
     "stackSize": 64,
     "enchantability": 0,

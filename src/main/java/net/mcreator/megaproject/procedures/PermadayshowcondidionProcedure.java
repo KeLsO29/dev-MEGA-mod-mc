@@ -8,10 +8,19 @@ public class PermadayshowcondidionProcedure extends MegaProjectModElements.ModEl
 
 	}
 
-	public static boolean executeProcedure(Map<String, Object> dependencies){
+	public static boolean executeProcedure(Map<String, Object> dependencies) {
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				System.err.println("Failed to load dependency world for procedure Permadayshowcondidion!");
+			return false;
+		}
 
+		IWorld world = (IWorld) dependencies.get("world");
 
-		if ((==(true))) {return (true);}return (false);
+		if (((MegaProjectModVariables.MapVariables.get(world).haarp_permaday) == (true))) {
+			return (true);
+		}
+		return (false);
 
 	}
 

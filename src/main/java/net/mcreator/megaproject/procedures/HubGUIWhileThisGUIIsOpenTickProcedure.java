@@ -270,6 +270,63 @@ public class HubGUIWhileThisGUIIsOpenTickProcedure extends MegaProjectModElement
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 		}
+		if ((((new Object() {
+			public int getAmount(int sltid) {
+				if (entity instanceof ServerPlayerEntity) {
+					Container _current = ((ServerPlayerEntity) entity).openContainer;
+					if (_current instanceof Supplier) {
+						Object invobj = ((Supplier) _current).get();
+						if (invobj instanceof Map) {
+							ItemStack stack = ((Slot) ((Map) invobj).get(sltid)).getStack();;
+							if (stack != null)
+								return stack.getCount();
+						}
+					}
+				}
+				return 0;
+			}
+		}.getAmount((int) (5))) == 0) && (64 < (new Object() {
+			public double getValue(BlockPos pos, String tag) {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity != null)
+					return tileEntity.getTileData().getDouble(tag);
+				return -1;
+			}
+		}.getValue(
+				new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+						(int) (MegaProjectModVariables.MapVariables.get(world).hub_y), (int) (MegaProjectModVariables.MapVariables.get(world).hub_z)),
+				"SandStone"))))) {
+			if (entity instanceof PlayerEntity) {
+				Container _current = ((PlayerEntity) entity).openContainer;
+				if (_current instanceof Supplier) {
+					Object invobj = ((Supplier) _current).get();
+					if (invobj instanceof Map) {
+						ItemStack _setstack = new ItemStack(Blocks.SANDSTONE, (int) (1));
+						_setstack.setCount((int) 64);
+						((Slot) ((Map) invobj).get((int) (5))).putStack(_setstack);
+						_current.detectAndSendChanges();
+					}
+				}
+			}
+			if (!world.getWorld().isRemote) {
+				BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+						(int) (MegaProjectModVariables.MapVariables.get(world).hub_y), (int) (MegaProjectModVariables.MapVariables.get(world).hub_z));
+				TileEntity _tileEntity = world.getTileEntity(_bp);
+				BlockState _bs = world.getBlockState(_bp);
+				if (_tileEntity != null)
+					_tileEntity.getTileData().putDouble("SandStone", ((new Object() {
+						public double getValue(BlockPos pos, String tag) {
+							TileEntity tileEntity = world.getTileEntity(pos);
+							if (tileEntity != null)
+								return tileEntity.getTileData().getDouble(tag);
+							return -1;
+						}
+					}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+							(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
+							(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "SandStone")) - 64));
+				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			}
+		}
 		if (((new Object() {
 			public ItemStack getItemStack(int sltid) {
 				Entity _ent = entity;

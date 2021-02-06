@@ -53,7 +53,7 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		if ((100 < (new Object() {
+		if ((1000 < (new Object() {
 			public double getValue(BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
@@ -75,7 +75,7 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 					}
 					return _retval.get();
 				}
-			}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) >= 2) && ((new Object() {
+			}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) >= 3) && ((new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					TileEntity _ent = world.getTileEntity(pos);
@@ -98,7 +98,7 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 							}
 							return _retval.get();
 						}
-					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) >= 1) && ((new Object() {
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) >= 2) && ((new Object() {
 						public ItemStack getItemStack(BlockPos pos, int sltid) {
 							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 							TileEntity _ent = world.getTileEntity(pos);
@@ -255,7 +255,7 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 					}
 					return _retval.get();
 				}
-			}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) >= 8) && ((new Object() {
+			}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) >= 9) && ((new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					TileEntity _ent = world.getTileEntity(pos);
@@ -278,7 +278,7 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 							}
 							return _retval.get();
 						}
-					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) >= 4) && ((new Object() {
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) >= 5) && ((new Object() {
 						public ItemStack getItemStack(BlockPos pos, int sltid) {
 							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 							TileEntity _ent = world.getTileEntity(pos);
@@ -422,7 +422,7 @@ public class FoundyblockUpdateTickProcedure extends MegaProjectModElements.ModEl
 							}
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
-								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 100));
+								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 5000));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			} else {

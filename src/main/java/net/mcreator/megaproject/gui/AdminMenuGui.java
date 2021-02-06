@@ -29,6 +29,7 @@ import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.megaproject.procedures.ClearlagExecutedProcedure;
 import net.mcreator.megaproject.procedures.AdminmenuSurvivalCreativeProcedure;
 import net.mcreator.megaproject.procedures.AdminmenuSunRainProcedure;
 import net.mcreator.megaproject.procedures.AdminmenuDayNightProcedure;
@@ -160,17 +161,21 @@ public class AdminMenuGui extends MegaProjectModElements.ModElement {
 		public void init(Minecraft minecraft, int width, int height) {
 			super.init(minecraft, width, height);
 			minecraft.keyboardListener.enableRepeatEvents(true);
-			this.addButton(new Button(this.guiLeft + 13, this.guiTop + 44, 110, 20, "Survival/Creative", e -> {
+			this.addButton(new Button(this.guiLeft + 12, this.guiTop + 31, 110, 20, "Survival/Creative", e -> {
 				MegaProjectMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(0, x, y, z));
 				handleButtonAction(entity, 0, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 13, this.guiTop + 116, 65, 20, "Sun/Rain", e -> {
+			this.addButton(new Button(this.guiLeft + 12, this.guiTop + 84, 65, 20, "Sun/Rain", e -> {
 				MegaProjectMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(1, x, y, z));
 				handleButtonAction(entity, 1, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 13, this.guiTop + 80, 70, 20, "Day/Night", e -> {
+			this.addButton(new Button(this.guiLeft + 12, this.guiTop + 58, 70, 20, "Day/Night", e -> {
 				MegaProjectMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(2, x, y, z));
 				handleButtonAction(entity, 2, x, y, z);
+			}));
+			this.addButton(new Button(this.guiLeft + 11, this.guiTop + 111, 70, 20, "Clear Lag", e -> {
+				MegaProjectMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(3, x, y, z));
+				handleButtonAction(entity, 3, x, y, z);
 			}));
 		}
 	}
@@ -283,6 +288,13 @@ public class AdminMenuGui extends MegaProjectModElements.ModElement {
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("world", world);
 				AdminmenuDayNightProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 3) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				ClearlagExecutedProcedure.executeProcedure($_dependencies);
 			}
 		}
 	}

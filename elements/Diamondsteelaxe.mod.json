@@ -8,7 +8,7 @@
     "name": "Diamond Steel Axe",
     "specialInfo": [],
     "creativeTab": {
-      "value": "TOOLS"
+      "value": "CUSTOM:ProjectMEGA"
     },
     "toolType": "Axe",
     "harvestLevel": 1,

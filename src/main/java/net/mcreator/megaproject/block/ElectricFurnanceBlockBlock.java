@@ -211,7 +211,7 @@ public class ElectricFurnanceBlockBlock extends MegaProjectModElements.ModElemen
 				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
 					@Override
 					public ITextComponent getDisplayName() {
-						return new StringTextComponent("Electric Furnance");
+						return new StringTextComponent("Electric Furnace");
 					}
 
 					@Override
@@ -343,7 +343,7 @@ public class ElectricFurnanceBlockBlock extends MegaProjectModElements.ModElemen
 
 		@Override
 		public ITextComponent getDisplayName() {
-			return new StringTextComponent("Electric Furnance");
+			return new StringTextComponent("Electric Furnace");
 		}
 
 		@Override

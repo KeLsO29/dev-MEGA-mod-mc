@@ -2866,24 +2866,6 @@
       }
     },
     {
-      "name": "Oil",
-      "type": "fluid",
-      "sortid": 156,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "oil"
-    },
-    {
-      "name": "OilStructure",
-      "type": "structure",
-      "sortid": 157,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "oil_structure"
-    },
-    {
       "name": "GeneratorMK1inactive",
       "type": "block",
       "sortid": 158,
@@ -3310,44 +3292,6 @@
       }
     },
     {
-      "name": "Constructorinactive",
-      "type": "block",
-      "sortid": 176,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "constructorinactive"
-    },
-    {
-      "name": "ConstructorinactiveUpdateTick",
-      "type": "procedure",
-      "sortid": 177,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "constructorinactive_update_tick",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
       "name": "ConstructorblockBlockDestroyedByPlayer",
       "type": "procedure",
       "sortid": 178,
@@ -3585,39 +3529,6 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "pocketchest"
-    },
-    {
-      "name": "PocketchestitemRightClickedOnBlock",
-      "type": "procedure",
-      "sortid": 196,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "pocketchestitem_right_clicked_on_block",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
     },
     {
       "name": "Pocketchestitem",
@@ -3973,48 +3884,6 @@
       "registry_name": "haarpinactive"
     },
     {
-      "name": "RecipeCHangeritemRightClickedOnBlock",
-      "type": "procedure",
-      "sortid": 208,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "recipe_c_hangeritem_right_clicked_on_block",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "RecipeCHangeritem",
-      "type": "item",
-      "sortid": 207,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "recipe_c_hangeritem"
-    },
-    {
       "name": "AssemblerblockUpdateTick",
       "type": "procedure",
       "sortid": 212,
@@ -4044,15 +3913,6 @@
       }
     },
     {
-      "name": "Assemblerinactiveblock",
-      "type": "block",
-      "sortid": 210,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "assemblerinactiveblock"
-    },
-    {
       "name": "Assemblergui",
       "type": "gui",
       "sortid": 211,
@@ -4069,6 +3929,1007 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "assemblerblock"
+    },
+    {
+      "name": "AssemblerChangeRecipeONclick",
+      "type": "procedure",
+      "sortid": 219,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "assembler_change_recipe_o_nclick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ClearlagExecuted",
+      "type": "procedure",
+      "sortid": 259,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "clearlag_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Orangelog",
+      "type": "block",
+      "sortid": 221,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "orangelog"
+    },
+    {
+      "name": "Cpu",
+      "type": "item",
+      "sortid": 251,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cpu"
+    },
+    {
+      "name": "Concreterecipe",
+      "type": "recipe",
+      "sortid": 248,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "concreterecipe"
+    },
+    {
+      "name": "ProjectMEGA",
+      "type": "tab",
+      "sortid": 218,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "project_mega"
+    },
+    {
+      "name": "JetpackKeyBindOnKeyPressed",
+      "type": "procedure",
+      "sortid": 230,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "jetpack_key_bind_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BuilderGUNrecipe",
+      "type": "recipe",
+      "sortid": 270,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "builder_gu_nrecipe"
+    },
+    {
+      "name": "ConcretemixerUpdateTick",
+      "type": "procedure",
+      "sortid": 242,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "concretemixer_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DSAWaterBreatheonclick",
+      "type": "procedure",
+      "sortid": 271,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dsa_water_breatheonclick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "JetpackKeyBind",
+      "type": "keybind",
+      "sortid": 230,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "jetpack_key_bind"
+    },
+    {
+      "name": "DSArmorkeybindOnKeyPressed",
+      "type": "procedure",
+      "sortid": 229,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ds_armorkeybind_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BuildertoolRightClickedInAir",
+      "type": "procedure",
+      "sortid": 264,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "buildertool_right_clicked_in_air",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Givememarkersbutton",
+      "type": "procedure",
+      "sortid": 269,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "givememarkersbutton",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Clearlagcommand",
+      "type": "command",
+      "sortid": 260,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "clearlagcommand"
+    },
+    {
+      "name": "Builderbuildprocedure",
+      "type": "procedure",
+      "sortid": 267,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "builderbuildprocedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MarkblockUpdateTick",
+      "type": "procedure",
+      "sortid": 234,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "markblock_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LimestoneactiveUpdateTick",
+      "type": "procedure",
+      "sortid": 235,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "limestoneactive_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DiamondSteelArmorGUI",
+      "type": "gui",
+      "sortid": 223,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamond_steel_armor_gui"
+    },
+    {
+      "name": "DiamondSteelArmorBootsTickEvent",
+      "type": "procedure",
+      "sortid": 228,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamond_steel_armor_boots_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Assemblerrecipue",
+      "type": "recipe",
+      "sortid": 233,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "assemblerrecipue"
+    },
+    {
+      "name": "Position2block",
+      "type": "block",
+      "sortid": 262,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "position_2block"
+    },
+    {
+      "name": "BuilderGUIThisGUIIsOpened",
+      "type": "procedure",
+      "sortid": 257,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "builder_gui_this_gui_is_opened",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Concretemixer",
+      "type": "block",
+      "sortid": 239,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "concretemixer"
+    },
+    {
+      "name": "ClearlagcommandCommandExecuted",
+      "type": "procedure",
+      "sortid": 260,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "clearlagcommand_command_executed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ConcreteMixerGUI",
+      "type": "gui",
+      "sortid": 240,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "concrete_mixer_gui"
+    },
+    {
+      "name": "Position2blockBlockIsPlacedBy",
+      "type": "procedure",
+      "sortid": 262,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "position_2block_block_is_placed_by",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Concretemixerrecipe",
+      "type": "recipe",
+      "sortid": 247,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "concretemixerrecipe"
+    },
+    {
+      "name": "LimestoneinactiveUpdateTick",
+      "type": "procedure",
+      "sortid": 236,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "limestoneinactive_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Orangeleaves",
+      "type": "block",
+      "sortid": 222,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "orangeleaves"
+    },
+    {
+      "name": "Concrete",
+      "type": "item",
+      "sortid": 241,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "concrete"
+    },
+    {
+      "name": "SandstoneextractorUpdateTick",
+      "type": "procedure",
+      "sortid": 244,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sandstoneextractor_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Limestonenode",
+      "type": "structure",
+      "sortid": 238,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "limestonenode"
+    },
+    {
+      "name": "Sandstoneextractor",
+      "type": "block",
+      "sortid": 243,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sandstoneextractor"
+    },
+    {
+      "name": "Limestoneinactive",
+      "type": "block",
+      "sortid": 236,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "limestoneinactive"
+    },
+    {
+      "name": "HaarpBlockDestroyedByPlayer",
+      "type": "procedure",
+      "sortid": 220,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "haarp_block_destroyed_by_player",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Builderclearprocedure",
+      "type": "procedure",
+      "sortid": 266,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "builderclearprocedure",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ControlUnit",
+      "type": "item",
+      "sortid": 249,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "control_unit"
+    },
+    {
+      "name": "Controlunitrecipe",
+      "type": "recipe",
+      "sortid": 250,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "controlunitrecipe"
+    },
+    {
+      "name": "Buildertool",
+      "type": "tool",
+      "sortid": 263,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "buildertool"
+    },
+    {
+      "name": "JetpackKeyBindOnKeyReleased",
+      "type": "procedure",
+      "sortid": 231,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "jetpack_key_bind_on_key_released",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LimestoneinactiveBlockIsPlacedBy",
+      "type": "procedure",
+      "sortid": 237,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "limestoneinactive_block_is_placed_by",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DSAslowfallingonclik",
+      "type": "procedure",
+      "sortid": 272,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ds_aslowfallingonclik",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Position1block",
+      "type": "block",
+      "sortid": 261,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "position_1block"
+    },
+    {
+      "name": "DSArmorkeybind",
+      "type": "keybind",
+      "sortid": 229,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ds_armorkeybind"
+    },
+    {
+      "name": "BuilderGUI",
+      "type": "gui",
+      "sortid": 255,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "builder_gui"
+    },
+    {
+      "name": "Position1blockBlockIsPlacedBy",
+      "type": "procedure",
+      "sortid": 261,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "position_1block_block_is_placed_by",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Markblock",
+      "type": "block",
+      "sortid": 234,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "markblock"
+    },
+    {
+      "name": "DiamondSteelArmorBodyTickEvent",
+      "type": "procedure",
+      "sortid": 232,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamond_steel_armor_body_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Buildrange",
+      "type": "enchantment",
+      "sortid": 268,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "buildrange"
+    },
+    {
+      "name": "Sandstoneextractorrecipe",
+      "type": "recipe",
+      "sortid": 245,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sandstoneextractorrecipe"
+    },
+    {
+      "name": "Limestoneactive",
+      "type": "block",
+      "sortid": 235,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "limestoneactive"
+    },
+    {
+      "name": "DSNightVisionONCLICK",
+      "type": "procedure",
+      "sortid": 224,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ds_night_vision_onclick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Haarprecipe",
+      "type": "recipe",
+      "sortid": 253,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "haarprecipe"
+    },
+    {
+      "name": "DSAJetpackonclickl",
+      "type": "procedure",
+      "sortid": 226,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dsa_jetpackonclickl",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DSASpeedonlcick",
+      "type": "procedure",
+      "sortid": 225,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dsa_speedonlcick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SandstoneextractorGUI",
+      "type": "gui",
+      "sortid": 246,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sandstoneextractor_gui"
+    },
+    {
+      "name": "BuilderPreviewblock",
+      "type": "block",
+      "sortid": 265,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "builder_previewblock"
+    },
+    {
+      "name": "ConstructorChangeRecipeOnclick",
+      "type": "procedure",
+      "sortid": 217,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "constructor_change_recipe_onclick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Cpurecipe",
+      "type": "recipe",
+      "sortid": 252,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cpurecipe"
+    },
+    {
+      "name": "DiamondSteelArmorHelmetTickEvent",
+      "type": "procedure",
+      "sortid": 227,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "diamond_steel_armor_helmet_tick_event",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -4181,12 +5042,6 @@
       "value": "0"
     },
     {
-      "name": "hub_oil_save",
-      "type": "number",
-      "scope": "map",
-      "value": "0"
-    },
-    {
       "name": "player_minnig_level",
       "type": "number",
       "scope": "player_persistent",
@@ -4209,6 +5064,78 @@
       "type": "logic",
       "scope": "map",
       "value": "false"
+    },
+    {
+      "name": "DSA_NightVision",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "hub_sandstone_save",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "buildgun_material",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": ""
+    },
+    {
+      "name": "build_gun_pos_num",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "1.0"
+    },
+    {
+      "name": "DSA_Jetpack",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "builder_pos2_z",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "builder_pos1_z",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "builder_pos2_y",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "builder_pos1_y",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "builder_pos2_x",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "DSA_Speed",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "builder_pos1_x",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [],

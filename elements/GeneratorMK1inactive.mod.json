@@ -33,7 +33,7 @@
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "BUILDING_BLOCKS"
+      "value": "CUSTOM:ProjectMEGA"
     },
     "destroyTool": "Not specified",
     "customDrop": {

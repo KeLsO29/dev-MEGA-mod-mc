@@ -95,6 +95,9 @@
     "onTickUpdate": {
       "name": "HaarpUpdateTick"
     },
+    "onDestroyedByPlayer": {
+      "name": "HaarpBlockDestroyedByPlayer"
+    },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],
     "blocksToReplace": [

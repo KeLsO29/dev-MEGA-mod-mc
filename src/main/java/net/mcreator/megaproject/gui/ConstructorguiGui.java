@@ -30,11 +30,13 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.megaproject.procedures.GeneratorWorkingLabelProcedure;
+import net.mcreator.megaproject.procedures.ConstructorChangeRecipeOnclickProcedure;
 import net.mcreator.megaproject.MegaProjectModElements;
 import net.mcreator.megaproject.MegaProjectMod;
 
@@ -122,9 +124,9 @@ public class ConstructorguiGui extends MegaProjectModElements.ModElement {
 					}
 				}
 			}
-			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 89, 58) {
+			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 29, 34) {
 			}));
-			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 197, 58) {
+			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 132, 34) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
 					return false;
@@ -134,9 +136,9 @@ public class ConstructorguiGui extends MegaProjectModElements.ModElement {
 			int sj;
 			for (si = 0; si < 3; ++si)
 				for (sj = 0; sj < 9; ++sj)
-					this.addSlot(new Slot(inv, sj + (si + 1) * 9, 64 + 8 + sj * 18, 62 + 84 + si * 18));
+					this.addSlot(new Slot(inv, sj + (si + 1) * 9, -1 + 8 + sj * 18, 24 + 84 + si * 18));
 			for (si = 0; si < 9; ++si)
-				this.addSlot(new Slot(inv, si, 64 + 8 + si * 18, 62 + 142));
+				this.addSlot(new Slot(inv, si, -1 + 8 + si * 18, 24 + 142));
 		}
 
 		public Map<Integer, Slot> get() {
@@ -303,8 +305,8 @@ public class ConstructorguiGui extends MegaProjectModElements.ModElement {
 			this.y = container.y;
 			this.z = container.z;
 			this.entity = container.entity;
-			this.xSize = 304;
-			this.ySize = 230;
+			this.xSize = 174;
+			this.ySize = 187;
 		}
 		private static final ResourceLocation texture = new ResourceLocation("mega_project:textures/constructorgui.png");
 		@Override
@@ -339,9 +341,17 @@ public class ConstructorguiGui extends MegaProjectModElements.ModElement {
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-			this.font.drawString("CONSTRUCTOR", 124, 12, -16777216);
+			this.font.drawString("CONSTRUCTOR", 56, 5, -16777216);
 			if (GeneratorWorkingLabelProcedure.executeProcedure(ImmutableMap.of("x", x, "y", y, "z", z, "world", world)))
-				this.font.drawString("Working", 133, 93, -16711936);
+				this.font.drawString("Working", 66, 36, -16711936);
+			this.font.drawString("Recipe: " + (new Object() {
+				public String getValue(BlockPos pos, String tag) {
+					TileEntity tileEntity = world.getTileEntity(pos);
+					if (tileEntity != null)
+						return tileEntity.getTileData().getString(tag);
+					return "";
+				}
+			}.getValue(new BlockPos((int) x, (int) y, (int) z), "Recipe")) + "", 31, 17, -12829636);
 		}
 
 		@Override
@@ -354,6 +364,10 @@ public class ConstructorguiGui extends MegaProjectModElements.ModElement {
 		public void init(Minecraft minecraft, int width, int height) {
 			super.init(minecraft, width, height);
 			minecraft.keyboardListener.enableRepeatEvents(true);
+			this.addButton(new Button(this.guiLeft + 41, this.guiTop + 79, 90, 20, "Change Recipe", e -> {
+				MegaProjectMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(0, x, y, z));
+				handleButtonAction(entity, 0, x, y, z);
+			}));
 		}
 	}
 
@@ -443,6 +457,16 @@ public class ConstructorguiGui extends MegaProjectModElements.ModElement {
 		// security measure to prevent arbitrary chunk generation
 		if (!world.isBlockLoaded(new BlockPos(x, y, z)))
 			return;
+		if (buttonID == 0) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				ConstructorChangeRecipeOnclickProcedure.executeProcedure($_dependencies);
+			}
+		}
 	}
 
 	private static void handleSlotAction(PlayerEntity entity, int slotID, int changeType, int meta, int x, int y, int z) {

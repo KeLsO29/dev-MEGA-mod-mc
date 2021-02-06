@@ -10,8 +10,17 @@
     "textureLeggings": "diamondsteel_leggings",
     "enableBoots": true,
     "textureBoots": "diamondsteel_boots",
+    "onHelmetTick": {
+      "name": "DiamondSteelArmorHelmetTickEvent"
+    },
+    "onBodyTick": {
+      "name": "DiamondSteelArmorBodyTickEvent"
+    },
+    "onBootsTick": {
+      "name": "DiamondSteelArmorBootsTickEvent"
+    },
     "creativeTab": {
-      "value": "COMBAT"
+      "value": "CUSTOM:ProjectMEGA"
     },
     "armorTextureFile": "diamondsteel",
     "helmetName": "Diamond Steel Helmet",

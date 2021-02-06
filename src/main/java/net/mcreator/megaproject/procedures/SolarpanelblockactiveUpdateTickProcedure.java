@@ -68,7 +68,7 @@ public class SolarpanelblockactiveUpdateTickProcedure extends MegaProjectModElem
 						}
 					}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 							(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
-							(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) + 250));
+							(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) + 200));
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 		} else {

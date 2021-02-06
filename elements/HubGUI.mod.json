@@ -6,7 +6,7 @@
     "width": 396,
     "height": 228,
     "inventoryOffsetX": 113,
-    "inventoryOffsetY": 0,
+    "inventoryOffsetY": -4,
     "renderBgLayer": true,
     "doesPauseGame": false,
     "components": [
@@ -19,8 +19,8 @@
             "falpha": 0.0
           },
           "name": "HUB",
-          "x": 208,
-          "y": 8
+          "x": 213,
+          "y": 9
         }
       },
       {
@@ -34,8 +34,8 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #0",
-          "x": 98,
-          "y": 56
+          "x": 105,
+          "y": 60
         }
       },
       {
@@ -47,8 +47,8 @@
             "falpha": 0.0
           },
           "name": "Iron Mined",
-          "x": 24,
-          "y": 60
+          "x": 27,
+          "y": 64
         }
       },
       {
@@ -60,8 +60,8 @@
             "falpha": 0.0
           },
           "name": "Coal Mined",
-          "x": 24,
-          "y": 41
+          "x": 27,
+          "y": 46
         }
       },
       {
@@ -73,8 +73,8 @@
             "falpha": 0.0
           },
           "name": "Caterium Mined",
-          "x": 24,
-          "y": 23
+          "x": 22,
+          "y": 28
         }
       },
       {
@@ -88,8 +88,8 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #1",
-          "x": 98,
-          "y": 38
+          "x": 105,
+          "y": 42
         }
       },
       {
@@ -103,8 +103,8 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #2",
-          "x": 98,
-          "y": 20
+          "x": 105,
+          "y": 24
         }
       },
       {
@@ -116,8 +116,8 @@
             "falpha": 0.0
           },
           "name": "<BNBT:number:Coal>",
-          "x": 120,
-          "y": 41
+          "x": 137,
+          "y": 46
         }
       },
       {
@@ -129,8 +129,8 @@
             "falpha": 0.0
           },
           "name": "<BNBT:number:Iron>",
-          "x": 120,
-          "y": 60
+          "x": 137,
+          "y": 64
         }
       },
       {
@@ -142,8 +142,8 @@
             "falpha": 0.0
           },
           "name": "<BNBT:number:Caterium>",
-          "x": 119,
-          "y": 23
+          "x": 137,
+          "y": 29
         }
       },
       {
@@ -155,8 +155,8 @@
             "falpha": 0.0
           },
           "name": "Energy:",
-          "x": 24,
-          "y": 8
+          "x": 23,
+          "y": 11
         }
       },
       {
@@ -168,8 +168,8 @@
             "falpha": 0.0
           },
           "name": "<BNBT:number:Energy>",
-          "x": 60,
-          "y": 8
+          "x": 62,
+          "y": 12
         }
       },
       {
@@ -182,7 +182,7 @@
           },
           "name": "Copper Mined",
           "x": 23,
-          "y": 77
+          "y": 82
         }
       },
       {
@@ -196,8 +196,8 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #3",
-          "x": 98,
-          "y": 74
+          "x": 105,
+          "y": 78
         }
       },
       {
@@ -209,21 +209,8 @@
             "falpha": 0.0
           },
           "name": "<BNBT:number:Copper>",
-          "x": 121,
-          "y": 78
-        }
-      },
-      {
-        "type": "label",
-        "data": {
-          "text": "Oil Mined",
-          "color": {
-            "value": -12829636,
-            "falpha": 0.0
-          },
-          "name": "Oil Mined",
-          "x": 24,
-          "y": 125
+          "x": 137,
+          "y": 82
         }
       },
       {
@@ -236,7 +223,7 @@
           },
           "name": "Upgrades",
           "x": 306,
-          "y": 195
+          "y": 194
         }
       },
       {
@@ -248,8 +235,8 @@
             "falpha": 0.0
           },
           "name": "<VAR:miners_level>",
-          "x": 368,
-          "y": 217
+          "x": 363,
+          "y": 216
         }
       },
       {
@@ -261,8 +248,8 @@
             "falpha": 0.0
           },
           "name": "Miner Levels",
-          "x": 347,
-          "y": 206
+          "x": 346,
+          "y": 204
         }
       },
       {
@@ -279,8 +266,8 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #4",
-          "x": 318,
-          "y": 207
+          "x": 317,
+          "y": 206
         }
       },
       {
@@ -295,8 +282,62 @@
             "name": "Permadayshowcondidion"
           },
           "name": "Perma Day activated!",
-          "x": 269,
-          "y": 13
+          "x": 273,
+          "y": 22
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "HAARP Status",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "HAARP Status",
+          "x": 291,
+          "y": 10
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "SandStone Mined",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "SandStone Mined",
+          "x": 22,
+          "y": 100
+        }
+      },
+      {
+        "type": "outputslot",
+        "data": {
+          "color": {
+            "value": -154,
+            "falpha": 0.0
+          },
+          "id": 5,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #5",
+          "x": 105,
+          "y": 96
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<BNBT:number:SandStone>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<BNBT:number:SandStone>",
+          "x": 137,
+          "y": 100
         }
       }
     ],

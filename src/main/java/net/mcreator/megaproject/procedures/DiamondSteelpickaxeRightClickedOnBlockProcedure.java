@@ -19,9 +19,11 @@ import net.minecraft.entity.Entity;
 import net.mcreator.megaproject.item.DiamondsteelaxeItem;
 import net.mcreator.megaproject.item.DiamondSteelpickaxeItem;
 import net.mcreator.megaproject.item.DiamondSteelSwordItem;
+import net.mcreator.megaproject.item.BuildertoolItem;
 import net.mcreator.megaproject.gui.SteeldiamondguiGui;
 import net.mcreator.megaproject.gui.DiamondsteelswordguiGui;
 import net.mcreator.megaproject.gui.DiamondsteelAXEguiGui;
+import net.mcreator.megaproject.gui.BuilderGUIGui;
 import net.mcreator.megaproject.MegaProjectModElements;
 
 import java.util.Map;
@@ -121,6 +123,26 @@ public class DiamondSteelpickaxeRightClickedOnBlockProcedure extends MegaProject
 						public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
 							return new DiamondsteelswordguiGui.GuiContainerMod(id, inventory,
 									new PacketBuffer(Unpooled.buffer()).writeBlockPos(_bpos));
+						}
+					}, _bpos);
+				}
+			}
+		}
+		if ((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY)
+				.getItem() == new ItemStack(BuildertoolItem.block, (int) (1)).getItem())) {
+			{
+				Entity _ent = entity;
+				if (_ent instanceof ServerPlayerEntity) {
+					BlockPos _bpos = new BlockPos((int) x, (int) y, (int) z);
+					NetworkHooks.openGui((ServerPlayerEntity) _ent, new INamedContainerProvider() {
+						@Override
+						public ITextComponent getDisplayName() {
+							return new StringTextComponent("BuilderGUI");
+						}
+
+						@Override
+						public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
+							return new BuilderGUIGui.GuiContainerMod(id, inventory, new PacketBuffer(Unpooled.buffer()).writeBlockPos(_bpos));
 						}
 					}, _bpos);
 				}

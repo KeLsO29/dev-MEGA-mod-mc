@@ -73,7 +73,7 @@ public class FoundryinactiveUpdateTickProcedure extends MegaProjectModElements.M
 					}
 					return _retval.get();
 				}
-			}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) >= 2) && ((new Object() {
+			}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) >= 3) && ((new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					TileEntity _ent = world.getTileEntity(pos);
@@ -96,7 +96,7 @@ public class FoundryinactiveUpdateTickProcedure extends MegaProjectModElements.M
 							}
 							return _retval.get();
 						}
-					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) >= 1) && ((new Object() {
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) >= 2) && ((new Object() {
 						public ItemStack getItemStack(BlockPos pos, int sltid) {
 							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 							TileEntity _ent = world.getTileEntity(pos);
@@ -157,7 +157,7 @@ public class FoundryinactiveUpdateTickProcedure extends MegaProjectModElements.M
 					}
 					return _retval.get();
 				}
-			}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) >= 16) && ((new Object() {
+			}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0))) >= 9) && ((new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					TileEntity _ent = world.getTileEntity(pos);
@@ -180,7 +180,7 @@ public class FoundryinactiveUpdateTickProcedure extends MegaProjectModElements.M
 							}
 							return _retval.get();
 						}
-					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) >= 4) && ((new Object() {
+					}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (1))) >= 5) && ((new Object() {
 						public ItemStack getItemStack(BlockPos pos, int sltid) {
 							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 							TileEntity _ent = world.getTileEntity(pos);

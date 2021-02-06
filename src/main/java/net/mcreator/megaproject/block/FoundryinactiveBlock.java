@@ -37,7 +37,6 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.BlockItem;
@@ -60,6 +59,7 @@ import net.minecraft.block.Block;
 import net.mcreator.megaproject.procedures.FoundryinactiveUpdateTickProcedure;
 import net.mcreator.megaproject.procedures.FoundryinactiveBlockIsPlacedByProcedure;
 import net.mcreator.megaproject.procedures.FoundryinactiveBlockDestroyedByPlayerProcedure;
+import net.mcreator.megaproject.itemgroup.ProjectMEGAItemGroup;
 import net.mcreator.megaproject.gui.FoundryGUIGui;
 import net.mcreator.megaproject.MegaProjectModElements;
 
@@ -89,7 +89,7 @@ public class FoundryinactiveBlock extends MegaProjectModElements.ModElement {
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items
-				.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)).setRegistryName(block.getRegistryName()));
+				.add(() -> new BlockItem(block, new Item.Properties().group(ProjectMEGAItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	@SubscribeEvent

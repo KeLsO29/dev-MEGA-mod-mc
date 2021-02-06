@@ -8,6 +8,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.megaproject.block.MinerblockBlock;
+import net.mcreator.megaproject.block.MarkblockBlock;
+import net.mcreator.megaproject.block.LimestoneactiveBlock;
 import net.mcreator.megaproject.block.IronOreNodeBlockBlock;
 import net.mcreator.megaproject.block.CopperNodeBlock;
 import net.mcreator.megaproject.block.CoalNodeBlock;
@@ -64,6 +66,7 @@ public class NodeScannerRightClickedOnBlockProcedure extends MegaProjectModEleme
 		double sx = 0;
 		double sy = 0;
 		double sz = 0;
+		double mark_height = 0;
 		if (((((itemstack)).getDamage()) < 98)) {
 			if (((((itemstack).getOrCreateTag().getString("NodeMaterial"))).equals("Iron"))) {
 				{
@@ -90,6 +93,12 @@ public class NodeScannerRightClickedOnBlockProcedure extends MegaProjectModEleme
 													+ (Math.round((y + (sy)))) + "" + ("  Z:") + "" + (Math.round((z + (sz)))))),
 											(false));
 								}
+								mark_height = (double) 3;
+								for (int index3 = 0; index3 < (int) (25); index3++) {
+									world.setBlockState(new BlockPos((int) (x + (sx)), (int) (((y + (sy)) + 1) + (mark_height)), (int) (z + (sz))),
+											MarkblockBlock.block.getDefaultState(), 3);
+									mark_height = (double) ((mark_height) + 1);
+								}
 								found = (boolean) (true);
 							}
 							sz = (double) ((sz) + 1);
@@ -113,11 +122,11 @@ public class NodeScannerRightClickedOnBlockProcedure extends MegaProjectModEleme
 				}
 				sx = (double) (-50);
 				found = (boolean) (false);
-				for (int index3 = 0; index3 < (int) (100); index3++) {
+				for (int index4 = 0; index4 < (int) (100); index4++) {
 					sy = (double) (-50);
-					for (int index4 = 0; index4 < (int) (100); index4++) {
+					for (int index5 = 0; index5 < (int) (100); index5++) {
 						sz = (double) (-50);
-						for (int index5 = 0; index5 < (int) (100); index5++) {
+						for (int index6 = 0; index6 < (int) (100); index6++) {
 							if ((((world.getBlockState(new BlockPos((int) (x + (sx)), (int) (y + (sy)), (int) (z + (sz)))))
 									.getBlock() == CateriumNODEblockBlock.block.getDefaultState().getBlock())
 									&& (!((world.getBlockState(new BlockPos((int) (x + (sx)), (int) ((y + (sy)) + 1), (int) (z + (sz)))))
@@ -127,6 +136,12 @@ public class NodeScannerRightClickedOnBlockProcedure extends MegaProjectModEleme
 											(("Free Caterium Node Found On:") + "" + ("  X:") + "" + (Math.round(((x + (sx)) + 1))) + "" + ("  Y:")
 													+ "" + (Math.round((y + (sy)))) + "" + ("  Z:") + "" + (Math.round((z + (sz)))))),
 											(false));
+								}
+								mark_height = (double) 3;
+								for (int index7 = 0; index7 < (int) (25); index7++) {
+									world.setBlockState(new BlockPos((int) (x + (sx)), (int) (((y + (sy)) + 1) + (mark_height)), (int) (z + (sz))),
+											MarkblockBlock.block.getDefaultState(), 3);
+									mark_height = (double) ((mark_height) + 1);
 								}
 								found = (boolean) (true);
 							}
@@ -151,11 +166,11 @@ public class NodeScannerRightClickedOnBlockProcedure extends MegaProjectModEleme
 				}
 				sx = (double) (-50);
 				found = (boolean) (false);
-				for (int index6 = 0; index6 < (int) (100); index6++) {
+				for (int index8 = 0; index8 < (int) (100); index8++) {
 					sy = (double) (-50);
-					for (int index7 = 0; index7 < (int) (100); index7++) {
+					for (int index9 = 0; index9 < (int) (100); index9++) {
 						sz = (double) (-50);
-						for (int index8 = 0; index8 < (int) (100); index8++) {
+						for (int index10 = 0; index10 < (int) (100); index10++) {
 							if ((((world.getBlockState(new BlockPos((int) (x + (sx)), (int) (y + (sy)), (int) (z + (sz)))))
 									.getBlock() == CoalNodeBlock.block.getDefaultState().getBlock())
 									&& (!((world.getBlockState(new BlockPos((int) (x + (sx)), (int) ((y + (sy)) + 1), (int) (z + (sz)))))
@@ -165,6 +180,12 @@ public class NodeScannerRightClickedOnBlockProcedure extends MegaProjectModEleme
 											(("Free Coal Node Found On:") + "" + ("  X:") + "" + (Math.round(((x + (sx)) + 1))) + "" + ("  Y:") + ""
 													+ (Math.round((y + (sy)))) + "" + ("  Z:") + "" + (Math.round((z + (sz)))))),
 											(false));
+								}
+								mark_height = (double) 3;
+								for (int index11 = 0; index11 < (int) (25); index11++) {
+									world.setBlockState(new BlockPos((int) (x + (sx)), (int) (((y + (sy)) + 1) + (mark_height)), (int) (z + (sz))),
+											MarkblockBlock.block.getDefaultState(), 3);
+									mark_height = (double) ((mark_height) + 1);
 								}
 								found = (boolean) (true);
 							}
@@ -189,11 +210,11 @@ public class NodeScannerRightClickedOnBlockProcedure extends MegaProjectModEleme
 				}
 				sx = (double) (-50);
 				found = (boolean) (false);
-				for (int index9 = 0; index9 < (int) (100); index9++) {
+				for (int index12 = 0; index12 < (int) (100); index12++) {
 					sy = (double) (-50);
-					for (int index10 = 0; index10 < (int) (100); index10++) {
+					for (int index13 = 0; index13 < (int) (100); index13++) {
 						sz = (double) (-50);
-						for (int index11 = 0; index11 < (int) (100); index11++) {
+						for (int index14 = 0; index14 < (int) (100); index14++) {
 							if ((((world.getBlockState(new BlockPos((int) (x + (sx)), (int) (y + (sy)), (int) (z + (sz)))))
 									.getBlock() == CopperNodeBlock.block.getDefaultState().getBlock())
 									&& (!((world.getBlockState(new BlockPos((int) (x + (sx)), (int) ((y + (sy)) + 1), (int) (z + (sz)))))
@@ -203,6 +224,12 @@ public class NodeScannerRightClickedOnBlockProcedure extends MegaProjectModEleme
 											(("Free Copper Node Found On:") + "" + ("  X:") + "" + (Math.round(((x + (sx)) + 1))) + "" + ("  Y:") + ""
 													+ (Math.round((y + (sy)))) + "" + ("  Z:") + "" + (Math.round((z + (sz)))))),
 											(false));
+								}
+								mark_height = (double) 3;
+								for (int index15 = 0; index15 < (int) (25); index15++) {
+									world.setBlockState(new BlockPos((int) (x + (sx)), (int) (((y + (sy)) + 1) + (mark_height)), (int) (z + (sz))),
+											MarkblockBlock.block.getDefaultState(), 3);
+									mark_height = (double) ((mark_height) + 1);
 								}
 								found = (boolean) (true);
 							}
@@ -215,6 +242,50 @@ public class NodeScannerRightClickedOnBlockProcedure extends MegaProjectModEleme
 				if (((found) == (false))) {
 					if (entity instanceof PlayerEntity && !entity.world.isRemote) {
 						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("No Free Copper Nodes Around"), (false));
+					}
+				}
+			} else if (((((itemstack).getOrCreateTag().getString("NodeMaterial"))).equals("SandStone"))) {
+				{
+					ItemStack _ist = (itemstack);
+					if (_ist.attemptDamageItem((int) 1, new Random(), null)) {
+						_ist.shrink(1);
+						_ist.setDamage(0);
+					}
+				}
+				sx = (double) (-50);
+				found = (boolean) (false);
+				for (int index16 = 0; index16 < (int) (100); index16++) {
+					sy = (double) (-50);
+					for (int index17 = 0; index17 < (int) (100); index17++) {
+						sz = (double) (-50);
+						for (int index18 = 0; index18 < (int) (100); index18++) {
+							if ((((world.getBlockState(new BlockPos((int) (x + (sx)), (int) (y + (sy)), (int) (z + (sz)))))
+									.getBlock() == LimestoneactiveBlock.block.getDefaultState().getBlock())
+									&& (!((world.getBlockState(new BlockPos((int) (x + (sx)), (int) ((y + (sy)) + 1), (int) (z + (sz)))))
+											.getBlock() == MinerblockBlock.block.getDefaultState().getBlock())))) {
+								if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+									((PlayerEntity) entity).sendStatusMessage(new StringTextComponent(
+											(("Free SandStone Node Found On:") + "" + ("  X:") + "" + (Math.round(((x + (sx)) + 1))) + "" + ("  Y:")
+													+ "" + (Math.round((y + (sy)))) + "" + ("  Z:") + "" + (Math.round((z + (sz)))))),
+											(false));
+								}
+								mark_height = (double) 3;
+								for (int index19 = 0; index19 < (int) (25); index19++) {
+									world.setBlockState(new BlockPos((int) (x + (sx)), (int) (((y + (sy)) + 1) + (mark_height)), (int) (z + (sz))),
+											MarkblockBlock.block.getDefaultState(), 3);
+									mark_height = (double) ((mark_height) + 1);
+								}
+								found = (boolean) (true);
+							}
+							sz = (double) ((sz) + 1);
+						}
+						sy = (double) ((sy) + 1);
+					}
+					sx = (double) ((sx) + 1);
+				}
+				if (((found) == (false))) {
+					if (entity instanceof PlayerEntity && !entity.world.isRemote) {
+						((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("No Free SandStone Nodes Around"), (false));
 					}
 				}
 			}

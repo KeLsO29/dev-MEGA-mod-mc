@@ -8,7 +8,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.IItemTier;
 import net.minecraft.entity.LivingEntity;
@@ -17,6 +16,7 @@ import net.minecraft.block.BlockState;
 
 import net.mcreator.megaproject.procedures.DiamondSteelpickaxeToolInHandTickProcedure;
 import net.mcreator.megaproject.procedures.DiamondSteelpickaxeBlockDestroyedWithToolProcedure;
+import net.mcreator.megaproject.itemgroup.ProjectMEGAItemGroup;
 import net.mcreator.megaproject.MegaProjectModElements;
 
 import java.util.Map;
@@ -56,7 +56,7 @@ public class DiamondSteelpickaxeItem extends MegaProjectModElements.ModElement {
 			public Ingredient getRepairMaterial() {
 				return Ingredient.EMPTY;
 			}
-		}, 1, -3f, new Item.Properties().group(ItemGroup.TOOLS)) {
+		}, 1, -3f, new Item.Properties().group(ProjectMEGAItemGroup.tab)) {
 			@Override
 			public boolean onBlockDestroyed(ItemStack itemstack, World world, BlockState bl, BlockPos pos, LivingEntity entity) {
 				boolean retval = super.onBlockDestroyed(itemstack, world, bl, pos, entity);

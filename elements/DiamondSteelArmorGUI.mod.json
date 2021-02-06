@@ -1,0 +1,143 @@
+{
+  "_fv": 13,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 223,
+    "height": 194,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Armor Panel",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Armor Panel",
+          "x": 181,
+          "y": 28
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Night Vision",
+          "onClick": {
+            "name": "DSNightVisionONCLICK"
+          },
+          "width": 85,
+          "height": 20,
+          "name": "Night Vision",
+          "x": 233,
+          "y": 49
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Jetpack",
+          "onClick": {
+            "name": "DSAJetpackonclickl"
+          },
+          "width": 60,
+          "height": 20,
+          "name": "Jetpack",
+          "x": 247,
+          "y": 87
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Speed",
+          "onClick": {
+            "name": "DSASpeedonlcick"
+          },
+          "width": 50,
+          "height": 20,
+          "name": "Speed",
+          "x": 253,
+          "y": 170
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Water Breathe",
+          "width": 90,
+          "height": 20,
+          "name": "Water Breathe",
+          "x": 109,
+          "y": 49
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "2.png",
+          "use1Xscale": false,
+          "name": "2.png",
+          "x": 207,
+          "y": 130
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "1.png",
+          "use1Xscale": false,
+          "name": "1.png",
+          "x": 207,
+          "y": 89
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "3.png",
+          "use1Xscale": false,
+          "name": "3.png",
+          "x": 207,
+          "y": 50
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "4.png",
+          "use1Xscale": false,
+          "name": "4.png",
+          "x": 208,
+          "y": 172
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Slow Falling",
+          "width": 85,
+          "height": 20,
+          "name": "Slow Falling",
+          "x": 233,
+          "y": 129
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Dolphin Grace",
+          "width": 90,
+          "height": 20,
+          "name": "Dolphin Grace",
+          "x": 107,
+          "y": 129
+        }
+      }
+    ]
+  }
+}

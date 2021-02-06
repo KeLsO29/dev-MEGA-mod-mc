@@ -8,6 +8,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.block.BlockState;
 
 import net.mcreator.megaproject.block.MinerinactiveBlock;
+import net.mcreator.megaproject.block.LimestoneactiveBlock;
 import net.mcreator.megaproject.block.IronOreNodeBlockBlock;
 import net.mcreator.megaproject.block.CopperNodeBlock;
 import net.mcreator.megaproject.block.CoalNodeBlock;
@@ -237,6 +238,56 @@ public class MinerblockUpdateTickProcedure extends MegaProjectModElements.ModEle
 							}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 									(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 									(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Copper")) + 1));
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					}
+					if (!world.getWorld().isRemote) {
+						BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
+								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z));
+						TileEntity _tileEntity = world.getTileEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_tileEntity != null)
+							_tileEntity.getTileData().putDouble("Energy", ((new Object() {
+								public double getValue(BlockPos pos, String tag) {
+									TileEntity tileEntity = world.getTileEntity(pos);
+									if (tileEntity != null)
+										return tileEntity.getTileData().getDouble(tag);
+									return -1;
+								}
+							}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+									(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
+									(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 5));
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					}
+				}
+			} else if ((LimestoneactiveBlock.block.getDefaultState()
+					.getBlock() == (world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock())) {
+				if ((Math.random() < 0.45)) {
+					if (!world.getWorld().isRemote) {
+						BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+						TileEntity _tileEntity = world.getTileEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_tileEntity != null)
+							_tileEntity.getTileData().putBoolean("Wokirng", (true));
+						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+					}
+					if (!world.getWorld().isRemote) {
+						BlockPos _bp = new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
+								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z));
+						TileEntity _tileEntity = world.getTileEntity(_bp);
+						BlockState _bs = world.getBlockState(_bp);
+						if (_tileEntity != null)
+							_tileEntity.getTileData().putDouble("SandStone", ((new Object() {
+								public double getValue(BlockPos pos, String tag) {
+									TileEntity tileEntity = world.getTileEntity(pos);
+									if (tileEntity != null)
+										return tileEntity.getTileData().getDouble(tag);
+									return -1;
+								}
+							}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
+									(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
+									(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "SandStone")) + 1));
 						world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 					}
 					if (!world.getWorld().isRemote) {

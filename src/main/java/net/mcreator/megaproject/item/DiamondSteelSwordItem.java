@@ -9,12 +9,12 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
 import net.minecraft.item.IItemTier;
 import net.minecraft.entity.player.PlayerEntity;
 
 import net.mcreator.megaproject.procedures.DiamondSteelSwordRightClickedOnBlockProcedure;
+import net.mcreator.megaproject.itemgroup.ProjectMEGAItemGroup;
 import net.mcreator.megaproject.MegaProjectModElements;
 
 import java.util.Map;
@@ -54,7 +54,7 @@ public class DiamondSteelSwordItem extends MegaProjectModElements.ModElement {
 			public Ingredient getRepairMaterial() {
 				return Ingredient.EMPTY;
 			}
-		}, 3, 0f, new Item.Properties().group(ItemGroup.COMBAT)) {
+		}, 3, 0f, new Item.Properties().group(ProjectMEGAItemGroup.tab)) {
 			@Override
 			public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity entity, Hand hand) {
 				ActionResult<ItemStack> retval = super.onItemRightClick(world, entity, hand);

@@ -23,6 +23,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.nbt.INBT;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
@@ -110,10 +111,10 @@ public class MegaProjectModVariables {
 		public double hub_x = 0;
 		public double hub_y = 0;
 		public double hub_copper_save = 0;
-		public double hub_oil_save = 0;
 		public boolean haarp_norain = false;
 		public double miners_level = 1.0;
 		public boolean haarp_permaday = false;
+		public double hub_sandstone_save = 0;
 		public MapVariables() {
 			super(DATA_NAME);
 		}
@@ -131,10 +132,10 @@ public class MegaProjectModVariables {
 			hub_x = nbt.getDouble("hub_x");
 			hub_y = nbt.getDouble("hub_y");
 			hub_copper_save = nbt.getDouble("hub_copper_save");
-			hub_oil_save = nbt.getDouble("hub_oil_save");
 			haarp_norain = nbt.getBoolean("haarp_norain");
 			miners_level = nbt.getDouble("miners_level");
 			haarp_permaday = nbt.getBoolean("haarp_permaday");
+			hub_sandstone_save = nbt.getDouble("hub_sandstone_save");
 		}
 
 		@Override
@@ -146,10 +147,10 @@ public class MegaProjectModVariables {
 			nbt.putDouble("hub_x", hub_x);
 			nbt.putDouble("hub_y", hub_y);
 			nbt.putDouble("hub_copper_save", hub_copper_save);
-			nbt.putDouble("hub_oil_save", hub_oil_save);
 			nbt.putBoolean("haarp_norain", haarp_norain);
 			nbt.putDouble("miners_level", miners_level);
 			nbt.putBoolean("haarp_permaday", haarp_permaday);
+			nbt.putDouble("hub_sandstone_save", hub_sandstone_save);
 			return nbt;
 		}
 
@@ -243,6 +244,17 @@ public class MegaProjectModVariables {
 			nbt.putBoolean("diamondsteel_itembuffer", instance.diamondsteel_itembuffer);
 			nbt.putDouble("player_rock_points", instance.player_rock_points);
 			nbt.putDouble("player_minnig_level", instance.player_minnig_level);
+			nbt.putBoolean("DSA_NightVision", instance.DSA_NightVision);
+			nbt.put("buildgun_material", instance.buildgun_material.write(new CompoundNBT()));
+			nbt.putDouble("build_gun_pos_num", instance.build_gun_pos_num);
+			nbt.putBoolean("DSA_Jetpack", instance.DSA_Jetpack);
+			nbt.putDouble("builder_pos2_z", instance.builder_pos2_z);
+			nbt.putDouble("builder_pos1_z", instance.builder_pos1_z);
+			nbt.putDouble("builder_pos2_y", instance.builder_pos2_y);
+			nbt.putDouble("builder_pos1_y", instance.builder_pos1_y);
+			nbt.putDouble("builder_pos2_x", instance.builder_pos2_x);
+			nbt.putBoolean("DSA_Speed", instance.DSA_Speed);
+			nbt.putDouble("builder_pos1_x", instance.builder_pos1_x);
 			return nbt;
 		}
 
@@ -261,6 +273,17 @@ public class MegaProjectModVariables {
 			instance.diamondsteel_itembuffer = nbt.getBoolean("diamondsteel_itembuffer");
 			instance.player_rock_points = nbt.getDouble("player_rock_points");
 			instance.player_minnig_level = nbt.getDouble("player_minnig_level");
+			instance.DSA_NightVision = nbt.getBoolean("DSA_NightVision");
+			instance.buildgun_material = ItemStack.read(nbt.getCompound("buildgun_material"));
+			instance.build_gun_pos_num = nbt.getDouble("build_gun_pos_num");
+			instance.DSA_Jetpack = nbt.getBoolean("DSA_Jetpack");
+			instance.builder_pos2_z = nbt.getDouble("builder_pos2_z");
+			instance.builder_pos1_z = nbt.getDouble("builder_pos1_z");
+			instance.builder_pos2_y = nbt.getDouble("builder_pos2_y");
+			instance.builder_pos1_y = nbt.getDouble("builder_pos1_y");
+			instance.builder_pos2_x = nbt.getDouble("builder_pos2_x");
+			instance.DSA_Speed = nbt.getBoolean("DSA_Speed");
+			instance.builder_pos1_x = nbt.getDouble("builder_pos1_x");
 		}
 	}
 
@@ -277,6 +300,17 @@ public class MegaProjectModVariables {
 		public boolean diamondsteel_itembuffer = false;
 		public double player_rock_points = 0;
 		public double player_minnig_level = 1.0;
+		public boolean DSA_NightVision = false;
+		public ItemStack buildgun_material = ItemStack.EMPTY;
+		public double build_gun_pos_num = 1.0;
+		public boolean DSA_Jetpack = false;
+		public double builder_pos2_z = 0;
+		public double builder_pos1_z = 0;
+		public double builder_pos2_y = 0;
+		public double builder_pos1_y = 0;
+		public double builder_pos2_x = 0;
+		public boolean DSA_Speed = false;
+		public double builder_pos1_x = 0;
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
 				MegaProjectMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity),
@@ -321,7 +355,18 @@ public class MegaProjectModVariables {
 		clone.diamondsteel_itembuffer = original.diamondsteel_itembuffer;
 		clone.player_rock_points = original.player_rock_points;
 		clone.player_minnig_level = original.player_minnig_level;
+		clone.buildgun_material = original.buildgun_material;
+		clone.build_gun_pos_num = original.build_gun_pos_num;
+		clone.builder_pos2_z = original.builder_pos2_z;
+		clone.builder_pos1_z = original.builder_pos1_z;
+		clone.builder_pos2_y = original.builder_pos2_y;
+		clone.builder_pos1_y = original.builder_pos1_y;
+		clone.builder_pos2_x = original.builder_pos2_x;
+		clone.builder_pos1_x = original.builder_pos1_x;
 		if (!event.isWasDeath()) {
+			clone.DSA_NightVision = original.DSA_NightVision;
+			clone.DSA_Jetpack = original.DSA_Jetpack;
+			clone.DSA_Speed = original.DSA_Speed;
 		}
 	}
 	public static class PlayerVariablesSyncMessage {
@@ -357,6 +402,17 @@ public class MegaProjectModVariables {
 					variables.diamondsteel_itembuffer = message.data.diamondsteel_itembuffer;
 					variables.player_rock_points = message.data.player_rock_points;
 					variables.player_minnig_level = message.data.player_minnig_level;
+					variables.DSA_NightVision = message.data.DSA_NightVision;
+					variables.buildgun_material = message.data.buildgun_material;
+					variables.build_gun_pos_num = message.data.build_gun_pos_num;
+					variables.DSA_Jetpack = message.data.DSA_Jetpack;
+					variables.builder_pos2_z = message.data.builder_pos2_z;
+					variables.builder_pos1_z = message.data.builder_pos1_z;
+					variables.builder_pos2_y = message.data.builder_pos2_y;
+					variables.builder_pos1_y = message.data.builder_pos1_y;
+					variables.builder_pos2_x = message.data.builder_pos2_x;
+					variables.DSA_Speed = message.data.DSA_Speed;
+					variables.builder_pos1_x = message.data.builder_pos1_x;
 				}
 			});
 			context.setPacketHandled(true);
