@@ -1,30 +1,11 @@
 package net.mcreator.megaproject.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-
-import net.minecraft.world.World;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.Explosion;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.DamageSource;
-import net.minecraft.particles.ParticleTypes;
-import net.minecraft.entity.Entity;
-
-import net.mcreator.megaproject.MegaProjectModElements;
-
-import java.util.stream.Collectors;
-import java.util.function.Function;
-import java.util.Map;
-import java.util.List;
-import java.util.Comparator;
-
 @MegaProjectModElements.ModElement.Tag
 public class PlasmaShootrangeditemBulletHitsBlockProcedure extends MegaProjectModElements.ModElement {
+
 	public PlasmaShootrangeditemBulletHitsBlockProcedure(MegaProjectModElements instance) {
 		super(instance, 296);
+
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -48,10 +29,12 @@ public class PlasmaShootrangeditemBulletHitsBlockProcedure extends MegaProjectMo
 				System.err.println("Failed to load dependency world for procedure PlasmaShootrangeditemBulletHitsBlock!");
 			return;
 		}
+
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
+
 		world.addParticle(ParticleTypes.LARGE_SMOKE, x, y, z, 0, 1, 0);
 		world.addParticle(ParticleTypes.EXPLOSION, x, y, z, 0, 1, 0);
 		if (world instanceof World && !world.getWorld().isRemote) {
@@ -77,7 +60,10 @@ public class PlasmaShootrangeditemBulletHitsBlockProcedure extends MegaProjectMo
 					}.compareDistOf(x, y, z)).collect(Collectors.toList());
 			for (Entity entityiterator : _entfound) {
 				entityiterator.attackEntityFrom(DamageSource.MAGIC, (float) 15);
+
 			}
 		}
+
 	}
+
 }

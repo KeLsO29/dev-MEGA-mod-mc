@@ -48,9 +48,9 @@ public class MegaProjectModElements {
 	public final List<Supplier<Enchantment>> enchantments = new ArrayList<>();
 	public static Map<ResourceLocation, net.minecraft.util.SoundEvent> sounds = new HashMap<>();
 	public MegaProjectModElements() {
-		sounds.put(new ResourceLocation("mega_project", "plazma"), new net.minecraft.util.SoundEvent(new ResourceLocation("mega_project", "plazma")));
 		sounds.put(new ResourceLocation("mega_project", "plasma_shoot"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("mega_project", "plasma_shoot")));
+		sounds.put(new ResourceLocation("mega_project", "plazma"), new net.minecraft.util.SoundEvent(new ResourceLocation("mega_project", "plazma")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("mega_project").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();

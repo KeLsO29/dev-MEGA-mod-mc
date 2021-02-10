@@ -1,30 +1,11 @@
 package net.mcreator.megaproject.procedures;
 
-import net.minecraftforge.items.ItemHandlerHelper;
-
-import net.minecraft.world.IWorld;
-import net.minecraft.world.GameType;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.item.ItemStack;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.client.network.play.NetworkPlayerInfo;
-import net.minecraft.client.entity.player.ClientPlayerEntity;
-import net.minecraft.client.Minecraft;
-import net.minecraft.block.Blocks;
-
-import net.mcreator.megaproject.block.Position1blockBlock;
-import net.mcreator.megaproject.MegaProjectModVariables;
-import net.mcreator.megaproject.MegaProjectModElements;
-
-import java.util.Map;
-
 @MegaProjectModElements.ModElement.Tag
 public class Position1blockBlockIsPlacedByProcedure extends MegaProjectModElements.ModElement {
+
 	public Position1blockBlockIsPlacedByProcedure(MegaProjectModElements instance) {
 		super(instance, 261);
+
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -53,32 +34,13 @@ public class Position1blockBlockIsPlacedByProcedure extends MegaProjectModElemen
 				System.err.println("Failed to load dependency world for procedure Position1blockBlockIsPlacedBy!");
 			return;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-		{
-			double _setval = (double) Math.round(x);
-			entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.builder_pos1_x = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
-		{
-			double _setval = (double) Math.round(y);
-			entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.builder_pos1_y = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
-		{
-			double _setval = (double) Math.round(z);
-			entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-				capability.builder_pos1_z = _setval;
-				capability.syncPlayerVariables(entity);
-			});
-		}
+
 		if ((new Object() {
 			public boolean checkGamemode(Entity _ent) {
 				if (_ent instanceof ServerPlayerEntity) {
@@ -108,5 +70,7 @@ public class Position1blockBlockIsPlacedByProcedure extends MegaProjectModElemen
 			((PlayerEntity) entity).sendStatusMessage(new StringTextComponent((("Position 1. is: ") + "" + ("X: ") + "" + (Math.round(x)) + ""
 					+ ("Y: ") + "" + (Math.round(y)) + "" + ("Z: ") + "" + (Math.round(z)))), (false));
 		}
+
 	}
+
 }

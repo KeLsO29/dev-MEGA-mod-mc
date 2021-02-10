@@ -4924,14 +4924,152 @@
       }
     },
     {
-      "name": "DSAdolphingraceonclick",
-      "type": "procedure",
-      "sortid": 273,
+      "name": "Natuswolf",
+      "type": "mob",
+      "sortid": 279,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "ds_adolphingraceonclick",
+      "registry_name": "natuswolf"
+    },
+    {
+      "name": "Armorcharger",
+      "type": "block",
+      "sortid": 287,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "armorcharger"
+    },
+    {
+      "name": "DSAoverlaywaterbreathe",
+      "type": "procedure",
+      "sortid": 286,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ds_aoverlaywaterbreathe",
       "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BetterCoolDownEnchantment",
+      "type": "enchantment",
+      "sortid": 298,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "better_cool_down_enchantment"
+    },
+    {
+      "name": "LedLampGUI",
+      "type": "gui",
+      "sortid": 278,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "led_lamp_gui"
+    },
+    {
+      "name": "DSAoverlayjetpack",
+      "type": "procedure",
+      "sortid": 285,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ds_aoverlayjetpack",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CheapPlasma",
+      "type": "enchantment",
+      "sortid": 299,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cheap_plasma"
+    },
+    {
+      "name": "DSAoverlayspeed",
+      "type": "procedure",
+      "sortid": 281,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ds_aoverlayspeed",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Ledlampoff",
+      "type": "block",
+      "sortid": 276,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ledlampoff"
+    },
+    {
+      "name": "PlasmaShootrangeditemWhileBulletFlyingTick",
+      "type": "procedure",
+      "sortid": 295,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plasma_shootrangeditem_while_bullet_flying_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DSAoverlaydolphingrace",
+      "type": "procedure",
+      "sortid": 284,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ds_aoverlaydolphingrace",
+      "metadata": {
+        "return_type": "LOGIC",
         "dependencies": [
           {
             "name": "entity",
@@ -4958,109 +5096,14 @@
       }
     },
     {
-      "name": "Ledlamp",
-      "type": "block",
-      "sortid": 275,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "ledlamp"
-    },
-    {
-      "name": "LedlampoffUpdateTick",
+      "name": "DSAdolphingraceonclick",
       "type": "procedure",
-      "sortid": 276,
+      "sortid": 273,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "ledlampoff_update_tick",
+      "registry_name": "ds_adolphingraceonclick",
       "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Ledlampoff",
-      "type": "block",
-      "sortid": 276,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "ledlampoff"
-    },
-    {
-      "name": "LedlampUpdateTick",
-      "type": "procedure",
-      "sortid": 277,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "ledlamp_update_tick",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "LedLampGUI",
-      "type": "gui",
-      "sortid": 278,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "led_lamp_gui"
-    },
-    {
-      "name": "Natuswolf",
-      "type": "mob",
-      "sortid": 279,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "natuswolf"
-    },
-    {
-      "name": "DSAoverlayspeed",
-      "type": "procedure",
-      "sortid": 281,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "ds_aoverlayspeed",
-      "metadata": {
-        "return_type": "LOGIC",
         "dependencies": [
           {
             "name": "entity",
@@ -5070,93 +5113,15 @@
       }
     },
     {
-      "name": "DSAoverlayslowfalling",
+      "name": "PlasmaShootCooldownProcedure",
       "type": "procedure",
-      "sortid": 282,
+      "sortid": 297,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "ds_aoverlayslowfalling",
+      "registry_name": "plasma_shoot_cooldown_procedure",
       "metadata": {
-        "return_type": "LOGIC",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "DSAoverlaynightvision",
-      "type": "procedure",
-      "sortid": 283,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "ds_aoverlaynightvision",
-      "metadata": {
-        "return_type": "LOGIC",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "DSAoverlaydolphingrace",
-      "type": "procedure",
-      "sortid": 284,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "ds_aoverlaydolphingrace",
-      "metadata": {
-        "return_type": "LOGIC",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "DSAoverlayjetpack",
-      "type": "procedure",
-      "sortid": 285,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "ds_aoverlayjetpack",
-      "metadata": {
-        "return_type": "LOGIC",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "DSAoverlaywaterbreathe",
-      "type": "procedure",
-      "sortid": 286,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "ds_aoverlaywaterbreathe",
-      "metadata": {
-        "return_type": "LOGIC",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
+        "dependencies": []
       }
     },
     {
@@ -5189,13 +5154,30 @@
       }
     },
     {
-      "name": "Armorcharger",
-      "type": "block",
-      "sortid": 287,
+      "name": "Armorchargerrecipe",
+      "type": "recipe",
+      "sortid": 289,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "armorcharger"
+      "registry_name": "armorchargerrecipe"
+    },
+    {
+      "name": "DSAPlasmaShootonclick",
+      "type": "procedure",
+      "sortid": 290,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "dsa_plasma_shootonclick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     },
     {
       "name": "EnergyplazmaEntityCollidesInTheBlock",
@@ -5208,9 +5190,127 @@
       "metadata": {
         "dependencies": [
           {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlasmashootkeybindOnKeyPressed",
+      "type": "procedure",
+      "sortid": 292,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plasmashootkeybind_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
             "name": "entity",
             "type": "entity"
           },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Ledlamp",
+      "type": "block",
+      "sortid": 275,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ledlamp"
+    },
+    {
+      "name": "DSAoverlayslowfalling",
+      "type": "procedure",
+      "sortid": 282,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ds_aoverlayslowfalling",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Plasmashootkeybind",
+      "type": "keybind",
+      "sortid": 292,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plasmashootkeybind"
+    },
+    {
+      "name": "DSAplasmalabel",
+      "type": "procedure",
+      "sortid": 291,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ds_aplasmalabel",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DSAoverlaynightvision",
+      "type": "procedure",
+      "sortid": 283,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ds_aoverlaynightvision",
+      "metadata": {
+        "return_type": "LOGIC",
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LedlampUpdateTick",
+      "type": "procedure",
+      "sortid": 277,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ledlamp_update_tick",
+      "metadata": {
+        "dependencies": [
           {
             "name": "x",
             "type": "number"
@@ -5238,127 +5338,6 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "energyplazma"
-    },
-    {
-      "name": "Armorchargerrecipe",
-      "type": "recipe",
-      "sortid": 289,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "armorchargerrecipe"
-    },
-    {
-      "name": "DSAPlasmaShootonclick",
-      "type": "procedure",
-      "sortid": 290,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "dsa_plasma_shootonclick",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "DSAplasmalabel",
-      "type": "procedure",
-      "sortid": 291,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "ds_aplasmalabel",
-      "metadata": {
-        "return_type": "LOGIC",
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "PlasmashootkeybindOnKeyPressed",
-      "type": "procedure",
-      "sortid": 292,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "plasmashootkeybind_on_key_pressed",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "Plasmashootkeybind",
-      "type": "keybind",
-      "sortid": 292,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "plasmashootkeybind"
-    },
-    {
-      "name": "Plasmabulletitem",
-      "type": "item",
-      "sortid": 294,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "plasmabulletitem"
-    },
-    {
-      "name": "PlasmaShootrangeditemWhileBulletFlyingTick",
-      "type": "procedure",
-      "sortid": 295,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "plasma_shootrangeditem_while_bullet_flying_tick",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "PlasmaShootrangeditem",
-      "type": "gun",
-      "sortid": 294,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "plasma_shootrangeditem"
     },
     {
       "name": "PlasmaShootrangeditemBulletHitsBlock",
@@ -5390,41 +5369,6 @@
       }
     },
     {
-      "name": "PlasmaShootCooldownProcedure",
-      "type": "procedure",
-      "sortid": 297,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "plasma_shoot_cooldown_procedure",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      }
-    },
-    {
-      "name": "BetterCoolDownEnchantment",
-      "type": "enchantment",
-      "sortid": 298,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "better_cool_down_enchantment"
-    },
-    {
-      "name": "CheapPlasma",
-      "type": "enchantment",
-      "sortid": 299,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "cheap_plasma"
-    },
-    {
       "name": "Crusher",
       "type": "block",
       "sortid": 300,
@@ -5432,6 +5376,53 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "crusher"
+    },
+    {
+      "name": "LedlampoffUpdateTick",
+      "type": "procedure",
+      "sortid": 276,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ledlampoff_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PlasmaShootrangeditem",
+      "type": "gun",
+      "sortid": 294,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plasma_shootrangeditem"
+    },
+    {
+      "name": "Plasmabulletitem",
+      "type": "item",
+      "sortid": 294,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "plasmabulletitem"
     }
   ],
   "variable_elements": [
@@ -5640,13 +5631,19 @@
       "value": "1.0"
     },
     {
-      "name": "DSA_SlowFalling",
-      "type": "logic",
-      "scope": "player_lifetime",
-      "value": "false"
+      "name": "DSA_energy",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     },
     {
-      "name": "DSA_WaterBreathe",
+      "name": "DSA_PlasmaShoot_Cooldown",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "DSA_SlowFalling",
       "type": "logic",
       "scope": "player_lifetime",
       "value": "false"
@@ -5658,39 +5655,25 @@
       "value": "false"
     },
     {
-      "name": "DSA_energy",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
-    },
-    {
       "name": "DSA_PlasmaShoot",
       "type": "logic",
       "scope": "player_lifetime",
       "value": "false"
     },
     {
-      "name": "DSA_PlasmaShoot_Cooldown",
-      "type": "number",
-      "scope": "player_persistent",
-      "value": "0"
-    },
-    {
       "name": "player_home_dimension",
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "DSA_WaterBreathe",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
     }
   ],
   "sound_elements": [
-    {
-      "name": "plazma",
-      "files": [
-        "plazma"
-      ],
-      "category": "block",
-      "subtitle": "bzzzz"
-    },
     {
       "name": "plasma_shoot",
       "files": [
@@ -5698,34 +5681,36 @@
       ],
       "category": "master",
       "subtitle": "[Plasma Shoot]"
+    },
+    {
+      "name": "plazma",
+      "files": [
+        "plazma"
+      ],
+      "category": "block",
+      "subtitle": "bzzzz"
     }
   ],
   "language_map": {
     "en_us": {
       "block.mega_project.iron_ore_node_block_inactive": "Iron Ore Node Block Inactive",
-      "block.mega_project.concretemixer": "Concrete Mixer",
       "key.mcreator.node_scanner_modes_keybind": "Node Scanner Modes",
-      "block.mega_project.solarpanelblockactive": " Solar panel Active",
       "item.mega_project.redstoneingotitem": "Redstone Ingot",
+      "block.mega_project.solarpanelblockactive": " Solar panel Active",
       "block.mega_project.generatormk_2": "Generator MK2",
       "block.mega_project.ledlamp": "Led Lamp ON",
       "block.mega_project.copper_node_inactve": "Copper Node(inactive)",
       "block.mega_project.assemblerblock": "Assembler",
       "block.mega_project.diamond_steelblock": "Diamond Steel",
       "block.mega_project.copper_node": "Copper Node(active)",
-      "entity.mega_project.natuswolf": "Natus Wolf",
       "block.mega_project.minerinactive": "Miner MK1",
-      "itemGroup.tabproject_mega": "Project MEGA",
       "block.mega_project.caterium_block": "Block of Caterium",
       "block.mega_project.electric_funanceinactive": "Electric Furnace MK1",
       "block.mega_project.solarpanelblockinactive": "Solar panel ",
       "block.mega_project.modularframe": "Modular Frame",
       "item.mega_project.node_scanner_tool": "Node Scanner",
-      "block.mega_project.builder_previewblock": "Builder Preview",
       "item.mega_project.ai_limiteritem": "Ai Limiter",
       "advancements.copperadvancement.descr": "Cooper!",
-      "block.mega_project.limestoneinactive": "Limestone (Inactive)",
-      "enchantment.mega_project.buildrange": "Build Range",
       "block.mega_project.caterium_node_block_inactive": "Caterium Node Block Inactive",
       "block.mega_project.minerblock": "Miner",
       "subtitles.plasma_shoot": "[Plasma Shoot]",
@@ -5737,7 +5722,6 @@
       "item.mega_project.diamond_steel_armor_helmet": "Diamond Steel Helmet",
       "block.mega_project.hub": "Hub",
       "key.mcreator.adminmenukeybind": "Admin Menu",
-      "item.mega_project.plasma_shootrangeditem": "PlasmaShoot",
       "item.mega_project.cateriumwireitem": "Caterium wire",
       "item.mega_project.copper_sheet_item": "Copper Sheet",
       "advancements.turbo_fueladvancement.title": "Turbo Fuel",
@@ -5745,16 +5729,9 @@
       "block.mega_project.ironextractor": "Iron Extractor",
       "block.mega_project.coal_node": "Coal Node(active)",
       "advancements.electronics.title": "Electronics",
-      "block.mega_project.orangelog": "Oring Log",
       "block.mega_project.chargerblock": "Charger",
-      "block.mega_project.energyplazma": "Energy Plazma",
       "item.mega_project.copper_ingot": "Copper",
-      "item.mega_project.buildertool": "Builder Gun",
-      "block.mega_project.position_2block": "Position 2.",
-      "item.mega_project.plasmabulletitem": "Plasma Bullet",
       "block.mega_project.constructorblock": "Constructor",
-      "block.mega_project.crusher": "Crusher",
-      "block.mega_project.markblock": "Markblock",
       "advancements.rudit_ingotadvancement.descr": "Advanced Redstone",
       "block.mega_project.haarpinactive": "Haarp!",
       "item.mega_project.diamond_steel_armor_chestplate": "Diamond Steel Chestplate",
@@ -5762,9 +5739,11 @@
       "block.mega_project.haarp": "Haarp!",
       "item.mega_project.turbofuelitem_2": "Turbofuel Mk.2",
       "item.mega_project.turbofuelitem_3": "Turbofuel Mk.3",
-      "key.mcreator.ds_armorkeybind": "Diamond Steel Armor GUI",
+      "item.mega_project.recipe_c_hangeritem": "Recipe Hanger",
       "item.mega_project.diamond_steel_sword": "Diamond Steel Sword",
       "block.mega_project.armorcharger": "Armor Charger",
+      "item.mega_project.oil_bucket": "Oil Bucket",
+      "block.mega_project.assemblerinactiveblock": "Assembler",
       "item.mega_project.diamondstellshovel": "Diamondstellshovel",
       "block.mega_project.generator_mk_1inactive": "Generator MK 1",
       "item.mega_project.diamondsteelplate": "Diamond Steel Plate",
@@ -5781,26 +5760,20 @@
       "item.mega_project.screw": "Screw",
       "advancements.copperadvancement.title": "Copper",
       "block.mega_project.presserblock": "Presser",
-      "key.mcreator.plasmashootkeybind": "Plasma Shoot",
       "item.mega_project.caterium_ingot": "Caterium Ingot",
-      "item.mega_project.natuswolf_spawn_egg": "Natus Wolf Spawn Egg",
       "advancements.allrecipescheat.title": "All Recipes Cheat",
       "item.mega_project.diamond_steel_armor_leggings": "Diamond Steel Leggings",
       "item.mega_project.permadayupgrade": "Perma Day Upgrade",
       "block.mega_project.hardenedcobble": "Hardened Cobble",
-      "block.mega_project.sandstoneextractor": "SandStone Extractor",
-      "enchantment.mega_project.cheap_plasma": "Cheap Plasma",
       "item.mega_project.highspeedconectoritem": "High Speed Connector",
       "key.mcreator.diamond_pickaxe_menu": "Diamond Tools/Builder Menu",
       "advancements.hub_crafted_achievment.title": "Hub Crafted",
-      "block.mega_project.orangeleaves": "Orig Leaves",
-      "item.mega_project.concrete": "Concrete",
+      "block.mega_project.constructorinactive": "Constructor",
       "block.mega_project.heavyironblock": "Heavy Iron",
       "advancements.electronics.descr": "Electronics!",
       "item.mega_project.cateriumroditem": "Caterium rod",
       "block.mega_project.heavyframe": "Heavy Frame",
       "block.mega_project.electric_furnance_block": "Electric Furnace",
-      "item.mega_project.cpu": "CPU",
       "advancements.rudit_ingotadvancement.title": "Rudit Ingot",
       "block.mega_project.foundryinactive": "Foundry",
       "item.mega_project.diamondsteelaxe": "Diamond Steel Axe",
@@ -5808,20 +5781,16 @@
       "advancements.allrecipescheat.descr": "Unlock Recipe Cheat",
       "block.mega_project.foundyblock": "Foundry",
       "item.mega_project.diamond_steelpickaxe": "Diamond Steel Pickaxe",
-      "block.mega_project.limestoneactive": "Limestoneactive",
       "block.mega_project.generator_mk_1": "Generator MK 1",
       "item.mega_project.pocketchestitem": "Pocket Chest",
       "block.mega_project.copper_ore": "Copper Ore",
       "item.mega_project.diamond_steel_armor_boots": "DiamondS teel Boots",
       "block.mega_project.coal_node_inactive": "Coal Node Inactive",
+      "fluid.oil": "Oil",
       "item.mega_project.node_scanner": "Node Scanner",
-      "item.mega_project.control_unit": "Control Unit",
-      "key.mcreator.jetpack_key_bind": "Jetpack",
       "item.mega_project.diamondsteelitem": "Diamond Steel Ingot",
       "advancements.hub_crafted_achievment.descr": "You Enter MENALOMANS Way",
-      "advancements.cateriumadvancement.descr": "Caterium!",
-      "block.mega_project.position_1block": "Position 1",
-      "enchantment.mega_project.better_cool_down_enchantment": "Better CoolDown"
+      "advancements.cateriumadvancement.descr": "Caterium!"
     }
   },
   "workspaceSettings": {

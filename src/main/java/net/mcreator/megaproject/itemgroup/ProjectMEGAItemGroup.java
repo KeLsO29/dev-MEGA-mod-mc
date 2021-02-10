@@ -1,17 +1,9 @@
 
 package net.mcreator.megaproject.itemgroup;
 
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
-
-import net.mcreator.megaproject.item.CircuitBoarditemItem;
-import net.mcreator.megaproject.MegaProjectModElements;
-
 @MegaProjectModElements.ModElement.Tag
 public class ProjectMEGAItemGroup extends MegaProjectModElements.ModElement {
+
 	public ProjectMEGAItemGroup(MegaProjectModElements instance) {
 		super(instance, 218);
 	}
@@ -31,5 +23,7 @@ public class ProjectMEGAItemGroup extends MegaProjectModElements.ModElement {
 			}
 		}.setBackgroundImageName("item_search.png");
 	}
+
 	public static ItemGroup tab;
+
 }

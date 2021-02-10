@@ -1,15 +1,11 @@
 package net.mcreator.megaproject.procedures;
 
-import net.minecraft.entity.Entity;
-
-import net.mcreator.megaproject.MegaProjectModElements;
-
-import java.util.Map;
-
 @MegaProjectModElements.ModElement.Tag
 public class ClearlagcommandCommandExecutedProcedure extends MegaProjectModElements.ModElement {
+
 	public ClearlagcommandCommandExecutedProcedure(MegaProjectModElements instance) {
 		super(instance, 260);
+
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -18,7 +14,9 @@ public class ClearlagcommandCommandExecutedProcedure extends MegaProjectModEleme
 				System.err.println("Failed to load dependency entity for procedure ClearlagcommandCommandExecuted!");
 			return;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
+
 		{
 			Entity _ent = entity;
 			if (!_ent.world.isRemote && _ent.world.getServer() != null) {
@@ -26,5 +24,7 @@ public class ClearlagcommandCommandExecutedProcedure extends MegaProjectModEleme
 						"/kill @e[type=minecraft:item]");
 			}
 		}
+
 	}
+
 }

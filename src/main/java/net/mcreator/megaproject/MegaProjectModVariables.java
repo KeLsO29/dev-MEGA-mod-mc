@@ -259,13 +259,13 @@ public class MegaProjectModVariables {
 			nbt.putBoolean("DSA_Speed", instance.DSA_Speed);
 			nbt.put("buildgun_material", instance.buildgun_material.write(new CompoundNBT()));
 			nbt.putDouble("build_gun_pos_num", instance.build_gun_pos_num);
-			nbt.putBoolean("DSA_SlowFalling", instance.DSA_SlowFalling);
-			nbt.putBoolean("DSA_WaterBreathe", instance.DSA_WaterBreathe);
-			nbt.putBoolean("DSA_DolphinGrace", instance.DSA_DolphinGrace);
 			nbt.putDouble("DSA_energy", instance.DSA_energy);
-			nbt.putBoolean("DSA_PlasmaShoot", instance.DSA_PlasmaShoot);
 			nbt.putDouble("DSA_PlasmaShoot_Cooldown", instance.DSA_PlasmaShoot_Cooldown);
+			nbt.putBoolean("DSA_SlowFalling", instance.DSA_SlowFalling);
+			nbt.putBoolean("DSA_DolphinGrace", instance.DSA_DolphinGrace);
+			nbt.putBoolean("DSA_PlasmaShoot", instance.DSA_PlasmaShoot);
 			nbt.putDouble("player_home_dimension", instance.player_home_dimension);
+			nbt.putBoolean("DSA_WaterBreathe", instance.DSA_WaterBreathe);
 			return nbt;
 		}
 
@@ -293,13 +293,13 @@ public class MegaProjectModVariables {
 			instance.DSA_Speed = nbt.getBoolean("DSA_Speed");
 			instance.buildgun_material = ItemStack.read(nbt.getCompound("buildgun_material"));
 			instance.build_gun_pos_num = nbt.getDouble("build_gun_pos_num");
-			instance.DSA_SlowFalling = nbt.getBoolean("DSA_SlowFalling");
-			instance.DSA_WaterBreathe = nbt.getBoolean("DSA_WaterBreathe");
-			instance.DSA_DolphinGrace = nbt.getBoolean("DSA_DolphinGrace");
 			instance.DSA_energy = nbt.getDouble("DSA_energy");
-			instance.DSA_PlasmaShoot = nbt.getBoolean("DSA_PlasmaShoot");
 			instance.DSA_PlasmaShoot_Cooldown = nbt.getDouble("DSA_PlasmaShoot_Cooldown");
+			instance.DSA_SlowFalling = nbt.getBoolean("DSA_SlowFalling");
+			instance.DSA_DolphinGrace = nbt.getBoolean("DSA_DolphinGrace");
+			instance.DSA_PlasmaShoot = nbt.getBoolean("DSA_PlasmaShoot");
 			instance.player_home_dimension = nbt.getDouble("player_home_dimension");
+			instance.DSA_WaterBreathe = nbt.getBoolean("DSA_WaterBreathe");
 		}
 	}
 
@@ -325,13 +325,13 @@ public class MegaProjectModVariables {
 		public boolean DSA_Speed = false;
 		public ItemStack buildgun_material = ItemStack.EMPTY;
 		public double build_gun_pos_num = 1.0;
-		public boolean DSA_SlowFalling = false;
-		public boolean DSA_WaterBreathe = false;
-		public boolean DSA_DolphinGrace = false;
 		public double DSA_energy = 0;
-		public boolean DSA_PlasmaShoot = false;
 		public double DSA_PlasmaShoot_Cooldown = 0;
+		public boolean DSA_SlowFalling = false;
+		public boolean DSA_DolphinGrace = false;
+		public boolean DSA_PlasmaShoot = false;
 		public double player_home_dimension = 0;
+		public boolean DSA_WaterBreathe = false;
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
 				MegaProjectMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity),
@@ -390,9 +390,9 @@ public class MegaProjectModVariables {
 			clone.DSA_Jetpack = original.DSA_Jetpack;
 			clone.DSA_Speed = original.DSA_Speed;
 			clone.DSA_SlowFalling = original.DSA_SlowFalling;
-			clone.DSA_WaterBreathe = original.DSA_WaterBreathe;
 			clone.DSA_DolphinGrace = original.DSA_DolphinGrace;
 			clone.DSA_PlasmaShoot = original.DSA_PlasmaShoot;
+			clone.DSA_WaterBreathe = original.DSA_WaterBreathe;
 		}
 	}
 	public static class PlayerVariablesSyncMessage {
@@ -437,13 +437,13 @@ public class MegaProjectModVariables {
 					variables.DSA_Speed = message.data.DSA_Speed;
 					variables.buildgun_material = message.data.buildgun_material;
 					variables.build_gun_pos_num = message.data.build_gun_pos_num;
-					variables.DSA_SlowFalling = message.data.DSA_SlowFalling;
-					variables.DSA_WaterBreathe = message.data.DSA_WaterBreathe;
-					variables.DSA_DolphinGrace = message.data.DSA_DolphinGrace;
 					variables.DSA_energy = message.data.DSA_energy;
-					variables.DSA_PlasmaShoot = message.data.DSA_PlasmaShoot;
 					variables.DSA_PlasmaShoot_Cooldown = message.data.DSA_PlasmaShoot_Cooldown;
+					variables.DSA_SlowFalling = message.data.DSA_SlowFalling;
+					variables.DSA_DolphinGrace = message.data.DSA_DolphinGrace;
+					variables.DSA_PlasmaShoot = message.data.DSA_PlasmaShoot;
 					variables.player_home_dimension = message.data.player_home_dimension;
+					variables.DSA_WaterBreathe = message.data.DSA_WaterBreathe;
 				}
 			});
 			context.setPacketHandled(true);

@@ -1,18 +1,11 @@
 package net.mcreator.megaproject.procedures;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.block.BlockState;
-
-import net.mcreator.megaproject.MegaProjectModElements;
-
-import java.util.Map;
-
 @MegaProjectModElements.ModElement.Tag
 public class AssemblerChangeRecipeONclickProcedure extends MegaProjectModElements.ModElement {
+
 	public AssemblerChangeRecipeONclickProcedure(MegaProjectModElements instance) {
 		super(instance, 219);
+
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -36,10 +29,12 @@ public class AssemblerChangeRecipeONclickProcedure extends MegaProjectModElement
 				System.err.println("Failed to load dependency world for procedure AssemblerChangeRecipeONclick!");
 			return;
 		}
+
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
+
 		if ((((new Object() {
 			public String getValue(BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
@@ -54,6 +49,7 @@ public class AssemblerChangeRecipeONclickProcedure extends MegaProjectModElement
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putString("Recipe", "DiamondScrew");
+
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 		} else if ((((new Object() {
@@ -70,6 +66,7 @@ public class AssemblerChangeRecipeONclickProcedure extends MegaProjectModElement
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putString("Recipe", "TurboFuel");
+
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 		} else if ((((new Object() {
@@ -86,6 +83,7 @@ public class AssemblerChangeRecipeONclickProcedure extends MegaProjectModElement
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putString("Recipe", "IronPlate");
+
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 		} else if ((((new Object() {
@@ -102,6 +100,7 @@ public class AssemblerChangeRecipeONclickProcedure extends MegaProjectModElement
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putString("Recipe", "CateriumWire");
+
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 		} else {
@@ -111,8 +110,11 @@ public class AssemblerChangeRecipeONclickProcedure extends MegaProjectModElement
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
 					_tileEntity.getTileData().putString("Recipe", "CircuitBoard");
+
 				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
 		}
+
 	}
+
 }
