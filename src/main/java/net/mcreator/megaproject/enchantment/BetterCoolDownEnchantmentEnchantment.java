@@ -1,12 +1,20 @@
 
 package net.mcreator.megaproject.enchantment;
 
+import net.minecraftforge.registries.ObjectHolder;
+
+import net.minecraft.item.ItemStack;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.enchantment.EnchantmentType;
+import net.minecraft.enchantment.Enchantment;
+
+import net.mcreator.megaproject.item.DiamondSteelArmorItem;
+import net.mcreator.megaproject.MegaProjectModElements;
+
 @MegaProjectModElements.ModElement.Tag
 public class BetterCoolDownEnchantmentEnchantment extends MegaProjectModElements.ModElement {
-
 	@ObjectHolder("mega_project:better_cool_down_enchantment")
 	public static final Enchantment enchantment = null;
-
 	public BetterCoolDownEnchantmentEnchantment(MegaProjectModElements instance) {
 		super(instance, 298);
 	}
@@ -15,9 +23,7 @@ public class BetterCoolDownEnchantmentEnchantment extends MegaProjectModElements
 	public void initElements() {
 		elements.enchantments.add(() -> new CustomEnchantment(EquipmentSlotType.MAINHAND).setRegistryName("better_cool_down_enchantment"));
 	}
-
 	public static class CustomEnchantment extends Enchantment {
-
 		public CustomEnchantment(EquipmentSlotType... slots) {
 			super(Enchantment.Rarity.VERY_RARE, EnchantmentType.ARMOR_CHEST, slots);
 		}
@@ -53,7 +59,5 @@ public class BetterCoolDownEnchantmentEnchantment extends MegaProjectModElements
 		public boolean isAllowedOnBooks() {
 			return true;
 		}
-
 	}
-
 }

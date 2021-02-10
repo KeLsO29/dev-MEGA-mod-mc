@@ -259,14 +259,15 @@ public class PresserblockUpdateTickProcedure extends MegaProjectModElements.ModE
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 500));
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-			}
-			if (!world.getWorld().isRemote) {
-				BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-				TileEntity _tileEntity = world.getTileEntity(_bp);
-				BlockState _bs = world.getBlockState(_bp);
-				if (_tileEntity != null)
-					_tileEntity.getTileData().putBoolean("Working", (false));
-				world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+			} else {
+				if (!world.getWorld().isRemote) {
+					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
+					TileEntity _tileEntity = world.getTileEntity(_bp);
+					BlockState _bs = world.getBlockState(_bp);
+					if (_tileEntity != null)
+						_tileEntity.getTileData().putBoolean("Working", (false));
+					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
+				}
 			}
 		} else {
 			if (!world.getWorld().isRemote) {

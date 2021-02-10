@@ -9,7 +9,7 @@
       "item": "mega_project:diamondsteelitem"
     },
     {
-      "item": "mega_project:unknown_element"
+      "item": "mega_project:control_unit"
     },
     {
       "item": "mega_project:diamondsteelitem"
@@ -25,7 +25,7 @@
     }
   ],
   "result": {
-    "item": "mega_project:unknown_element",
+    "item": "mega_project:buildertool",
     "count": 1
   }
 }

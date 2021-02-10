@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "mega_project:blocks/blank_transparent",
+    "up": "mega_project:blocks/blank_transparent",
+    "north": "mega_project:blocks/energy_plazma_mk2",
+    "east": "mega_project:blocks/energy_plazma_mk2",
+    "south": "mega_project:blocks/energy_plazma_mk2",
+    "west": "mega_project:blocks/energy_plazma_mk2",
+    "particle": "mega_project:blocks/blank_transparent"
+  }
+}
