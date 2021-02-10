@@ -3,11 +3,11 @@ loaderVersion="[31,)"
 
 [[mods]]
 modId="mega_project"
-version="1.5.1"
+version="1.0.0"
 displayName="MEGA Project"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
-authors="dZ__, Kelso with MCreator"
+authors="matus, MCreator"
 
 [[dependencies.mega_project]]
     modId="minecraft"
@@ -18,9 +18,4 @@ authors="dZ__, Kelso with MCreator"
 
 
 
-[[dependencies.mega_project]]
-    modId="just_enough_items"
-    mandatory=false
-    ordering="NONE"
-    side="BOTH"
 
