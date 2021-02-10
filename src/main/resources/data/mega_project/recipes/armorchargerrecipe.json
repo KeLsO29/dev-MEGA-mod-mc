@@ -1,0 +1,36 @@
+{
+  "group": "armorchargerrecipe",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    " 4 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "mega_project:diamondsteelitem"
+    },
+    "1": {
+      "item": "mega_project:diamond_steelblock"
+    },
+    "2": {
+      "item": "mega_project:diamondsteelitem"
+    },
+    "4": {
+      "item": "mega_project:generator_mk_1"
+    },
+    "6": {
+      "item": "mega_project:heavyironblock"
+    },
+    "7": {
+      "item": "mega_project:heavyironblock"
+    },
+    "8": {
+      "item": "mega_project:heavyironblock"
+    }
+  },
+  "result": {
+    "item": "mega_project:armorcharger",
+    "count": 1
+  }
+}

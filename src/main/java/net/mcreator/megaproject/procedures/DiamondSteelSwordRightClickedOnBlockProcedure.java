@@ -7,6 +7,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.item.ArmorStandEntity;
 import net.minecraft.entity.effect.LightningBoltEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -75,8 +76,8 @@ public class DiamondSteelSwordRightClickedOnBlockProcedure extends MegaProjectMo
 							}
 						}.compareDistOf(x, y, z)).collect(Collectors.toList());
 				for (Entity entityiterator : _entfound) {
-					if (((entityiterator instanceof LivingEntity)
-							&& ((!(entityiterator instanceof PlayerEntity)) || (!(entityiterator instanceof ServerPlayerEntity))))) {
+					if (((entityiterator instanceof LivingEntity) && ((!(entityiterator instanceof ArmorStandEntity))
+							&& ((!(entityiterator instanceof PlayerEntity)) || (!(entityiterator instanceof ServerPlayerEntity)))))) {
 						if (world instanceof ServerWorld)
 							((ServerWorld) world).addLightningBolt(new LightningBoltEntity(world.getWorld(), (int) (entityiterator.getPosX()),
 									(int) (entityiterator.getPosY()), (int) (entityiterator.getPosZ()), false));

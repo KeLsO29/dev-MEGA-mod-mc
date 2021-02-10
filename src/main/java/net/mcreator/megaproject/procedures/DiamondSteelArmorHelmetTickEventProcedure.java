@@ -23,10 +23,39 @@ public class DiamondSteelArmorHelmetTickEventProcedure extends MegaProjectModEle
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if ((((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
-				.orElse(new MegaProjectModVariables.PlayerVariables())).DSA_NightVision) == (true))) {
+		if (((((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new MegaProjectModVariables.PlayerVariables())).DSA_energy) > 1)
+				&& (((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new MegaProjectModVariables.PlayerVariables())).DSA_NightVision) == (true)))) {
 			if (entity instanceof LivingEntity)
-				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 180, (int) 1, (false), (false)));
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.NIGHT_VISION, (int) 300, (int) 2, (false), (false)));
+			if ((Math.random() < 0.1)) {
+				{
+					double _setval = (double) (((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new MegaProjectModVariables.PlayerVariables())).DSA_energy) - 1);
+					entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.DSA_energy = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			}
+		}
+		if (((((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+				.orElse(new MegaProjectModVariables.PlayerVariables())).DSA_energy) > 1)
+				&& (((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+						.orElse(new MegaProjectModVariables.PlayerVariables())).DSA_WaterBreathe) == (true)))) {
+			if (entity instanceof LivingEntity)
+				((LivingEntity) entity).addPotionEffect(new EffectInstance(Effects.WATER_BREATHING, (int) 180, (int) 2, (false), (false)));
+			if ((Math.random() < 0.1)) {
+				{
+					double _setval = (double) (((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+							.orElse(new MegaProjectModVariables.PlayerVariables())).DSA_energy) - 1);
+					entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.DSA_energy = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			}
 		}
 	}
 }

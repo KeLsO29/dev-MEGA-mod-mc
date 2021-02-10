@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "mega_project:block/crusher"
+    },
+    "facing=east": {
+      "model": "mega_project:block/crusher",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "mega_project:block/crusher",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "mega_project:block/crusher",
+      "y": 270
+    }
+  }
+}

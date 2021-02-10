@@ -17,6 +17,7 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
+import net.mcreator.megaproject.procedures.DiamondSteelArmorLeggingsTickEventProcedure;
 import net.mcreator.megaproject.procedures.DiamondSteelArmorHelmetTickEventProcedure;
 import net.mcreator.megaproject.procedures.DiamondSteelArmorBootsTickEventProcedure;
 import net.mcreator.megaproject.procedures.DiamondSteelArmorBodyTickEventProcedure;
@@ -105,6 +106,10 @@ public class DiamondSteelArmorItem extends MegaProjectModElements.ModElement {
 				{
 					Map<String, Object> $_dependencies = new HashMap<>();
 					$_dependencies.put("entity", entity);
+					$_dependencies.put("x", x);
+					$_dependencies.put("y", y);
+					$_dependencies.put("z", z);
+					$_dependencies.put("world", world);
 					DiamondSteelArmorBodyTickEventProcedure.executeProcedure($_dependencies);
 				}
 			}
@@ -113,6 +118,18 @@ public class DiamondSteelArmorItem extends MegaProjectModElements.ModElement {
 			@Override
 			public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {
 				return "mega_project:textures/models/armor/diamondsteel_layer_" + (slot == EquipmentSlotType.LEGS ? "2" : "1") + ".png";
+			}
+
+			@Override
+			public void onArmorTick(ItemStack itemstack, World world, PlayerEntity entity) {
+				double x = entity.getPosX();
+				double y = entity.getPosY();
+				double z = entity.getPosZ();
+				{
+					Map<String, Object> $_dependencies = new HashMap<>();
+					$_dependencies.put("entity", entity);
+					DiamondSteelArmorLeggingsTickEventProcedure.executeProcedure($_dependencies);
+				}
 			}
 		}.setRegistryName("diamond_steel_armor_leggings"));
 		elements.items.add(() -> new ArmorItem(armormaterial, EquipmentSlotType.FEET, new Item.Properties().group(ProjectMEGAItemGroup.tab)) {

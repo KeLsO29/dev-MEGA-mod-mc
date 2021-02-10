@@ -74,7 +74,8 @@
       "Controlunitrecipe",
       "Cpurecipe",
       "Haarprecipe",
-      "BuilderGUNrecipe"
+      "BuilderGUNrecipe",
+      "Armorchargerrecipe"
     ],
     "rewardFunction": "No function",
     "rewardXP": 1,

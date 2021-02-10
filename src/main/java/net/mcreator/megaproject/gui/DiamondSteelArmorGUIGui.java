@@ -30,14 +30,28 @@ import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.megaproject.procedures.DSNightVisionONCLICKProcedure;
+import net.mcreator.megaproject.procedures.DSAslowfallingonclikProcedure;
+import net.mcreator.megaproject.procedures.DSAplasmalabelProcedure;
+import net.mcreator.megaproject.procedures.DSAoverlaywaterbreatheProcedure;
+import net.mcreator.megaproject.procedures.DSAoverlayspeedProcedure;
+import net.mcreator.megaproject.procedures.DSAoverlayslowfallingProcedure;
+import net.mcreator.megaproject.procedures.DSAoverlaynightvisionProcedure;
+import net.mcreator.megaproject.procedures.DSAoverlayjetpackProcedure;
+import net.mcreator.megaproject.procedures.DSAoverlaydolphingraceProcedure;
+import net.mcreator.megaproject.procedures.DSAdolphingraceonclickProcedure;
+import net.mcreator.megaproject.procedures.DSAWaterBreatheonclickProcedure;
 import net.mcreator.megaproject.procedures.DSASpeedonlcickProcedure;
+import net.mcreator.megaproject.procedures.DSAPlasmaShootonclickProcedure;
 import net.mcreator.megaproject.procedures.DSAJetpackonclicklProcedure;
+import net.mcreator.megaproject.MegaProjectModVariables;
 import net.mcreator.megaproject.MegaProjectModElements;
 import net.mcreator.megaproject.MegaProjectMod;
 
 import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
+
+import com.google.common.collect.ImmutableMap;
 
 @MegaProjectModElements.ModElement.Tag
 public class DiamondSteelArmorGUIGui extends MegaProjectModElements.ModElement {
@@ -111,8 +125,8 @@ public class DiamondSteelArmorGUIGui extends MegaProjectModElements.ModElement {
 			this.y = container.y;
 			this.z = container.z;
 			this.entity = container.entity;
-			this.xSize = 223;
-			this.ySize = 194;
+			this.xSize = 248;
+			this.ySize = 218;
 		}
 		private static final ResourceLocation texture = new ResourceLocation("mega_project:textures/diamond_steel_armor_gui.png");
 		@Override
@@ -130,13 +144,13 @@ public class DiamondSteelArmorGUIGui extends MegaProjectModElements.ModElement {
 			int l = (this.height - this.ySize) / 2;
 			this.blit(k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("mega_project:textures/2.png"));
-			this.blit(this.guiLeft + 105, this.guiTop + 107, 0, 0, 16, 16, 16, 16);
+			this.blit(this.guiLeft + 114, this.guiTop + 87, 0, 0, 16, 16, 16, 16);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("mega_project:textures/1.png"));
-			this.blit(this.guiLeft + 105, this.guiTop + 66, 0, 0, 16, 16, 16, 16);
+			this.blit(this.guiLeft + 114, this.guiTop + 60, 0, 0, 16, 16, 16, 16);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("mega_project:textures/3.png"));
-			this.blit(this.guiLeft + 105, this.guiTop + 27, 0, 0, 16, 16, 16, 16);
+			this.blit(this.guiLeft + 114, this.guiTop + 33, 0, 0, 16, 16, 16, 16);
 			Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("mega_project:textures/4.png"));
-			this.blit(this.guiLeft + 106, this.guiTop + 149, 0, 0, 16, 16, 16, 16);
+			this.blit(this.guiLeft + 114, this.guiTop + 114, 0, 0, 16, 16, 16, 16);
 		}
 
 		@Override
@@ -155,7 +169,26 @@ public class DiamondSteelArmorGUIGui extends MegaProjectModElements.ModElement {
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-			this.font.drawString("Armor Panel", 79, 5, -12829636);
+			this.font.drawString("Armor Panel", 4, 4, -12829636);
+			if (DSAoverlayspeedProcedure.executeProcedure(ImmutableMap.of("entity", entity)))
+				this.font.drawString("Speed", 166, 197, -16724992);
+			if (DSAoverlayslowfallingProcedure.executeProcedure(ImmutableMap.of("entity", entity)))
+				this.font.drawString("Slow Falling", 149, 184, -13382656);
+			if (DSAoverlayjetpackProcedure.executeProcedure(ImmutableMap.of("entity", entity)))
+				this.font.drawString("JetPack", 160, 170, -16724992);
+			if (DSAoverlaynightvisionProcedure.executeProcedure(ImmutableMap.of("entity", entity)))
+				this.font.drawString("Night Vision", 150, 156, -16724992);
+			if (DSAoverlaywaterbreatheProcedure.executeProcedure(ImmutableMap.of("entity", entity)))
+				this.font.drawString("Water Breathe", 14, 157, -13382656);
+			if (DSAoverlaydolphingraceProcedure.executeProcedure(ImmutableMap.of("entity", entity)))
+				this.font.drawString("Fast Swim", 22, 184, -16724992);
+			this.font.drawString("Energy: " + (int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new MegaProjectModVariables.PlayerVariables())).DSA_energy) + "", 78, 3, -16750849);
+			this.font.drawString("Active Functions", 80, 143, -12829636);
+			if (DSAplasmalabelProcedure.executeProcedure(ImmutableMap.of("entity", entity)))
+				this.font.drawString("Plasma Shoot", 16, 170, -16724992);
+			this.font.drawString("Plasma Shoot CoolDown: " + (int) ((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+					.orElse(new MegaProjectModVariables.PlayerVariables())).DSA_PlasmaShoot_Cooldown) + "", 4, 17, -12829636);
 		}
 
 		@Override
@@ -168,29 +201,37 @@ public class DiamondSteelArmorGUIGui extends MegaProjectModElements.ModElement {
 		public void init(Minecraft minecraft, int width, int height) {
 			super.init(minecraft, width, height);
 			minecraft.keyboardListener.enableRepeatEvents(true);
-			this.addButton(new Button(this.guiLeft + 131, this.guiTop + 26, 85, 20, "Night Vision", e -> {
+			this.addButton(new Button(this.guiLeft + 150, this.guiTop + 33, 85, 20, "Night Vision", e -> {
 				MegaProjectMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(0, x, y, z));
 				handleButtonAction(entity, 0, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 145, this.guiTop + 64, 60, 20, "Jetpack", e -> {
+			this.addButton(new Button(this.guiLeft + 168, this.guiTop + 60, 60, 20, "Jetpack", e -> {
 				MegaProjectMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(1, x, y, z));
 				handleButtonAction(entity, 1, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 151, this.guiTop + 147, 50, 20, "Speed", e -> {
+			this.addButton(new Button(this.guiLeft + 168, this.guiTop + 114, 50, 20, "Speed", e -> {
 				MegaProjectMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(2, x, y, z));
 				handleButtonAction(entity, 2, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 7, this.guiTop + 26, 90, 20, "Water Breathe", e -> {
+			this.addButton(new Button(this.guiLeft + 6, this.guiTop + 33, 90, 20, "Water Breathe", e -> {
 				MegaProjectMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(3, x, y, z));
 				handleButtonAction(entity, 3, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 131, this.guiTop + 106, 85, 20, "Slow Falling", e -> {
+			this.addButton(new Button(this.guiLeft + 150, this.guiTop + 87, 85, 20, "Slow Falling", e -> {
 				MegaProjectMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(4, x, y, z));
 				handleButtonAction(entity, 4, x, y, z);
 			}));
-			this.addButton(new Button(this.guiLeft + 5, this.guiTop + 106, 90, 20, "Dolphin Grace", e -> {
+			this.addButton(new Button(this.guiLeft + 6, this.guiTop + 87, 90, 20, "Fast Swim", e -> {
 				MegaProjectMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(5, x, y, z));
 				handleButtonAction(entity, 5, x, y, z);
+			}));
+			this.addButton(new Button(this.guiLeft + 24, this.guiTop + 114, 30, 20, "X", e -> {
+				MegaProjectMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(6, x, y, z));
+				handleButtonAction(entity, 6, x, y, z);
+			}));
+			this.addButton(new Button(this.guiLeft + 10, this.guiTop + 59, 85, 20, "Plasma Shoot", e -> {
+				MegaProjectMod.PACKET_HANDLER.sendToServer(new ButtonPressedMessage(7, x, y, z));
+				handleButtonAction(entity, 7, x, y, z);
 			}));
 		}
 	}
@@ -300,6 +341,34 @@ public class DiamondSteelArmorGUIGui extends MegaProjectModElements.ModElement {
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
 				DSASpeedonlcickProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 3) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				DSAWaterBreatheonclickProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 4) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				DSAslowfallingonclikProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 5) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				DSAdolphingraceonclickProcedure.executeProcedure($_dependencies);
+			}
+		}
+		if (buttonID == 7) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				DSAPlasmaShootonclickProcedure.executeProcedure($_dependencies);
 			}
 		}
 	}

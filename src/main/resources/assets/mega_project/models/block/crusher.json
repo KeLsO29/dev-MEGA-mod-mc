@@ -1,0 +1,12 @@
+{
+  "parent": "mega_project:custom/drticka",
+  "textures": {
+    "all": "mega_project:blocks/hopper_top",
+    "particle": "mega_project:blocks/hopper_top",
+    "0": "mega_project:blocks/bedrock",
+    "1": "mega_project:blocks/cobblestone",
+    "2": "mega_project:blocks/gold_block",
+    "3": "mega_project:blocks/blast_furnace_top",
+    "4": "mega_project:blocks/barrel_side"
+  }
+}

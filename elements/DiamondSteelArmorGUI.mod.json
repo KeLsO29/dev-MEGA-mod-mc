@@ -3,8 +3,8 @@
   "_type": "gui",
   "definition": {
     "type": 0,
-    "width": 223,
-    "height": 194,
+    "width": 248,
+    "height": 218,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -19,8 +19,8 @@
             "falpha": 0.0
           },
           "name": "Armor Panel",
-          "x": 181,
-          "y": 28
+          "x": 94,
+          "y": 15
         }
       },
       {
@@ -33,8 +33,8 @@
           "width": 85,
           "height": 20,
           "name": "Night Vision",
-          "x": 233,
-          "y": 49
+          "x": 240,
+          "y": 44
         }
       },
       {
@@ -47,8 +47,8 @@
           "width": 60,
           "height": 20,
           "name": "Jetpack",
-          "x": 247,
-          "y": 87
+          "x": 258,
+          "y": 71
         }
       },
       {
@@ -61,19 +61,22 @@
           "width": 50,
           "height": 20,
           "name": "Speed",
-          "x": 253,
-          "y": 170
+          "x": 258,
+          "y": 125
         }
       },
       {
         "type": "button",
         "data": {
           "text": "Water Breathe",
+          "onClick": {
+            "name": "DSAWaterBreatheonclick"
+          },
           "width": 90,
           "height": 20,
           "name": "Water Breathe",
-          "x": 109,
-          "y": 49
+          "x": 96,
+          "y": 44
         }
       },
       {
@@ -82,8 +85,8 @@
           "image": "2.png",
           "use1Xscale": false,
           "name": "2.png",
-          "x": 207,
-          "y": 130
+          "x": 204,
+          "y": 98
         }
       },
       {
@@ -92,8 +95,8 @@
           "image": "1.png",
           "use1Xscale": false,
           "name": "1.png",
-          "x": 207,
-          "y": 89
+          "x": 204,
+          "y": 71
         }
       },
       {
@@ -102,8 +105,8 @@
           "image": "3.png",
           "use1Xscale": false,
           "name": "3.png",
-          "x": 207,
-          "y": 50
+          "x": 204,
+          "y": 44
         }
       },
       {
@@ -112,30 +115,212 @@
           "image": "4.png",
           "use1Xscale": false,
           "name": "4.png",
-          "x": 208,
-          "y": 172
+          "x": 204,
+          "y": 125
         }
       },
       {
         "type": "button",
         "data": {
           "text": "Slow Falling",
+          "onClick": {
+            "name": "DSAslowfallingonclik"
+          },
           "width": 85,
           "height": 20,
           "name": "Slow Falling",
-          "x": 233,
-          "y": 129
+          "x": 240,
+          "y": 98
         }
       },
       {
         "type": "button",
         "data": {
-          "text": "Dolphin Grace",
+          "text": "Fast Swim",
+          "onClick": {
+            "name": "DSAdolphingraceonclick"
+          },
           "width": 90,
           "height": 20,
-          "name": "Dolphin Grace",
-          "x": 107,
-          "y": 129
+          "name": "Fast Swim",
+          "x": 96,
+          "y": 98
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "X",
+          "width": 30,
+          "height": 20,
+          "name": "X",
+          "x": 114,
+          "y": 125
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Speed",
+          "color": {
+            "value": -16724992,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DSAoverlayspeed"
+          },
+          "name": "Speed",
+          "x": 256,
+          "y": 208
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Slow Falling",
+          "color": {
+            "value": -13382656,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DSAoverlayslowfalling"
+          },
+          "name": "Slow Falling",
+          "x": 239,
+          "y": 195
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "JetPack",
+          "color": {
+            "value": -16724992,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DSAoverlayjetpack"
+          },
+          "name": "JetPack",
+          "x": 250,
+          "y": 181
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Night Vision",
+          "color": {
+            "value": -16724992,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DSAoverlaynightvision"
+          },
+          "name": "Night Vision",
+          "x": 240,
+          "y": 167
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Water Breathe",
+          "color": {
+            "value": -13382656,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DSAoverlaywaterbreathe"
+          },
+          "name": "Water Breathe",
+          "x": 104,
+          "y": 168
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Fast Swim",
+          "color": {
+            "value": -16724992,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DSAoverlaydolphingrace"
+          },
+          "name": "Fast Swim",
+          "x": 112,
+          "y": 195
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Energy: <VAR:integer:DSA_energy>",
+          "color": {
+            "value": -16750849,
+            "falpha": 0.0
+          },
+          "name": "Energy: <VAR:integer:DSA_energy>",
+          "x": 168,
+          "y": 14
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Active Functions",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Active Functions",
+          "x": 170,
+          "y": 154
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Plasma Shoot",
+          "onClick": {
+            "name": "DSAPlasmaShootonclick"
+          },
+          "width": 85,
+          "height": 20,
+          "name": "Plasma Shoot",
+          "x": 100,
+          "y": 70
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Plasma Shoot",
+          "color": {
+            "value": -16724992,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DSAplasmalabel"
+          },
+          "name": "Plasma Shoot",
+          "x": 106,
+          "y": 181
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Plasma Shoot CoolDown: <VAR:integer:DSA_PlasmaShoot_Cooldown>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Plasma Shoot CoolDown: <VAR:integer:DSA_PlasmaShoot_Cooldown>",
+          "x": 94,
+          "y": 28
         }
       }
     ]
