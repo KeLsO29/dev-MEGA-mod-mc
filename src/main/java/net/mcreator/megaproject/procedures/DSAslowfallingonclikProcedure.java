@@ -1,18 +1,11 @@
 package net.mcreator.megaproject.procedures;
 
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.Entity;
-
-import net.mcreator.megaproject.MegaProjectModVariables;
-import net.mcreator.megaproject.MegaProjectModElements;
-
-import java.util.Map;
-
 @MegaProjectModElements.ModElement.Tag
 public class DSAslowfallingonclikProcedure extends MegaProjectModElements.ModElement {
+
 	public DSAslowfallingonclikProcedure(MegaProjectModElements instance) {
 		super(instance, 272);
+
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -21,7 +14,9 @@ public class DSAslowfallingonclikProcedure extends MegaProjectModElements.ModEle
 				System.err.println("Failed to load dependency entity for procedure DSAslowfallingonclik!");
 			return;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
+
 		if ((((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new MegaProjectModVariables.PlayerVariables())).DSA_SlowFalling) == (true))) {
 			{
@@ -46,5 +41,7 @@ public class DSAslowfallingonclikProcedure extends MegaProjectModElements.ModEle
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Slow Falling ON"), (true));
 			}
 		}
+
 	}
+
 }

@@ -2,12 +2,12 @@
   "_fv": 13,
   "_type": "block",
   "definition": {
-    "texture": "blank_transparent",
-    "textureTop": "blank_transparent",
-    "textureLeft": "energy_plazma",
-    "textureFront": "energy_plazma",
-    "textureRight": "energy_plazma",
-    "textureBack": "energy_plazma",
+    "texture": "generatormk2_bottom",
+    "textureTop": "armorcharger_mk2_top",
+    "textureLeft": "generatormk2_side",
+    "textureFront": "generatormk2_side",
+    "textureRight": "generatormk2_side",
+    "textureBack": "generatormk2_side",
     "renderType": 10,
     "customModelName": "Normal",
     "rotationMode": 0,
@@ -16,28 +16,28 @@
     "itemTexture": "",
     "particleTexture": "",
     "hasTransparency": false,
-    "connectedSides": true,
-    "transparencyType": "TRANSLUCENT",
+    "connectedSides": false,
+    "transparencyType": "SOLID",
     "mx": 0.0,
     "my": 0.0,
     "mz": 0.0,
     "Mx": 1.0,
     "My": 1.0,
     "Mz": 1.0,
-    "name": "Energy Plazma",
+    "name": "Armor Charger MK2",
     "specialInfo": [],
-    "hardness": 500.0,
-    "resistance": 500.0,
+    "hardness": 5.0,
+    "resistance": 30.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "No creative tab entry"
+      "value": "CUSTOM:ProjectMEGA"
     },
     "destroyTool": "Not specified",
     "customDrop": {
       "value": ""
     },
-    "dropAmount": 0,
+    "dropAmount": 1,
     "useLootTableForDrops": false,
     "isBeaconBase": false,
     "enchantPowerBonus": 0.0,
@@ -45,9 +45,9 @@
     "canProvidePower": false,
     "lightOpacity": 255,
     "material": {
-      "value": "GLASS"
+      "value": "IRON"
     },
-    "tickRate": 40,
+    "tickRate": 10,
     "tickRandomly": false,
     "isReplaceable": false,
     "colorOnMap": "DEFAULT",
@@ -61,11 +61,11 @@
     "isLadder": false,
     "slipperiness": 0.6,
     "reactionToPushing": "NORMAL",
-    "isNotColidable": true,
+    "isNotColidable": false,
     "soundOnStep": {
-      "value": "GLASS"
+      "value": "METAL"
     },
-    "luminance": 0.15000000000000002,
+    "luminance": 0.0,
     "unbreakable": false,
     "breakHarvestLevel": 1,
     "spawnParticles": false,
@@ -93,10 +93,7 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onTickUpdate": {
-      "name": "EnergyplazmaUpdateTick"
-    },
-    "onEntityCollides": {
-      "name": "EnergyplazmaEntityCollidesInTheBlock"
+      "name": "Armorchargermk2UpdateTick"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

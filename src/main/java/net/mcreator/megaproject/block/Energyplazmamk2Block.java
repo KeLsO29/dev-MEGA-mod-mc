@@ -1,17 +1,44 @@
 
 package net.mcreator.megaproject.block;
 
+import net.minecraftforge.registries.ObjectHolder;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.api.distmarker.Dist;
+
+import net.minecraft.world.storage.loot.LootContext;
+import net.minecraft.world.server.ServerWorld;
+import net.minecraft.world.World;
+import net.minecraft.world.IWorldReader;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.Direction;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item;
+import net.minecraft.item.BlockItem;
+import net.minecraft.entity.Entity;
+import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Block;
+
+import net.mcreator.megaproject.procedures.Energyplazmamk2UpdateTickProcedure;
+import net.mcreator.megaproject.procedures.Energyplazmamk2EntityCollidesInTheBlockProcedure;
+import net.mcreator.megaproject.MegaProjectModElements;
+
+import java.util.Random;
+import java.util.Map;
+import java.util.List;
+import java.util.HashMap;
+import java.util.Collections;
 
 @MegaProjectModElements.ModElement.Tag
-public class EnergyplazmaBlock extends MegaProjectModElements.ModElement {
-
-	@ObjectHolder("mega_project:energyplazma")
+public class Energyplazmamk2Block extends MegaProjectModElements.ModElement {
+	@ObjectHolder("mega_project:energyplazmamk_2")
 	public static final Block block = null;
-
-	public EnergyplazmaBlock(MegaProjectModElements instance) {
-		super(instance, 288);
-
+	public Energyplazmamk2Block(MegaProjectModElements instance) {
+		super(instance, 302);
 	}
 
 	@Override
@@ -25,16 +52,11 @@ public class EnergyplazmaBlock extends MegaProjectModElements.ModElement {
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getTranslucent());
 	}
-
 	public static class CustomBlock extends Block {
-
 		public CustomBlock() {
-			super(
-
-					Block.Properties.create(Material.GLASS).sound(SoundType.GLASS).hardnessAndResistance(500f, 500f).lightValue(2)
-							.doesNotBlockMovement());
-
-			setRegistryName("energyplazma");
+			super(Block.Properties.create(Material.GLASS).sound(SoundType.GLASS).hardnessAndResistance(500f, 500f).lightValue(2)
+					.doesNotBlockMovement());
+			setRegistryName("energyplazmamk_2");
 		}
 
 		@OnlyIn(Dist.CLIENT)
@@ -49,7 +71,6 @@ public class EnergyplazmaBlock extends MegaProjectModElements.ModElement {
 
 		@Override
 		public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
-
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
@@ -73,13 +94,11 @@ public class EnergyplazmaBlock extends MegaProjectModElements.ModElement {
 			int z = pos.getZ();
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
-
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-
-				EnergyplazmaUpdateTickProcedure.executeProcedure($_dependencies);
+				Energyplazmamk2UpdateTickProcedure.executeProcedure($_dependencies);
 			}
 			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, this.tickRate(world));
 		}
@@ -92,17 +111,13 @@ public class EnergyplazmaBlock extends MegaProjectModElements.ModElement {
 			int z = pos.getZ();
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
-
 				$_dependencies.put("entity", entity);
 				$_dependencies.put("x", x);
 				$_dependencies.put("y", y);
 				$_dependencies.put("z", z);
 				$_dependencies.put("world", world);
-
-				EnergyplazmaEntityCollidesInTheBlockProcedure.executeProcedure($_dependencies);
+				Energyplazmamk2EntityCollidesInTheBlockProcedure.executeProcedure($_dependencies);
 			}
 		}
-
 	}
-
 }

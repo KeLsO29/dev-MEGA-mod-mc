@@ -4,10 +4,10 @@
   "definition": {
     "texture": "blank_transparent",
     "textureTop": "blank_transparent",
-    "textureLeft": "energy_plazma",
-    "textureFront": "energy_plazma",
-    "textureRight": "energy_plazma",
-    "textureBack": "energy_plazma",
+    "textureLeft": "energy_plazma_mk2",
+    "textureFront": "energy_plazma_mk2",
+    "textureRight": "energy_plazma_mk2",
+    "textureBack": "energy_plazma_mk2",
     "renderType": 10,
     "customModelName": "Normal",
     "rotationMode": 0,
@@ -93,10 +93,10 @@
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
     "onTickUpdate": {
-      "name": "EnergyplazmaUpdateTick"
+      "name": "Energyplazmamk2UpdateTick"
     },
     "onEntityCollides": {
-      "name": "EnergyplazmaEntityCollidesInTheBlock"
+      "name": "Energyplazmamk2EntityCollidesInTheBlock"
     },
     "spawnWorldTypes": [],
     "restrictionBiomes": [],

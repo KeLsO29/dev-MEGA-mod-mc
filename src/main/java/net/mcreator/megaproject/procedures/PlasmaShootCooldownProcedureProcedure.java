@@ -1,22 +1,11 @@
 package net.mcreator.megaproject.procedures;
 
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.MinecraftForge;
-
-import net.minecraft.world.World;
-import net.minecraft.entity.Entity;
-
-import net.mcreator.megaproject.MegaProjectModVariables;
-import net.mcreator.megaproject.MegaProjectModElements;
-
-import java.util.Map;
-import java.util.HashMap;
-
 @MegaProjectModElements.ModElement.Tag
 public class PlasmaShootCooldownProcedureProcedure extends MegaProjectModElements.ModElement {
+
 	public PlasmaShootCooldownProcedureProcedure(MegaProjectModElements instance) {
 		super(instance, 297);
+
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
@@ -26,7 +15,9 @@ public class PlasmaShootCooldownProcedureProcedure extends MegaProjectModElement
 				System.err.println("Failed to load dependency entity for procedure PlasmaShootCooldownProcedure!");
 			return;
 		}
+
 		Entity entity = (Entity) dependencies.get("entity");
+
 		if ((((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new MegaProjectModVariables.PlayerVariables())).DSA_PlasmaShoot_Cooldown) > 0)) {
 			{
@@ -38,6 +29,7 @@ public class PlasmaShootCooldownProcedureProcedure extends MegaProjectModElement
 				});
 			}
 		}
+
 	}
 
 	@SubscribeEvent
@@ -58,4 +50,5 @@ public class PlasmaShootCooldownProcedureProcedure extends MegaProjectModElement
 			this.executeProcedure(dependencies);
 		}
 	}
+
 }
