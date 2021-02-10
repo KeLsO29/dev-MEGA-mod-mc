@@ -1,11 +1,27 @@
 package net.mcreator.megaproject.procedures;
 
+import net.minecraftforge.items.IItemHandlerModifiable;
+import net.minecraftforge.items.CapabilityItemHandler;
+
+import net.minecraft.world.IWorld;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.BlockState;
+
+import net.mcreator.megaproject.item.ConcreteItem;
+import net.mcreator.megaproject.MegaProjectModVariables;
+import net.mcreator.megaproject.MegaProjectModElements;
+
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.Map;
+
 @MegaProjectModElements.ModElement.Tag
 public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.ModElement {
-
 	public ConcretemixerUpdateTickProcedure(MegaProjectModElements instance) {
 		super(instance, 242);
-
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -29,12 +45,10 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 				System.err.println("Failed to load dependency world for procedure ConcretemixerUpdateTick!");
 			return;
 		}
-
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-
 		if (((new Object() {
 			public double getValue(BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
@@ -83,7 +97,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 								return _retval.get();
 							}
 						}.getAmount(new BlockPos((int) x, (int) y, (int) z), (int) (0)))));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (!world.getWorld().isRemote) {
@@ -103,7 +116,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 250));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				{
@@ -163,7 +175,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 								return -1;
 							}
 						}.getValue(new BlockPos((int) x, (int) y, (int) z), "Concrete")) - 64));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (!world.getWorld().isRemote) {
@@ -183,7 +194,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 250));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
@@ -232,7 +242,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 								return -1;
 							}
 						}.getValue(new BlockPos((int) x, (int) y, (int) z), "Concrete")) - 64));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (!world.getWorld().isRemote) {
@@ -252,7 +261,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 250));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
@@ -301,7 +309,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 								return -1;
 							}
 						}.getValue(new BlockPos((int) x, (int) y, (int) z), "Concrete")) - 64));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (!world.getWorld().isRemote) {
@@ -321,7 +328,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 250));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
@@ -370,7 +376,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 								return -1;
 							}
 						}.getValue(new BlockPos((int) x, (int) y, (int) z), "Concrete")) - 64));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (!world.getWorld().isRemote) {
@@ -390,7 +395,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 250));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
@@ -443,7 +447,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 250));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (!world.getWorld().isRemote) {
@@ -459,7 +462,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 								return -1;
 							}
 						}.getValue(new BlockPos((int) x, (int) y, (int) z), "Concrete")) - 64));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
@@ -508,7 +510,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 								return -1;
 							}
 						}.getValue(new BlockPos((int) x, (int) y, (int) z), "Concrete")) - 64));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (!world.getWorld().isRemote) {
@@ -528,7 +529,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 250));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
@@ -581,7 +581,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 250));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (!world.getWorld().isRemote) {
@@ -597,7 +596,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 								return -1;
 							}
 						}.getValue(new BlockPos((int) x, (int) y, (int) z), "Concrete")) - 64));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
@@ -646,7 +644,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 								return -1;
 							}
 						}.getValue(new BlockPos((int) x, (int) y, (int) z), "Concrete")) - 64));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (!world.getWorld().isRemote) {
@@ -666,7 +663,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 250));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
@@ -719,7 +715,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 250));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (!world.getWorld().isRemote) {
@@ -735,7 +730,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 								return -1;
 							}
 						}.getValue(new BlockPos((int) x, (int) y, (int) z), "Concrete")) - 64));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
@@ -788,7 +782,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 250));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (!world.getWorld().isRemote) {
@@ -804,7 +797,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 								return -1;
 							}
 						}.getValue(new BlockPos((int) x, (int) y, (int) z), "Concrete")) - 64));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
@@ -857,7 +849,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 250));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (!world.getWorld().isRemote) {
@@ -873,7 +864,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 								return -1;
 							}
 						}.getValue(new BlockPos((int) x, (int) y, (int) z), "Concrete")) - 64));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
@@ -926,7 +916,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 250));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (!world.getWorld().isRemote) {
@@ -942,7 +931,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 								return -1;
 							}
 						}.getValue(new BlockPos((int) x, (int) y, (int) z), "Concrete")) - 64));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
@@ -995,7 +983,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 250));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (!world.getWorld().isRemote) {
@@ -1011,7 +998,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 								return -1;
 							}
 						}.getValue(new BlockPos((int) x, (int) y, (int) z), "Concrete")) - 64));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
@@ -1064,7 +1050,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 250));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (!world.getWorld().isRemote) {
@@ -1080,7 +1065,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 								return -1;
 							}
 						}.getValue(new BlockPos((int) x, (int) y, (int) z), "Concrete")) - 64));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
@@ -1133,7 +1117,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 250));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (!world.getWorld().isRemote) {
@@ -1149,7 +1132,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 								return -1;
 							}
 						}.getValue(new BlockPos((int) x, (int) y, (int) z), "Concrete")) - 64));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
@@ -1202,7 +1184,6 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 						}.getValue(new BlockPos((int) (MegaProjectModVariables.MapVariables.get(world).hub_x),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_y),
 								(int) (MegaProjectModVariables.MapVariables.get(world).hub_z)), "Energy")) - 250));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 				if (!world.getWorld().isRemote) {
@@ -1218,12 +1199,9 @@ public class ConcretemixerUpdateTickProcedure extends MegaProjectModElements.Mod
 								return -1;
 							}
 						}.getValue(new BlockPos((int) x, (int) y, (int) z), "Concrete")) - 64));
-
 					world.getWorld().notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
 			}
 		}
-
 	}
-
 }

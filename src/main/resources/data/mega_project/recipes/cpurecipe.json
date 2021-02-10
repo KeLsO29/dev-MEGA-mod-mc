@@ -8,7 +8,7 @@
   ],
   "key": {
     "0": {
-      "item": "mega_project:circuit_boarditem"
+      "item": "mega_project:highspeedconectoritem"
     },
     "1": {
       "item": "mega_project:control_unit"
@@ -32,7 +32,7 @@
       "item": "mega_project:control_unit"
     },
     "8": {
-      "item": "mega_project:circuit_boarditem"
+      "item": "mega_project:highspeedconectoritem"
     }
   },
   "result": {

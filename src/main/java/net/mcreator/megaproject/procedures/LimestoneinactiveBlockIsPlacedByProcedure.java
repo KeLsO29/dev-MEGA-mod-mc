@@ -1,11 +1,27 @@
 package net.mcreator.megaproject.procedures;
 
+import net.minecraft.world.IWorld;
+import net.minecraft.world.GameType;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.item.ItemStack;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.item.ItemEntity;
+import net.minecraft.entity.Entity;
+import net.minecraft.client.network.play.NetworkPlayerInfo;
+import net.minecraft.client.entity.player.ClientPlayerEntity;
+import net.minecraft.client.Minecraft;
+import net.minecraft.block.Blocks;
+
+import net.mcreator.megaproject.block.LimestoneinactiveBlock;
+import net.mcreator.megaproject.MegaProjectModElements;
+
+import java.util.Map;
+
 @MegaProjectModElements.ModElement.Tag
 public class LimestoneinactiveBlockIsPlacedByProcedure extends MegaProjectModElements.ModElement {
-
 	public LimestoneinactiveBlockIsPlacedByProcedure(MegaProjectModElements instance) {
 		super(instance, 237);
-
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -34,13 +50,11 @@ public class LimestoneinactiveBlockIsPlacedByProcedure extends MegaProjectModEle
 				System.err.println("Failed to load dependency world for procedure LimestoneinactiveBlockIsPlacedBy!");
 			return;
 		}
-
 		Entity entity = (Entity) dependencies.get("entity");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
-
 		if ((((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock() == Blocks.STONE.getDefaultState().getBlock())
 				|| ((world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) z))).getBlock() == Blocks.GRASS_BLOCK.getDefaultState()
 						.getBlock()))) {
@@ -71,7 +85,5 @@ public class LimestoneinactiveBlockIsPlacedByProcedure extends MegaProjectModEle
 				}
 			}
 		}
-
 	}
-
 }
