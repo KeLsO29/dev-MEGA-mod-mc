@@ -1,12 +1,20 @@
 
 package net.mcreator.megaproject.enchantment;
 
+import net.minecraftforge.registries.ObjectHolder;
+
+import net.minecraft.item.ItemStack;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.enchantment.EnchantmentType;
+import net.minecraft.enchantment.Enchantment;
+
+import net.mcreator.megaproject.item.DiamondSteelArmorItem;
+import net.mcreator.megaproject.MegaProjectModElements;
+
 @MegaProjectModElements.ModElement.Tag
 public class CheapPlasmaEnchantment extends MegaProjectModElements.ModElement {
-
 	@ObjectHolder("mega_project:cheap_plasma")
 	public static final Enchantment enchantment = null;
-
 	public CheapPlasmaEnchantment(MegaProjectModElements instance) {
 		super(instance, 299);
 	}
@@ -15,9 +23,7 @@ public class CheapPlasmaEnchantment extends MegaProjectModElements.ModElement {
 	public void initElements() {
 		elements.enchantments.add(() -> new CustomEnchantment(EquipmentSlotType.MAINHAND).setRegistryName("cheap_plasma"));
 	}
-
 	public static class CustomEnchantment extends Enchantment {
-
 		public CustomEnchantment(EquipmentSlotType... slots) {
 			super(Enchantment.Rarity.RARE, EnchantmentType.ARMOR_CHEST, slots);
 		}
@@ -53,7 +59,5 @@ public class CheapPlasmaEnchantment extends MegaProjectModElements.ModElement {
 		public boolean isAllowedOnBooks() {
 			return true;
 		}
-
 	}
-
 }
