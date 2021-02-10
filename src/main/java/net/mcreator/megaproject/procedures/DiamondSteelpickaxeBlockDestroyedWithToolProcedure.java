@@ -52,9 +52,44 @@ public class DiamondSteelpickaxeBlockDestroyedWithToolProcedure extends MegaProj
 		IWorld world = (IWorld) dependencies.get("world");
 		if (((((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY).getOrCreateTag()
 				.getBoolean("3x3")) == (true))) {
-			if (((((entity.getHorizontalFacing()) == Direction.NORTH) || ((entity.getHorizontalFacing()) == Direction.SOUTH))
+			if (((!(entity.isSneaking())) && ((((entity.rotationPitch) < (-60)) || ((entity.rotationPitch) > 60))
 					&& ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z)))
-							.getMaterial() == net.minecraft.block.material.Material.ROCK))) {
+							.getMaterial() == net.minecraft.block.material.Material.ROCK)))) {
+				Block.spawnDrops(world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) (z - 1))), world.getWorld(),
+						new BlockPos((int) x, (int) y, (int) z));
+				world.destroyBlock(new BlockPos((int) (x - 1), (int) y, (int) (z - 1)), false);
+				Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) (z - 1))), world.getWorld(),
+						new BlockPos((int) x, (int) y, (int) z));
+				world.destroyBlock(new BlockPos((int) x, (int) y, (int) (z - 1)), false);
+				Block.spawnDrops(world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) (z - 1))), world.getWorld(),
+						new BlockPos((int) x, (int) y, (int) z));
+				world.destroyBlock(new BlockPos((int) (x + 1), (int) y, (int) (z - 1)), false);
+				Block.spawnDrops(world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) z)), world.getWorld(),
+						new BlockPos((int) x, (int) y, (int) z));
+				world.destroyBlock(new BlockPos((int) (x - 1), (int) y, (int) z), false);
+				Block.spawnDrops(world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) z)), world.getWorld(),
+						new BlockPos((int) x, (int) y, (int) z));
+				world.destroyBlock(new BlockPos((int) (x + 1), (int) y, (int) z), false);
+				Block.spawnDrops(world.getBlockState(new BlockPos((int) (x - 1), (int) y, (int) (z + 1))), world.getWorld(),
+						new BlockPos((int) x, (int) y, (int) z));
+				world.destroyBlock(new BlockPos((int) (x - 1), (int) y, (int) (z + 1)), false);
+				Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) y, (int) (z + 1))), world.getWorld(),
+						new BlockPos((int) x, (int) y, (int) z));
+				world.destroyBlock(new BlockPos((int) x, (int) y, (int) (z + 1)), false);
+				Block.spawnDrops(world.getBlockState(new BlockPos((int) (x + 1), (int) y, (int) (z + 1))), world.getWorld(),
+						new BlockPos((int) x, (int) y, (int) z));
+				world.destroyBlock(new BlockPos((int) (x + 1), (int) y, (int) (z + 1)), false);
+				{
+					ItemStack _ist = ((entity instanceof LivingEntity) ? ((LivingEntity) entity).getHeldItemMainhand() : ItemStack.EMPTY);
+					if (_ist.attemptDamageItem((int) 8, new Random(), null)) {
+						_ist.shrink(1);
+						_ist.setDamage(0);
+					}
+				}
+			} else if (((!(entity.isSneaking()))
+					&& ((((entity.getHorizontalFacing()) == Direction.NORTH) || ((entity.getHorizontalFacing()) == Direction.SOUTH))
+							&& ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z)))
+									.getMaterial() == net.minecraft.block.material.Material.ROCK)))) {
 				Block.spawnDrops(world.getBlockState(new BlockPos((int) (x - 1), (int) (y - 1), (int) z)), world.getWorld(),
 						new BlockPos((int) x, (int) y, (int) z));
 				world.destroyBlock(new BlockPos((int) (x - 1), (int) (y - 1), (int) z), false);
@@ -86,10 +121,10 @@ public class DiamondSteelpickaxeBlockDestroyedWithToolProcedure extends MegaProj
 						_ist.setDamage(0);
 					}
 				}
-			}
-			if (((((entity.getHorizontalFacing()) == Direction.WEST) || ((entity.getHorizontalFacing()) == Direction.EAST))
-					&& ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z)))
-							.getMaterial() == net.minecraft.block.material.Material.ROCK))) {
+			} else if (((!(entity.isSneaking()))
+					&& ((((entity.getHorizontalFacing()) == Direction.WEST) || ((entity.getHorizontalFacing()) == Direction.EAST))
+							&& ((world.getBlockState(new BlockPos((int) x, (int) y, (int) z)))
+									.getMaterial() == net.minecraft.block.material.Material.ROCK)))) {
 				Block.spawnDrops(world.getBlockState(new BlockPos((int) x, (int) (y - 1), (int) (z - 1))), world.getWorld(),
 						new BlockPos((int) x, (int) y, (int) z));
 				world.destroyBlock(new BlockPos((int) x, (int) (y - 1), (int) (z - 1)), false);

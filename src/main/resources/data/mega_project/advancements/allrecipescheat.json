@@ -83,7 +83,8 @@
       "mega_project:controlunitrecipe",
       "mega_project:cpurecipe",
       "mega_project:haarprecipe",
-      "mega_project:builder_gu_nrecipe"
+      "mega_project:builder_gu_nrecipe",
+      "mega_project:armorchargerrecipe"
     ]
   }
 }

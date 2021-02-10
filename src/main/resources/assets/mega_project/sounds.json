@@ -1,1 +1,22 @@
-{}
+{
+  "plasma_shoot": {
+    "category": "master",
+    "subtitle": "subtitles.plasma_shoot",
+    "sounds": [
+      {
+        "name": "mega_project:plazma_shoot",
+        "stream": false
+      }
+    ]
+  },
+  "plazma": {
+    "category": "block",
+    "subtitle": "subtitles.plazma",
+    "sounds": [
+      {
+        "name": "mega_project:plazma",
+        "stream": false
+      }
+    ]
+  }
+}

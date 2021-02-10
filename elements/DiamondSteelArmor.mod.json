@@ -16,6 +16,9 @@
     "onBodyTick": {
       "name": "DiamondSteelArmorBodyTickEvent"
     },
+    "onLeggingsTick": {
+      "name": "DiamondSteelArmorLeggingsTickEvent"
+    },
     "onBootsTick": {
       "name": "DiamondSteelArmorBootsTickEvent"
     },

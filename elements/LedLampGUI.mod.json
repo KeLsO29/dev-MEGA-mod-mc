@@ -1,0 +1,58 @@
+{
+  "_fv": 13,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 109,
+    "height": 85,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "LED LAMP",
+          "color": {
+            "value": -16711681,
+            "falpha": 0.0
+          },
+          "name": "LED LAMP",
+          "x": 190,
+          "y": 84
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Working",
+          "color": {
+            "value": -16724992,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "GeneratorWorkingLabel"
+          },
+          "name": "Working",
+          "x": 192,
+          "y": 104
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "ON/OFF",
+          "onClick": {
+            "name": "Extractoronoff"
+          },
+          "width": 55,
+          "height": 20,
+          "name": "ON/OFF",
+          "x": 183,
+          "y": 125
+        }
+      }
+    ]
+  }
+}

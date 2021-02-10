@@ -255,6 +255,13 @@ public class MegaProjectModVariables {
 			nbt.putDouble("builder_pos2_x", instance.builder_pos2_x);
 			nbt.putBoolean("DSA_Speed", instance.DSA_Speed);
 			nbt.putDouble("builder_pos1_x", instance.builder_pos1_x);
+			nbt.putDouble("DSA_energy", instance.DSA_energy);
+			nbt.putDouble("DSA_PlasmaShoot_Cooldown", instance.DSA_PlasmaShoot_Cooldown);
+			nbt.putBoolean("DSA_SlowFalling", instance.DSA_SlowFalling);
+			nbt.putBoolean("DSA_DolphinGrace", instance.DSA_DolphinGrace);
+			nbt.putBoolean("DSA_PlasmaShoot", instance.DSA_PlasmaShoot);
+			nbt.putDouble("player_home_dimension", instance.player_home_dimension);
+			nbt.putBoolean("DSA_WaterBreathe", instance.DSA_WaterBreathe);
 			return nbt;
 		}
 
@@ -284,6 +291,13 @@ public class MegaProjectModVariables {
 			instance.builder_pos2_x = nbt.getDouble("builder_pos2_x");
 			instance.DSA_Speed = nbt.getBoolean("DSA_Speed");
 			instance.builder_pos1_x = nbt.getDouble("builder_pos1_x");
+			instance.DSA_energy = nbt.getDouble("DSA_energy");
+			instance.DSA_PlasmaShoot_Cooldown = nbt.getDouble("DSA_PlasmaShoot_Cooldown");
+			instance.DSA_SlowFalling = nbt.getBoolean("DSA_SlowFalling");
+			instance.DSA_DolphinGrace = nbt.getBoolean("DSA_DolphinGrace");
+			instance.DSA_PlasmaShoot = nbt.getBoolean("DSA_PlasmaShoot");
+			instance.player_home_dimension = nbt.getDouble("player_home_dimension");
+			instance.DSA_WaterBreathe = nbt.getBoolean("DSA_WaterBreathe");
 		}
 	}
 
@@ -311,6 +325,13 @@ public class MegaProjectModVariables {
 		public double builder_pos2_x = 0;
 		public boolean DSA_Speed = false;
 		public double builder_pos1_x = 0;
+		public double DSA_energy = 0;
+		public double DSA_PlasmaShoot_Cooldown = 0;
+		public boolean DSA_SlowFalling = false;
+		public boolean DSA_DolphinGrace = false;
+		public boolean DSA_PlasmaShoot = false;
+		public double player_home_dimension = 0;
+		public boolean DSA_WaterBreathe = false;
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayerEntity)
 				MegaProjectMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) entity),
@@ -363,10 +384,17 @@ public class MegaProjectModVariables {
 		clone.builder_pos1_y = original.builder_pos1_y;
 		clone.builder_pos2_x = original.builder_pos2_x;
 		clone.builder_pos1_x = original.builder_pos1_x;
+		clone.DSA_energy = original.DSA_energy;
+		clone.DSA_PlasmaShoot_Cooldown = original.DSA_PlasmaShoot_Cooldown;
+		clone.player_home_dimension = original.player_home_dimension;
 		if (!event.isWasDeath()) {
 			clone.DSA_NightVision = original.DSA_NightVision;
 			clone.DSA_Jetpack = original.DSA_Jetpack;
 			clone.DSA_Speed = original.DSA_Speed;
+			clone.DSA_SlowFalling = original.DSA_SlowFalling;
+			clone.DSA_DolphinGrace = original.DSA_DolphinGrace;
+			clone.DSA_PlasmaShoot = original.DSA_PlasmaShoot;
+			clone.DSA_WaterBreathe = original.DSA_WaterBreathe;
 		}
 	}
 	public static class PlayerVariablesSyncMessage {
@@ -413,6 +441,13 @@ public class MegaProjectModVariables {
 					variables.builder_pos2_x = message.data.builder_pos2_x;
 					variables.DSA_Speed = message.data.DSA_Speed;
 					variables.builder_pos1_x = message.data.builder_pos1_x;
+					variables.DSA_energy = message.data.DSA_energy;
+					variables.DSA_PlasmaShoot_Cooldown = message.data.DSA_PlasmaShoot_Cooldown;
+					variables.DSA_SlowFalling = message.data.DSA_SlowFalling;
+					variables.DSA_DolphinGrace = message.data.DSA_DolphinGrace;
+					variables.DSA_PlasmaShoot = message.data.DSA_PlasmaShoot;
+					variables.player_home_dimension = message.data.player_home_dimension;
+					variables.DSA_WaterBreathe = message.data.DSA_WaterBreathe;
 				}
 			});
 			context.setPacketHandled(true);

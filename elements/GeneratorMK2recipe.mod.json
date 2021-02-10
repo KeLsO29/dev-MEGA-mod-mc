@@ -22,7 +22,7 @@
         "value": "CUSTOM:CircuitBoarditem"
       },
       {
-        "value": "CUSTOM:GeneratorMK1"
+        "value": "CUSTOM:GeneratorMK1inactive"
       },
       {
         "value": "CUSTOM:CircuitBoarditem"
@@ -38,7 +38,7 @@
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:Generatormk2"
+      "value": "CUSTOM:GeneratorMK2inactive"
     },
     "name": "generator_mk_2recipe",
     "namespace": "mod"
