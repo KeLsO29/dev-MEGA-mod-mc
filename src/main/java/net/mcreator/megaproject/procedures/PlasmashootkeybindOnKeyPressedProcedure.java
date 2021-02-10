@@ -1,11 +1,27 @@
 package net.mcreator.megaproject.procedures;
 
+import net.minecraft.world.World;
+import net.minecraft.world.IWorld;
+import net.minecraft.item.ItemStack;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.Entity;
+import net.minecraft.enchantment.EnchantmentHelper;
+
+import net.mcreator.megaproject.item.PlasmaShootrangeditemItem;
+import net.mcreator.megaproject.item.DiamondSteelArmorItem;
+import net.mcreator.megaproject.enchantment.CheapPlasmaEnchantment;
+import net.mcreator.megaproject.enchantment.BetterCoolDownEnchantmentEnchantment;
+import net.mcreator.megaproject.MegaProjectModVariables;
+import net.mcreator.megaproject.MegaProjectModElements;
+
+import java.util.Random;
+import java.util.Map;
+
 @MegaProjectModElements.ModElement.Tag
 public class PlasmashootkeybindOnKeyPressedProcedure extends MegaProjectModElements.ModElement {
-
 	public PlasmashootkeybindOnKeyPressedProcedure(MegaProjectModElements instance) {
 		super(instance, 292);
-
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -19,10 +35,8 @@ public class PlasmashootkeybindOnKeyPressedProcedure extends MegaProjectModEleme
 				System.err.println("Failed to load dependency world for procedure PlasmashootkeybindOnKeyPressed!");
 			return;
 		}
-
 		Entity entity = (Entity) dependencies.get("entity");
 		IWorld world = (IWorld) dependencies.get("world");
-
 		if (((((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new MegaProjectModVariables.PlayerVariables())).DSA_PlasmaShoot_Cooldown) == 0)
 				&& (((((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).inventory.armorInventory.get((int) 2) : ItemStack.EMPTY)
@@ -33,7 +47,6 @@ public class PlasmashootkeybindOnKeyPressedProcedure extends MegaProjectModEleme
 								.orElse(new MegaProjectModVariables.PlayerVariables())).DSA_energy) > 300)))) {
 			if (world instanceof World && !world.getWorld().isRemote && entity instanceof LivingEntity) {
 				PlasmaShootrangeditemItem.shoot(world.getWorld(), (LivingEntity) entity, new Random(), (float) 5, (float) 5, (int) 5);
-
 			}
 			if (((EnchantmentHelper.getEnchantmentLevel(BetterCoolDownEnchantmentEnchantment.enchantment,
 					((entity instanceof PlayerEntity) ? ((PlayerEntity) entity).inventory.armorInventory.get((int) 2) : ItemStack.EMPTY))) == 0)) {
@@ -104,7 +117,5 @@ public class PlasmashootkeybindOnKeyPressedProcedure extends MegaProjectModEleme
 				}
 			}
 		}
-
 	}
-
 }

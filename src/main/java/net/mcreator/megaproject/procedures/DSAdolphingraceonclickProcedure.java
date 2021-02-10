@@ -1,11 +1,18 @@
 package net.mcreator.megaproject.procedures;
 
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.Entity;
+
+import net.mcreator.megaproject.MegaProjectModVariables;
+import net.mcreator.megaproject.MegaProjectModElements;
+
+import java.util.Map;
+
 @MegaProjectModElements.ModElement.Tag
 public class DSAdolphingraceonclickProcedure extends MegaProjectModElements.ModElement {
-
 	public DSAdolphingraceonclickProcedure(MegaProjectModElements instance) {
 		super(instance, 273);
-
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -14,9 +21,7 @@ public class DSAdolphingraceonclickProcedure extends MegaProjectModElements.ModE
 				System.err.println("Failed to load dependency entity for procedure DSAdolphingraceonclick!");
 			return;
 		}
-
 		Entity entity = (Entity) dependencies.get("entity");
-
 		if ((((entity.getCapability(MegaProjectModVariables.PLAYER_VARIABLES_CAPABILITY, null)
 				.orElse(new MegaProjectModVariables.PlayerVariables())).DSA_DolphinGrace) == (true))) {
 			{
@@ -41,7 +46,5 @@ public class DSAdolphingraceonclickProcedure extends MegaProjectModElements.ModE
 				((PlayerEntity) entity).sendStatusMessage(new StringTextComponent("Dolphin Grace ON"), (true));
 			}
 		}
-
 	}
-
 }
