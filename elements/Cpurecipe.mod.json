@@ -10,7 +10,7 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "CUSTOM:CircuitBoarditem"
+        "value": "CUSTOM:Highspeedconectoritem"
       },
       {
         "value": "CUSTOM:ControlUnit"
@@ -34,7 +34,7 @@
         "value": "CUSTOM:ControlUnit"
       },
       {
-        "value": "CUSTOM:CircuitBoarditem"
+        "value": "CUSTOM:Highspeedconectoritem"
       }
     ],
     "recipeReturnStack": {

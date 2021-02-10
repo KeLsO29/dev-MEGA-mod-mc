@@ -5443,24 +5443,19 @@
       "registry_name": "armorchargermk_2"
     },
     {
-      "name": "Energyplazmamk2",
-      "type": "block",
-      "sortid": 302,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "energyplazmamk_2"
-    },
-    {
-      "name": "Armorchargermk2UpdateTick",
+      "name": "Energyplazmamk2EntityCollidesInTheBlock",
       "type": "procedure",
-      "sortid": 303,
+      "sortid": 304,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "armorchargermk_2_update_tick",
+      "registry_name": "energyplazmamk_2_entity_collides_in_the_block",
       "metadata": {
         "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
           {
             "name": "x",
             "type": "number"
@@ -5481,19 +5476,24 @@
       }
     },
     {
-      "name": "Energyplazmamk2EntityCollidesInTheBlock",
-      "type": "procedure",
-      "sortid": 304,
+      "name": "Energyplazmamk2",
+      "type": "block",
+      "sortid": 302,
       "compiles": true,
       "locked_code": false,
       "ids": {},
-      "registry_name": "energyplazmamk_2_entity_collides_in_the_block",
+      "registry_name": "energyplazmamk_2"
+    },
+    {
+      "name": "Armorchargermk2UpdateTick",
+      "type": "procedure",
+      "sortid": 303,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "armorchargermk_2_update_tick",
       "metadata": {
         "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
           {
             "name": "x",
             "type": "number"

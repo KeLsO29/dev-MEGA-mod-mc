@@ -1,20 +1,11 @@
 package net.mcreator.megaproject.procedures;
 
-import net.minecraft.world.IWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.block.Blocks;
-
-import net.mcreator.megaproject.block.Energyplazmamk2Block;
-import net.mcreator.megaproject.MegaProjectModVariables;
-import net.mcreator.megaproject.MegaProjectModElements;
-
-import java.util.Map;
-
 @MegaProjectModElements.ModElement.Tag
 public class Armorchargermk2UpdateTickProcedure extends MegaProjectModElements.ModElement {
+
 	public Armorchargermk2UpdateTickProcedure(MegaProjectModElements instance) {
 		super(instance, 303);
+
 	}
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
@@ -38,10 +29,12 @@ public class Armorchargermk2UpdateTickProcedure extends MegaProjectModElements.M
 				System.err.println("Failed to load dependency world for procedure Armorchargermk2UpdateTick!");
 			return;
 		}
+
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
+
 		if ((((new Object() {
 			public double getValue(BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
@@ -72,5 +65,7 @@ public class Armorchargermk2UpdateTickProcedure extends MegaProjectModElements.M
 			world.setBlockState(new BlockPos((int) x, (int) (y + 1), (int) z), Blocks.AIR.getDefaultState(), 3);
 			world.setBlockState(new BlockPos((int) x, (int) (y + 2), (int) z), Blocks.AIR.getDefaultState(), 3);
 		}
+
 	}
+
 }
