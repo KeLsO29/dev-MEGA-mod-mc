@@ -18,5 +18,14 @@
         "stream": false
       }
     ]
+  },
+  "jetpack_sound": {
+    "category": "player",
+    "sounds": [
+      {
+        "name": "mega_project:jetpack",
+        "stream": false
+      }
+    ]
   }
 }

@@ -1,0 +1,8 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "mega_project:blocks/pink_concrete",
+    "top": "mega_project:blocks/pink_concrete",
+    "side": "mega_project:blocks/pink_concrete"
+  }
+}

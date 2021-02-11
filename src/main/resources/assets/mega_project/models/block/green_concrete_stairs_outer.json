@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "mega_project:blocks/green_concrete",
+    "top": "mega_project:blocks/green_concrete",
+    "side": "mega_project:blocks/green_concrete"
+  }
+}

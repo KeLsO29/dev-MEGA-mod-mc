@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "mega_project:block/black_concrete_slab"
+    },
+    "type=top": {
+      "model": "mega_project:block/black_concrete_slab_top"
+    },
+    "type=double": {
+      "model": "mega_project:block/black_concrete_slab_full"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab_top",
+  "textures": {
+    "bottom": "mega_project:blocks/red_concrete",
+    "top": "mega_project:blocks/red_concrete",
+    "side": "mega_project:blocks/red_concrete"
+  }
+}

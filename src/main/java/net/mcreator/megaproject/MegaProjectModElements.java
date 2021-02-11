@@ -51,6 +51,8 @@ public class MegaProjectModElements {
 		sounds.put(new ResourceLocation("mega_project", "plasma_shoot"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("mega_project", "plasma_shoot")));
 		sounds.put(new ResourceLocation("mega_project", "plazma"), new net.minecraft.util.SoundEvent(new ResourceLocation("mega_project", "plazma")));
+		sounds.put(new ResourceLocation("mega_project", "jetpack_sound"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("mega_project", "jetpack_sound")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("mega_project").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();

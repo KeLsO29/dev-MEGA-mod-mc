@@ -1,0 +1,42 @@
+{
+  "group": "armorchargermk2",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "mega_project:highspeedconectoritem"
+    },
+    "1": {
+      "item": "mega_project:diamond_steelblock"
+    },
+    "2": {
+      "item": "mega_project:highspeedconectoritem"
+    },
+    "3": {
+      "item": "mega_project:diamond_steelblock"
+    },
+    "4": {
+      "item": "mega_project:armorcharger"
+    },
+    "5": {
+      "item": "mega_project:diamond_steelblock"
+    },
+    "6": {
+      "item": "mega_project:highspeedconectoritem"
+    },
+    "7": {
+      "item": "mega_project:diamond_steelblock"
+    },
+    "8": {
+      "item": "mega_project:highspeedconectoritem"
+    }
+  },
+  "result": {
+    "item": "mega_project:armorchargermk_2",
+    "count": 1
+  }
+}
